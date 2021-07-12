@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7. Etude de l’atmosphère terrestre &#8212; Capacités numériques - Sujets</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/thermo_statique.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="6. Etude d’un mouvement à force centrale" href="meca_force_centrale.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pcsi3physiquestan.github.io/capacites_numeriques/thermo_statique.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Etude de l’atmosphère terrestre" />
+<meta property="og:description" content="Etude de l’atmosphère terrestre  But : étudier les variations de température et de pression dans l’atmosphère.  Position du problème  Modélisation de l’atmosphè" />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Capacités numériques - Sujets</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capacite_numerique.html">
+   Capacités numériques en physique
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="signal_fourier.html">
+   1. Analyse spectrale d’un signal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="elec_reponse_o1.html">
+   2. Résolution numérique d’une équation différentielle d’ordre 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="elec_filtrage.html">
+   3. Etude numérique d’un filtre linéaire
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_non_lineaire.html">
+   4. Système conservatif : Effets non linéaires.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_pendule.html">
+   5. Etude d’un pendule simple
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_force_centrale.html">
+   6. Etude d’un mouvement à force centrale
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. Etude de l’atmosphère terrestre
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/thermo_statique.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/thermo_statique.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/thermo_statique.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#position-du-probleme">
+   7.1. Position du problème
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelisation-de-l-atmosphere">
+     7.1.1. Modélisation de l’atmosphère
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#donnees-numeriques">
+       7.1.1.1. Données numériques
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mise-en-equation">
+     7.1.2. Mise en équation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schema-d-euler-explicite">
+     7.1.3. Schéma d’Euler explicite
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determination-du-profil-de-pression-et-temperature">
+   7.2. Détermination du profil de pression et température
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimensionnement-d-un-ballon-sonde-atmospherique">
+   7.3. Dimensionnement d’un ballon-sonde atmosphérique
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     7.3.1. Position du problème
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complement">
+   7.4. Complément
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<div class="section" id="etude-de-l-atmosphere-terrestre">
+<h1><span class="section-number">7. </span>Etude de l’atmosphère terrestre<a class="headerlink" href="#etude-de-l-atmosphere-terrestre" title="Permalink to this headline">¶</a></h1>
+<p><strong>But :</strong> étudier les variations de température et de pression dans l’atmosphère.</p>
+<div class="section" id="position-du-probleme">
+<h2><span class="section-number">7.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modelisation-de-l-atmosphere">
+<h3><span class="section-number">7.1.1. </span>Modélisation de l’atmosphère<a class="headerlink" href="#modelisation-de-l-atmosphere" title="Permalink to this headline">¶</a></h3>
+<p>Dans le cadre du modèle ISA (International Standard Atmosphere), l’atmosphère est divisée en différentes couches, au sein desquelles la température est supposée suivre une <a class="reference external" href="https://fr.wikipedia.org/w/index.php?title=Atmosph%C3%A8re_normalis%C3%A9e&amp;oldid=181118275">loi affine</a>. La valeur du gradient vertical de température dans chacune de ces couches est normalisée.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  <span class="c1"># Pour l&#39;affichage des données</span>
+<span class="sd">&quot;&quot;&quot;Données normalisées pour chaque couche de l&#39;atmosphère.</span>
+<span class="sd">Vous pourrez utiliser ces vecteurs par la suite.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">couche</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Troposphère&quot;</span><span class="p">,</span> <span class="s2">&quot;Tropopause&quot;</span><span class="p">,</span> <span class="s2">&quot;Stratosphère&quot;</span><span class="p">,</span> <span class="s2">&quot;Stratosphère&quot;</span><span class="p">,</span> <span class="s2">&quot;Stratopause&quot;</span><span class="p">,</span> <span class="s2">&quot;Mesosphère&quot;</span><span class="p">,</span> <span class="s2">&quot;Mesosphère&quot;</span><span class="p">,</span> <span class="s2">&quot;Mesopause&quot;</span><span class="p">]</span>
+<span class="n">altitude</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">85</span><span class="p">]</span>
+<span class="n">gradient</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">+</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span> <span class="mf">2.8</span><span class="p">,</span> <span class="o">-</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">&quot;NA&quot;</span><span class="p">]</span>  <span class="c1"># Attention il faudrait traiter le dernier élément qui n&#39;est pas un nombre.</span>
+
+<span class="sd">&quot;&quot;&quot;Affichage des données</span>
+<span class="sd">La syntaxe utilisée n&#39;est pas à connaître.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;Couche atmosphérique&quot;</span> <span class="p">:</span> <span class="n">couche</span><span class="p">,</span>
+    <span class="s2">&quot;Altitude de la base (km)&quot;</span> <span class="p">:</span> <span class="n">altitude</span><span class="p">,</span>
+    <span class="s2">&quot;Gradient thermique vertical (K/km)&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">{:.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="nb">float</span> <span class="k">else</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span>  <span class="ow">in</span> <span class="n">gradient</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">datas</span><span class="o">.</span><span class="n">style</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_57147_" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Couche atmosphérique</th>        <th class="col_heading level0 col1" >Altitude de la base (km)</th>        <th class="col_heading level0 col2" >Gradient thermique vertical (K/km)</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_57147_level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_57147_row0_col0" class="data row0 col0" >Troposphère</td>
+                        <td id="T_57147_row0_col1" class="data row0 col1" >0</td>
+                        <td id="T_57147_row0_col2" class="data row0 col2" >-6.5</td>
+            </tr>
+            <tr>
+                        <th id="T_57147_level0_row1" class="row_heading level0 row1" >1</th>
+                        <td id="T_57147_row1_col0" class="data row1 col0" >Tropopause</td>
+                        <td id="T_57147_row1_col1" class="data row1 col1" >11</td>
+                        <td id="T_57147_row1_col2" class="data row1 col2" >0</td>
+            </tr>
+            <tr>
+                        <th id="T_57147_level0_row2" class="row_heading level0 row2" >2</th>
+                        <td id="T_57147_row2_col0" class="data row2 col0" >Stratosphère</td>
+                        <td id="T_57147_row2_col1" class="data row2 col1" >20</td>
+                        <td id="T_57147_row2_col2" class="data row2 col2" >1.0</td>
+            </tr>
+            <tr>
+                        <th id="T_57147_level0_row3" class="row_heading level0 row3" >3</th>
+                        <td id="T_57147_row3_col0" class="data row3 col0" >Stratosphère</td>
+                        <td id="T_57147_row3_col1" class="data row3 col1" >32</td>
+                        <td id="T_57147_row3_col2" class="data row3 col2" >2.8</td>
+            </tr>
+            <tr>
+                        <th id="T_57147_level0_row4" class="row_heading level0 row4" >4</th>
+                        <td id="T_57147_row4_col0" class="data row4 col0" >Stratopause</td>
+                        <td id="T_57147_row4_col1" class="data row4 col1" >47</td>
+                        <td id="T_57147_row4_col2" class="data row4 col2" >0</td>
+            </tr>
+            <tr>
+                        <th id="T_57147_level0_row5" class="row_heading level0 row5" >5</th>
+                        <td id="T_57147_row5_col0" class="data row5 col0" >Mesosphère</td>
+                        <td id="T_57147_row5_col1" class="data row5 col1" >51</td>
+                        <td id="T_57147_row5_col2" class="data row5 col2" >-2.8</td>
+            </tr>
+            <tr>
+                        <th id="T_57147_level0_row6" class="row_heading level0 row6" >6</th>
+                        <td id="T_57147_row6_col0" class="data row6 col0" >Mesosphère</td>
+                        <td id="T_57147_row6_col1" class="data row6 col1" >71</td>
+                        <td id="T_57147_row6_col2" class="data row6 col2" >-2.0</td>
+            </tr>
+            <tr>
+                        <th id="T_57147_level0_row7" class="row_heading level0 row7" >7</th>
+                        <td id="T_57147_row7_col0" class="data row7 col0" >Mesopause</td>
+                        <td id="T_57147_row7_col1" class="data row7 col1" >85</td>
+                        <td id="T_57147_row7_col2" class="data row7 col2" >NA</td>
+            </tr>
+    </tbody></table></div></div>
+</div>
+<p>On propose ici de déterminer numériquement la loi de variation de la pression atmosphérique avec l’altitude <span class="math notranslate nohighlight">\(z\)</span> dans le cadre du modèle ISA, en supposant que l’atmosphère est <strong>un gaz parfait au repos</strong> dans le référentiel terrestre galiléen et en négligeant les variations de la pesanteur avec l’altitude. On fixe les valeurs de la température et de la pression au niveau du sol (en z = 0) respectivement à :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+T_{sol} &amp;= 288 K\\
+P_{sol} &amp;= 1.013 \times 10^5 Pa
+\end{cases}
+\end{split}\]</div>
+<p>On utilisera les données obtenues pour étudier les  mouvements d’un ballon sonde.</p>
+<div class="section" id="donnees-numeriques">
+<h4><span class="section-number">7.1.1.1. </span>Données numériques<a class="headerlink" href="#donnees-numeriques" title="Permalink to this headline">¶</a></h4>
+<p>On prend :</p>
+<div class="amsmath math notranslate nohighlight" id="equation-23c84b1e-1d02-4fc0-b9cb-91687f7a2a8c">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-23c84b1e-1d02-4fc0-b9cb-91687f7a2a8c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\textrm{Accélération de la pesanteur} &amp;:&amp; g = 9.81 m.s^{-2}\\
+\textrm{Masse molaire de l'air} &amp;:&amp; M_{air} = 29 g.mol^{-1}\\
+\textrm{Constante des gaz parfaits} &amp;:&amp; R = 8.314 J.K^{-1}.mol^{-1}
+\end{align}\]</div>
+</div>
+</div>
+<div class="section" id="mise-en-equation">
+<h3><span class="section-number">7.1.2. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
+<p>On dispose de deux fonctions à intégrer : <span class="math notranslate nohighlight">\(T(z)\)</span> et <span class="math notranslate nohighlight">\(P(z)\)</span> de deux équations : le modèle affine par morceaux de la température et l’équation de la statique des fluides appliquées à un gaz parfait. Il vient le système (on note le gradient <span class="math notranslate nohighlight">\(k_{ISA}\)</span> de température) :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+\frac{\rm{d}T}{\rm{dz}}(z) &amp;= k_{ISA}(z) \\
+\frac{\rm{d}P}{\rm{dz}}(z) &amp;= - {M_{air} g \over RT(z)} \times P(z)
+\end{cases}
+\end{split}\]</div>
+<p>avec
+$<span class="math notranslate nohighlight">\(
+\begin{cases}
+T(z = 0) &amp;= T_{sol} \\
+P(z = 0) &amp;= P_{sol}
+\end{cases}
+\)</span>$</p>
+</div>
+<div class="section" id="schema-d-euler-explicite">
+<h3><span class="section-number">7.1.3. </span>Schéma d’Euler explicite<a class="headerlink" href="#schema-d-euler-explicite" title="Permalink to this headline">¶</a></h3>
+<p>On utilise un schéma d’Euler explicite pour le vecteur :
+$<span class="math notranslate nohighlight">\(Y(z) = \begin{cases}T(z) \\ P(z) \end{cases}\)</span>$</p>
+<p>Pour un pas d’intégration <span class="math notranslate nohighlight">\(h\)</span> et une suite de valeurs <span class="math notranslate nohighlight">\(Y_k\)</span> aux altitudes <span class="math notranslate nohighlight">\(z_k\)</span>, on utilisera la relation de récurrence :</p>
+<div class="math notranslate nohighlight">
+\[
+Y_k{k+1} = Y_k + h \times F(z_k, Y_k)
+\]</div>
+</div>
+</div>
+<div class="section" id="determination-du-profil-de-pression-et-temperature">
+<h2><span class="section-number">7.2. </span>Détermination du profil de pression et température<a class="headerlink" href="#determination-du-profil-de-pression-et-temperature" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice 1 :</strong></p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">kISA</span></code> qui prend comme argument une altitude <code class="docutils literal notranslate"><span class="pre">z</span></code> et qui renvoie le gradient de température <span class="math notranslate nohighlight">\(k_{ISA}(z)\)</span> associé. Pensez à utiliser les listes définies au début.</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">F_atm(z,</span> <span class="pre">Y)</span></code> qui prend comme argument l’altitude <code class="docutils literal notranslate"><span class="pre">z</span></code> et le vecteur <code class="docutils literal notranslate"><span class="pre">Y</span></code><span class="math notranslate nohighlight">\(=[T(z), P(z)]\)</span> et qui renvoie la fonction <code class="docutils literal notranslate"><span class="pre">F</span></code> définie précédemment pour ces valeurs. <em>On rappelle que <code class="docutils literal notranslate"><span class="pre">F</span></code> doit être un <strong>vecteur</strong>.</em></p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">euler(F,</span> <span class="pre">pas,</span> <span class="pre">Y0,</span> <span class="pre">zf)</span></code> qui implémente le schéma d’Euler explicite pour une fonction <code class="docutils literal notranslate"><span class="pre">F</span></code> avec un <code class="docutils literal notranslate"><span class="pre">pas</span></code> d’intégration, des conditions aux limites données par le vecteur <code class="docutils literal notranslate"><span class="pre">Y0</span></code>  en <span class="math notranslate nohighlight">\(z=0\)</span> et l’altitude finale de l’intégration <code class="docutils literal notranslate"><span class="pre">zf</span></code>. Elle doit renvoyer un vecteur donnant les altitudes de calcul et un tableau à deux colonnes donnant les solutions <span class="math notranslate nohighlight">\([T_k, P_k]\)</span></p></li>
+<li><p>Utiliser la fonction précédente pour obtenir le profil de température et de pression dans l’atmosphère pour le modèle ISA.</p></li>
+<li><p>Tracer deux deux graphiques les profils <span class="math notranslate nohighlight">\(T(z)\)</span> et <span class="math notranslate nohighlight">\(P(z)\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Les bibliothèques scientifiques ont déjà été importées&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Les bibliothèques scientifiques ont déjà été importées&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><strong>Exercice 2 :</strong></p>
+<ol class="simple">
+<li><p>Reprendre l’exercice précédent mais en utilisant la fonction <code class="docutils literal notranslate"><span class="pre">odeint</span></code> dela bibliothèque <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></p></li>
+</ol>
+</div></blockquote>
+<p><em>Indications utiles</em> :</p>
+<ul class="simple">
+<li><p>Pour pouvoir réutiliser la fonction <code class="docutils literal notranslate"><span class="pre">F_atm</span></code>, pensez à ajouter l’argument <code class="docutils literal notranslate"><span class="pre">tfirst=True</span></code> dans la fonction <code class="docutils literal notranslate"><span class="pre">odeint</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dimensionnement-d-un-ballon-sonde-atmospherique">
+<h2><span class="section-number">7.3. </span>Dimensionnement d’un ballon-sonde atmosphérique<a class="headerlink" href="#dimensionnement-d-un-ballon-sonde-atmospherique" title="Permalink to this headline">¶</a></h2>
+<p>Les ballons-sonde stratosphériques constituent une solution simple et relativement économique pour envoyer une charge dans l’atmosphère. Équipés de capteurs divers, ils peuvent par exemple permettre de relever les valeurs de la pression, de la température, de l’humidité ou encore devitesse du vent dans les différentes couches de l’atmosphère traversées</p>
+<div class="section" id="id1">
+<h3><span class="section-number">7.3.1. </span>Position du problème<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>On considère ici un ballon-sonde stratosphérique “ouvert”, constitué d’une enveloppe de volume <span class="math notranslate nohighlight">\(V\)</span> ouverte sur l’extérieur par des manches d’évacuation situées à la base du ballon. Au moment du lancement, le ballon est gonflé à l’hélium (<span class="math notranslate nohighlight">\(M_{He} = 4,0 g.mol^{-1}\)</span>) ; l’enveloppe garde un volume constant tout au long de l’ascension. Le ballon étant ouvert à sa base, la pression à l’intérieur du ballon est identique à tout moment à la pression atmosphérique. La masse de l’ensemble { enveloppe (hors hélium) + nacelle + instruments embarqués } est <span class="math notranslate nohighlight">\(m = 10 kg\)</span>.</p>
+<blockquote>
+<div><p><strong>Exercice 2 :</strong>
+On souhaite que le ballon atteigne une altitude <span class="math notranslate nohighlight">\(z_{max}\)</span> choisie.</p>
+<ol class="simple">
+<li><p>Estimer le volume <span class="math notranslate nohighlight">\(V\)</span> de l’enveloppe qui permet d’atteindre cette altitude puis le diamètre du ballon associé.
+Vous devrez :</p></li>
+</ol>
+<ul class="simple">
+<li><p>Préciser la modélisation et le paramétrage du problème. On discutera notamment des hypothèses choisies.</p></li>
+<li><p>Tracer V et d en fonction de<span class="math notranslate nohighlight">\(z_{max}\)</span>.</p></li>
+<li><p>Estimer V et d pour <span class="math notranslate nohighlight">\(z_{max} = 36 km\)</span> en procédant par dichotomie pour trouver l’indice donnant l’altitude la plus proche de <span class="math notranslate nohighlight">\(z_{max}\)</span>. Commenter la possibilité pour des amateurs de réaliser un tel ballon.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="complement">
+<h2><span class="section-number">7.4. </span>Complément<a class="headerlink" href="#complement" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice 3 :</strong><br />
+Si le temps le permet, reprendre l’intégration du système mais en tenant compte des variation du champ de pesanteur avec l’altitude en assimilant ce dernier au champ de gravitation terrestre.<br />
+Vous représenterez les champs de pression pour les deux modèles (champ de pesanteur uniforme et non uniforme) ainsi que le tracé de l’écart relatif entre les deux modèles en fonction de l’altitude.</p>
+</div></blockquote>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="meca_force_centrale.html" title="previous page"><span class="section-number">6. </span>Etude d’un mouvement à force centrale</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

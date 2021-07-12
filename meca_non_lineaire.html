@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Système conservatif : Effets non linéaires. &#8212; Capacités numériques - Sujets</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/meca_non_lineaire.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Etude d’un pendule simple" href="meca_pendule.html" />
+    <link rel="prev" title="3. Etude numérique d’un filtre linéaire" href="elec_filtrage.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pcsi3physiquestan.github.io/capacites_numeriques/meca_non_lineaire.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Système conservatif : Effets non linéaires." />
+<meta property="og:description" content="Système conservatif : Effets non linéaires.  But :  résoudre numériquement une équation différentielle du deuxième ordre non-linéaire et faire apparaître l’effe" />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Capacités numériques - Sujets</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capacite_numerique.html">
+   Capacités numériques en physique
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="signal_fourier.html">
+   1. Analyse spectrale d’un signal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="elec_reponse_o1.html">
+   2. Résolution numérique d’une équation différentielle d’ordre 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="elec_filtrage.html">
+   3. Etude numérique d’un filtre linéaire
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Système conservatif : Effets non linéaires.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_pendule.html">
+   5. Etude d’un pendule simple
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_force_centrale.html">
+   6. Etude d’un mouvement à force centrale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="thermo_statique.html">
+   7. Etude de l’atmosphère terrestre
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/meca_non_lineaire.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/meca_non_lineaire.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/meca_non_lineaire.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#position-du-probleme">
+   4.1. Position du problème
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#etude-de-l-energie-potentielle">
+     4.1.1. Etude de l’énergie potentielle.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schema-d-euler-pour-un-equation-d-ordre-2">
+   4.2. Schéma d’Euler pour un équation d’ordre 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-a-l-etude-de-la-vibration">
+   4.3. Application à l’étude de la vibration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#effets-de-non-linearite">
+     4.3.1. Effets de non linéarité
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonctions-de-la-bibliotheque-scipy">
+     4.3.2. Fonctions de la bibliothéque scipy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trajectoire-de-diffusion">
+   4.4. Trajectoire de diffusion
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<div class="section" id="systeme-conservatif-effets-non-lineaires">
+<h1><span class="section-number">4. </span>Système conservatif : Effets non linéaires.<a class="headerlink" href="#systeme-conservatif-effets-non-lineaires" title="Permalink to this headline">¶</a></h1>
+<p><strong>But :</strong>  résoudre numériquement une équation différentielle du deuxième ordre non-linéaire et faire apparaître l’effet des termes non-linéaires.</p>
+<div class="section" id="position-du-probleme">
+<h2><span class="section-number">4.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
+<p>Nous allons chercher à résoudre numériquement l’équation d’évolution traduisant la vibration d’une molécule HCl. La différence de masse des deux atomes permet de supposer que l’atome de chlore est immobile. On travaillera donc dans son référentiel qu’on supposera galiléen. On suppose le mouvement de l’atome d’hydrogène rectiligne suivant un axe Ox (O étant la position du chlore)</p>
+<p>Le système HCl est supposé isolé. On suppose que l’interaction intramoléculaire est modélisée par l’énergie potentielle :</p>
+<div class="math notranslate nohighlight">
+\[
+E_p = {C \over r^n} - \alpha {e^2 \over 4\pi \epsilon_0 r}
+\]</div>
+<p>avec : <span class="math notranslate nohighlight">\(C = 2.2 \times 10^{-138} J.m^{12}; \alpha = 0.40; n = 12; \epsilon_0 = 8.85 \times 10^{-12} SI; e=1.6\times 10^{-19}C\)</span></p>
+<p>et la masse de l’hydrogène : <span class="math notranslate nohighlight">\(m_H = 1.0 \times 10^{-27} kg\)</span></p>
+<p>Pour éviter de traiter des puissances trop importantes, on va changer les unités d’étude : la <strong>masse</strong> sera en <em>unité de masse atomique</em>, les <strong>distances</strong> en <em>Angstrom</em>, les <strong>charges</strong> en nombre de fois <em>la charge élémentaire</em> et  les <strong>temps</strong> en <em>femtosecondes</em>. Les constantes précédentes prennent alors les valeurs suivantes (UA = Unité arbitraire):</p>
+<p><span class="math notranslate nohighlight">\(C = 2.2 \times 10^{-1} (UA); \alpha = 0.40; n = 12; \epsilon_0 = 3.45 \times 10^{-1} (UA); e=1 (UA); m_H = 1 (UA)\)</span></p>
+<div class="section" id="etude-de-l-energie-potentielle">
+<h3><span class="section-number">4.1.1. </span>Etude de l’énergie potentielle.<a class="headerlink" href="#etude-de-l-energie-potentielle" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Exercice 1</strong> :<br />
+Vous devez :</p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">Ep</span></code> qui prend comme argument une distance <code class="docutils literal notranslate"><span class="pre">r</span></code> et qui renvoie l’énergie potentielle associée. <em>Il est conseillé d’enregistrer les variables C, alpha… comme des variables globales.</em></p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">force</span></code> qui prend comme argument une valeur <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">pas</span></code> et qui renvoie la valeur de la force : <span class="math notranslate nohighlight">\(F = - \frac{dE_p}{dr}\)</span> estimée en <code class="docutils literal notranslate"><span class="pre">x</span></code> par dérivation numérique en utilisant le pas <code class="docutils literal notranslate"><span class="pre">pas</span></code>.</p></li>
+<li><p>Tracer <span class="math notranslate nohighlight">\(E_p(r)\)</span>^et <span class="math notranslate nohighlight">\(F(r)\)</span> pour <span class="math notranslate nohighlight">\(r\)</span> entre 1 et 10 Angstrom.</p></li>
+<li><p>Déterminer, par une recherche de 0 par dichotomie, la distance <code class="docutils literal notranslate"><span class="pre">rE</span></code> correspondant à la position d’équilibre de la molécule avec une tolérance de <span class="math notranslate nohighlight">\(10^{-4} \mathring{A}\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<p><strong>Utiliser la notation scientifique 4e-4 pour entrer la valeur numérique <span class="math notranslate nohighlight">\(4\times 10^{-4}\)</span>.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">N&#39;oubliez pas les bibliothèques scientifiques </span>
+<span class="sd">et pensez à commenter votre code.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\nN&#39;oubliez pas les bibliothèques scientifiques \net pensez à commenter votre code.\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="schema-d-euler-pour-un-equation-d-ordre-2">
+<h2><span class="section-number">4.2. </span>Schéma d’Euler pour un équation d’ordre 2<a class="headerlink" href="#schema-d-euler-pour-un-equation-d-ordre-2" title="Permalink to this headline">¶</a></h2>
+<p>On rappelle le principe, on utilise deux fonctions inconnues :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+x(t)\\
+v(t)
+\end{pmatrix}
+\end{split}\]</div>
+<p>On a alors la relation :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\rm{d} \over \rm{dt}}
+\begin{pmatrix}
+x(t)\\
+v(t)
+\end{pmatrix}
+=
+\begin{pmatrix}
+v(t)\\
+{\sum F_{ext}(t, x, v) \over m} = f(t, x, v)
+\end{pmatrix}
+\end{split}\]</div>
+<p>On peut alors implémenter le schéma d’Euler explicite sur le vecteur précédent :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+x_{k+1}\\
+v_{k+1}
+\end{pmatrix}
+=
+\begin{pmatrix}
+x_{k} + h \times v_k\\
+v_k + h \times f(t, x, v)
+\end{pmatrix}
+\end{split}\]</div>
+<p>où <span class="math notranslate nohighlight">\(h\)</span> est le pas d’intégration.</p>
+<blockquote>
+<div><p><strong>Exercice 2</strong>:</p>
+<ol>
+<li><p>Préciser l’expression de <span class="math notranslate nohighlight">\(f(t, x, v)\)</span> pour notre système et définir une fonction <code class="docutils literal notranslate"><span class="pre">f_hcl(t,</span> <span class="pre">x,</span> <span class="pre">v)</span></code> qui renvoie cette expression.</p></li>
+<li><p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> qui prend pour argument :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> : la fonction du schéma d’Euler</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code> : le pas d’intégration choisi</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code> et <code class="docutils literal notranslate"><span class="pre">v0</span></code> : les conditions initiales sur la position et la vitesse au temps initial <span class="math notranslate nohighlight">\(t=0\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tf</span></code> : le temps final pour l’intégration.</p></li>
+</ul>
+<p>et qui renvoie trois vecteurs :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tk</span></code> les temps où on calcule les positions vitesses</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xk</span></code> les positions <span class="math notranslate nohighlight">\(x(t_k)\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vk</span></code> les vitesses <span class="math notranslate nohighlight">\(v(t_k)\)</span></p></li>
+</ul>
+</li>
+<li><p>Vous pouvez tester votre fonction sur une chute libre (<span class="math notranslate nohighlight">\(f(t, x, v) = g = 10\)</span>) avec un faible nombre de points.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Pensez à réutiliser les fonctions déjà définies.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nPensez à réutiliser les fonctions déjà définies.\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="application-a-l-etude-de-la-vibration">
+<h2><span class="section-number">4.3. </span>Application à l’étude de la vibration<a class="headerlink" href="#application-a-l-etude-de-la-vibration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="effets-de-non-linearite">
+<h3><span class="section-number">4.3.1. </span>Effets de non linéarité<a class="headerlink" href="#effets-de-non-linearite" title="Permalink to this headline">¶</a></h3>
+<p>Le but est d’observer les vibrations de la molécule autour de sa position d’équilibre pour :</p>
+<ul class="simple">
+<li><p>une vibration de très faible amplitude : <span class="math notranslate nohighlight">\((r - r_E) &lt; 0.01 r_E\)</span></p></li>
+<li><p>une vibration plus importante : <span class="math notranslate nohighlight">\((r - r_E) &lt; 0.2 r_E\)</span></p></li>
+</ul>
+<p>On cherchera à observer par les tracés temporelles et le portrait de phase si l’approximation linéaire de l’équation pourrait être valable et quelle sont les effets de non linéarité.</p>
+<blockquote>
+<div><p><strong>Exercice 3:</strong><br />
+Vous devez :</p>
+<ol class="simple">
+<li><p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">Ec(v)</span></code> qui renvoient l’énergie cinétique du système pour une vitesse donnée.</p></li>
+<li><p>Utiliser votre implémentation du schéma d’Euler pour obtenir les temps <span class="math notranslate nohighlight">\(t_k\)</span>, positions <span class="math notranslate nohighlight">\(x(t_k)\)</span> et vitesses <span class="math notranslate nohighlight">\(v(t_k)\)</span> pour les deux cas étudiées puis les énergies potentielles <span class="math notranslate nohighlight">\(E_p(t_k)\)</span>, énergie cinétique <span class="math notranslate nohighlight">\(E_c(t_k)\)</span> et énergie mécanique <span class="math notranslate nohighlight">\(E_m(t_k)\)</span> aux temps <span class="math notranslate nohighlight">\(t_k\)</span>.</p></li>
+<li><p>Tracer alors une fenêtre avec 4 graphiques : l’un donnant <span class="math notranslate nohighlight">\(x(t)\)</span>, le second <span class="math notranslate nohighlight">\(v(t)\)</span>, le troisième le portrait de phase et le quatrième l’évolution des 3 termes énergétiques.</p></li>
+<li><p>Observer l’influence du pas d’intégration et l’adapter pour une intégration correcte.</p></li>
+<li><p>Observer si ces évolutions sont cohérentes avec l’approximation linéaire et sinon quelles sont les différences.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="fonctions-de-la-bibliotheque-scipy">
+<h3><span class="section-number">4.3.2. </span>Fonctions de la bibliothéque scipy<a class="headerlink" href="#fonctions-de-la-bibliotheque-scipy" title="Permalink to this headline">¶</a></h3>
+<p>Nous allons utiliser la fonction <code class="docutils literal notranslate"><span class="pre">odeint</span></code> de la bibliothèque <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>. Sa signature est :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">tfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code> : fonction qui renvoie le vecteur :
+$<span class="math notranslate nohighlight">\(\begin{pmatrix}
+v_k\\
+f(t, x, v)
+\end{pmatrix}
+\)</span><span class="math notranslate nohighlight">\(
+Plus généralement, on utiliser la représentation matricielle :
+\)</span><span class="math notranslate nohighlight">\(
+Y_{k+1} = Y_k + h * F(t, x, v)
+\)</span>$</p></li>
+</ul>
+<p>avec</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Y_k = \begin{pmatrix}
+x_k\\
+v_k
+\end{pmatrix}
+\end{split}\]</div>
+<p>et <span class="math notranslate nohighlight">\(F\)</span> une fonction qui renvoie un vecteur (deux valeurs). Ici le vecteur donné précédemment.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code> est un <strong>vecteur</strong> donnant les conditions initiales.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> est le vecteur pour lequels les valeurs de <span class="math notranslate nohighlight">\(Y_k\)</span> (positions et vitesses) seront calculées. (<code class="docutils literal notranslate"><span class="pre">t</span></code> doit être ordonné).</p></li>
+</ul>
+<p><strong>Précision sur le vecteur <code class="docutils literal notranslate"><span class="pre">t</span></code> et le pas d’intégration.</strong><br />
+<em>Vous remarquerez qu’on ne donne pas de pas d’intégration. Le vecteur <code class="docutils literal notranslate"><span class="pre">t</span></code> ne fait pas office de pas d’intégration. Les valeurs de position et vitesse à ces temps seront calculées ensuite par interpolation.<br />
+C’est la fonction odeint elle-même qui va déterminer le pas d’intégration par comparaison d’erreurs entre plusieurs méthodes. Elles peut fait varier ce pas d’intégration au cours du calcul : on dit que c’est une méthode à <strong>pas variable.</strong> On peut régler la tolérance sur l’erreur avec des arguments optionnels non présentés ici.<br />
+Ce pas pouvant varier et quelles fois être grand, il est préférable de donner explicitement un vecteur avec des valeurs temps pour calculer les positions et vitesses a posteriori.</em></p>
+<blockquote>
+<div><p><strong>Exercice 4:</strong></p>
+<ol class="simple">
+<li><p>Créer une fonction <code class="docutils literal notranslate"><span class="pre">Fhcl(t,</span> <span class="pre">Y)</span></code> qui prend comme argument un temps <code class="docutils literal notranslate"><span class="pre">t</span></code> et le vecteur <code class="docutils literal notranslate"><span class="pre">Y</span></code> composé de deux éléments <span class="math notranslate nohighlight">\((x_k, v_k)\)</span> et qui renvoie le vecteur <span class="math notranslate nohighlight">\(F(t, Y)\)</span> décrit précédemment.</p></li>
+<li><p>A vous de comprendre et utiliser la fonction précédente pour réaliser l’intégration du problème et étudier les vibration de la molécule.</p></li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="trajectoire-de-diffusion">
+<h2><span class="section-number">4.4. </span>Trajectoire de diffusion<a class="headerlink" href="#trajectoire-de-diffusion" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice 5:</strong></p>
+<ol class="simple">
+<li><p>Comment choisir les conditions initiales pour placer l’hydrogène dans un état de diffusion ?</p></li>
+<li><p>Réaliser l’intégration numérique dans ces conditions et déterminer numériquement l’énergie cinétique à l’infini. Obtient-on ce qu’on attend ?</p></li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="elec_filtrage.html" title="previous page"><span class="section-number">3. </span>Etude numérique d’un filtre linéaire</a>
+    <a class='right-next' id="next-link" href="meca_pendule.html" title="next page"><span class="section-number">5. </span>Etude d’un pendule simple</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

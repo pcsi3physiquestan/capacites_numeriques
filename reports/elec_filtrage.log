@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+"""Les bibliothèques utiles ont déjà été importées."""
+
+"""Les instructions suivantes chargent les données du fichier wav.
+"""
+filename = ''  # Entrer ici le chemin relatif vers le fichier sonore téléchargé
+samplerate, datas = read(filename)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m<ipython-input-2-af5f02afa0ed>[0m in [0;36m<module>[0;34m[0m
+[1;32m      4[0m """
+[1;32m      5[0m [0mfilename[0m [0;34m=[0m [0;34m''[0m  [0;31m# Entrer ici le chemin relatif vers le fichier sonore téléchargé[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 6[0;31m [0msamplerate[0m[0;34m,[0m [0mdatas[0m [0;34m=[0m [0mread[0m[0;34m([0m[0mfilename[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m~/miniconda3/envs/jupybook/lib/python3.9/site-packages/scipy/io/wavfile.py[0m in [0;36mread[0;34m(filename, mmap)[0m
+[1;32m    637[0m         [0mmmap[0m [0;34m=[0m [0;32mFalse[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    638[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 639[0;31m         [0mfid[0m [0;34m=[0m [0mopen[0m[0;34m([0m[0mfilename[0m[0;34m,[0m [0;34m'rb'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    640[0m [0;34m[0m[0m
+[1;32m    641[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: ''
+FileNotFoundError: [Errno 2] No such file or directory: ''
+

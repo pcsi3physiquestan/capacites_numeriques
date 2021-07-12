@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Etude d’un mouvement à force centrale &#8212; Capacités numériques - Sujets</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/meca_force_centrale.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7. Etude de l’atmosphère terrestre" href="thermo_statique.html" />
+    <link rel="prev" title="5. Etude d’un pendule simple" href="meca_pendule.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pcsi3physiquestan.github.io/capacites_numeriques/meca_force_centrale.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Etude d’un mouvement à force centrale" />
+<meta property="og:description" content="Etude d’un mouvement à force centrale  But : obtenir des trajectoires d’un point matériel soumis à un champ de force centrale conservatif  Position du problème " />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Capacités numériques - Sujets</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capacite_numerique.html">
+   Capacités numériques en physique
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="signal_fourier.html">
+   1. Analyse spectrale d’un signal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="elec_reponse_o1.html">
+   2. Résolution numérique d’une équation différentielle d’ordre 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="elec_filtrage.html">
+   3. Etude numérique d’un filtre linéaire
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_non_lineaire.html">
+   4. Système conservatif : Effets non linéaires.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_pendule.html">
+   5. Etude d’un pendule simple
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Etude d’un mouvement à force centrale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="thermo_statique.html">
+   7. Etude de l’atmosphère terrestre
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/meca_force_centrale.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/meca_force_centrale.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/meca_force_centrale.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#position-du-probleme">
+   6.1. Position du problème
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelisation-du-probleme">
+   6.2. Modélisation du problème.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#consideration-sur-les-unites">
+     6.2.1. Considération sur les unités
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mise-en-equation">
+     6.2.2. Mise en équation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schema-d-euler">
+     6.2.3. Schéma d’Euler
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditions-initiales">
+     6.2.4. Conditions initiales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temps-d-observation">
+     6.2.5. Temps d’observation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliotheques-utiles">
+   6.3. Bibliothèques utiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#travail-sur-les-conditions-initiales">
+   6.4. Travail sur les conditions initiales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determination-de-la-trajectoire">
+   6.5. Détermination de la trajectoire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametre-d-impact-et-diffusion">
+   6.6. Paramètre d’impact et diffusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistique-des-angles-de-diffusion">
+   6.7. Statistique des angles de diffusion
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<div class="section" id="etude-d-un-mouvement-a-force-centrale">
+<h1><span class="section-number">6. </span>Etude d’un mouvement à force centrale<a class="headerlink" href="#etude-d-un-mouvement-a-force-centrale" title="Permalink to this headline">¶</a></h1>
+<p><strong>But :</strong> obtenir des trajectoires d’un point matériel soumis à un champ de force centrale conservatif</p>
+<div class="section" id="position-du-probleme">
+<h2><span class="section-number">6.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
+<p>On se propose d’étudier l’expérience de Rutherford où des particules alpha (charge <span class="math notranslate nohighlight">\(+2e\)</span>) d’énergie cinétique <span class="math notranslate nohighlight">\(E_c\)</span> bombardent des noyau d’or <span class="math notranslate nohighlight">\(Z = 79\)</span> supposés fixes dans un référentiel galiléen. On peut supposer que chaque particule ne rencontre qu’un seul noyau d’or qui est responsable de sa déviation.</p>
+<p>Dans la modélisation habituelle, les particules sont initialement à l’infini et l’interaction entre le noyau et la particule est coulombienne :</p>
+<p>Nous allons :</p>
+<ul class="simple">
+<li><p>Etablir une condition sur la distance initiale pour pouvoir considérer que les particules sont initialement sur une trajectoire de diffusion.</p></li>
+<li><p>Déterminer et tracer la trajectoire des particules alpha pour plusieurs paramètres d’impact <span class="math notranslate nohighlight">\(b\)</span> à énergie cinétique fixée.</p></li>
+<li><p>Déterminer l’angle de diffusion en fonction du paramètre d’impact <span class="math notranslate nohighlight">\(b\)</span> et vérifier la cohérence avec la loi attendue.</p></li>
+<li><p>Simuler un bombardement homogène et vérifier que la loi sur la section efficace attendue est correcte.</p></li>
+<li><p>Etudier la dépendance de la précédente loi à l’énergie cinétique des particules alpha.</p></li>
+</ul>
+</div>
+<div class="section" id="modelisation-du-probleme">
+<h2><span class="section-number">6.2. </span>Modélisation du problème.<a class="headerlink" href="#modelisation-du-probleme" title="Permalink to this headline">¶</a></h2>
+<p>On suppose la particules alpha initialement à une distance <span class="math notranslate nohighlight">\(r_i\)</span> <strong>suffisamment grande</strong> pour qu’elle puisse presque être considérée comme à l’infini (on ne peut pas la placer à l’infini pour une simulation numérique !). Le paramètre d’impact <span class="math notranslate nohighlight">\(b\)</span> représenté sur la figure est supposé connu. Elle possède initialement une vitesse <span class="math notranslate nohighlight">\(v_0\)</span> orientée comme sur le schéma.</p>
+<p><img alt="Conditions initiales" src="_images/rutherford.png" /></p>
+<div class="section" id="consideration-sur-les-unites">
+<h3><span class="section-number">6.2.1. </span>Considération sur les unités<a class="headerlink" href="#consideration-sur-les-unites" title="Permalink to this headline">¶</a></h3>
+<p>Comme dans le cas de l’étude de la vibration moléculaire, on va se placer dans un système d’unités évitant des puissances de 10 trop grandes. On va donc travailler avec comme unité de référence :</p>
+<ul class="simple">
+<li><p>la charge élémentaire devient <span class="math notranslate nohighlight">\(e = 1(UA)\)</span></p></li>
+<li><p>la masse atomique devient <span class="math notranslate nohighlight">\(m = 1(UA)\)</span></p></li>
+<li><p>la distance <span class="math notranslate nohighlight">\(r = 10^{-14} m\)</span> (taille typique du noyau) devient <span class="math notranslate nohighlight">\(r = 1 (UA)\)</span></p></li>
+<li><p>l’énergie <span class="math notranslate nohighlight">\(E = 1.6 \times 10^{-19} J\)</span> (1eV) devient <span class="math notranslate nohighlight">\(E = 1(UA)\)</span></p></li>
+</ul>
+<p>Dans ces conditions, les données numériques utiles deviennent :</p>
+<ul class="simple">
+<li><p>Masse des particules alpha : <span class="math notranslate nohighlight">\(m = 4 (UA)\)</span></p></li>
+<li><p>Energie cinétique initiale <span class="math notranslate nohighlight">\(E_{c0} = 5.3 \times 10^6 (UA)\)</span> (cette valeur sera susceptible de changer ensuite).</p></li>
+<li><p>Constante <span class="math notranslate nohighlight">\({e^2 \over 4 \pi \epsilon_0} = 1.44 \times 10^6 (UA)\)</span></p></li>
+<li><p>un pas de temps de <span class="math notranslate nohighlight">\(h = 1(UA)\)</span> correspondra à <span class="math notranslate nohighlight">\(7.9 \times 10^{-20} s\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="mise-en-equation">
+<h3><span class="section-number">6.2.2. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
+<p>Il s’agit d’un problème classique de force centrale coulombienne, la conservation du moment cinétique et le principe fondamental de la dynamique permettent de se ramener à un problème à trois inconnues :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\rm{d} \over \rm{d}t}
+\begin{pmatrix}
+\theta \\
+r \\
+\dot r
+\end{pmatrix}(t)
+=
+\begin{pmatrix}
+{bv_0 \over r(t)^2} \\
+\dot r(t) \\
+{b^2 v_0^2 \over r(t)^3} + {2Ze^2 \over 4 \pi \epsilon_0 m r(t)^2}
+\end{pmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="schema-d-euler">
+<h3><span class="section-number">6.2.3. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">¶</a></h3>
+<p>On utlisera directement la fonction native <code class="docutils literal notranslate"><span class="pre">odeint</span></code> de la bibliothèque <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>. Sa signature doit être adaptée pour tenir compte du moment cinétique qui va changer :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ysol</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">C</span><span class="p">,))</span>
+</pre></div>
+</div>
+<p>avec :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F(Y,</span> <span class="pre">t,</span> <span class="pre">C)</span></code> la fonction telle que <span class="math notranslate nohighlight">\(\frac{\rm{d}Y}{\rm{dt}}(t) = F(Y, t, C)\)</span> et <span class="math notranslate nohighlight">\(Y = (\theta, r, \dot r)\)</span>. <code class="docutils literal notranslate"><span class="pre">F</span></code> doit renvoyer un vecteur. L’argument <code class="docutils literal notranslate"><span class="pre">C</span></code> sera la constante des aires <span class="math notranslate nohighlight">\(C = bv_0\)</span>. Elle apparaît dans <code class="docutils literal notranslate"><span class="pre">F</span></code> mais variera suivant les conditions initiales.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Y0</span></code> les conditions initiales (vecteur)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> vecteur contenant l’ensemble des instants où l’on veut estimer la fonction <code class="docutils literal notranslate"><span class="pre">Y(t)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span> <span class="pre">=</span> <span class="pre">(C,)</span></code> permettra de passer à la fonction <code class="docutils literal notranslate"><span class="pre">F</span></code> le troisième argument <code class="docutils literal notranslate"><span class="pre">C</span></code>. On y mettra donc la valeur de la constante des aires. <strong>Attention, les parenthèse et la virgule sont obligatoire.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ysol</span></code> le tableau renvoyé qui contient les estimations des fonctions (ici <span class="math notranslate nohighlight">\(\theta(t), r(t), \dot r(t)\)</span>) aux instants du vecteur <code class="docutils literal notranslate"><span class="pre">t</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="conditions-initiales">
+<h3><span class="section-number">6.2.4. </span>Conditions initiales<a class="headerlink" href="#conditions-initiales" title="Permalink to this headline">¶</a></h3>
+<p>Les conditions initiales ne sont pas directement <span class="math notranslate nohighlight">\(\theta, r, \dot r\)</span> mais :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+b \\
+r(t=0) = r_i \\
+Ec(t=0) = E_{c0}
+\end{pmatrix}
+\end{split}\]</div>
+<p>avec <span class="math notranslate nohighlight">\(v_0\)</span> suivant <span class="math notranslate nohighlight">\(-\vec e_x\)</span>.</p>
+<p><strong>Il faudra donc déterminer <span class="math notranslate nohighlight">\(\theta, r, \dot r\)</span> à partir de ces contraintes avant de commencer l’intégration.</strong></p>
+<p>Pour qu’on puisse considérer que la particules est à l’infini et proche de l’axe Ox, il faut deux conditions sur <span class="math notranslate nohighlight">\(r_i\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r_i \gg r_{min}\)</span> avec <span class="math notranslate nohighlight">\(r_{min}\)</span> le rayon limite  à <span class="math notranslate nohighlight">\(t=0\)</span> pour lequel la particule alpha est placée dans un état de diffusion.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r_i \gg b\)</span></p></li>
+</ul>
+<p><strong>On choisira donc <span class="math notranslate nohighlight">\(r_i = \max(1000 r_{min}, 1000 b)\)</span>.</strong></p>
+</div>
+<div class="section" id="temps-d-observation">
+<h3><span class="section-number">6.2.5. </span>Temps d’observation<a class="headerlink" href="#temps-d-observation" title="Permalink to this headline">¶</a></h3>
+<p>En supposant <span class="math notranslate nohighlight">\(r_i\)</span> suffisamment grand, le temps que mettra la particule pour atteindre à nouveau la distance <span class="math notranslate nohighlight">\(r_i\)</span> dans un état de diffusion est de l’ordre de <span class="math notranslate nohighlight">\({2r_i \over v_0}\)</span>. On pourra se servir de cette estimer pour choisir un pas de temps donnant <strong>approximativement</strong> N points sur la trajectoire.</p>
+<p><strong>Pour se donner un peu de marge on choisira un un durée totale de simulation égale <span class="math notranslate nohighlight">\({4r_i \over v_0}\)</span> et un nombre de points de simulation <span class="math notranslate nohighlight">\(N = 10000\)</span>.</strong></p>
+</div>
+</div>
+<div class="section" id="bibliotheques-utiles">
+<h2><span class="section-number">6.3. </span>Bibliothèques utiles<a class="headerlink" href="#bibliotheques-utiles" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="travail-sur-les-conditions-initiales">
+<h2><span class="section-number">6.4. </span>Travail sur les conditions initiales<a class="headerlink" href="#travail-sur-les-conditions-initiales" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice 1 :</strong></p>
+<ol class="simple">
+<li><p>Trouver par le calcul une condition sur <span class="math notranslate nohighlight">\(ri\)</span> pour que la particule alpha, possédant une énergie cinétique <span class="math notranslate nohighlight">\(E_{c0}\)</span> soit dans un état de diffusion. On note <span class="math notranslate nohighlight">\(r_{min}\)</span> la valeur minimale trouvée. Pour pouvoir négliger l’énergie potentielle et donc l’interaction à l’instant initiale, on prend <span class="math notranslate nohighlight">\(ri = 1000 r_{min}\)</span> comme condition initiale.</p></li>
+<li><p>En vous aidant de la figure et du calcul précédent, écrire une fonction <code class="docutils literal notranslate"><span class="pre">CI(b,</span> <span class="pre">Ec0)</span></code> qui prend comme argument les conditions initiales <code class="docutils literal notranslate"><span class="pre">b</span></code> et <code class="docutils literal notranslate"><span class="pre">Ec0</span></code> et qui renvoient les conditions initiales <span class="math notranslate nohighlight">\(\theta(t=0), r(t=0), \dot r(t=0)\)</span> sous forme d’un vecteur numpy. <em>On considèrera que <span class="math notranslate nohighlight">\(b\)</span> est de signe quelconque et que <span class="math notranslate nohighlight">\(v_0\)</span> est positif pour un vecteur vitesse suivant <span class="math notranslate nohighlight">\(-\vec e_x\)</span>.</em></p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="determination-de-la-trajectoire">
+<h2><span class="section-number">6.5. </span>Détermination de la trajectoire<a class="headerlink" href="#determination-de-la-trajectoire" title="Permalink to this headline">¶</a></h2>
+<p>L’implémentation du schéma d’Euler sera ici un peut particulière : on ne va pas arrêter l’intégration à un temps fixé mais lorsque la particule aura atteint à nouveau la distance <span class="math notranslate nohighlight">\(r_i\)</span>. On pourra alors considérer qu’elle est à nouveau “à l’infini”.</p>
+<p><strong>Vous ne connaîtrez donc pas à l’avance la taille des ensembles de points <code class="docutils literal notranslate"><span class="pre">tk</span></code>(temps), <code class="docutils literal notranslate"><span class="pre">thetak</span></code>, <code class="docutils literal notranslate"><span class="pre">rk</span></code> et <code class="docutils literal notranslate"><span class="pre">rpointk</span></code>.</strong></p>
+<blockquote>
+<div><p><strong>Exercice 2 :</strong></p>
+<ol class="simple">
+<li><p>Ecrire la fonction <code class="docutils literal notranslate"><span class="pre">F(Y,</span> <span class="pre">t,</span> <span class="pre">C)</span></code> introduite dans le schéma d’Euler explicite. <strong>Attention, Y est ici un vecteur à 3 coordonnées.</strong></p></li>
+<li><p>Ecrire la fonction <code class="docutils literal notranslate"><span class="pre">deviation(b,</span> <span class="pre">Ec0,</span> <span class="pre">N)</span></code> qui doit, à partir du paramètre d’impact <code class="docutils literal notranslate"><span class="pre">b</span></code>, de l’énergie cinétique initiale <code class="docutils literal notranslate"><span class="pre">Ec0</span></code> et du nombre de points de calculs <code class="docutils literal notranslate"><span class="pre">N</span></code> :</p>
+<ul class="simple">
+<li><p>calculer les conditions initiales</p></li>
+<li><p>créer un vecteur <code class="docutils literal notranslate"><span class="pre">temps</span></code> contenant les instants où on veut estimer les coordonnées polaires.</p></li>
+<li><p>utiliser la fonction <code class="docutils literal notranslate"><span class="pre">odeint</span></code> pour réaliser l’intégration numérique</p></li>
+<li><p>renvoyer le veceur <code class="docutils literal notranslate"><span class="pre">temps</span></code> et le tableau du résultat de l’intégration</p></li>
+</ul>
+</li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">polçto_cart(r,</span> <span class="pre">theta)</span></code> qui prend comme arguments deux vecteurs <code class="docutils literal notranslate"><span class="pre">r</span></code> et <code class="docutils literal notranslate"><span class="pre">theta</span></code> correspondant à des coordonnées polaires et qui renvoie les vecteurs de coordonnées <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> cartésiennes associées.</p></li>
+<li><p>Pour la valeur d’énergie cinétique donnée dans l’énoncé, déterminer puis tracer la trajectoire pour des paramètres d’impacts <span class="math notranslate nohighlight">\(b\)</span> allant de 0.01 (inclus) à 1000 (inclus, 16 valeurs, on utilisera <code class="docutils literal notranslate"><span class="pre">logspace</span></code> pour répartir les valeurs sur une échelle logarithmique) et commenter l’allure des trajectoires et l’angle de déviation observé. <em>On choisira N = 10000 points.</em> Est-ce qu’on attend ?</p></li>
+</ol>
+</div></blockquote>
+<p><em>Indications utiles :</em></p>
+<ul class="simple">
+<li><p>Pour rappel, la signature est <code class="docutils literal notranslate"><span class="pre">logspace(start,</span> <span class="pre">stop,</span> <span class="pre">Np)</span></code> pour créer Np point entre <span class="math notranslate nohighlight">\(10^{start}\)</span> et <span class="math notranslate nohighlight">\(10^{stop}\)</span> inclus.</p></li>
+</ul>
+</div>
+<div class="section" id="parametre-d-impact-et-diffusion">
+<h2><span class="section-number">6.6. </span>Paramètre d’impact et diffusion<a class="headerlink" href="#parametre-d-impact-et-diffusion" title="Permalink to this headline">¶</a></h2>
+<p>On va étudier la relation entre le paramètre d’impact et l’angle de diffusion (<span class="math notranslate nohighlight">\(D\)</span> sur la figure ci-après).</p>
+<p><img alt="Angle de diffusion" src="_images/diffusion2.png" /></p>
+<p>On veut tester la relation théorique :
+$<span class="math notranslate nohighlight">\(
+b = {\beta \over \tan({D \over 2}}
+\)</span><span class="math notranslate nohighlight">\(
+avec \)</span>\beta = {1 \over 2E_{c0}}{2Ze^2 \over 4\pi \epsilon_0}$</p>
+<blockquote>
+<div><p><strong>Exercice 3 :</strong></p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">D_th(b,</span> <span class="pre">Ec0)</span></code> qui renvoie l’angle de diffusion pour un paramètre d’impact <code class="docutils literal notranslate"><span class="pre">b</span></code> et une énergie cinétique initiale <code class="docutils literal notranslate"><span class="pre">Ec0</span></code> (la particule étant initialement à l’infini.</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">D_sim(Y)</span></code> qui, partant du vecteur <code class="docutils literal notranslate"><span class="pre">Y</span></code> renvoyé par odeint, renvoie une estimation de l’angle de diffusion.</p></li>
+<li><p>Représenter l’angle de diffusion en fonction b suivant la relation théorique et l’intégration numérique puis représenter <span class="math notranslate nohighlight">\(\tan(D/2)\)</span> en fonction de <span class="math notranslate nohighlight">\(1/b\)</span>. Utiliser ces graphiques pour commenter la fiabilité de l’intégration numérique.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="statistique-des-angles-de-diffusion">
+<h2><span class="section-number">6.7. </span>Statistique des angles de diffusion<a class="headerlink" href="#statistique-des-angles-de-diffusion" title="Permalink to this headline">¶</a></h2>
+<p>En pratique, on n’envoie pas une particule alpha mais un jet uniformément répartie dans le plan <span class="math notranslate nohighlight">\(y0z\)</span>. Pour un point de départ <span class="math notranslate nohighlight">\((y_0, z_0)\)</span>, l’invariance par rotation autour de l’axe Ox permet de conserver l’étude précédente en prenant <span class="math notranslate nohighlight">\(b = \sqrt{y_0^2 + z_0^2}\)</span>.</p>
+<p>Les détecteur de l’expérience de Rutherford, répartie  sur une sphère autour de l’échantillons n’ont pas accès à <span class="math notranslate nohighlight">\(D\)</span> et <span class="math notranslate nohighlight">\(b\)</span> mais au nombre de particules qui arrivent dans la surface <span class="math notranslate nohighlight">\(d\Omega\)</span> (appelée <em>angle solide</em> pour une sphère de rayon 1) située entre <span class="math notranslate nohighlight">\(D\)</span> et <span class="math notranslate nohighlight">\(D + dD\)</span> (<span class="math notranslate nohighlight">\(dD\)</span> est au final la taille d’un capteur).</p>
+<p><img alt="Section efficace" src="_images/section_efficace.png" /></p>
+<p><em>Sur la figure, l’angle de diffusion est noté <span class="math notranslate nohighlight">\(\theta\)</span> et non <span class="math notranslate nohighlight">\(D\)</span>.</em></p>
+<p>On peut assez facilement calculer théoriquement ce nombre de particule <span class="math notranslate nohighlight">\(dn\)</span> avec le flux de particules émis en remarquant qu’elle sont forcément passées par la surface circulaire comprise entre les rayons <span class="math notranslate nohighlight">\(b\)</span> (angle de diffusion <span class="math notranslate nohighlight">\(D\)</span>) et <span class="math notranslate nohighlight">\(b+db\)</span> (angle de diffusion <span class="math notranslate nohighlight">\(D +dD\)</span>) :</p>
+<div class="math notranslate nohighlight">
+\[
+dn = {\left(\beta \over 2\right)}^2 {1 \over \sin^4 (D/2)} Jd\Omega
+\]</div>
+<p>où</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(J\)</span> est le nombre de particules émis par unité de surface.</p></li>
+<li><p><span class="math notranslate nohighlight">\(d\Omega = 2\pi \sin D dD\)</span></p></li>
+</ul>
+<p>On se propose de réaliser une simulation (de Monte-Carlo) pour vérifier l’expression théorique de la _<em>section efficace différentielle</em> :
+$<span class="math notranslate nohighlight">\(
+{dn \over Jd\Omega}
+\)</span>$</p>
+<p>Le principe est :</p>
+<ol class="simple">
+<li><p>On tire aléatoirement (tirage uniforme) deux coordonnées <span class="math notranslate nohighlight">\(y_0\)</span> et <span class="math notranslate nohighlight">\(z_0\)</span>.</p></li>
+<li><p>On calcule <span class="math notranslate nohighlight">\(b\)</span> et s’il est inférieur à un <span class="math notranslate nohighlight">\(b_{max}\)</span> fixé (on prendra <span class="math notranslate nohighlight">\(b_{max} = 100\)</span>), on déterminer l’angle de diffusion <span class="math notranslate nohighlight">\(D\)</span> associé par intégration.</p></li>
+<li><p>On détermine alors la statistique des angles de diffusion et on calcule la section efficace différentielle en fonction de <span class="math notranslate nohighlight">\(D\)</span>.</p></li>
+</ol>
+<p>On réalisera <span class="math notranslate nohighlight">\(N = 10000\)</span> tirages et on prendra 100 <code class="docutils literal notranslate"><span class="pre">bins</span></code> pour la statistique des angles des fréquences statistiques. De plus, on calcule <span class="math notranslate nohighlight">\(J\)</span> par :
+$<span class="math notranslate nohighlight">\(
+J = N / (\pi  bmax^2)
+\)</span>$</p>
+<blockquote>
+<div><p><strong>Exercice 4 :</strong></p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">tir</span></code> qui prend comme argument <code class="docutils literal notranslate"><span class="pre">Ec0</span></code>, <code class="docutils literal notranslate"><span class="pre">b_max</span></code>, <code class="docutils literal notranslate"><span class="pre">N</span></code> et <code class="docutils literal notranslate"><span class="pre">nbins</span></code> et qui renvoie les fréquences des occurences (vecteur) des angles de diffusion en respectant les règles imposées par la simulation précédente et les valeurs d’angle de diffusion associées à chaque fréquence (vecteur).</p></li>
+<li><p>Obtenir à partir de ces deux vecteurs la section efficace différentielle en fonction <span class="math notranslate nohighlight">\(D\)</span> et la tracé graphiquement. Tracer son expression théorique et comparer.</p></li>
+</ol>
+</div></blockquote>
+<p><em>Indications utiles :</em><br />
+On utilisera la fonction <code class="docutils literal notranslate"><span class="pre">histogram</span></code> de la bibliothèque <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dont la signature est :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hist</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">Nd</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>et qui renvoie pour un vecteur de valeurs <code class="docutils literal notranslate"><span class="pre">a</span></code> le fréquences <code class="docutils literal notranslate"><span class="pre">hist</span></code> associées aux valeurs <code class="docutils literal notranslate"><span class="pre">bins</span></code>. Le nobmre de <em>bacs</em> de valeurs et donné par <code class="docutils literal notranslate"><span class="pre">bins</span></code>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="meca_pendule.html" title="previous page"><span class="section-number">5. </span>Etude d’un pendule simple</a>
+    <a class='right-next' id="next-link" href="thermo_statique.html" title="next page"><span class="section-number">7. </span>Etude de l’atmosphère terrestre</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
