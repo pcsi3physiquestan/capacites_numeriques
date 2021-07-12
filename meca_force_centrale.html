@@ -483,20 +483,22 @@ dn = {\left(\beta \over 2\right)}^2 {1 \over \sin^4 (D/2)} Jd\Omega
 <li><p><span class="math notranslate nohighlight">\(J\)</span> est le nombre de particules émis par unité de surface.</p></li>
 <li><p><span class="math notranslate nohighlight">\(d\Omega = 2\pi \sin D dD\)</span></p></li>
 </ul>
-<p>On se propose de réaliser une simulation (de Monte-Carlo) pour vérifier l’expression théorique de la _<em>section efficace différentielle</em> :
-$<span class="math notranslate nohighlight">\(
+<p>On se propose de réaliser une simulation (de Monte-Carlo) pour vérifier l’expression théorique de la <strong>section efficace différentielle</strong> :</p>
+<div class="math notranslate nohighlight">
+\[
 {dn \over Jd\Omega}
-\)</span>$</p>
+\]</div>
 <p>Le principe est :</p>
 <ol class="simple">
 <li><p>On tire aléatoirement (tirage uniforme) deux coordonnées <span class="math notranslate nohighlight">\(y_0\)</span> et <span class="math notranslate nohighlight">\(z_0\)</span>.</p></li>
 <li><p>On calcule <span class="math notranslate nohighlight">\(b\)</span> et s’il est inférieur à un <span class="math notranslate nohighlight">\(b_{max}\)</span> fixé (on prendra <span class="math notranslate nohighlight">\(b_{max} = 100\)</span>), on déterminer l’angle de diffusion <span class="math notranslate nohighlight">\(D\)</span> associé par intégration.</p></li>
 <li><p>On détermine alors la statistique des angles de diffusion et on calcule la section efficace différentielle en fonction de <span class="math notranslate nohighlight">\(D\)</span>.</p></li>
 </ol>
-<p>On réalisera <span class="math notranslate nohighlight">\(N = 10000\)</span> tirages et on prendra 100 <code class="docutils literal notranslate"><span class="pre">bins</span></code> pour la statistique des angles des fréquences statistiques. De plus, on calcule <span class="math notranslate nohighlight">\(J\)</span> par :
-$<span class="math notranslate nohighlight">\(
+<p>On réalisera <span class="math notranslate nohighlight">\(N = 10000\)</span> tirages et on prendra 100 <code class="docutils literal notranslate"><span class="pre">bins</span></code> pour la statistique des angles des fréquences statistiques. De plus, on calcule <span class="math notranslate nohighlight">\(J\)</span> par :</p>
+<div class="math notranslate nohighlight">
+\[
 J = N / (\pi  bmax^2)
-\)</span>$</p>
+\]</div>
 <blockquote>
 <div><p><strong>Exercice 4 :</strong></p>
 <ol class="simple">

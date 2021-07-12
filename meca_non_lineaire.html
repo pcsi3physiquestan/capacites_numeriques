@@ -304,7 +304,7 @@ Vous devez :</p>
 <ol class="simple">
 <li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">Ep</span></code> qui prend comme argument une distance <code class="docutils literal notranslate"><span class="pre">r</span></code> et qui renvoie l’énergie potentielle associée. <em>Il est conseillé d’enregistrer les variables C, alpha… comme des variables globales.</em></p></li>
 <li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">force</span></code> qui prend comme argument une valeur <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">pas</span></code> et qui renvoie la valeur de la force : <span class="math notranslate nohighlight">\(F = - \frac{dE_p}{dr}\)</span> estimée en <code class="docutils literal notranslate"><span class="pre">x</span></code> par dérivation numérique en utilisant le pas <code class="docutils literal notranslate"><span class="pre">pas</span></code>.</p></li>
-<li><p>Tracer <span class="math notranslate nohighlight">\(E_p(r)\)</span>^et <span class="math notranslate nohighlight">\(F(r)\)</span> pour <span class="math notranslate nohighlight">\(r\)</span> entre 1 et 10 Angstrom.</p></li>
+<li><p>Tracer <span class="math notranslate nohighlight">\(E_p(r)\)</span> et <span class="math notranslate nohighlight">\(F(r)\)</span> pour <span class="math notranslate nohighlight">\(r\)</span> entre 1 et 10 Angstrom.</p></li>
 <li><p>Déterminer, par une recherche de 0 par dichotomie, la distance <code class="docutils literal notranslate"><span class="pre">rE</span></code> correspondant à la position d’équilibre de la molécule avec une tolérance de <span class="math notranslate nohighlight">\(10^{-4} \mathring{A}\)</span>.</p></li>
 </ol>
 </div></blockquote>
@@ -406,8 +406,8 @@ v_k + h \times f(t, x, v)
 <h3><span class="section-number">4.3.1. </span>Effets de non linéarité<a class="headerlink" href="#effets-de-non-linearite" title="Permalink to this headline">¶</a></h3>
 <p>Le but est d’observer les vibrations de la molécule autour de sa position d’équilibre pour :</p>
 <ul class="simple">
-<li><p>une vibration de très faible amplitude : <span class="math notranslate nohighlight">\((r - r_E) &lt; 0.01 r_E\)</span></p></li>
-<li><p>une vibration plus importante : <span class="math notranslate nohighlight">\((r - r_E) &lt; 0.2 r_E\)</span></p></li>
+<li><p>une vibration de très faible amplitude : <span class="math notranslate nohighlight">\((r - r_E) = 0.01 r_E\)</span></p></li>
+<li><p>une vibration plus importante : <span class="math notranslate nohighlight">\((r - r_E) = 0.2 r_E\)</span></p></li>
 </ul>
 <p>On cherchera à observer par les tracés temporelles et le portrait de phase si l’approximation linéaire de l’équation pourrait être valable et quelle sont les effets de non linéarité.</p>
 <blockquote>
