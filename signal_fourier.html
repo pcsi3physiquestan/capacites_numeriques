@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -196,7 +196,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/signal_fourier.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/signal_fourier.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -204,6 +204,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -286,7 +289,7 @@
 <div class="section" id="position-du-probleme">
 <h2><span class="section-number">1.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="elements-theoriques">
-<h3><span class="section-number">1.1.1. </span>Eléments théoriques<a class="headerlink" href="#elements-theoriques" title="Permalink to this headline">¶</a></h3>
+<span id="theoriques"></span><h3><span class="section-number">1.1.1. </span>Eléments théoriques<a class="headerlink" href="#elements-theoriques" title="Permalink to this headline">¶</a></h3>
 <p>On rappelle que le <strong>spectre</strong> d’un signal est sa décomposition en somme de sinusoïdes où l’on donne : la <em>fréquence</em> (<span class="math notranslate nohighlight">\(f_i\)</span>), l’<em>amplitude</em> <span class="math notranslate nohighlight">\((A_i)\)</span> et la <em>phase à l’origine</em> (<span class="math notranslate nohighlight">\(\phi_i\)</span>) de chaque sinusoïde de la décomposition :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -343,7 +346,7 @@ s_{triangle} = \sum_{k=1}^{m} {8 \over {\left (\pi (2k + 1)\right)}^2}\ \sin \le
 <div><p><strong>Exercice 1</strong><br />
 Dans la cellule de code suivante, vous devez :</p>
 <ol class="simple">
-<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">fonc_temp</span></code> qui prend 4 arguments : 1 flottant <code class="docutils literal notranslate"><span class="pre">t</span></code> et 3 vecteurs numpy <code class="docutils literal notranslate"><span class="pre">fs</span></code>, <code class="docutils literal notranslate"><span class="pre">amps</span></code>, <code class="docutils literal notranslate"><span class="pre">phis</span></code> (liste des fréquences amplitudes et phases à l’origine du spectre) et qui renvoie la valeur de <span class="math notranslate nohighlight">\(s\)</span> définie dans les Eléments théoriques (plus haut) évaluée à l’instant <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">fonc_temp</span></code> qui prend 4 arguments : 1 flottant <code class="docutils literal notranslate"><span class="pre">t</span></code> et 3 vecteurs numpy <code class="docutils literal notranslate"><span class="pre">fs</span></code>, <code class="docutils literal notranslate"><span class="pre">amps</span></code>, <code class="docutils literal notranslate"><span class="pre">phis</span></code> (liste des fréquences amplitudes et phases à l’origine du spectre) et qui renvoie la valeur de <span class="math notranslate nohighlight">\(s\)</span> définie dans les <a class="reference internal" href="#theoriques"><span class="std std-ref">Eléments théoriques</span></a> évaluée à l’instant <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></li>
 <li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">evalue_temp</span></code> qui prend comme arguments : 3 vecteurs numpy <code class="docutils literal notranslate"><span class="pre">fs</span></code>, <code class="docutils literal notranslate"><span class="pre">amps</span></code>, <code class="docutils literal notranslate"><span class="pre">phis</span></code>, 2 flottants <code class="docutils literal notranslate"><span class="pre">t1</span></code>, <code class="docutils literal notranslate"><span class="pre">t2</span></code> et un entier <code class="docutils literal notranslate"><span class="pre">N</span></code> et qui renvoie deux vecteurs numpy:</p>
 <ol class="simple">
 <li><p>un vecteur contenant <code class="docutils literal notranslate"><span class="pre">N</span></code> valeurs de temps <span class="math notranslate nohighlight">\(t_k\)</span> régulièrement réparties entre <code class="docutils literal notranslate"><span class="pre">t1</span></code> et <code class="docutils literal notranslate"><span class="pre">t2</span></code></p></li>
@@ -436,8 +439,8 @@ Vous devez :</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "pcsi3physiquestan/capacites_numeriques_source",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
