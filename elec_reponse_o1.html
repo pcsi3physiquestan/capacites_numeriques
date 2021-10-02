@@ -433,26 +433,26 @@ y_{k+1} = y_k + h \times f(t, y_k)
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{cases}
-y(t - h) &amp;= y(t) - h \frac{\rm{d}y}{\rm{dt}}(t)\\
-y(t + h) &amp;= y(t) + h \frac{\rm{d}y}{\rm{dt}}(t)
+y(t - h) &amp;\approx y(t) - h \frac{\rm{d}y}{\rm{dt}}(t)\\
+y(t + h) &amp;\approx y(t) + h \frac{\rm{d}y}{\rm{dt}}(t)
 \end{cases}
 \end{split}\]</div>
 <p>soit par soustraction :</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\rm{d}y}{\rm{dt}}(t) = \frac{y(t+h) - y(t-h)}{2h}
+\frac{\rm{d}y}{\rm{dt}}(t) \approx \frac{y(t+h) - y(t-h)}{2h}
 \]</div>
-<p>soit pour la suite des <span class="math notranslate nohighlight">\(y_k\)</span> (on note la suite des valeurs de la dérivée <span class="math notranslate nohighlight">\(i_k\)</span>):</p>
+<p>soit pour la suite des <span class="math notranslate nohighlight">\(y_k\)</span> (on note la suite des valeurs de la dérivée <span class="math notranslate nohighlight">\(dy_k\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
-i_k = \frac{\rm{d}y}{\rm{dt}}(t_k) = \frac{y_{k+1} - y_{k-1}}{2h}
+dy_k = \frac{\rm{d}y}{\rm{dt}}(t_k) = \frac{y_{k+1} - y_{k-1}}{2h}
 \]</div>
 <p>Seul problème : <strong>on ne peut utiliser cette expression pour calculer la dérivée pour <span class="math notranslate nohighlight">\(k=0\)</span> et <span class="math notranslate nohighlight">\(k=k_{\max}\)</span></strong>. Pour les deux valeurs extrêmes, on va utiliser l’expression :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{cases}
-i_0 &amp;= \frac{y_{1} - y_{0}}{h} \textrm{ Dérivation à droite}\\
-i_{k_{\max}} &amp;= \frac{y_{k_{\max}} - y_{k_{\max} - 1}}{h} \textrm{ Dérivation à gauche}\\
+dy_0 &amp;= \frac{y_{1} - y_{0}}{h} \textrm{ Dérivation à droite}\\
+dy_{k_{\max}} &amp;= \frac{y_{k_{\max}} - y_{k_{\max} - 1}}{h} \textrm{ Dérivation à gauche}\\
 \end{cases}
 \end{split}\]</div>
 <blockquote>
@@ -490,7 +490,12 @@ t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
 1 &amp; \textrm{si t &gt; T0}\\
 \end{cases}
 \end{split}\]</div>
-<p>On prendra <span class="math notranslate nohighlight">\(R = 1\rm{k\Omega}; C = 1\rm{\mu F}; T0 = k \times \tau; u(t=0) = 0 \rm{V}\)</span></p>
+<p>On prendra <span class="math notranslate nohighlight">\(R = 1\rm{k\Omega}; C = 1\rm{\mu F}; T0 = k \times \tau; u(t=0) = 0 \rm{V}\)</span>.</p>
+<p><em>Rappels :</em></p>
+<ul class="simple">
+<li><p>L’<strong>énergie</strong> stockée dans un condensateur est <span class="math notranslate nohighlight">\(E_{el} = \frac{1}{2}C u_c^2\)</span></p></li>
+<li><p>La <strong>puissance</strong> dissipée par effet Joule est <span class="math notranslate nohighlight">\(P_J(t) = R i^2(t)\)</span></p></li>
+</ul>
 <blockquote>
 <div><p><strong>Exercice 6</strong></p>
 <ol class="simple">
