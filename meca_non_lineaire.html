@@ -322,7 +322,7 @@ Vous devez :</p>
 <p>On rappelle le principe, on utilise deux fonctions inconnues :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{pmatrix}
+Y = \begin{pmatrix}
 x(t)\\
 v(t)
 \end{pmatrix}
@@ -330,6 +330,8 @@ v(t)
 <p>On a alors la relation :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
+{\rm{d} \over \rm{dt}} Y
+=
 {\rm{d} \over \rm{dt}}
 \begin{pmatrix}
 x(t)\\
@@ -338,12 +340,13 @@ v(t)
 =
 \begin{pmatrix}
 v(t)\\
-{\sum F_{ext}(t, x, v) \over m} = f(t, x, v)
+{\sum F_{ext}(t, Y) \over m} = f(t, Y)
 \end{pmatrix}
 \end{split}\]</div>
 <p>On peut alors implémenter le schéma d’Euler explicite sur le vecteur précédent :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
+Y_{k+1} =
 \begin{pmatrix}
 x_{k+1}\\
 v_{k+1}
@@ -351,29 +354,28 @@ v_{k+1}
 =
 \begin{pmatrix}
 x_{k} + h \times v_k\\
-v_k + h \times f(t, x, v)
+v_k + h \times f(t, Y)
 \end{pmatrix}
 \end{split}\]</div>
 <p>où <span class="math notranslate nohighlight">\(h\)</span> est le pas d’intégration.</p>
 <blockquote>
 <div><p><strong>Exercice 2</strong>:</p>
 <ol>
-<li><p>Préciser l’expression de <span class="math notranslate nohighlight">\(f(t, x, v)\)</span> pour notre système et définir une fonction <code class="docutils literal notranslate"><span class="pre">f_hcl(t,</span> <span class="pre">x,</span> <span class="pre">v)</span></code> qui renvoie cette expression.</p></li>
+<li><p>Préciser l’expression de <span class="math notranslate nohighlight">\(f(t, Y)\)</span> pour notre système et définir une fonction <code class="docutils literal notranslate"><span class="pre">f_hcl(t,</span> <span class="pre">Y)</span></code> qui renvoie cette expression.</p></li>
 <li><p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> qui prend pour argument :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> : la fonction du schéma d’Euler</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">h</span></code> : le pas d’intégration choisi</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code> et <code class="docutils literal notranslate"><span class="pre">v0</span></code> : les conditions initiales sur la position et la vitesse au temps initial <span class="math notranslate nohighlight">\(t=0\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Y0</span></code> : les conditions initiales sur la position et la vitesse au temps initial <span class="math notranslate nohighlight">\(t=0\)</span></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tf</span></code> : le temps final pour l’intégration.</p></li>
 </ul>
 <p>et qui renvoie trois vecteurs :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tk</span></code> les temps où on calcule les positions vitesses</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xk</span></code> les positions <span class="math notranslate nohighlight">\(x(t_k)\)</span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">vk</span></code> les vitesses <span class="math notranslate nohighlight">\(v(t_k)\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Yk</span></code> le vecteur contenant les positions <span class="math notranslate nohighlight">\(x(t_k)\)</span> et les vitesses <span class="math notranslate nohighlight">\(v(t_k)\)</span></p></li>
 </ul>
 </li>
-<li><p>Vous pouvez tester votre fonction sur une chute libre (<span class="math notranslate nohighlight">\(f(t, x, v) = g = 10\)</span>) avec un faible nombre de points.</p></li>
+<li><p>Vous pouvez tester votre fonction sur une chute libre (<span class="math notranslate nohighlight">\(f(t, Y) = g = 10\)</span>) avec un faible nombre de points.</p></li>
 </ol>
 </div></blockquote>
 <div class="cell docutils container">
