@@ -328,8 +328,8 @@
 <ul class="simple">
 <li><p>Masse des particules alpha : <span class="math notranslate nohighlight">\(m = 4 \rm{m_a}\)</span></p></li>
 <li><p>Energie cinétique initiale <span class="math notranslate nohighlight">\(E_{c0} = 5.3 \times 10^6 \rm{E_a}\)</span> (cette valeur sera susceptible de changer ensuite).</p></li>
-<li><p>Constante <span class="math notranslate nohighlight">\({e^2 \over 4 \pi \epsilon_0} = 1.4 \times 10^4 \rm{E_a.r_a} \)</span></p></li>
-<li><p>un pas de temps de <span class="math notranslate nohighlight">\(h = 1 t_a\)</span> correspondra à <span class="math notranslate nohighlight">\(1.0 \times 10^{-18} \rm{s}\)</span></p></li>
+<li><p>Constante <span class="math notranslate nohighlight">\({e^2 \over 4 \pi \epsilon_0} = 1.4 \times 10^5 \rm{E_a.r_a} \)</span></p></li>
+<li><p>un pas de temps de <span class="math notranslate nohighlight">\(h = 1 t_a\)</span> correspondra à <span class="math notranslate nohighlight">\(1.0 \times 10^{-20} \rm{s}\)</span></p></li>
 </ul>
 </div>
 <div class="section" id="mise-en-equation">
@@ -431,7 +431,7 @@ Ec(t=0) = E_{c0}
 <li><p>renvoyer le veceur <code class="docutils literal notranslate"><span class="pre">temps</span></code> et le tableau du résultat de l’intégration</p></li>
 </ul>
 </li>
-<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">polçto_cart(r,</span> <span class="pre">theta)</span></code> qui prend comme arguments deux vecteurs <code class="docutils literal notranslate"><span class="pre">r</span></code> et <code class="docutils literal notranslate"><span class="pre">theta</span></code> correspondant à des coordonnées polaires et qui renvoie les vecteurs de coordonnées <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> cartésiennes associées.</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">pol_to_cart(r,</span> <span class="pre">theta)</span></code> qui prend comme arguments deux vecteurs <code class="docutils literal notranslate"><span class="pre">r</span></code> et <code class="docutils literal notranslate"><span class="pre">theta</span></code> correspondant à des coordonnées polaires et qui renvoie les vecteurs de coordonnées <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> cartésiennes associées.</p></li>
 <li><p>Pour la valeur d’énergie cinétique donnée dans l’énoncé, déterminer puis tracer la trajectoire pour des paramètres d’impacts <span class="math notranslate nohighlight">\(b\)</span> allant de 0.01 (inclus) à 1000 (inclus, 16 valeurs, on utilisera <code class="docutils literal notranslate"><span class="pre">logspace</span></code> pour répartir les valeurs sur une échelle logarithmique) et commenter l’allure des trajectoires et l’angle de déviation observé. <em>On choisira N = 10000 points.</em> Est-ce qu’on attend ?</p></li>
 </ol>
 </div></blockquote>
