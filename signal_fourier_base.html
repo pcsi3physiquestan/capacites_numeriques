@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.2. Etude de base &#8212; Capacités numériques - Sujets</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/signal_fourier_base.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.3. Etude complète" href="signal_fourier_complet.html" />
+    <link rel="prev" title="1. Analyse spectrale d’un signal" href="signal_fourier.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Capacités numériques - Sujets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capacite_numerique.html">
+   Capacités numériques en physique
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="signal_fourier.html">
+   1. Analyse spectrale d’un signal
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.2. Etude de base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="signal_fourier_complet.html">
+     1.3. Etude complète
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="elec_reponse_o1.html">
+   2. Résolution numérique d’une équation différentielle d’ordre 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="elec_filtrage.html">
+   3. Etude numérique d’un filtre linéaire
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_non_lineaire.html">
+   4. Système conservatif : Effets non linéaires.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_pendule.html">
+   5. Etude d’un pendule simple
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_force_centrale.html">
+   6. Etude d’un mouvement à force centrale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="thermo_statique.html">
+   7. Etude de l’atmosphère terrestre
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/signal_fourier_base.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/signal_fourier_base.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/signal_fourier_base.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-d-utilisation-des-representations">
+   1.2.1. Exemple d’utilisation des représentations.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trace-temporel">
+     1.2.1.1. Tracé temporel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trace-des-spectres">
+     1.2.1.2. Tracé des spectres.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<p><strong>Si vous vous sentez suffisamment à l’aise,</strong> vous pouvez passer directement à l’étude approfondie.</p>
+<div class="section" id="etude-de-base">
+<h1><span class="section-number">1.2. </span>Etude de base<a class="headerlink" href="#etude-de-base" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exemple-d-utilisation-des-representations">
+<h2><span class="section-number">1.2.1. </span>Exemple d’utilisation des représentations.<a class="headerlink" href="#exemple-d-utilisation-des-representations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="trace-temporel">
+<h3><span class="section-number">1.2.1.1. </span>Tracé temporel<a class="headerlink" href="#trace-temporel" title="Permalink to this headline">¶</a></h3>
+<p>On se propose de mettre en place les représentations précédentes dans des cas particuliers sans faire appel à la création de fonction dans un premier temps.</p>
+<blockquote>
+<div><p><strong>Exercice A</strong><br />
+On considère un signal sinusoïdal de fréquence 100 Hz, d’amplitude 4 S.I. et de phase à l’origine <span class="math notranslate nohighlight">\(-\pi/2\)</span>.</p>
+<ol class="simple">
+<li><p>(Théorie): Quelle valeur donner à <span class="math notranslate nohighlight">\(t_2\)</span> dans l’intervalle <span class="math notranslate nohighlight">\([0;t_2]\)</span> pour observer 5 périodes ? Quelle est l’expression mathématique de <span class="math notranslate nohighlight">\(s(t)\)</span> ?</p></li>
+<li><p>Ecrire dans la cellule suivante 5 instructions qui:</p>
+<ul class="simple">
+<li><p>Importe le module <code class="docutils literal notranslate"><span class="pre">numpy</span></code> sous l’alias <code class="docutils literal notranslate"><span class="pre">np</span></code></p></li>
+<li><p>Importe le module <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> sous l’alias <code class="docutils literal notranslate"><span class="pre">plt</span></code></p></li>
+<li><p>Crée un <em>vecteur</em> <code class="docutils literal notranslate"><span class="pre">numpy</span></code> nommé <code class="docutils literal notranslate"><span class="pre">tk</span></code> contenant 1000 valeurs <span class="math notranslate nohighlight">\(t_k\)</span> également espacées entre 0 et <span class="math notranslate nohighlight">\(t_2\)</span>.</p></li>
+<li><p>Crée un <em>vecteur</em> <code class="docutils literal notranslate"><span class="pre">numpy</span></code> nommé <code class="docutils literal notranslate"><span class="pre">sk</span></code> contenant les 1000 valeurs <span class="math notranslate nohighlight">\(s_k = s(t_k)\)</span>.</p></li>
+<li><p>Affiche la taille du vecteur <code class="docutils literal notranslate"><span class="pre">sk</span></code></p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>Pensez à exécutez la cellule une fois écrite.</p></li>
+<li><p>On se rappellera qu’il y a deux façons de créer une suite de valeurs dans un vecteur <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Réfléchir à la plus adéquat.</p></li>
+</ul>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Exercice B</strong><br />
+<em>Les modules importés précédemment restent importés tant que vous êtes sur ce notebook. Inutile de les réimporter. De plus, les variables créées précédemment sont toujours en mémoire.</em>
+Ecrire une suite d’instruction traçant l’allure de <span class="math notranslate nohighlight">\(s(t)\)</span>. On rappelle qu’il faut:</p>
+<ol class="simple">
+<li><p>Créer la fenêtre graphique et les axes.</p></li>
+<li><p>Légender les axes (<span class="math notranslate nohighlight">\(s\)</span> et <span class="math notranslate nohighlight">\(t\)</span>) et titrer le graphique (ici “Signal sinusoïdal”)</p></li>
+<li><p>Tracer la courbe (inutile de la légender car il n’y en a qu’une).</p></li>
+<li><p>Ajouter une grille (<code class="docutils literal notranslate"><span class="pre">ax.grid()</span></code> ou <code class="docutils literal notranslate"><span class="pre">ax</span></code> est la variable où sont stockées les axes).</p></li>
+<li><p>Afficher le graphique (<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>)</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Exercice C</strong><br />
+On considère un signal <span class="math notranslate nohighlight">\(s_2 (t)\)</span> défini comme la somme de deux signaux sinusoïdaux : le premier de fréquence 100 Hz, d’amplitude 2 S.I. et de phase à l’origine <span class="math notranslate nohighlight">\(-\pi/3\)</span> et le second de fréquence 1000 Hz, d’amplitude 2 S.I. et de phase à l’origine <span class="math notranslate nohighlight">\(0\)</span>. On veut tracer ce signal sur <span class="math notranslate nohighlight">\([0;t_2]\)</span> (même valeur de <span class="math notranslate nohighlight">\(t_2\)</span> que précédemment). On va utiliser la représentation fréquentielle proposée dans la présentation. Dans la cellule suivante, vous devez:</p>
+<ol class="simple">
+<li><p>Définir trois vecteurs <code class="docutils literal notranslate"><span class="pre">fs</span></code>, <code class="docutils literal notranslate"><span class="pre">amps</span></code>, <code class="docutils literal notranslate"><span class="pre">phis</span></code> contenant respectivement les fréquences, amplitudes et phases à l’origine des composantes du signaux.</p></li>
+<li><p>Ecrire 3 instructions qui:</p>
+<ul class="simple">
+<li><p>Initialise la variable <code class="docutils literal notranslate"><span class="pre">si2</span></code> comme un vecteur numpy contenant que des 0 et de taille identique à <code class="docutils literal notranslate"><span class="pre">tk</span></code> (cette variable est toujours définie).</p></li>
+<li><p>Ajoute à <code class="docutils literal notranslate"><span class="pre">si2</span></code> un vecteur contenant les valeurs, aux instants <span class="math notranslate nohighlight">\(t_k\)</span> de la première composante. __On ne rentrera pas à la main les valeurs de fréquence, amplitude et phase à l’origine, mais on utilisera les vecteurs <code class="docutils literal notranslate"><span class="pre">fs</span></code>, <code class="docutils literal notranslate"><span class="pre">amps</span></code>, <code class="docutils literal notranslate"><span class="pre">phis</span></code> créés précédemment pour aller chercher ces valeurs.</p></li>
+<li><p>Ajoute à <code class="docutils literal notranslate"><span class="pre">si2</span></code> un vecteur contenant les valeurs, aux instants <span class="math notranslate nohighlight">\(t_k\)</span> de la deuxième composante. __On ne rentrera pas à la main les valeurs de fréquence, amplitude et phase à l’origine, mais on utilisera les vecteurs <code class="docutils literal notranslate"><span class="pre">fs</span></code>, <code class="docutils literal notranslate"><span class="pre">amps</span></code>, <code class="docutils literal notranslate"><span class="pre">phis</span></code> créés précédemment pour aller chercher ces valeurs.</p></li>
+<li><p>Tracer l’allure du signal <span class="math notranslate nohighlight">\(s_2 (t)\)</span> grâce aux vecteurs précédents (on rappelle que <code class="docutils literal notranslate"><span class="pre">tk</span></code> est toujours défini)</p></li>
+</ul>
+</li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Exercice D</strong><br />
+Le but est d’automatiser la méthode précédente en utilisant une boucle pour qu’elle puisse se généraliser à une somme de m sinusoïdes. m étant quelconque.</p>
+<ol class="simple">
+<li><p>Copier votre code précédent dans la cellule ci-après et remplacer les lignes après l’initialisation de <code class="docutils literal notranslate"><span class="pre">si2</span></code> par une boucle. <em>On rappelle que la taille d’un vecteur à 1 dimension peut s’obtenir avec la fonction <code class="docutils literal notranslate"><span class="pre">len</span></code>) et que la fonction <code class="docutils literal notranslate"><span class="pre">range(m)</span></code> crée une suite de valeurs allant de 0 <strong>inclus</strong> à m <strong>exclus</strong>.</em></p></li>
+<li><p>Vérifier son bon fonctionnement en traçant à nouveau la courbe.</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Exercice E</strong><br />
+On considère un signal <span class="math notranslate nohighlight">\(s_c (t)\)</span> composé de <span class="math notranslate nohighlight">\(m\)</span> composantes (de fréquences notées <span class="math notranslate nohighlight">\(f_k\)</span>, n allant de 0 à m-1) dont les phases à l’origine sont toutes égales à <span class="math notranslate nohighlight">\(\pi / 2\)</span>, les fréquences sont <span class="math notranslate nohighlight">\(f_k = (2 * k + 1) * f_0\)</span> avec <span class="math notranslate nohighlight">\(f_0 = 100 Hz\)</span> et d’amplitudes respectives <span class="math notranslate nohighlight">\(c_k = \frac{4}{(2k + 1) \pi}\)</span>. (C’est le développement d’un créneau).</p>
+<ol class="simple">
+<li><p>A l’aide du code précédent, tracer l’allure temporelle du signal précédent pour <span class="math notranslate nohighlight">\(m = 5\)</span> puis <span class="math notranslate nohighlight">\(m=10\)</span>. On réfléchira à la façon de créer les vecteurs <code class="docutils literal notranslate"><span class="pre">fsc</span></code>, <code class="docutils literal notranslate"><span class="pre">ampsc</span></code> et <code class="docutils literal notranslate"><span class="pre">phisc</span></code> (1 seule ligne d’instruction est nécessaire à chaque fois en utilisant la fonction <code class="docutils literal notranslate"><span class="pre">np.arange</span></code>).</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="trace-des-spectres">
+<h3><span class="section-number">1.2.1.2. </span>Tracé des spectres.<a class="headerlink" href="#trace-des-spectres" title="Permalink to this headline">¶</a></h3>
+<p>Pour tracer les spectres, on va utiliser la fonction <code class="docutils literal notranslate"><span class="pre">bar(x,</span> <span class="pre">y,</span> <span class="pre">width,...)</span></code> de la bibliothèque <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>. Elle fonctionne comme plot (même options comme <code class="docutils literal notranslate"><span class="pre">label</span></code>) mais trace des barres au lieu de points. L’argument <code class="docutils literal notranslate"><span class="pre">width</span></code> défini la largeur des barres, on prendra <code class="docutils literal notranslate"><span class="pre">0.05</span></code>.</p>
+<blockquote>
+<div><p><strong>Exercice F</strong></p>
+<ol class="simple">
+<li><p>Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">bar</span></code> pour tracer les spectres de <span class="math notranslate nohighlight">\(s_2(t)\)</span> et <span class="math notranslate nohighlight">\(s_c(t)\)</span> à partir des listes <code class="docutils literal notranslate"><span class="pre">fs</span></code> et <code class="docutils literal notranslate"><span class="pre">amps</span></code> (ou <code class="docutils literal notranslate"><span class="pre">fsc</span></code> et <code class="docutils literal notranslate"><span class="pre">ampsc</span></code>).</p></li>
+</ol>
+</div></blockquote>
+<p>On s’intéresse maintenant au cas où la décomposition spectrale n’est pas donnée. On va même prendre un signal non périodique <span class="math notranslate nohighlight">\(e(t) = A e^{-t/\tau}\)</span> avec <span class="math notranslate nohighlight">\(A = 1.SI\)</span> et <span class="math notranslate nohighlight">\(\tau = 2 s\)</span>. En pratique, un tel signal est de spectre continu mais comme pour toute étude numérique, on ne peut calculer les amplitudes que pour des valeurs discrètes. Le spectre qu’on va obtenir sera donc discret: on obtiendra les amplitudes <span class="math notranslate nohighlight">\(c_i\)</span> des composantes spectrales <span class="math notranslate nohighlight">\(f_i\)</span>.</p>
+<p>On suppose qu’on dispose de <code class="docutils literal notranslate"><span class="pre">N</span></code> mesures d’un signal <span class="math notranslate nohighlight">\(e\)</span> faites avec une fréquence d’échantillonnage <code class="docutils literal notranslate"><span class="pre">fe</span></code>. Ces valeurs sont stockées dans un vecteur numpy <code class="docutils literal notranslate"><span class="pre">ek</span></code>. On veut obtenir la transformée de Fourier du signal <span class="math notranslate nohighlight">\(s\)</span> basée sur les mesures <code class="docutils literal notranslate"><span class="pre">ek</span></code>.</p>
+<p>Nous allons utiliser la fonction native <code class="docutils literal notranslate"><span class="pre">fft</span></code> de la bibliothèque <code class="docutils literal notranslate"><span class="pre">numpy.fft</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fft(sk)</span></code> permet de calculer la TF à partir de <code class="docutils literal notranslate"><span class="pre">ek</span></code> pour une liste de valeurs de fréquences discrètes <span class="math notranslate nohighlight">\(f_i\)</span>. La fonction renvoie les amplitudes <strong>sous forme d’un vecteur de grandeurs complexes</strong> :</p>
+<ul>
+<li><p>Le module est l’amplitude de la composante spectrale</p></li>
+<li><p>son argument est la phase à l’origine du signal.</p></li>
+</ul>
+</li>
+</ul>
+<p>Les valeurs <span class="math notranslate nohighlight">\(f_i\)</span> auxquelles le spectre est évalué sont données par la liste suivante (non renvoyé par <code class="docutils literal notranslate"><span class="pre">fft</span></code>):</p>
+<div class="math notranslate nohighlight">
+\[
+[0, 1, ..., N-1] \times {fe \over N}
+\]</div>
+<blockquote>
+<div><p><strong>Exercice G</strong></p>
+<ol class="simple">
+<li><p>(Théorie): On suppose qu’on a échantillonner le signal <span class="math notranslate nohighlight">\(e(t)\)</span> avec une fréquence <span class="math notranslate nohighlight">\(f_e = 1 kHz\)</span> pendant <span class="math notranslate nohighlight">\(t_f = 10 s\)</span>. Quel est l’intervalle de temps <span class="math notranslate nohighlight">\(t_e\)</span> entre deux mesures? Quel est le nombre de points mesures <span class="math notranslate nohighlight">\(N\)</span> ?</p></li>
+<li><p>Dans la cellule suivante, créer un vecteur <code class="docutils literal notranslate"><span class="pre">tk</span></code> correspondant aux instants <span class="math notranslate nohighlight">\(t_k\)</span> de mesures puis un vecteur <code class="docutils literal notranslate"><span class="pre">ek</span></code> correspondant aux valeurs <span class="math notranslate nohighlight">\(e(t_k)\)</span>. Réfléchir aux choix de la fonction à utiliser (<code class="docutils literal notranslate"><span class="pre">arange</span></code> ou <code class="docutils literal notranslate"><span class="pre">linspace</span></code>) aux vues des données.</p></li>
+<li><p>Dans la même cellule, créer un vecteur <code class="docutils literal notranslate"><span class="pre">fi</span></code> contenant les fréquences auxquelles le spectre va être évalués (on rappelle qu’il aura la même taille que <code class="docutils literal notranslate"><span class="pre">ek</span></code>).</p></li>
+<li><p>Dans la même cellule, écrire une suite d’instructions (3 instructions) qui utilise la fonction <code class="docutils literal notranslate"><span class="pre">fft</span></code> de <code class="docutils literal notranslate"><span class="pre">numpy</span></code> pour obtenir un vecteur contenant les amplitudes de la décomposition de <span class="math notranslate nohighlight">\(e(t)\)</span> et un vecteur contenant les phases à l’origine de la décomposition de <span class="math notranslate nohighlight">\(e(t)\)</span> à partir du vecteur <code class="docutils literal notranslate"><span class="pre">ek</span></code>. <em>Les fonctions <code class="docutils literal notranslate"><span class="pre">np.abs</span></code> et <code class="docutils literal notranslate"><span class="pre">np.angle</span></code> renvoient respectivement les modules et arguments d’un vecteur de complexes (sous forme de vecteur).</em></p></li>
+<li><p>Tracer dans deux graphiques différents l’allure temporelle de <span class="math notranslate nohighlight">\(e(t)\)</span> et le spectre obtenu par les instructions précédentes.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;On importe pour vous la fonction fft&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="kn">import</span> <span class="n">fft</span>  <span class="c1"># Avec cette méthode d&#39;importation, vous pouver utiliser directement la syntaxe fft(...)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vous avez maintenant toutes les instructions de base pour réaliser le TP. Celui-ci vous demandera de les réutiliser mais dans des <strong>fonctions</strong> pour automatiser les études.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "pcsi3physiquestan/capacites_numeriques_source",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="signal_fourier.html" title="previous page"><span class="section-number">1. </span>Analyse spectrale d’un signal</a>
+    <a class='right-next' id="next-link" href="signal_fourier_complet.html" title="next page"><span class="section-number">1.3. </span>Etude complète</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
