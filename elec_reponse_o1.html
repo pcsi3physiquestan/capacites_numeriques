@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Etude numérique d’un filtre linéaire" href="elec_filtrage.html" />
-    <link rel="prev" title="1. Analyse spectrale d’un signal" href="signal_fourier.html" />
+    <link rel="next" title="2.3. Implémentation basique" href="elec_reponse_o1_base.html" />
+    <link rel="prev" title="1.3. Etude complète" href="signal_fourier_complet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,15 +92,49 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="signal_fourier.html">
    1. Analyse spectrale d’un signal
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="signal_fourier_base.html">
+     1.2. Etude de base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="signal_fourier_complet.html">
+     1.3. Etude complète
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    2. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_base.html">
+     2.3. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_complet.html">
+     2.4. Implémentation basique
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="elec_filtrage.html">
@@ -236,6 +270,11 @@
      2.1.2. Schéma d’intégration d’Euler explicite
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#synthese">
+     2.1.3. Synthèse
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -244,41 +283,9 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementation-du-schema-d-euler">
-     2.2.1. Implémentation du schéma d’Euler
+    <a class="reference internal nav-link" href="#mise-en-equation">
+     2.2.1. Mise en équation
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#application-au-regime-libre-et-a-l-echelon-de-tension">
-     2.2.2. Application au régime libre et à l’échelon de tension.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#erreur-et-pas-d-integration">
-     2.2.3. Erreur et pas d’intégration
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rampe-de-tension">
-     2.2.4. Rampe de tension
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#derivation-numerique">
-       2.2.4.1. Dérivation numérique.
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#integration-numerique">
-       2.2.4.2. Intégration numérique.
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#application-a-la-rampe">
-       2.2.4.3. Application à la rampe.
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -309,7 +316,7 @@
 <p>avec <span class="math notranslate nohighlight">\(y(t_0) = y_0\)</span></p>
 <p>où <span class="math notranslate nohighlight">\(y\)</span> est la fonction inconnue.</p>
 <blockquote>
-<div><p>Exemple : Pour un circuit RC série relié à une tension de tension <span class="math notranslate nohighlight">\(E(t)\)</span>, l’équation d’évolution est :</p>
+<div><p>(exemple_rc)=Exemple : Pour un circuit RC série relié à une tension de tension <span class="math notranslate nohighlight">\(E(t)\)</span>, l’équation d’évolution est :</p>
 <div class="math notranslate nohighlight">
 \[\frac{\rm{d}u}{\rm{dt}} = \frac{1}{RC}\left (E(t) - u(t) \right )\]</div>
 <p>La fonction <span class="math notranslate nohighlight">\(f\)</span> est donc :</p>
@@ -336,6 +343,23 @@ y(t + h) = y(t) + h \times f(t, y(t))
 y_{k+1} = y_k + h \times f(t, y_k)
 \]</div>
 </div>
+<div class="section" id="synthese">
+<h3><span class="section-number">2.1.3. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">¶</a></h3>
+<p>Pour résoudre numériquement une équation différentielle d’ordre 1 par la méthode d’Euler avec un pas de temps <span class="math notranslate nohighlight">\(h\)</span>, on va donc:</p>
+<ul class="simple">
+<li><p>définir une fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span> qui est une expression de la dérivée obtenue par l’équation différentielle:
+$<span class="math notranslate nohighlight">\(
+\frac{\rm{d}y}{\rm{dt}}(t) = f(t,y)
+\)</span>$</p></li>
+<li><p>créer un vecteur temps contenant les instants <span class="math notranslate nohighlight">\(t_k = t_0 + k \times h\)</span></p></li>
+<li><p>calculer un vecteur contenant les éléments de la suite <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span> définie par la récurrence:
+$<span class="math notranslate nohighlight">\(
+y_{k+1} = y_k + f(t_k, y_k) * h
+\)</span><span class="math notranslate nohighlight">\(
+avec \)</span>y_0 = y(t_0)$ la condition initiale.</p></li>
+</ul>
+<p><em>La définition de <span class="math notranslate nohighlight">\(y_k\)</span> par récurrence impose d’utiliser une boucle pour sa création.</em></p>
+</div>
 </div>
 <div class="section" id="application-en-electrocinetique">
 <h2><span class="section-number">2.2. </span>Application en électrocinétique.<a class="headerlink" href="#application-en-electrocinetique" title="Permalink to this headline">¶</a></h2>
@@ -345,182 +369,20 @@ y_{k+1} = y_k + h \times f(t, y_k)
 <li><p>une rampe de tension suivie d’une tension constante.</p></li>
 </ul>
 <p>On étudiera l’influence du pas d’intégration sur la fiabilité de l’intégration numérique.</p>
-<div class="section" id="implementation-du-schema-d-euler">
-<h3><span class="section-number">2.2.1. </span>Implémentation du schéma d’Euler<a class="headerlink" href="#implementation-du-schema-d-euler" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mise-en-equation">
+<h3><span class="section-number">2.2.1. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p><strong>Exercice 1</strong></p>
+<div><p><strong>Etude théorique</strong>
+On travaille avec un circuit <span class="math notranslate nohighlight">\(RC\)</span> série dont la constante de temps est <span class="math notranslate nohighlight">\(\tau = RC\)</span>. On prendra <span class="math notranslate nohighlight">\(R = 10\rm{k\Ohm}\)</span> et <span class="math notranslate nohighlight">\(C = 100 \rm{\mu F}\)</span>.</p>
 <ol class="simple">
-<li><p>Commencer par importer les bibliothèques scientifiques utiles : numpy, matplotlib.pyplot</p></li>
-<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code></p>
-<ul class="simple">
-<li><p>qui prend en arguments :</p>
-<ul>
-<li><p>une variable <code class="docutils literal notranslate"><span class="pre">f</span></code> qui sera une fonction</p></li>
-<li><p>un flottant <code class="docutils literal notranslate"><span class="pre">pas</span></code> qui sera le pas <code class="docutils literal notranslate"><span class="pre">h</span></code> d’intégration</p></li>
-<li><p>deux flottants <code class="docutils literal notranslate"><span class="pre">t1</span></code> et <code class="docutils literal notranslate"><span class="pre">t2</span></code> donnant les temps initiaux et finaux de l’intervalle sur lesquels on va intégrer le signal (Note : <code class="docutils literal notranslate"><span class="pre">t2</span></code> ne sera pas forcément atteint)</p></li>
-<li><p>un flottant <code class="docutils literal notranslate"><span class="pre">y1</span></code> donnant la valeur de <span class="math notranslate nohighlight">\(y(t)\)</span> à l’instant <code class="docutils literal notranslate"><span class="pre">t1</span></code></p></li>
-</ul>
-</li>
-<li><p>et qui renvoie deux vecteurs numpy :</p>
-<ul>
-<li><p>le premier contient les temps <span class="math notranslate nohighlight">\(t_k\)</span> où on a évaluer la fonction (on commence à <code class="docutils literal notranslate"><span class="pre">t1</span></code>)</p></li>
-<li><p>le second contient les valeurs estimées de <span class="math notranslate nohighlight">\(y\)</span> (<span class="math notranslate nohighlight">\(y_k\)</span>).</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</div></blockquote>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Ne pas oublier d&#39;importer les bibliothèques scientifiques&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Ne pas oublier d&#39;importer les bibliothèques scientifiques&quot;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="application-au-regime-libre-et-a-l-echelon-de-tension">
-<h3><span class="section-number">2.2.2. </span>Application au régime libre et à l’échelon de tension.<a class="headerlink" href="#application-au-regime-libre-et-a-l-echelon-de-tension" title="Permalink to this headline">¶</a></h3>
-<p><strong>On prendra <span class="math notranslate nohighlight">\(\tau = 1\)</span>.</strong></p>
-<blockquote>
-<div><p><strong>Exercice 2</strong></p>
-<ol class="simple">
-<li><p>Préciser l’expression de la fonction <span class="math notranslate nohighlight">\(f(t, y)\)</span>  dans le cas d’un régime libre et d’un échelon de tension (<span class="math notranslate nohighlight">\(E = 1V\)</span>) puis implémenter deux fonctions <code class="docutils literal notranslate"><span class="pre">f_libre</span></code> et <code class="docutils literal notranslate"><span class="pre">f_echelon</span></code> correspondant à ces fonctions (mettre les arguments <code class="docutils literal notranslate"><span class="pre">t</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> même s’ils n’interviennent pas dans la fonction).</p></li>
-<li><p>Définir deux fonctions <code class="docutils literal notranslate"><span class="pre">sol_libre</span></code> et <code class="docutils literal notranslate"><span class="pre">sol_echelon</span></code> qui prennent comme argument <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">t1</span></code> et <code class="docutils literal notranslate"><span class="pre">y0</span></code> et qui renvoient respectivement les solutions pour un régime libre puis pour un échelon de tension avec comme condition initiale <span class="math notranslate nohighlight">\(y(t1) = y0\)</span>.</p></li>
-<li><p>Utiliser le schéma d’Euler que vous avez implémenté pour résoudre numériquement le cas d’un régime libre et d’un échelon de tension. Choisir un pas d’intégration <span class="math notranslate nohighlight">\(pas = \frac{1}{1000} \tau\)</span></p></li>
-<li><p>Tracer sur le même graphique la réponse numérique et la réponse analytique pour un régime libre puis pour un échelon de tension.</p></li>
-</ol>
-</div></blockquote>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;La fonction euler que vous avez défini précédemment est accessibles&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;La fonction euler que vous avez défini précédemment est accessibles&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="erreur-et-pas-d-integration">
-<h3><span class="section-number">2.2.3. </span>Erreur et pas d’intégration<a class="headerlink" href="#erreur-et-pas-d-integration" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p><strong>Exercice 3</strong></p>
-<ol class="simple">
-<li><p>Reprendre l’exercice précédent mais en affichant deux graphiques (1 colonne et deux lignes) : les solutions analytique et numérique précédentes sur le premier et la valeur absolue des écarts entre les deux solutions sur le second graphique.</p></li>
-<li><p>Etudier l’évolution des erreurs en fonction du pas d’intégration (commencer par un pas égal à <span class="math notranslate nohighlight">\(\tau\)</span> puis diviser successivement par 5 le pas).</p></li>
-</ol>
-</div></blockquote>
-<p>Pour vous aider sur la manière de tracer une fenêtre multi-graphique, utiliser cet <a class="reference external" href="https://pcsi3physiquestan.github.io/intro_python/notebook/plus_loin.html">élément de cours</a>.</p>
-<p><em>Informations utiles</em>:</p>
-<ul class="simple">
-<li><p>Vous pouvez tout à fait créer un tracé (<code class="docutils literal notranslate"><span class="pre">ax[0].plot(...)</span></code>) à l’intérieur d’une boucle pour superposer plusieurs courbes.</p></li>
-</ul>
-</div>
-<div class="section" id="rampe-de-tension">
-<h3><span class="section-number">2.2.4. </span>Rampe de tension<a class="headerlink" href="#rampe-de-tension" title="Permalink to this headline">¶</a></h3>
-<p>On va aussi réaliser une étude énergétique. Pour cela, il faut calculer l’intensité <span class="math notranslate nohighlight">\(i\)</span> par dérivation numérique puis l’énergie (dissipée ou fournie) par intégration numérique.</p>
-<div class="section" id="derivation-numerique">
-<h4><span class="section-number">2.2.4.1. </span>Dérivation numérique.<a class="headerlink" href="#derivation-numerique" title="Permalink to this headline">¶</a></h4>
-<p>On va réaliser une dérivée numérique centrée. Pour un pas de temps <span class="math notranslate nohighlight">\(h\)</span>. On peut faire l’approximation de <span class="math notranslate nohighlight">\(y(t-h)\)</span> et <span class="math notranslate nohighlight">\(y(t+h)\)</span> par :</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{cases}
-y(t - h) &amp;\approx y(t) - h \frac{\rm{d}y}{\rm{dt}}(t)\\
-y(t + h) &amp;\approx y(t) + h \frac{\rm{d}y}{\rm{dt}}(t)
-\end{cases}
-\end{split}\]</div>
-<p>soit par soustraction :</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\rm{d}y}{\rm{dt}}(t) \approx \frac{y(t+h) - y(t-h)}{2h}
-\]</div>
-<p>soit pour la suite des <span class="math notranslate nohighlight">\(y_k\)</span> (on note la suite des valeurs de la dérivée <span class="math notranslate nohighlight">\(dy_k\)</span>):</p>
-<div class="math notranslate nohighlight">
-\[
-dy_k = \frac{\rm{d}y}{\rm{dt}}(t_k) = \frac{y_{k+1} - y_{k-1}}{2h}
-\]</div>
-<p>Seul problème : <strong>on ne peut utiliser cette expression pour calculer la dérivée pour <span class="math notranslate nohighlight">\(k=0\)</span> et <span class="math notranslate nohighlight">\(k=k_{\max}\)</span></strong>. Pour les deux valeurs extrêmes, on va utiliser l’expression :</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{cases}
-dy_0 &amp;= \frac{y_{1} - y_{0}}{h} \textrm{ Dérivation à droite}\\
-dy_{k_{\max}} &amp;= \frac{y_{k_{\max}} - y_{k_{\max} - 1}}{h} \textrm{ Dérivation à gauche}\\
-\end{cases}
-\end{split}\]</div>
-<blockquote>
-<div><p><strong>Exercice 4</strong></p>
-<ol class="simple">
-<li><p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">deriv</span></code> qui prend comme argument le vecteur <code class="docutils literal notranslate"><span class="pre">y</span></code> des valeurs à dériver et le <code class="docutils literal notranslate"><span class="pre">pas</span></code> de calcul et qui renvoie le vecteur des valeurs dérivées.</p></li>
-<li><p>Vérifier son fonctionnement en calculant la dérivée des tensions pour les régimes libre et échelon de tension en traçant leur comparaison avec leurs expressions analytiques.</p></li>
+<li><p>Dans le cas d’un régime libre, préciser l’expression de la fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span>. Dépend-elle explicitement de <span class="math notranslate nohighlight">\(t\)</span>?</p></li>
+<li><p>Dans le cas où le RC est relié à une source <span class="math notranslate nohighlight">\(E = 1V\)</span>, préciser l’expression de la fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span>. Dépend-elle explicitement de <span class="math notranslate nohighlight">\(t\)</span>?</p></li>
+<li><p>On veut étudier le régime transitoire, on va donc intégrer de 0 à <span class="math notranslate nohighlight">\(t_f\)</span>. Comment choisir le temps final <span class="math notranslate nohighlight">\(t_f\)</span> pour observer complètement le régime transitoire ? En déduire le nombre de temps <span class="math notranslate nohighlight">\(t_k\)</span> de calcul pour un pas <span class="math notranslate nohighlight">\(h\)</span> en fonction de <span class="math notranslate nohighlight">\(\tau\)</span> et <span class="math notranslate nohighlight">\(h\)</span>.</p></li>
 </ol>
 </div></blockquote>
 </div>
-<div class="section" id="integration-numerique">
-<h4><span class="section-number">2.2.4.2. </span>Intégration numérique.<a class="headerlink" href="#integration-numerique" title="Permalink to this headline">¶</a></h4>
-<p>On applique la méthode des rectangles pour calculer numériquement l’intégrale de <span class="math notranslate nohighlight">\(y(t)\)</span> entre <span class="math notranslate nohighlight">\(t_0\)</span> et <span class="math notranslate nohighlight">\(t_k\)</span>. On note <span class="math notranslate nohighlight">\(s_k\)</span> la valeur de cette intégrale et on prend <span class="math notranslate nohighlight">\(s_0 = 0\)</span> (l’énergie échangé initialement sera nulle). On définit donc la récurrence :</p>
-<div class="math notranslate nohighlight">
-\[
-s_{k+1} = s_k + h * y_k
-\]</div>
-<blockquote>
-<div><p><strong>Exercice 5</strong></p>
-<ol class="simple">
-<li><p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">integ</span></code> qui prend comme argument le vecteur <code class="docutils literal notranslate"><span class="pre">y</span></code> à intégrer et le <code class="docutils literal notranslate"><span class="pre">pas</span></code> de calcul et qui renvoie le vecteur des valeurs intégrées.</p></li>
-<li><p>Vérifier son fonctionnement en calculant l’intégrale des tensions pour les régimes libre et échelon de tension en traçant leur comparaison avec leurs expressions analytiques.</p></li>
-</ol>
-</div></blockquote>
 </div>
-<div class="section" id="application-a-la-rampe">
-<h4><span class="section-number">2.2.4.3. </span>Application à la rampe.<a class="headerlink" href="#application-a-la-rampe" title="Permalink to this headline">¶</a></h4>
-<p>On étudie un circuit RC série soumis à une tension <span class="math notranslate nohighlight">\(E(t)\)</span> :</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-E(t) = 
-\begin{cases}
-0 &amp; \textrm{si t &lt;= 0}\\
-t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
-1 &amp; \textrm{si t &gt; T0}\\
-\end{cases}
-\end{split}\]</div>
-<p>On prendra <span class="math notranslate nohighlight">\(R = 1\rm{k\Omega}; C = 1\rm{\mu F}; T0 = k \times \tau; u(t=0) = 0 \rm{V}\)</span>.</p>
-<p><em>Rappels :</em></p>
-<ul class="simple">
-<li><p>L’<strong>énergie</strong> stockée dans un condensateur est <span class="math notranslate nohighlight">\(E_{el} = \frac{1}{2}C u_c^2\)</span></p></li>
-<li><p>La <strong>puissance</strong> dissipée par effet Joule est <span class="math notranslate nohighlight">\(P_J(t) = R i^2(t)\)</span></p></li>
-</ul>
-<blockquote>
-<div><p><strong>Exercice 6</strong></p>
-<ol class="simple">
-<li><p>Procéder à l’intégration de l’équation différentielle pour <span class="math notranslate nohighlight">\(k=2\)</span> en choisissant un pas de calcul adapté.</p></li>
-<li><p>En déduire l’intensité circulant dans le condensateur, l’énergie stockée dans le condensateur (aux mêmes instants <span class="math notranslate nohighlight">\(t_k\)</span>), l’énergie dissipée par la résistance et l’énergie fournie par la source (entre t=0  et <span class="math notranslate nohighlight">\(t=t_k\)</span>).</p></li>
-<li><p>Représenter quatre graphiques dans une même fenêtre (2 lignes, 2 colonnes) représentant :</p>
-<ul class="simple">
-<li><p>premier graphique : les tensions <span class="math notranslate nohighlight">\(E(t)\)</span> et <span class="math notranslate nohighlight">\(u(t)\)</span></p></li>
-<li><p>deuxième graphique : l’intensité <span class="math notranslate nohighlight">\(i(t)\)</span></p></li>
-<li><p>troisième graphique ; le portrait de phase (ensemble des points de coordonnées (<span class="math notranslate nohighlight">\(u(t); \frac{du}{dt}(t)\)</span>))</p></li>
-<li><p>quatrième graphique ; l’évolution de l’énergie stockée dans le condensateur, celle délivrée par la source et celle dissipée par la résistance</p></li>
-</ul>
-</li>
-<li><p>Analyser physiquement les courbes obtenues.</p></li>
-<li><p>Reprendre l’étude en augmentant <span class="math notranslate nohighlight">\(k\)</span>. On commentera notamment l’énergie dissipée par effet Joule.</p></li>
-<li><p>Quantifier l’évolution du rendement <span class="math notranslate nohighlight">\(\eta = \frac{E_{stockee}(+\infty)}{E_{fournie}(+\infty)}\)</span> par rapport à <span class="math notranslate nohighlight">\(k\)</span> par un tracé graphique adapté. On réfléchira à comment estimer <span class="math notranslate nohighlight">\(\eta\)</span> pour chaque valeur de <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
-</ol>
-</div></blockquote>
-<p><em>Pour étudier le rendement sur plusieurs décades entre <span class="math notranslate nohighlight">\(k=0.01\)</span> et <span class="math notranslate nohighlight">\(k=1000\)</span>. Deux syntaxes utiles :</em></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">np.logspace(start,</span> <span class="pre">stop,</span> <span class="pre">N)</span></code> fonctionne comme <code class="docutils literal notranslate"><span class="pre">linspace</span></code> mais les points sont créés régulièrement sur un axe logarithmique entre <span class="math notranslate nohighlight">\(10^{start}\)</span> et <span class="math notranslate nohighlight">\(10^{stop}\)</span>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ax.set_xscale('log')</span></code> permet de représenter les abscisses suivant une échelle logarithmique.</p></li>
-</ul>
-</div>
-</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -549,8 +411,8 @@ t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="signal_fourier.html" title="previous page"><span class="section-number">1. </span>Analyse spectrale d’un signal</a>
-    <a class='right-next' id="next-link" href="elec_filtrage.html" title="next page"><span class="section-number">3. </span>Etude numérique d’un filtre linéaire</a>
+    <a class='left-prev' id="prev-link" href="signal_fourier_complet.html" title="previous page"><span class="section-number">1.3. </span>Etude complète</a>
+    <a class='right-next' id="next-link" href="elec_reponse_o1_base.html" title="next page"><span class="section-number">2.3. </span>Implémentation basique</a>
 
         </div>
         
