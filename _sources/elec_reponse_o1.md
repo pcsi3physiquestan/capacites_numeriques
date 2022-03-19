@@ -30,7 +30,8 @@ avec $y(t_0) = y_0$
 
 où $y$ est la fonction inconnue.
 
-> (exemple_rc)=Exemple : Pour un circuit RC série relié à une tension de tension $E(t)$, l'équation d'évolution est :
+(exemple_rc)=
+> Exemple : Pour un circuit RC série relié à une tension de tension $E(t)$, l'équation d'évolution est :
 > 
 > $$\frac{\rm{d}u}{\rm{dt}} = \frac{1}{RC}\left (E(t) - u(t) \right )$$
 > 
@@ -84,7 +85,7 @@ On étudiera l'influence du pas d'intégration sur la fiabilité de l'intégrati
 
 ### Mise en équation
 > __Etude théorique__
-> On travaille avec un circuit $RC$ série dont la constante de temps est $\tau = RC$. On prendra $R = 10\rm{k\Ohm}$ et $C = 100 \rm{\mu F}$.  
+> On travaille avec un circuit $RC$ série dont la constante de temps est $\tau = RC$. On prendra $R = 10\rm{k\Omega}$ et $C = 100 \rm{\mu F}$.  
 > 1. Dans le cas d'un régime libre, préciser l'expression de la fonction $f(t,y)$. Dépend-elle explicitement de $t$?
 > 2. Dans le cas où le RC est relié à une source $E = 1V$, préciser l'expression de la fonction $f(t,y)$. Dépend-elle explicitement de $t$?
 > 3. On veut étudier le régime transitoire, on va donc intégrer de 0 à $t_f$. Comment choisir le temps final $t_f$ pour observer complètement le régime transitoire ? En déduire le nombre de temps $t_k$ de calcul pour un pas $h$ en fonction de $\tau$ et $h$.

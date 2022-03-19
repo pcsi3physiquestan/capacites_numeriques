@@ -16,7 +16,7 @@ La page ci-présente existe en version notebook téléchargeable grâce au bouto
 # Implémentation basique
 __Si vous vous sentez suffisamment à l'aise,__ vous pouvez passer directement à l'[étude approfondie](elec_reponse_o1_complet).
 
-### Implémentation du schéma d'Euler
+## Implémentation du schéma d'Euler
 
 > __Exercice 1__
 > 1. Commencer par importer les bibliothèques scientifiques utiles : numpy, matplotlib.pyplot
@@ -34,7 +34,7 @@ __Si vous vous sentez suffisamment à l'aise,__ vous pouvez passer directement �
 """Ne pas oublier d'importer les bibliothèques scientifiques"""
 ```
 
-### Application au régime libre et à l'échelon de tension.
+## Application au régime libre et à l'échelon de tension.
 __On prendra $\tau = 1$.__
 
 > __Exercice 2__
@@ -47,7 +47,7 @@ __On prendra $\tau = 1$.__
 """La fonction euler que vous avez défini précédemment est accessibles"""
 ```
 
-### Erreur et pas d'intégration
+## Erreur et pas d'intégration
 
 > __Exercice 3__
 > 1. Reprendre l'exercice précédent mais en affichant deux graphiques (1 colonne et deux lignes) : les solutions analytique et numérique précédentes sur le premier et la valeur absolue des écarts entre les deux solutions sur le second graphique.
@@ -62,11 +62,11 @@ _Informations utiles_:
 
 ```
 
-### Rampe de tension
+## Rampe de tension
 
 On va aussi réaliser une étude énergétique. Pour cela, il faut calculer l'intensité $i$ par dérivation numérique puis l'énergie (dissipée ou fournie) par intégration numérique.
 
-#### Dérivation numérique.
+### Dérivation numérique.
 
 On va réaliser une dérivée numérique centrée. Pour un pas de temps $h$. On peut faire l'approximation de $y(t-h)$ et $y(t+h)$ par :
 
@@ -106,7 +106,7 @@ $$
 
 ```
 
-#### Intégration numérique.
+### Intégration numérique.
 On applique la méthode des rectangles pour calculer numériquement l'intégrale de $y(t)$ entre $t_0$ et $t_k$. On note $s_k$ la valeur de cette intégrale et on prend $s_0 = 0$ (l'énergie échangé initialement sera nulle). On définit donc la récurrence :
 
 $$
@@ -121,7 +121,7 @@ $$
 
 ```
 
-#### Application à la rampe.
+### Application à la rampe.
 On étudie un circuit RC série soumis à une tension $E(t)$ :
 
 $$
