@@ -379,6 +379,10 @@ y_{k+1} = y_k + h \times f(t, y_k)
 <li><p>créer un vecteur temps contenant les instants <span class="math notranslate nohighlight">\(t_k = t_0 + k \times h\)</span></p></li>
 <li><p>calculer un vecteur contenant les éléments de la suite <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span> définie par la récurrence:</p></li>
 </ul>
+<div class="sidebar">
+<p class="sidebar-title">Comparaison avec l’intégration numérique</p>
+<p>Le relation de récurrence est identique au cas d’intégration numérique vu <a class="reference internal" href="derivation_integration.html#inter-pcp"><span class="std std-ref">précédemment</span></a>. L’intégration numérique est en effet un cas particulier d’intégration d’une équation différentielle où <span class="math notranslate nohighlight">\(f(t,y)\)</span>… ne dépend pas de <span class="math notranslate nohighlight">\(y\)</span> !.</p>
+</div>
 <div class="math notranslate nohighlight">
 \[
 y_{k+1} = y_k + f(t_k, y_k) * h
