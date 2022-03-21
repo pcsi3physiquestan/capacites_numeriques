@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Capacités numériques en physique &#8212; Capacités numériques - Sujets</title>
+    <title>3.5. Réponse à une rampe de tension. &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,11 +49,14 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/capacite_numerique.html" />
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_reponse_o1_rampe.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Analyse spectrale d’un signal" href="signal_fourier.html" />
+    <link rel="next" title="4. Etude numérique d’un filtre linéaire" href="elec_filtrage.html" />
+    <link rel="prev" title="3.4. Implémentation complète" href="elec_reponse_o1_complet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -82,13 +85,13 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capacite_numerique.html">
    Capacités numériques en physique
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="signal_fourier.html">
    1. Analyse spectrale d’un signal
@@ -133,16 +136,16 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_reponse_o1.html">
    3. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_base.html">
      3.3. Implémentation basique
@@ -153,8 +156,8 @@
      3.4. Implémentation complète
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_rampe.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      3.5. Réponse à une rampe de tension.
     </a>
    </li>
@@ -225,11 +228,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/capacite_numerique.ipynb"><button type="button"
+            href="_sources/elec_reponse_o1_rampe.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/capacite_numerique.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/elec_reponse_o1_rampe.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -254,7 +257,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/capacite_numerique.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o1_rampe.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -274,6 +277,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonctions-utiles">
+   3.5.1. Fonctions utiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rampe-de-tension">
+   3.5.2. Rampe de tension
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -282,10 +303,72 @@
         
               <div>
                 
-  <div class="section" id="capacites-numeriques-en-physique">
-<h1>Capacités numériques en physique<a class="headerlink" href="#capacites-numeriques-en-physique" title="Permalink to this headline">¶</a></h1>
-<p>Voici le recueil des activités sur les capacités numériques pour l’année.</p>
-<div class="toctree-wrapper compound">
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<div class="section" id="reponse-a-une-rampe-de-tension">
+<h1><span class="section-number">3.5. </span>Réponse à une rampe de tension.<a class="headerlink" href="#reponse-a-une-rampe-de-tension" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fonctions-utiles">
+<h2><span class="section-number">3.5.1. </span>Fonctions utiles<a class="headerlink" href="#fonctions-utiles" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="simple">
+<li><p>La fonction que vous avez définie dans l’autre notebook n’est pas défini ici. Copiez-collez votre fonction pour l’utiliser ici.</p></li>
+<li><p>De même, les fonctions que vous avez créés dans la partie sur <a class="reference internal" href="derive_integ_fonction.html#deriv-int-fn"><span class="std std-ref">l’intégration et la dérivation numérique</span></a> vont être utiles ici. Recopiez les aussi pour pouvoir les utiliser.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Ne pas oublier d&#39;importer les bibliothèques scientifiques&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Ne pas oublier d&#39;importer les bibliothèques scientifiques&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="rampe-de-tension">
+<h2><span class="section-number">3.5.2. </span>Rampe de tension<a class="headerlink" href="#rampe-de-tension" title="Permalink to this headline">¶</a></h2>
+<p>On étudie un circuit RC série soumis à une tension <span class="math notranslate nohighlight">\(E(t)\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+E(t) = 
+\begin{cases}
+0 &amp; \textrm{si t &lt;= 0}\\
+t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
+1 &amp; \textrm{si t &gt; T0}\\
+\end{cases}
+\end{split}\]</div>
+<p>On prendra <span class="math notranslate nohighlight">\(R = 1\rm{k\Omega}; C = 1\rm{\mu F}; T0 = k \times \tau; u(t=0) = 0 \rm{V}\)</span>.</p>
+<p><em>Rappels :</em></p>
+<ul class="simple">
+<li><p>L’<strong>énergie</strong> stockée dans un condensateur est <span class="math notranslate nohighlight">\(E_{el} = \frac{1}{2}C u_c^2\)</span></p></li>
+<li><p>La <strong>puissance</strong> dissipée par effet Joule est <span class="math notranslate nohighlight">\(P_J(t) = R i^2(t)\)</span></p></li>
+</ul>
+<blockquote>
+<div><p><strong>Exercice 6</strong></p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">rampe(t)</span></code> qui renvoie la valeur de <code class="docutils literal notranslate"><span class="pre">E(t)</span></code> pour un instant donné puis l’utiliser pour créer la fonction <code class="docutils literal notranslate"><span class="pre">f_rampe</span></code> du schéma d’Euler.</p></li>
+<li><p>Procéder à l’intégration de l’équation différentielle pour <span class="math notranslate nohighlight">\(k=2\)</span> en choisissant un pas de calcul adapté.</p></li>
+<li><p>En déduire l’intensité circulant dans le condensateur, l’énergie stockée dans le condensateur (aux mêmes instants <span class="math notranslate nohighlight">\(t_k\)</span>), l’énergie dissipée par la résistance et l’énergie fournie par la source (entre t=0  et <span class="math notranslate nohighlight">\(t=t_k\)</span>).</p></li>
+<li><p>Représenter quatre graphiques dans une même fenêtre (2 lignes, 2 colonnes) représentant :</p>
+<ul class="simple">
+<li><p>premier graphique : les tensions <span class="math notranslate nohighlight">\(E(t)\)</span> et <span class="math notranslate nohighlight">\(u(t)\)</span></p></li>
+<li><p>deuxième graphique : l’intensité <span class="math notranslate nohighlight">\(i(t)\)</span></p></li>
+<li><p>troisième graphique ; le portrait de phase (ensemble des points de coordonnées (<span class="math notranslate nohighlight">\(u(t); \frac{du}{dt}(t)\)</span>))</p></li>
+<li><p>quatrième graphique ; l’évolution de l’énergie stockée dans le condensateur, celle délivrée par la source et celle dissipée par la résistance</p></li>
+</ul>
+</li>
+<li><p>Analyser physiquement les courbes obtenues.</p></li>
+<li><p>Reprendre l’étude en augmentant <span class="math notranslate nohighlight">\(k\)</span>. On commentera notamment l’énergie dissipée par effet Joule.</p></li>
+<li><p>Quantifier l’évolution du rendement <span class="math notranslate nohighlight">\(\eta = \frac{E_{stockee}(+\infty)}{E_{fournie}(+\infty)}\)</span> par rapport à <span class="math notranslate nohighlight">\(k\)</span> par un tracé graphique adapté. On réfléchira à comment estimer <span class="math notranslate nohighlight">\(\eta\)</span> pour chaque valeur de <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<p><em>Pour étudier le rendement sur plusieurs décades entre <span class="math notranslate nohighlight">\(k=0.01\)</span> et <span class="math notranslate nohighlight">\(k=1000\)</span>. Deux syntaxes utiles :</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.logspace(start,</span> <span class="pre">stop,</span> <span class="pre">N)</span></code> fonctionne comme <code class="docutils literal notranslate"><span class="pre">linspace</span></code> mais les points sont créés régulièrement sur un axe logarithmique entre <span class="math notranslate nohighlight">\(10^{start}\)</span> et <span class="math notranslate nohighlight">\(10^{stop}\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.set_xscale('log')</span></code> permet de représenter les abscisses suivant une échelle logarithmique.</p></li>
+</ul>
 </div>
 </div>
 
@@ -314,7 +397,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="signal_fourier.html" title="next page"><span class="section-number">1. </span>Analyse spectrale d’un signal</a>
+    <a class='left-prev' id="prev-link" href="elec_reponse_o1_complet.html" title="previous page"><span class="section-number">3.4. </span>Implémentation complète</a>
+    <a class='right-next' id="next-link" href="elec_filtrage.html" title="next page"><span class="section-number">4. </span>Etude numérique d’un filtre linéaire</a>
 
         </div>
         
