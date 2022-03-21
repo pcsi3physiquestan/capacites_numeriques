@@ -309,14 +309,9 @@ Dans la cellule ci-après, vous devez:</p>
 <li><p>Créer deux fonction <code class="docutils literal notranslate"><span class="pre">f_libre</span></code> et <code class="docutils literal notranslate"><span class="pre">f_echelon</span></code> prenant deux arguments <code class="docutils literal notranslate"><span class="pre">t</span></code> et <code class="docutils literal notranslate"><span class="pre">u</span></code> (correspondant à un instant <span class="math notranslate nohighlight">\(t_k\)</span> et à <span class="math notranslate nohighlight">\(u_k = u(u_k)\)</span>) et qui renvoie la valeur <span class="math notranslate nohighlight">\(f(t_k, u_k)\)</span> pour chaque cas (régime libre et échelon de tension) (u est la tension aux bornes du condensateur comme dans l’étude présentée dans l’<a class="reference internal" href="elec_reponse_o1.html#pospb"><span class="std std-ref">exemple</span></a>). <em>Vous pouvez définir <span class="math notranslate nohighlight">\(R,C\)</span> et <span class="math notranslate nohighlight">\(\tau\)</span> comme des variables globales que vous utilisez dans les fonctions.</em></p></li>
 </ol>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Ne pas oublier d&#39;importer les bibliothèques scientifiques et d&#39;éxécuter la cellule.&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Ne pas oublier d&#39;importer les bibliothèques scientifiques et d&#39;éxécuter la cellule.&quot;
 </pre></div>
 </div>
 </div>
@@ -340,7 +335,7 @@ Dans la cellule ci-après, vous devez:</p>
 </li>
 </ol>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># On rappelle que la fonction f_libre est accessible et que les bibliothèques scientifiques ont été créés.</span>
 </pre></div>
@@ -361,12 +356,12 @@ Dans la cellule ci-après, vous devez:</p>
 <li><p>Tracer <span class="math notranslate nohighlight">\(y(t)\)</span> pour chaque intégration (for et while). Tracer sur le même graphique la solution analytique pour comparaison (utilisez les <span class="math notranslate nohighlight">\(t_k\)</span> comme abscisses). <strong>N’oubliez pas de légender la figure.</strong></p></li>
 </ol>
 </div></blockquote>
-<p>On rappelle que la solution analytique est:
+<p>On rappelle que la solution analytique est:<br />
 $<span class="math notranslate nohighlight">\(
 y(t) = y_0 \exp^{- t / \tau}
 \)</span>$
 <em>Note : Certaines étapes pourraient être raffinées (création du vecteur temps par exemple).</em></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># On rappelle que la fonction f_libre est accessible et que les bibliothèques scientifiques ont été créés.</span>
 </pre></div>
@@ -392,7 +387,7 @@ y(t) = y_0 \exp^{- t / \tau}
 <li><p>Reprendre la suite d’instructions précédente (avec for ou while peu importe) avec un pas d’intégration correctement et obtenir la solution numérique pour un échelon de tension (<span class="math notranslate nohighlight">\(E = 1V\)</span> et <span class="math notranslate nohighlight">\(y_0 = 0V\)</span>). Le comparer à la solution analytique.</p></li>
 </ol>
 </div></blockquote>
-<p>On rappelle que la solution analytique est:
+<p>On rappelle que la solution analytique est:<br />
 $<span class="math notranslate nohighlight">\(
 y(t) = E(1 -  \exp^{- t / \tau})
 \)</span>$</p>
