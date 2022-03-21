@@ -55,7 +55,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.3. Dérivation : Méthode de base" href="derivation_base.html" />
+    <link rel="next" title="2.3. Dérivation et intégration : Méthode de base" href="derivation_base.html" />
     <link rel="prev" title="1.3. Etude complète" href="signal_fourier_complet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -126,17 +126,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="derivation_base.html">
-     2.3. Dérivation : Méthode de base
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="integration_base.html">
-     2.4. Intégration : Méthode de base
+     2.3. Dérivation et intégration : Méthode de base
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="derive_integ_fonction.html">
-     2.5. Utilisation de fonctions
+     2.4. Utilisation de fonctions
     </a>
    </li>
   </ul>
@@ -359,8 +354,8 @@
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="5888145d-9ee0-4ca8-9a71-4cbf3c139528" name="ce7cd0d1-e960-4a72-9b5c-fd8f9fc82b29" type="radio">
-</input><label class="tabbed-label" for="5888145d-9ee0-4ca8-9a71-4cbf3c139528">
+<input checked="checked" id="1a94954a-1899-49ff-b3b3-ef7949689748" name="3fcb7206-904d-4ef3-a2b9-f14dc7f60ffa" type="radio">
+</input><label class="tabbed-label" for="1a94954a-1899-49ff-b3b3-ef7949689748">
 Dérivée à droite</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0)}{h}\]</div>
@@ -370,8 +365,8 @@ Dérivée à droite</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="4d65b1fc-0f28-413d-80ef-f279fb038023" name="ce7cd0d1-e960-4a72-9b5c-fd8f9fc82b29" type="radio">
-</input><label class="tabbed-label" for="4d65b1fc-0f28-413d-80ef-f279fb038023">
+<input id="67c84a71-59ee-4a48-a6e2-caf09e2ebe19" name="3fcb7206-904d-4ef3-a2b9-f14dc7f60ffa" type="radio">
+</input><label class="tabbed-label" for="67c84a71-59ee-4a48-a6e2-caf09e2ebe19">
 Dérivée à gauche</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0) - f(x_0 - h)}{h}\]</div>
@@ -381,8 +376,8 @@ Dérivée à gauche</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="13e56b93-50d8-49e1-be5b-a18ae5db4624" name="ce7cd0d1-e960-4a72-9b5c-fd8f9fc82b29" type="radio">
-</input><label class="tabbed-label" for="13e56b93-50d8-49e1-be5b-a18ae5db4624">
+<input id="61cac97d-50ad-4364-88fe-f02997f1d10f" name="3fcb7206-904d-4ef3-a2b9-f14dc7f60ffa" type="radio">
+</input><label class="tabbed-label" for="61cac97d-50ad-4364-88fe-f02997f1d10f">
 Dérivée centrée</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0 - h)}{2h}\]</div>
@@ -441,32 +436,32 @@ I \approx \sum_{i=0}^{N-1} f(x_i) \times h
 <h3><span class="section-number">2.2.2. </span>Type d’intégration<a class="headerlink" href="#type-d-integration" title="Permalink to this headline">¶</a></h3>
 <p>On distingue quatre types d’intégration:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="5494e624-8f5e-4bee-9f31-9a652bab24bb" name="7dc4e56d-d03e-493d-944b-354bd729a4c7" type="radio">
-</input><label class="tabbed-label" for="5494e624-8f5e-4bee-9f31-9a652bab24bb">
+<input checked="checked" id="9ad1d821-4e55-4714-97ed-54730dc2ee57" name="9575aa22-7974-4c85-a858-7186a36c4e9c" type="radio">
+</input><label class="tabbed-label" for="9ad1d821-4e55-4714-97ed-54730dc2ee57">
 Méthode des rectangles à droite</label><div class="tabbed-content docutils">
 <p>On commence à <span class="math notranslate nohighlight">\(a\)</span> et on s’arrête à <span class="math notranslate nohighlight">\(b - h\)</span>.</p>
 <div class="figure align-center" id="rectangle-droite">
 <img alt="_images/rectangle_gauche.png" src="_images/rectangle_gauche.png" />
 </div>
 </div>
-<input id="8c722e84-3830-4a7f-8513-b9050c8636a8" name="7dc4e56d-d03e-493d-944b-354bd729a4c7" type="radio">
-</input><label class="tabbed-label" for="8c722e84-3830-4a7f-8513-b9050c8636a8">
+<input id="29476bab-e165-41d2-8e1c-bce5f0588e8c" name="9575aa22-7974-4c85-a858-7186a36c4e9c" type="radio">
+</input><label class="tabbed-label" for="29476bab-e165-41d2-8e1c-bce5f0588e8c">
 Méthode des rectangles à gauche</label><div class="tabbed-content docutils">
 <p>On commence à <span class="math notranslate nohighlight">\(a + h\)</span> et on s’arrête à <span class="math notranslate nohighlight">\(b\)</span>.</p>
 <div class="figure align-center" id="rectangle-gauche">
 <img alt="_images/rectangle_droite.png" src="_images/rectangle_droite.png" />
 </div>
 </div>
-<input id="cea5462f-de4e-4297-895f-e049b24aafed" name="7dc4e56d-d03e-493d-944b-354bd729a4c7" type="radio">
-</input><label class="tabbed-label" for="cea5462f-de4e-4297-895f-e049b24aafed">
+<input id="bff614cb-0135-447c-b083-b1784b32851c" name="9575aa22-7974-4c85-a858-7186a36c4e9c" type="radio">
+</input><label class="tabbed-label" for="bff614cb-0135-447c-b083-b1784b32851c">
 Méthode des rectangles centrés</label><div class="tabbed-content docutils">
 <p>On commence à <span class="math notranslate nohighlight">\(a + h / 2\)</span> et on s’arrête à <span class="math notranslate nohighlight">\(b - h / 2\)</span>.</p>
 <div class="figure align-center" id="rectangle-centre">
 <img alt="_images/rectangle_milieu.png" src="_images/rectangle_milieu.png" />
 </div>
 </div>
-<input id="88698a78-bdd1-4be1-b316-c14f0c29f992" name="7dc4e56d-d03e-493d-944b-354bd729a4c7" type="radio">
-</input><label class="tabbed-label" for="88698a78-bdd1-4be1-b316-c14f0c29f992">
+<input id="5be26044-1ad9-4aea-96be-9b095dce2cfc" name="9575aa22-7974-4c85-a858-7186a36c4e9c" type="radio">
+</input><label class="tabbed-label" for="5be26044-1ad9-4aea-96be-9b095dce2cfc">
 Méthode des trapèzes</label><div class="tabbed-content docutils">
 <p>L’aire d’un trapèze est:</p>
 <div class="math notranslate nohighlight">
@@ -483,14 +478,14 @@ Méthode des trapèzes</label><div class="tabbed-content docutils">
 <h3><span class="section-number">2.2.3. </span>Cas étudiés et pas de calcul<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Comme pour la dérivation, on distingue deux cas:</p>
 <ul class="simple">
-<li><p>La fonction <span class="math notranslate nohighlight">\(f\)</span> est connue analytiquement mais on ne veut/peut pas faire le calcul analytique de la dérivée. On peut alors choisir les <span class="math notranslate nohighlight">\(x_i\)</span> et choisir le pas d’intégration comme on veut.</p></li>
+<li><p>La fonction <span class="math notranslate nohighlight">\(f\)</span> est connue analytiquement mais on ne veut/peut pas faire le calcul analytique de l’intégrale. On peut alors choisir les <span class="math notranslate nohighlight">\(x_i\)</span> et choisir le pas d’intégration comme on veut (ou choisir N).</p></li>
 </ul>
 <div class="margin sidebar">
 <p class="sidebar-title">Cas discret</p>
 <p>Il est possible que le pas <span class="math notranslate nohighlight">\(h = x_{i+1} - x_i\)</span> varie dans le cas de mesures. Ce n’est pas un problème.</p>
 </div>
 <ul class="simple">
-<li><p>La fonction <span class="math notranslate nohighlight">\(f\)</span> n’est pas connue. On a juste les valeurs <span class="math notranslate nohighlight">\(y_k = f(x_k)\)</span> pour des abscisses <span class="math notranslate nohighlight">\(x_k\)</span> (k entier dans <span class="math notranslate nohighlight">\([0;N-1]\)</span>). Le pas <span class="math notranslate nohighlight">\(h\)</span> est alors imposée par les <span class="math notranslate nohighlight">\(x_{i+1} - x_i\)</span>.</p></li>
+<li><p>La fonction <span class="math notranslate nohighlight">\(f\)</span> n’est pas connue. On a juste les valeurs <span class="math notranslate nohighlight">\(y_k = f(x_k)\)</span> pour des abscisses <span class="math notranslate nohighlight">\(x_k\)</span> (k entier dans <span class="math notranslate nohighlight">\([0;N-1]\)</span>). Le pas <span class="math notranslate nohighlight">\(h\)</span> est alors imposée par les <span class="math notranslate nohighlight">\(x_{i+1} - x_i\)</span>. On peut néanmoins toujours la méthode d’intégration.</p></li>
 </ul>
 <p><strong>Dans les deux cas, la méthode par récurrence est conseillée. D’autant qu’elle permet de calculer l’intégrale sur plusieurs intervalles <span class="math notranslate nohighlight">\([x_0, x_k]\)</span> (<span class="math notranslate nohighlight">\(k \in [0, N-1]\)</span>). La suite <span class="math notranslate nohighlight">\(I_k\)</span> ainsi obtenue donc une primitive (qui s’annule en <span class="math notranslate nohighlight">\(x_0\)</span>) de la fonction <span class="math notranslate nohighlight">\(f\)</span> sur l’intervalle étudiée.</strong></p>
 </div>
@@ -525,7 +520,7 @@ Méthode des trapèzes</label><div class="tabbed-content docutils">
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="signal_fourier_complet.html" title="previous page"><span class="section-number">1.3. </span>Etude complète</a>
-    <a class='right-next' id="next-link" href="derivation_base.html" title="next page"><span class="section-number">2.3. </span>Dérivation : Méthode de base</a>
+    <a class='right-next' id="next-link" href="derivation_base.html" title="next page"><span class="section-number">2.3. </span>Dérivation et intégration : Méthode de base</a>
 
         </div>
         

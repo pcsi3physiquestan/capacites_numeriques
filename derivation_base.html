@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.3. Dérivation : Méthode de base &#8212; Capacités numériques - Sujets</title>
+    <title>2.3. Dérivation et intégration : Méthode de base &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,11 +49,13 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/derivation_base.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.4. Intégration : Méthode de base" href="integration_base.html" />
+    <link rel="next" title="2.4. Utilisation de fonctions" href="derive_integ_fonction.html" />
     <link rel="prev" title="2. Dérivation et intégration numérique" href="derivation_integration.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -124,17 +126,12 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.3. Dérivation : Méthode de base
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="integration_base.html">
-     2.4. Intégration : Méthode de base
+     2.3. Dérivation et intégration : Méthode de base
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="derive_integ_fonction.html">
-     2.5. Utilisation de fonctions
+     2.4. Utilisation de fonctions
     </a>
    </li>
   </ul>
@@ -275,6 +272,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-de-l-intensite">
+   2.3.1. Calcul de l’intensité.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-de-l-energie-dissipee">
+   2.3.2. Calcul de l’énergie dissipée
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-partir-de-donnees-experimentales">
+   2.3.3. A partir de données expérimentales.
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -284,8 +304,100 @@
               <div>
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
-<div class="section" id="derivation-methode-de-base">
-<h1><span class="section-number">2.3. </span>Dérivation : Méthode de base<a class="headerlink" href="#derivation-methode-de-base" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="derivation-et-integration-methode-de-base">
+<h1><span class="section-number">2.3. </span>Dérivation et intégration : Méthode de base<a class="headerlink" href="#derivation-et-integration-methode-de-base" title="Permalink to this headline">¶</a></h1>
+<p>On se propose de mettre en place les calculs d’intégration et de dérivation sur des cas simples basés sur l’électrocinétique. On considère un circuit RC soumis à un échelon de tension <span class="math notranslate nohighlight">\(E\)</span>. La tension aux bornes du condensateur est alors:</p>
+<div class="math notranslate nohighlight">
+\[
+u(t) = E (1 - e^{- t / \tau})
+\]</div>
+<p>avec <span class="math notranslate nohighlight">\(\tau = RC\)</span>.</p>
+<p>Pour la suite, on prendra <span class="math notranslate nohighlight">\(E = 1\rm{V}; R = 10 \rm{k\Omega}; C=10^{-4} \rm{F}\)</span> et donc <span class="math notranslate nohighlight">\(\tau = 1\rm{s}\)</span>. On rappelle que:</p>
+<ul class="simple">
+<li><p>L’intensité qui circule à travers le condensateur (et donc aussi la résistance) est donné par <span class="math notranslate nohighlight">\(i = C \frac{\rm{d}u}{\rm{dt}}\)</span></p></li>
+<li><p>La puissance dissipée à un instant <span class="math notranslate nohighlight">\(t\)</span> par effet Joule est donné par <span class="math notranslate nohighlight">\(P(t) = R i^2(t)\)</span>. L’énergie dissipée par effet Joule entre <span class="math notranslate nohighlight">\(t_0\)</span> et <span class="math notranslate nohighlight">\(t_1\)</span> est donc:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+E_J = \int_{t_0}^{t_1} Ri^2(t) dt
+\]</div>
+<p>Dans ce cas, simple, on peut calculer analytiquement <span class="math notranslate nohighlight">\(i(t)\)</span> et <span class="math notranslate nohighlight">\(E_J\)</span>. Mais on va réaliser une dérivation puis une intégration numérique. L’intérêt sera de comparer ce qu’on trouve aux expressions analytiques.</p>
+<div class="section" id="calcul-de-l-intensite">
+<h2><span class="section-number">2.3.1. </span>Calcul de l’intensité.<a class="headerlink" href="#calcul-de-l-intensite" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice A:</strong></p>
+<ol class="simple">
+<li><p>Importer les bibliothèques scientifiques <code class="docutils literal notranslate"><span class="pre">numpy</span></code> et <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>.</p></li>
+<li><p>Ecrire deux instructions pour créer deux vecteurs <code class="docutils literal notranslate"><span class="pre">tk</span></code> et <code class="docutils literal notranslate"><span class="pre">uk</span></code> contenant respectivement les instants <span class="math notranslate nohighlight">\(t_k\)</span> équirépartis entre 0 et 5s et les valeurs <span class="math notranslate nohighlight">\(u_k = u(t_k)\)</span> à ces instants. On prendra 1000 valeurs pour chaque vecteur.</p></li>
+<li><p>Ecrire une boucle <strong>avec son initialisation</strong> qui calcule les <span class="math notranslate nohighlight">\(i_k = i(t_k)\)</span> par un calcul dérivée à gauche avec un pas <span class="math notranslate nohighlight">\(h=10^{-3}\rm{s}\)</span> puis les ajoute à une liste <code class="docutils literal notranslate"><span class="pre">ik</span></code>.</p></li>
+<li><p>Transformer la liste <code class="docutils literal notranslate"><span class="pre">ik</span></code> en un vecteur <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
+<li><p>Tracer sur un même graphique <span class="math notranslate nohighlight">\(i(t)\)</span> obtenu par dérivation numérique et <span class="math notranslate nohighlight">\(i(t)\)</span> obtenu par calcul analytique puis jouer sur le pas <span class="math notranslate nohighlight">\(h\)</span> pour voir si la dérivation est encore acceptable si on augmente <span class="math notranslate nohighlight">\(h\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<p><em>On rappelle que analytiquement, on trouve:</em></p>
+<div class="math notranslate nohighlight">
+\[
+i(t) = \frac{E}{R} e^{-t / \tau}
+\]</div>
+<blockquote>
+<div><p><strong>Exercice B:</strong></p>
+<ol class="simple">
+<li><p>Reprendre les instructions précédentes et réaliser le calcul de la dérivation numérique par intégration à droite puis centrée. Comparer graphiquement à la solution analytique.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="calcul-de-l-energie-dissipee">
+<h2><span class="section-number">2.3.2. </span>Calcul de l’énergie dissipée<a class="headerlink" href="#calcul-de-l-energie-dissipee" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice C:</strong></p>
+<ol class="simple">
+<li><p>Ecrire une instruction pour créer un vecteur <code class="docutils literal notranslate"><span class="pre">Pk</span></code> contenant les puissances <span class="math notranslate nohighlight">\(P_k = P_J(t_k)\)</span> dissipées par effet Joule dans R à chaque instant.</p></li>
+<li><p>Ecrire une boucle <strong>avec son initialisation</strong> qui calcule les <span class="math notranslate nohighlight">\(E_k = E_J(t_k)\)</span>, énergie dissipée entre <span class="math notranslate nohighlight">\(t=0\)</span> et <span class="math notranslate nohighlight">\(t=t_k\)</span>, par la méthode des rectangles à gauche avec un pas <span class="math notranslate nohighlight">\(h=10^{-3}\rm{s}\)</span> puis les ajoute à une liste <code class="docutils literal notranslate"><span class="pre">Ek</span></code>. Pensez à utiliser une récurrence.</p></li>
+<li><p>Transformer la liste <code class="docutils literal notranslate"><span class="pre">Ek</span></code> en un vecteur <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
+<li><p>Tracer sur un même graphique <span class="math notranslate nohighlight">\(E_J(t)\)</span> obtenu par dérivation numérique et <span class="math notranslate nohighlight">\(E_J(t)\)</span> obtenu par calcul analytique puis jouer sur le pas <span class="math notranslate nohighlight">\(h\)</span> pour voir si la dérivation est encore acceptable si on augmente <span class="math notranslate nohighlight">\(h\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<p><em>On rappelle que analytiquement, on trouve:</em></p>
+<div class="math notranslate nohighlight">
+\[
+E_J(t) = \frac{CE^2}{2} \left(1 -  e^{-2 t / \tau}\right)
+\]</div>
+<blockquote>
+<div><p><strong>Exercice D:</strong></p>
+<ol class="simple">
+<li><p>Reprendre les instructions précédentes et réaliser le calcul de l’intégration numérique par intégration à droite, centrée puis par les trapèzes. Comparer graphiquement à la solution analytique.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="a-partir-de-donnees-experimentales">
+<span id="cas-exp"></span><h2><span class="section-number">2.3.3. </span>A partir de données expérimentales.<a class="headerlink" href="#a-partir-de-donnees-experimentales" title="Permalink to this headline">¶</a></h2>
+<p>Les données expérimentales sont celle déjà utilisée précédemment et accessible par <a class="reference external" href="https://github.com/pcsi3physiquestan/donnees_exp/blob/main/circuit_rc.dat?raw=true">ce lien</a>. On rappelle que la méthode d’importation d’un fichier est disponible <a class="reference external" href="https://pcsi3physiquestan.github.io/intro_python/notebook/import_file.html">ici</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si votre navigateur ouvre le fichier au lieu de le télécharger, faites un clic droit sur le lien et choisir <code class="docutils literal notranslate"><span class="pre">Enregistrer</span> <span class="pre">la</span> <span class="pre">cible</span> <span class="pre">du</span> <span class="pre">lien</span></code>.</p>
+</div>
+<blockquote>
+<div><p><strong>Exercice E:</strong></p>
+<ol class="simple">
+<li><p>Après avoir télécharger le fichier <strong>et l’avoir placé dans le bon répertoire</strong>, ouvrez le pour lire l’en-tête et la structure du fichier. Ecrire alors deux instructions : la première importe le fichier et crée deux vecteurs <code class="docutils literal notranslate"><span class="pre">tk</span></code> et <code class="docutils literal notranslate"><span class="pre">ukb</span></code> contenant les temps de mesure et les mesures de tension en bits et la seconde instruction qui transforme la liste <code class="docutils literal notranslate"><span class="pre">ukb</span></code> en une liste <code class="docutils literal notranslate"><span class="pre">uk</span></code> contenant les valeurs de tension en volt. <em>S’aider de la ligne de commande proposée ci-dessous et de la description du fichier.</em></p></li>
+<li><p>Ecrire une boucle <strong>avec son initialisation</strong> qui calcule les <span class="math notranslate nohighlight">\(i_k = i(t_k)\)</span> par dérivation numérique (cf. remarque après) et qui le stocke dans une liste <code class="docutils literal notranslate"><span class="pre">ik</span></code> puis transformer la liste en un vecteur.</p></li>
+<li><p>Ecrire une boucle <strong>avec son initialisation</strong> qui calcule les <span class="math notranslate nohighlight">\(E_k = E_J(t_k)\)</span>, énergie dissipée entre <span class="math notranslate nohighlight">\(t=0\)</span> et <span class="math notranslate nohighlight">\(t=t_k\)</span> par intégration numérique et qui le stocke dans une liste <code class="docutils literal notranslate"><span class="pre">Ek</span></code> puis transformer la liste en un vecteur. On utilisera la méthode des rectangles (cf. remarque après).</p></li>
+<li><p>Tracer trois graphiques: <span class="math notranslate nohighlight">\(u(t), i(t), E_J(t)\)</span> sur trois graphiques différents (on utilisera soit trois fenêtres graphiques, soit un graphique multiple si on se sent à l’aise avec ce dernier).</p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p>Pour l’import, on rappelle la commande permettant de séparer les colonne en plusieurs variables:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">temps,</span> <span class="pre">ucb</span> <span class="pre">=</span> <span class="pre">np.loadtxt('chemin_vers_fichier',</span> <span class="pre">skiprows=7,</span> <span class="pre">delimiter=&quot;;&quot;,</span> <span class="pre">unpack=True)</span></code></p>
+<ul class="simple">
+<li><p>Pour les méthodes numériques, on ne peut choisir ici le pas d’intégration car on ne connaît que des valeurs discrètes.</p>
+<ul>
+<li><p>Dérivation numérique: le pas est imposé par les écarts entre les <span class="math notranslate nohighlight">\(t_k\)</span>. De plus, comme précisé précédemment, vous devez utiliser une dérivée à droite en <span class="math notranslate nohighlight">\(t_0\)</span> et une dérivée à gauche en <span class="math notranslate nohighlight">\(t_{final}\)</span>. Pour les instants intermédiaires, il est <strong>demandé d’utiliser une dérivée centrée.</strong></p></li>
+<li><p>Intégration numérique: le pas est à nouveau imposé par les <span class="math notranslate nohighlight">\(t_k\)</span>. On utilisera <strong>la méthode des trapèzes</strong> pour l’intégration.</p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -314,7 +426,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="derivation_integration.html" title="previous page"><span class="section-number">2. </span>Dérivation et intégration numérique</a>
-    <a class='right-next' id="next-link" href="integration_base.html" title="next page"><span class="section-number">2.4. </span>Intégration : Méthode de base</a>
+    <a class='right-next' id="next-link" href="derive_integ_fonction.html" title="next page"><span class="section-number">2.4. </span>Utilisation de fonctions</a>
 
         </div>
         

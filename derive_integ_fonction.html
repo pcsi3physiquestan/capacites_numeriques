@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.5. Utilisation de fonctions &#8212; Capacités numériques - Sujets</title>
+    <title>2.4. Utilisation de fonctions &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,12 +49,14 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/derive_integ_fonction.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. Résolution numérique d’une équation différentielle d’ordre 1" href="elec_reponse_o1.html" />
-    <link rel="prev" title="2.4. Intégration : Méthode de base" href="integration_base.html" />
+    <link rel="prev" title="2.3. Dérivation et intégration : Méthode de base" href="derivation_base.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -124,17 +126,12 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="derivation_base.html">
-     2.3. Dérivation : Méthode de base
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="integration_base.html">
-     2.4. Intégration : Méthode de base
+     2.3. Dérivation et intégration : Méthode de base
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.5. Utilisation de fonctions
+     2.4. Utilisation de fonctions
     </a>
    </li>
   </ul>
@@ -275,6 +272,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creation-des-fonctions">
+   2.4.1. Création des fonctions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-des-fonctions">
+   2.4.2. Test des fonctions
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -285,7 +300,33 @@
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="section" id="utilisation-de-fonctions">
-<h1><span class="section-number">2.5. </span>Utilisation de fonctions<a class="headerlink" href="#utilisation-de-fonctions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.4. </span>Utilisation de fonctions<a class="headerlink" href="#utilisation-de-fonctions" title="Permalink to this headline">¶</a></h1>
+<p>Par la suite, on sera amené à réutiliser l’intégration et la dérivation numérique sur des vecteurs de valeurs comme réalisée dans <a class="reference internal" href="derivation_base.html#cas-exp"><span class="std std-ref">la dernière partie</span></a>. On va donc écrire deux fonctions <code class="docutils literal notranslate"><span class="pre">deriv</span></code> et <code class="docutils literal notranslate"><span class="pre">integ</span></code> qui vont réaliser respectivement :</p>
+<ul class="simple">
+<li><p>la dérivation numérique d’une fonction <span class="math notranslate nohighlight">\(f\)</span> donnée par un vecteur de valeurs <code class="docutils literal notranslate"><span class="pre">yk</span></code> et les instants de mesure <code class="docutils literal notranslate"><span class="pre">tk</span></code>: calcul des <span class="math notranslate nohighlight">\(f'(t_k)\)</span></p></li>
+<li><p>la primitivation numérique d’une fonction <span class="math notranslate nohighlight">\(f\)</span> donnée par un vecteur de valeurs <code class="docutils literal notranslate"><span class="pre">yk</span></code> et les instants de mesure <code class="docutils literal notranslate"><span class="pre">tk</span></code>: calcul des <span class="math notranslate nohighlight">\(I_k = \int_{t_0}^{t_k} f(t) dt\)</span></p></li>
+</ul>
+<p>On testera les deux fonctions grâce aux fichier de données utilisé <a class="reference external" href="https://github.com/pcsi3physiquestan/donnees_exp/blob/main/circuit_rc.dat?raw=true">précédemment</a></p>
+<div class="section" id="creation-des-fonctions">
+<h2><span class="section-number">2.4.1. </span>Création des fonctions<a class="headerlink" href="#creation-des-fonctions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice 1:</strong></p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">deriv(x,y)</span></code> qui prend comme argument deux vecteur <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> contenant le même nombre de valeur et qui renvoie le calcul de la dérivée pour chaque abscisse <span class="math notranslate nohighlight">\(x_k\)</span> de <code class="docutils literal notranslate"><span class="pre">x</span></code> de la fonction <span class="math notranslate nohighlight">\(f\)</span> qui aurait les valeurs <span class="math notranslate nohighlight">\(y_k = f(x_k)\)</span> (les <span class="math notranslate nohighlight">\(y_k\)</span> sont les éléments de <code class="docutils literal notranslate"><span class="pre">y</span></code>). Comme <a class="reference internal" href="derivation_base.html#cas-exp"><span class="std std-ref">précédement</span></a>, on réalisera une dérivation centrée sauf en <span class="math notranslate nohighlight">\(x_0\)</span> (dérivation à droite) et en <span class="math notranslate nohighlight">\(x_{finale}\)</span> (dérivation à gauche).</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">inter(x,y)</span></code> qui prend comme argument deux vecteur <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> contenant le même nombre de valeur et qui renvoie le calcul des intégrales <span class="math notranslate nohighlight">\(I_k = \int_{x_0}^{x_k} f(x) dx\)</span> pour chaque abscisse <span class="math notranslate nohighlight">\(x_k\)</span> de <code class="docutils literal notranslate"><span class="pre">x</span></code> où la fonction <span class="math notranslate nohighlight">\(f\)</span> aurait les valeurs <span class="math notranslate nohighlight">\(y_k = f(x_k)\)</span> (les <span class="math notranslate nohighlight">\(y_k\)</span> sont les éléments de <code class="docutils literal notranslate"><span class="pre">y</span></code>). Comme <a class="reference internal" href="derivation_base.html#cas-exp"><span class="std std-ref">précédement</span></a>, on réalisera une intégration par la méthode des trapèzes.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="test-des-fonctions">
+<h2><span class="section-number">2.4.2. </span>Test des fonctions<a class="headerlink" href="#test-des-fonctions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice 2:</strong></p>
+<ol class="simple">
+<li><p>Charger comme <a class="reference internal" href="derivation_base.html#cas-exp"><span class="std std-ref">précédemment</span></a> les données dans deux vecteurs <code class="docutils literal notranslate"><span class="pre">tk</span></code> et <code class="docutils literal notranslate"><span class="pre">ukb</span></code> puis obtenir les valeurs de tension en volt dans un vecteur <code class="docutils literal notranslate"><span class="pre">uk</span></code></p></li>
+<li><p>Utiliser les fonctions <code class="docutils literal notranslate"><span class="pre">deriv</span></code> et <code class="docutils literal notranslate"><span class="pre">integ</span></code> créés précédemment pour obtenir <span class="math notranslate nohighlight">\(i(t)\)</span> et <span class="math notranslate nohighlight">\(E_J(t)\)</span> puis les tracer.</p></li>
+</ol>
+</div></blockquote>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -313,7 +354,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="integration_base.html" title="previous page"><span class="section-number">2.4. </span>Intégration : Méthode de base</a>
+    <a class='left-prev' id="prev-link" href="derivation_base.html" title="previous page"><span class="section-number">2.3. </span>Dérivation et intégration : Méthode de base</a>
     <a class='right-next' id="next-link" href="elec_reponse_o1.html" title="next page"><span class="section-number">3. </span>Résolution numérique d’une équation différentielle d’ordre 1</a>
 
         </div>
