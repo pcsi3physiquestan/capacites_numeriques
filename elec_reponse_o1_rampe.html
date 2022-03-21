@@ -339,7 +339,7 @@ t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
 1 &amp; \textrm{si t &gt; T0}\\
 \end{cases}
 \end{split}\]</div>
-<p>On prendra <span class="math notranslate nohighlight">\(R = 1\rm{k\Omega}; C = 1\rm{\mu F}; T0 = k \times \tau; u(t=0) = 0 \rm{V}\)</span>.</p>
+<p>On prendra <span class="math notranslate nohighlight">\(R = 1\rm{k\Omega}; C = 1\rm{\mu F}; T0 = n \times \tau; u(t=0) = 0 \rm{V}\)</span>.</p>
 <p><em>Rappels :</em></p>
 <ul class="simple">
 <li><p>L’<strong>énergie</strong> stockée dans un condensateur est <span class="math notranslate nohighlight">\(E_{el} = \frac{1}{2}C u_c^2\)</span></p></li>
@@ -349,7 +349,7 @@ t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
 <div><p><strong>Exercice 6</strong></p>
 <ol class="simple">
 <li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">rampe(t)</span></code> qui renvoie la valeur de <code class="docutils literal notranslate"><span class="pre">E(t)</span></code> pour un instant donné puis l’utiliser pour créer la fonction <code class="docutils literal notranslate"><span class="pre">f_rampe</span></code> du schéma d’Euler.</p></li>
-<li><p>Procéder à l’intégration de l’équation différentielle pour <span class="math notranslate nohighlight">\(k=2\)</span> en choisissant un pas de calcul adapté.</p></li>
+<li><p>Procéder à l’intégration de l’équation différentielle pour <span class="math notranslate nohighlight">\(n=2\)</span> en choisissant un pas de calcul adapté.</p></li>
 <li><p>En déduire l’intensité circulant dans le condensateur, l’énergie stockée dans le condensateur (aux mêmes instants <span class="math notranslate nohighlight">\(t_k\)</span>), l’énergie dissipée par la résistance et l’énergie fournie par la source (entre t=0  et <span class="math notranslate nohighlight">\(t=t_k\)</span>).</p></li>
 <li><p>Représenter quatre graphiques dans une même fenêtre (2 lignes, 2 colonnes) représentant :</p>
 <ul class="simple">
@@ -360,11 +360,11 @@ t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
 </ul>
 </li>
 <li><p>Analyser physiquement les courbes obtenues.</p></li>
-<li><p>Reprendre l’étude en augmentant <span class="math notranslate nohighlight">\(k\)</span>. On commentera notamment l’énergie dissipée par effet Joule.</p></li>
-<li><p>Quantifier l’évolution du rendement <span class="math notranslate nohighlight">\(\eta = \frac{E_{stockee}(+\infty)}{E_{fournie}(+\infty)}\)</span> par rapport à <span class="math notranslate nohighlight">\(k\)</span> par un tracé graphique adapté. On réfléchira à comment estimer <span class="math notranslate nohighlight">\(\eta\)</span> pour chaque valeur de <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+<li><p>Reprendre l’étude en augmentant <span class="math notranslate nohighlight">\(n\)</span>. On commentera notamment l’énergie dissipée par effet Joule.</p></li>
+<li><p>Quantifier l’évolution du rendement <span class="math notranslate nohighlight">\(\eta = \frac{E_{stockee}(+\infty)}{E_{fournie}(+\infty)}\)</span> par rapport à <span class="math notranslate nohighlight">\(n\)</span> par un tracé graphique adapté. On réfléchira à comment estimer <span class="math notranslate nohighlight">\(\eta\)</span> pour chaque valeur de <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
 </ol>
 </div></blockquote>
-<p><em>Pour étudier le rendement sur plusieurs décades entre <span class="math notranslate nohighlight">\(k=0.01\)</span> et <span class="math notranslate nohighlight">\(k=1000\)</span>. Deux syntaxes utiles :</em></p>
+<p><em>Pour étudier le rendement sur plusieurs décades entre <span class="math notranslate nohighlight">\(n=0.01\)</span> et <span class="math notranslate nohighlight">\(n=1000\)</span>. Deux syntaxes utiles :</em></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">np.logspace(start,</span> <span class="pre">stop,</span> <span class="pre">N)</span></code> fonctionne comme <code class="docutils literal notranslate"><span class="pre">linspace</span></code> mais les points sont créés régulièrement sur un axe logarithmique entre <span class="math notranslate nohighlight">\(10^{start}\)</span> et <span class="math notranslate nohighlight">\(10^{stop}\)</span>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ax.set_xscale('log')</span></code> permet de représenter les abscisses suivant une échelle logarithmique.</p></li>
