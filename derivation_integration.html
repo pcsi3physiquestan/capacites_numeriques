@@ -293,8 +293,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#type-de-calcul">
-     2.1.2. Type de calcul
+    <a class="reference internal nav-link" href="#types-de-calcul">
+     2.1.2. Types de calcul
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-etudies-et-pas-d-integration">
+     2.1.3. Cas étudiés et pas d’intégration
     </a>
    </li>
   </ul>
@@ -326,14 +331,14 @@
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0)}{h}\]</div>
 </div>
-<div class="section" id="type-de-calcul">
-<h3><span class="section-number">2.1.2. </span>Type de calcul<a class="headerlink" href="#type-de-calcul" title="Permalink to this headline">¶</a></h3>
-<p>On distingue trois façon de calcul un nombre dérivé:</p>
+<div class="section" id="types-de-calcul">
+<h3><span class="section-number">2.1.2. </span>Types de calcul<a class="headerlink" href="#types-de-calcul" title="Permalink to this headline">¶</a></h3>
+<p>On distingue trois façons de calcul un nombre dérivé:</p>
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="637a52b0-9500-4ae0-a9c0-0aca37b888db" name="f74df3f8-2481-4ada-84b4-fd9f9f0a7a2f" type="radio">
-</input><label class="tabbed-label" for="637a52b0-9500-4ae0-a9c0-0aca37b888db">
+<input checked="checked" id="174dbe7e-e967-4fe8-9618-47dd4e70e791" name="e42d8f8b-6d4c-4de8-a7b5-65798f04bdd7" type="radio">
+</input><label class="tabbed-label" for="174dbe7e-e967-4fe8-9618-47dd4e70e791">
 Dérivée à droite</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0)}{h}\]</div>
@@ -343,8 +348,8 @@ Dérivée à droite</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="cf20666c-1c9c-4797-ab22-5fc7ee8cb532" name="f74df3f8-2481-4ada-84b4-fd9f9f0a7a2f" type="radio">
-</input><label class="tabbed-label" for="cf20666c-1c9c-4797-ab22-5fc7ee8cb532">
+<input id="c41465dd-268c-4569-a849-52570a15b7d0" name="e42d8f8b-6d4c-4de8-a7b5-65798f04bdd7" type="radio">
+</input><label class="tabbed-label" for="c41465dd-268c-4569-a849-52570a15b7d0">
 Dérivée à gauche</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0) - f(x_0 - h)}{h}\]</div>
@@ -354,8 +359,8 @@ Dérivée à gauche</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="255ab013-3f46-4713-9514-f5d549eac295" name="f74df3f8-2481-4ada-84b4-fd9f9f0a7a2f" type="radio">
-</input><label class="tabbed-label" for="255ab013-3f46-4713-9514-f5d549eac295">
+<input id="741d224a-eeb5-46c9-893b-f51221c9d52c" name="e42d8f8b-6d4c-4de8-a7b5-65798f04bdd7" type="radio">
+</input><label class="tabbed-label" for="741d224a-eeb5-46c9-893b-f51221c9d52c">
 Dérivée centrée</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0 - h)}{2h}\]</div>
@@ -367,6 +372,14 @@ Dérivée centrée</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="cas-etudies-et-pas-d-integration">
+<h3><span class="section-number">2.1.3. </span>Cas étudiés et pas d’intégration<a class="headerlink" href="#cas-etudies-et-pas-d-integration" title="Permalink to this headline">¶</a></h3>
+<p>En général, on estime la fonction dérivée sur un intervale <span class="math notranslate nohighlight">\([a,b]\)</span>, soit une estimation du nombre dérivée pour plus valeur <span class="math notranslate nohighlight">\(x_i \in [a,b]\)</span> avec un pas <span class="math notranslate nohighlight">\(h\)</span>. On distingue deux cas:</p>
+<ul class="simple">
+<li><p>La fonction <span class="math notranslate nohighlight">\(f\)</span> est connue analytiquement mais on ne veut/peut pas faire le calcul analytique de la dérivée. On peut alors choisir les <span class="math notranslate nohighlight">\(x_i\)</span> et choisir le pas d’intégration comme on veut.</p></li>
+<li><p>La fonction <span class="math notranslate nohighlight">\(f\)</span> n’est pas connue. On a juste les valeurs <span class="math notranslate nohighlight">\(y_k = f(x_k)\)</span> pour des abscisses <span class="math notranslate nohighlight">\(x_k\)</span>. <code class="docutils literal notranslate"><span class="pre">{margin}</span> <span class="pre">C'est</span> <span class="pre">le</span> <span class="pre">cas</span> <span class="pre">en</span> <span class="pre">général</span> <span class="pre">lorsque</span> <span class="pre">les</span> <span class="pre">$y_k$</span> <span class="pre">sont</span> <span class="pre">issus</span> <span class="pre">d'une</span> <span class="pre">mesure</span> <span class="pre">expérimentale</span> <span class="pre">par</span> <span class="pre">exemple</span></code> On ne peut alors calculer</p></li>
+</ul>
 </div>
 </div>
 <div class="toctree-wrapper compound">
