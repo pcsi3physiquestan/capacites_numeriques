@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.4. Implémentation basique &#8212; Capacités numériques - Sujets</title>
+    <title>2.4. Implémentation complète &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -131,7 +131,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4. Implémentation basique
+     2.4. Implémentation complète
     </a>
    </li>
   </ul>
@@ -304,9 +304,8 @@
               <div>
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
-<div class="section" id="implementation-basique">
-<h1><span class="section-number">2.4. </span>Implémentation basique<a class="headerlink" href="#implementation-basique" title="Permalink to this headline">¶</a></h1>
-<p><strong>Si vous vous sentez suffisamment à l’aise,</strong> vous pouvez passer directement à l’<a class="reference internal" href="#"><span class="doc std std-doc">étude approfondie</span></a>.</p>
+<div class="section" id="implementation-complete">
+<h1><span class="section-number">2.4. </span>Implémentation complète<a class="headerlink" href="#implementation-complete" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="implementation-du-schema-d-euler">
 <h2><span class="section-number">2.4.1. </span>Implémentation du schéma d’Euler<a class="headerlink" href="#implementation-du-schema-d-euler" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -318,15 +317,15 @@
 <li><p>qui prend en arguments :</p>
 <ul>
 <li><p>une variable <code class="docutils literal notranslate"><span class="pre">f</span></code> qui sera une fonction</p></li>
-<li><p>un flottant <code class="docutils literal notranslate"><span class="pre">pas</span></code> qui sera le pas <code class="docutils literal notranslate"><span class="pre">h</span></code> d’intégration</p></li>
-<li><p>deux flottants <code class="docutils literal notranslate"><span class="pre">t1</span></code> et <code class="docutils literal notranslate"><span class="pre">t2</span></code> donnant les temps initiaux et finaux de l’intervalle sur lesquels on va intégrer le signal (Note : <code class="docutils literal notranslate"><span class="pre">t2</span></code> ne sera pas forcément atteint)</p></li>
-<li><p>un flottant <code class="docutils literal notranslate"><span class="pre">y1</span></code> donnant la valeur de <span class="math notranslate nohighlight">\(y(t)\)</span> à l’instant <code class="docutils literal notranslate"><span class="pre">t1</span></code></p></li>
+<li><p>un flottant <code class="docutils literal notranslate"><span class="pre">h</span></code> qui sera le pas <span class="math notranslate nohighlight">\(h\)</span> d’intégration</p></li>
+<li><p>deux flottants <code class="docutils literal notranslate"><span class="pre">t0</span></code> et <code class="docutils literal notranslate"><span class="pre">tf</span></code> donnant les temps initiaux et finaux de l’intervalle sur lesquels on va intégrer le signal (Note : <code class="docutils literal notranslate"><span class="pre">tf</span></code> ne sera pas forcément atteint)</p></li>
+<li><p>un flottant <code class="docutils literal notranslate"><span class="pre">y0</span></code> donnant la valeur de <span class="math notranslate nohighlight">\(y(t)\)</span> à l’instant <code class="docutils literal notranslate"><span class="pre">t0</span></code></p></li>
 </ul>
 </li>
 <li><p>et qui renvoie deux vecteurs numpy :</p>
 <ul>
-<li><p>le premier contient les temps <span class="math notranslate nohighlight">\(t_k\)</span> où on a évaluer la fonction (on commence à <code class="docutils literal notranslate"><span class="pre">t1</span></code>)</p></li>
-<li><p>le second contient les valeurs estimées de <span class="math notranslate nohighlight">\(y\)</span> (<span class="math notranslate nohighlight">\(y_k\)</span>).</p></li>
+<li><p>le premier contient les temps <span class="math notranslate nohighlight">\(t_k\)</span> où on a évaluer la fonction (on commence à <code class="docutils literal notranslate"><span class="pre">t0</span></code>)</p></li>
+<li><p>le second contient les valeurs estimées de <span class="math notranslate nohighlight">\(y(t_k)\)</span> (<span class="math notranslate nohighlight">\(y_k\)</span>).</p></li>
 </ul>
 </li>
 </ul>
@@ -348,7 +347,7 @@
 </div>
 <div class="section" id="application-au-regime-libre-et-a-l-echelon-de-tension">
 <h2><span class="section-number">2.4.2. </span>Application au régime libre et à l’échelon de tension.<a class="headerlink" href="#application-au-regime-libre-et-a-l-echelon-de-tension" title="Permalink to this headline">¶</a></h2>
-<p><strong>On prendra <span class="math notranslate nohighlight">\(\tau = 1\)</span>.</strong></p>
+<p><strong>On prendra <span class="math notranslate nohighlight">\(\tau = 1\)</span>.</strong> Il s’agit de vérifier que la fonction précédente fonctionne correctement. <em>Si vous avez fait la comparaison dans l’étude de base, vous pouvez réutiliser une bonne partie du code pour le tracé graphique en choisissant bien le nom de vos variables.</em></p>
 <blockquote>
 <div><p><strong>Exercice 2</strong></p>
 <ol class="simple">
@@ -373,6 +372,7 @@
 </div>
 <div class="section" id="erreur-et-pas-d-integration">
 <h2><span class="section-number">2.4.3. </span>Erreur et pas d’intégration<a class="headerlink" href="#erreur-et-pas-d-integration" title="Permalink to this headline">¶</a></h2>
+<p><strong>Inutile de faire cette partie si vous l’avez dans l’étude de base.</strong></p>
 <blockquote>
 <div><p><strong>Exercice 3</strong></p>
 <ol class="simple">

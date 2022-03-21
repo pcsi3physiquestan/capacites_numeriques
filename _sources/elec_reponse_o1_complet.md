@@ -13,8 +13,7 @@ kernelspec:
 ---
 La page ci-présente existe en version notebook téléchargeable grâce au bouton ![Bouton](./images/bouton_tl.png) (choisir le format `.ipynb`). On rappelle qu'l faut ensuite l'enregistrer dans un répertoire adéquat sur votre ordinateur (`capa_num` par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.
 
-# Implémentation basique
-__Si vous vous sentez suffisamment à l'aise,__ vous pouvez passer directement à l'[étude approfondie](elec_reponse_o1_complet).
+# Implémentation complète
 
 ## Implémentation du schéma d'Euler
 
@@ -23,19 +22,19 @@ __Si vous vous sentez suffisamment à l'aise,__ vous pouvez passer directement �
 > 2. Ecrire une fonction `euler` 
 >     * qui prend en arguments :
 >         * une variable `f` qui sera une fonction
->         * un flottant `pas` qui sera le pas `h` d'intégration
->         * deux flottants `t1` et `t2` donnant les temps initiaux et finaux de l'intervalle sur lesquels on va intégrer le signal (Note : `t2` ne sera pas forcément atteint)
->         * un flottant `y1` donnant la valeur de $y(t)$ à l'instant `t1`  
+>         * un flottant `h` qui sera le pas $h$ d'intégration
+>         * deux flottants `t0` et `tf` donnant les temps initiaux et finaux de l'intervalle sur lesquels on va intégrer le signal (Note : `tf` ne sera pas forcément atteint)
+>         * un flottant `y0` donnant la valeur de $y(t)$ à l'instant `t0` 
 >     * et qui renvoie deux vecteurs numpy : 
->         * le premier contient les temps $t_k$ où on a évaluer la fonction (on commence à `t1`)
->         * le second contient les valeurs estimées de $y$ ($y_k$).
+>         * le premier contient les temps $t_k$ où on a évaluer la fonction (on commence à `t0`)
+>         * le second contient les valeurs estimées de $y(t_k)$ ($y_k$).
 
 ```{code-cell} ipython3
 """Ne pas oublier d'importer les bibliothèques scientifiques"""
 ```
 
 ## Application au régime libre et à l'échelon de tension.
-__On prendra $\tau = 1$.__
+__On prendra $\tau = 1$.__ Il s'agit de vérifier que la fonction précédente fonctionne correctement. _Si vous avez fait la comparaison dans l'étude de base, vous pouvez réutiliser une bonne partie du code pour le tracé graphique en choisissant bien le nom de vos variables._
 
 > __Exercice 2__
 > 1. Préciser l'expression de la fonction $f(t, y)$  dans le cas d'un régime libre et d'un échelon de tension ($E = 1V$) puis implémenter deux fonctions `f_libre` et `f_echelon` correspondant à ces fonctions (mettre les arguments `t` et `y` même s'ils n'interviennent pas dans la fonction).
@@ -48,6 +47,7 @@ __On prendra $\tau = 1$.__
 ```
 
 ## Erreur et pas d'intégration
+__Inutile de faire cette partie si vous l'avez dans l'étude de base.__
 
 > __Exercice 3__
 > 1. Reprendre l'exercice précédent mais en affichant deux graphiques (1 colonne et deux lignes) : les solutions analytique et numérique précédentes sur le premier et la valeur absolue des écarts entre les deux solutions sur le second graphique.
