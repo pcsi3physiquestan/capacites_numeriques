@@ -337,8 +337,8 @@
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ec6b143a-8fb3-4700-a1b3-102c4ad3e27f" name="dff04fde-fc12-4a76-b32b-2f15bfe07644" type="radio">
-</input><label class="tabbed-label" for="ec6b143a-8fb3-4700-a1b3-102c4ad3e27f">
+<input checked="checked" id="2b5ff357-62d1-47da-816d-42fa4426c5ae" name="a0bd6d8c-63b5-4eaa-a953-35dac95249c3" type="radio">
+</input><label class="tabbed-label" for="2b5ff357-62d1-47da-816d-42fa4426c5ae">
 Dérivée à droite</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0)}{h}\]</div>
@@ -348,8 +348,8 @@ Dérivée à droite</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="43d344e9-9181-4270-a1ef-f27196a5f9c3" name="dff04fde-fc12-4a76-b32b-2f15bfe07644" type="radio">
-</input><label class="tabbed-label" for="43d344e9-9181-4270-a1ef-f27196a5f9c3">
+<input id="4d9ac0e5-00b9-43cd-8c76-5273a1e7a37c" name="a0bd6d8c-63b5-4eaa-a953-35dac95249c3" type="radio">
+</input><label class="tabbed-label" for="4d9ac0e5-00b9-43cd-8c76-5273a1e7a37c">
 Dérivée à gauche</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0) - f(x_0 - h)}{h}\]</div>
@@ -359,8 +359,8 @@ Dérivée à gauche</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="a133331c-8e22-4f65-8e10-a18aed9c151b" name="dff04fde-fc12-4a76-b32b-2f15bfe07644" type="radio">
-</input><label class="tabbed-label" for="a133331c-8e22-4f65-8e10-a18aed9c151b">
+<input id="32437b26-baeb-4042-a018-ebf46aea913f" name="a0bd6d8c-63b5-4eaa-a953-35dac95249c3" type="radio">
+</input><label class="tabbed-label" for="32437b26-baeb-4042-a018-ebf46aea913f">
 Dérivée centrée</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0 - h)}{2h}\]</div>
@@ -380,6 +380,11 @@ Dérivée centrée</label><div class="tabbed-content docutils">
 <li><p>La fonction <span class="math notranslate nohighlight">\(f\)</span> est connue analytiquement mais on ne veut/peut pas faire le calcul analytique de la dérivée. On peut alors choisir les <span class="math notranslate nohighlight">\(x_i\)</span> et choisir le pas d’intégration comme on veut.</p></li>
 <li><p>La fonction <span class="math notranslate nohighlight">\(f\)</span> n’est pas connue. On a juste les valeurs <span class="math notranslate nohighlight">\(y_k = f(x_k)\)</span> pour des abscisses <span class="math notranslate nohighlight">\(x_k\)</span>. On ne peut alors calculer la dérivée de <span class="math notranslate nohighlight">\(f\)</span> qu’aux points <span class="math notranslate nohighlight">\(x_k\)</span> et le pas d’intégration est nécessairement <span class="math notranslate nohighlight">\(h = x_{k+1} - x_k\)</span> (<em>à adapter pour la dérivée à gauche et centrée</em>).</p></li>
 </ul>
+<div class="sidebar">
+<p class="sidebar-title">Cas des valeurs discrètes</p>
+<p>C’est le cas en général lorsque les <span class="math notranslate nohighlight">\(y_k\)</span> sont issus d’une mesure expérimentale par exemple.</p>
+<p><em>Note : Par manque d’information, le nombre dérivée en <span class="math notranslate nohighlight">\(x_0\)</span> ne peut alors être calculé que par dérivation à droite et le nombre dérivée en <span class="math notranslate nohighlight">\(x_N\)</span> (dernier échantillon) ne peut être calculé que par dérivation à gauche. Pour les autres, on a le choix.</em></p>
+</div>
 </div>
 </div>
 <div class="toctree-wrapper compound">
