@@ -55,7 +55,8 @@ L'implémentation suivante est à bien comprendre et à savoir refaire sans guid
 >     * (Terminaison) Pour une utilisation plus simples ensuite des listes de valeurs `tkw` et `ukw`. Transformer les deux listes en deux vecteurs `numpy`.
 > 2. Tracer $y(t)$ pour chaque intégration (for et while). Tracer sur le même graphique la solution analytique pour comparaison (utilisez les $t_k$ comme abscisses). __N'oubliez pas de légender la figure.__
 
-On rappelle que la solution analytique est:  
+On rappelle que la solution analytique est:
+
 $$
 y(t) = y_0 \exp^{- t / \tau}
 $$
@@ -80,7 +81,8 @@ _Note : Certaines étapes pourraient être raffinées (création du vecteur temp
 > __Exercice E__ :
 > 1. Reprendre la suite d'instructions précédente (avec for ou while peu importe) avec un pas d'intégration correctement et obtenir la solution numérique pour un échelon de tension ($E = 1V$ et $y_0 = 0V$). Le comparer à la solution analytique.
 
-On rappelle que la solution analytique est:  
+On rappelle que la solution analytique est:
+
 $$
 y(t) = E(1 -  \exp^{- t / \tau})
 $$

@@ -356,11 +356,12 @@ Dans la cellule ci-après, vous devez:</p>
 <li><p>Tracer <span class="math notranslate nohighlight">\(y(t)\)</span> pour chaque intégration (for et while). Tracer sur le même graphique la solution analytique pour comparaison (utilisez les <span class="math notranslate nohighlight">\(t_k\)</span> comme abscisses). <strong>N’oubliez pas de légender la figure.</strong></p></li>
 </ol>
 </div></blockquote>
-<p>On rappelle que la solution analytique est:<br />
-$<span class="math notranslate nohighlight">\(
+<p>On rappelle que la solution analytique est:</p>
+<div class="math notranslate nohighlight">
+\[
 y(t) = y_0 \exp^{- t / \tau}
-\)</span>$
-<em>Note : Certaines étapes pourraient être raffinées (création du vecteur temps par exemple).</em></p>
+\]</div>
+<p><em>Note : Certaines étapes pourraient être raffinées (création du vecteur temps par exemple).</em></p>
 <div class="cell tag_hide-input tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># On rappelle que la fonction f_libre est accessible et que les bibliothèques scientifiques ont été créés.</span>
@@ -387,10 +388,11 @@ y(t) = y_0 \exp^{- t / \tau}
 <li><p>Reprendre la suite d’instructions précédente (avec for ou while peu importe) avec un pas d’intégration correctement et obtenir la solution numérique pour un échelon de tension (<span class="math notranslate nohighlight">\(E = 1V\)</span> et <span class="math notranslate nohighlight">\(y_0 = 0V\)</span>). Le comparer à la solution analytique.</p></li>
 </ol>
 </div></blockquote>
-<p>On rappelle que la solution analytique est:<br />
-$<span class="math notranslate nohighlight">\(
+<p>On rappelle que la solution analytique est:</p>
+<div class="math notranslate nohighlight">
+\[
 y(t) = E(1 -  \exp^{- t / \tau})
-\)</span>$</p>
+\]</div>
 <p>La nécessité de copier-coller le même code pour chaque test montre qu’il serait bien plus efficace de mettre ces instructions dans une fonction qu’on réutiliserait plusieurs fois. C’est l’objectif de la première partie de l’étude complète avant de l’utiliser pour la réponse à une entrée plus complexe : une rampe de tension.</p>
 </div>
 </div>
