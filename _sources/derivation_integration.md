@@ -76,17 +76,23 @@ glue("deriv_c", f, display="False")
 ````{tabbed} Dérivée à droite
 
 $$ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0)}{h}$$
-{glue:}`deriv_d`
+```{glue:figure} deriv_d
+:align: center
+```
 ````
 
 ````{tabbed} Dérivée à gauche
 
 $$ f'(x_0) \approx \frac{f(x_0) - f(x_0 - h)}{h}$$
-{glue:}`deriv_g`
+```{glue:figure} deriv_g
+:align: center
+```
 ````
 
 ````{tabbed} Dérivée centrée
 
 $$ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0 - h)}{2h}$$
-{glue:}`deriv_c`
+```{glue:figure} deriv_c
+:align: center
+```
 ````

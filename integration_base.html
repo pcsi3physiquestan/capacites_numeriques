@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Analyse spectrale d’un signal &#8212; Capacités numériques - Sujets</title>
+    <title>2.3. Intégration : Méthode de base &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,14 +49,12 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/signal_fourier.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/integration_base.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1.2. Etude de base" href="signal_fourier_base.html" />
-    <link rel="prev" title="Capacités numériques en physique" href="capacite_numerique.html" />
+    <link rel="next" title="2.4. Utilisation de fonctions" href="derive_integ_fonction.html" />
+    <link rel="prev" title="2.2. Dérivation : Méthode de base" href="derivation_base.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,11 +90,11 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="signal_fourier.html">
    1. Analyse spectrale d’un signal
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
@@ -114,23 +112,23 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="derivation_integration.html">
    2. Dérivation et intégration numérique
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="derivation_base.html">
      2.2. Dérivation : Méthode de base
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="integration_base.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      2.3. Intégration : Méthode de base
     </a>
    </li>
@@ -228,11 +226,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/signal_fourier.ipynb"><button type="button"
+            href="_sources/integration_base.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/signal_fourier.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/integration_base.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -257,7 +255,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/signal_fourier.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/integration_base.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -277,48 +275,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#position-du-probleme">
-   1.1. Position du problème
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#elements-theoriques">
-     1.1.1. Eléments théoriques
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reflexions-prelimineaires">
-     1.1.2. Réflexions préliminéaires
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#representation-des-signaux">
-     1.1.3. Représentation des signaux
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#representation-temporelle">
-       1.1.3.1. Représentation temporelle
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#representation-frequentielle">
-       1.1.3.2. Représentation fréquentielle.
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -327,72 +283,9 @@
         
               <div>
                 
-  <div class="section" id="analyse-spectrale-d-un-signal">
-<h1><span class="section-number">1. </span>Analyse spectrale d’un signal<a class="headerlink" href="#analyse-spectrale-d-un-signal" title="Permalink to this headline">¶</a></h1>
-<p><em>Méthodes numériques</em></p>
-<p>Dans cette séance, vous allez apprendre à :</p>
-<ul class="simple">
-<li><p>Utiliser les objets Python comme les vecteurs numpy et réaliser des tracés graphiques.</p></li>
-<li><p>Créer des fonctions Python et utiliser des boucles.</p></li>
-<li><p>Créer une fonction qui construit numériquement l’allure d’un signal temporel à partir de son spectre.</p></li>
-<li><p>Obtenir le spectre d’un signal grâce à des fonctions natives de la bibliothèques <code class="docutils literal notranslate"><span class="pre">numpy.fft</span></code></p></li>
-</ul>
-<div class="section" id="position-du-probleme">
-<h2><span class="section-number">1.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="elements-theoriques">
-<span id="theoriques"></span><h3><span class="section-number">1.1.1. </span>Eléments théoriques<a class="headerlink" href="#elements-theoriques" title="Permalink to this headline">¶</a></h3>
-<p>On rappelle que le <strong>spectre</strong> d’un signal est sa décomposition en somme de sinusoïdes où l’on donne : la <em>fréquence</em> (<span class="math notranslate nohighlight">\(f_i\)</span>), l’<em>amplitude</em> <span class="math notranslate nohighlight">\((A_i)\)</span> et la <em>phase à l’origine</em> (<span class="math notranslate nohighlight">\(\phi_i\)</span>) de chaque sinusoïde de la décomposition :</p>
-<div class="math notranslate nohighlight">
-\[
-s(t) = \sum_{i} A_i \cos \left ( 2 \pi f_i t + \phi_i \right )
-\]</div>
-<p><em>Pour rappel, pour les signaux périodiques, la somme est infinie et les fréquences <span class="math notranslate nohighlight">\(f_i\)</span> sont des multiples de la fréquence <span class="math notranslate nohighlight">\(f\)</span> du signal.</em></p>
-</div>
-<div class="section" id="reflexions-prelimineaires">
-<h3><span class="section-number">1.1.2. </span>Réflexions préliminéaires<a class="headerlink" href="#reflexions-prelimineaires" title="Permalink to this headline">¶</a></h3>
-<p><strong>But :</strong> On veut pouvoir représenter un signal de deux manières :</p>
-<ul class="simple">
-<li><p>son allure temporelle représentée mathématiquement par la fonction <span class="math notranslate nohighlight">\(x(t)\)</span> évaluée sur un intervalle <span class="math notranslate nohighlight">\([t_1, t_2]\)</span></p></li>
-<li><p>son spectre représenté par l’ensemble des triplets <span class="math notranslate nohighlight">\((f_i, A_i, \phi_i)\)</span> de sa décomposition</p></li>
-</ul>
-<p><strong>Travail (5 minutes) :</strong> Réfléchir au(x) type(s) de variable(s) qui permettent, sous <code class="docutils literal notranslate"><span class="pre">Python</span></code> de stocker la représentation de l’allure temporelle (l’intervalle <span class="math notranslate nohighlight">\([t_1, t_2]\)</span> et les valeurs de x sur cet intervalle) et à leur structure puis au(x) type(s) de variable(s) qui permettent de stocker la représentation du spectre d’un signal <em>(on supposera la somme finie, quitte à limiter la somme à N fréquences dans le cas de sommes infinies)</em>.</p>
-<p><strong>Après avoir réfléchi à la question précédente</strong>, passer à la suite qui propose une représentation temporelle et fréquentielle sous Python.</p>
-</div>
-<div class="section" id="representation-des-signaux">
-<h3><span class="section-number">1.1.3. </span>Représentation des signaux<a class="headerlink" href="#representation-des-signaux" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="representation-temporelle">
-<h4><span class="section-number">1.1.3.1. </span>Représentation temporelle<a class="headerlink" href="#representation-temporelle" title="Permalink to this headline">¶</a></h4>
-<p>Dans un calcul numérique, l’évaluation de la fonction (pour sont tracé par exemple) ne peut être fait que pour des <strong>valeurs discrètes</strong>. On va donc définir pour un signal <span class="math notranslate nohighlight">\(s(t)\)</span> dont on connaît la fonction temporelle <span class="math notranslate nohighlight">\(s\)</span> :</p>
-<ol class="simple">
-<li><p>Une fonction qui associe à une valeur de temps <span class="math notranslate nohighlight">\(t_k\)</span> la valeur calculée <span class="math notranslate nohighlight">\(s(t_k)\)</span>.</p></li>
-<li><p>Un vecteur numpy contenant des valeurs d’abscisses temporelles <span class="math notranslate nohighlight">\(t_i\)</span> régulièrement réparties entre deux valeurs choisies <span class="math notranslate nohighlight">\(t_1\)</span> et <span class="math notranslate nohighlight">\(t_2\)</span> et de longueur <span class="math notranslate nohighlight">\(N\)</span>.</p></li>
-<li><p>Un vecteur numpy contenant les valeurs du signal <span class="math notranslate nohighlight">\(s_i\)</span> aux instants <span class="math notranslate nohighlight">\(t_i\)</span> : <span class="math notranslate nohighlight">\(s_k = s(t_k)\)</span>.</p></li>
-</ol>
-<p>On pourra alors tracer le signal temporel ou obtenir son spectre grâce aux fonctions natives de <code class="docutils literal notranslate"><span class="pre">numpy.fft</span></code></p>
-</div>
-<div class="section" id="representation-frequentielle">
-<h4><span class="section-number">1.1.3.2. </span>Représentation fréquentielle.<a class="headerlink" href="#representation-frequentielle" title="Permalink to this headline">¶</a></h4>
-<p>Il y a une série de trois grandeurs, on va donc représenter le spectre d’un signal par trois vecteurs :</p>
-<ul class="simple">
-<li><p>un contenant les fréquences <span class="math notranslate nohighlight">\(f_i\)</span> de la décomposition</p></li>
-<li><p>un contenant les amplitudes <span class="math notranslate nohighlight">\(A_i\)</span> de la décomposition</p></li>
-<li><p>un contenant les phases à l’origine <span class="math notranslate nohighlight">\(\phi_i\)</span> de la décomposition</p></li>
-</ul>
-<p>On pourra alors reconstruire la fonction <span class="math notranslate nohighlight">\(s(t)\)</span> comme donnée précédemment et ainsi visualiser son allure temporelle. On pourra aussi représenter le spectre du signal.</p>
-<p>On réfléchira aux listes des m premiers éléments des décompositions spectrales des signaux créneaux et triangulaires (de fréquence <span class="math notranslate nohighlight">\(f_0\)</span>) données ci-dessous :</p>
-<div class="math notranslate nohighlight">
-\[
-s_{creneau} = \sum_{i=1}^{m} {4 \over \pi (2i + 1)}\ \sin \left ( 2 \pi (2i + 1) f_0 t \right)
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-s_{triangle} = \sum_{i=1}^{m} {8 \over {\left (\pi (2i + 1)\right)}^2}\ \sin \left ( 2 \pi (2i + 1) f_0 t \right)
-\]</div>
-</div>
-</div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<div class="section" id="integration-methode-de-base">
+<h1><span class="section-number">2.3. </span>Intégration : Méthode de base<a class="headerlink" href="#integration-methode-de-base" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -420,8 +313,8 @@ s_{triangle} = \sum_{i=1}^{m} {8 \over {\left (\pi (2i + 1)\right)}^2}\ \sin \le
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="capacite_numerique.html" title="previous page">Capacités numériques en physique</a>
-    <a class='right-next' id="next-link" href="signal_fourier_base.html" title="next page"><span class="section-number">1.2. </span>Etude de base</a>
+    <a class='left-prev' id="prev-link" href="derivation_base.html" title="previous page"><span class="section-number">2.2. </span>Dérivation : Méthode de base</a>
+    <a class='right-next' id="next-link" href="derive_integ_fonction.html" title="next page"><span class="section-number">2.4. </span>Utilisation de fonctions</a>
 
         </div>
         
