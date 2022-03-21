@@ -26,11 +26,11 @@ y = np.sin(x) - x ** 3
 
 Kd = 1.1
 Kg = 2 - Kd
-xd = [np.pi / 4, np.pi / 4 * Kd]
+xd = np.array([np.pi / 4, np.pi / 4 * Kd])
 yd = np.sin(xd) - xd ** 3
-xg = [np.pi / 4 * Kg, np.pi / 4]
+xg = np.array([np.pi / 4 * Kg, np.pi / 4])
 yg = np.sin(xg) - xg ** 3
-xc = [np.pi / 4 * Kg, np.pi / 4 * Kd]
+xc = np.array([np.pi / 4 * Kg, np.pi / 4 * Kd])
 xc2 = [np.pi / 4 * Kg, np.pi / 4, np.pi / 4 * Kd]
 yc = np.sin(xc) - xc ** 3
 
@@ -54,18 +54,17 @@ ax.plot(y, x, linewidth=1.3, color=blue)
 ax.plot(yc, xc, linewidth=1, color=red)
 ax.set_xticks(xc2, label=["x0-h", "x0", "x0+h"])
 glue("deriv_c", f, display="False")
-
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-1-b45192abe8b5>[0m in [0;36m<module>[0;34m[0m
-[1;32m      9[0m [0mKg[0m [0;34m=[0m [0;36m2[0m [0;34m-[0m [0mKd[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     10[0m [0mxd[0m [0;34m=[0m [0;34m[[0m[0mnp[0m[0;34m.[0m[0mpi[0m [0;34m/[0m [0;36m4[0m[0;34m,[0m [0mnp[0m[0;34m.[0m[0mpi[0m [0;34m/[0m [0;36m4[0m [0;34m*[0m [0mKd[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 11[0;31m [0myd[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0msin[0m[0;34m([0m[0mxd[0m[0;34m)[0m [0;34m-[0m [0mxd[0m [0;34m**[0m [0;36m3[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     12[0m [0mxg[0m [0;34m=[0m [0;34m[[0m[0mnp[0m[0;34m.[0m[0mpi[0m [0;34m/[0m [0;36m4[0m [0;34m*[0m [0mKg[0m[0;34m,[0m [0mnp[0m[0;34m.[0m[0mpi[0m [0;34m/[0m [0;36m4[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m     13[0m [0myg[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0msin[0m[0;34m([0m[0mxg[0m[0;34m)[0m [0;34m-[0m [0mxg[0m [0;34m**[0m [0;36m3[0m[0;34m[0m[0;34m[0m[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-1-080cf4c39ae5>[0m in [0;36m<module>[0;34m[0m
+[1;32m     18[0m [0mf[0m[0;34m,[0m [0max[0m [0;34m=[0m [0mplt[0m[0;34m.[0m[0msubplots[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     19[0m [0mf[0m[0;34m.[0m[0msuptitle[0m[0;34m([0m[0;34m"Dérivée à droite"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 20[0;31m [0max[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0my[0m[0;34m,[0m [0mx[0m[0;34m,[0m [0mlinewidth[0m[0;34m=[0m[0;36m1.3[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0mblue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     21[0m [0max[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0myd[0m[0;34m,[0m [0mxd[0m[0;34m,[0m [0mlinewidth[0m[0;34m=[0m[0;36m1[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0mred[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     22[0m [0max[0m[0;34m.[0m[0mset_xticks[0m[0;34m([0m[0mxd[0m[0;34m,[0m [0mlabel[0m[0;34m=[0m[0;34m[[0m[0;34m"x0"[0m[0;34m,[0m [0;34m"x0+h"[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mTypeError[0m: unsupported operand type(s) for ** or pow(): 'list' and 'int'
-TypeError: unsupported operand type(s) for ** or pow(): 'list' and 'int'
+[0;31mNameError[0m: name 'blue' is not defined
+NameError: name 'blue' is not defined
 
