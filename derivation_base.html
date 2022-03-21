@@ -388,7 +388,7 @@ E_J(t) = \frac{CE^2}{2} \left(1 -  e^{-2 t / \tau}\right)
 <ul class="simple">
 <li><p>Pour l’import, on rappelle la commande permettant de séparer les colonne en plusieurs variables:</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">temps,</span> <span class="pre">ucb</span> <span class="pre">=</span> <span class="pre">np.loadtxt('chemin_vers_fichier',</span> <span class="pre">skiprows=7,</span> <span class="pre">delimiter=&quot;;&quot;,</span> <span class="pre">unpack=True)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">temps,</span> <span class="pre">ucb</span> <span class="pre">=</span> <span class="pre">np.loadtxt('chemin_vers_fichier',</span> <span class="pre">skiprows=nlignes_a_sauter,</span> <span class="pre">delimiter=&quot;delimiteur</span> <span class="pre">de</span> <span class="pre">colonne&quot;,</span> <span class="pre">unpack=True)</span></code></p>
 <ul class="simple">
 <li><p>Pour les méthodes numériques, on ne peut choisir ici le pas d’intégration car on ne connaît que des valeurs discrètes.</p>
 <ul>

@@ -126,12 +126,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="derivation_base.html">
-     2.2. Dérivation : Méthode de base
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="integration_base.html">
-     2.3. Intégration : Méthode de base
+     2.3. Dérivation et intégration : Méthode de base
     </a>
    </li>
    <li class="toctree-l2">
@@ -374,17 +369,21 @@ y_{k+1} = y_k + h \times f(t, y_k)
 <h3><span class="section-number">3.1.3. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">¶</a></h3>
 <p>Pour résoudre numériquement une équation différentielle d’ordre 1 par la méthode d’Euler avec un pas de temps <span class="math notranslate nohighlight">\(h\)</span>, on va donc:</p>
 <ul class="simple">
-<li><p>définir une fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span> qui est une expression de la dérivée obtenue par l’équation différentielle:
-$<span class="math notranslate nohighlight">\(
-\frac{\rm{d}y}{\rm{dt}}(t) = f(t,y)
-\)</span>$</p></li>
-<li><p>créer un vecteur temps contenant les instants <span class="math notranslate nohighlight">\(t_k = t_0 + k \times h\)</span></p></li>
-<li><p>calculer un vecteur contenant les éléments de la suite <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span> définie par la récurrence:
-$<span class="math notranslate nohighlight">\(
-y_{k+1} = y_k + f(t_k, y_k) * h
-\)</span><span class="math notranslate nohighlight">\(
-avec \)</span>y_0 = y(t_0)$ la condition initiale.</p></li>
+<li><p>définir une fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span> qui est une expression de la dérivée obtenue par l’équation différentielle:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+\frac{\rm{d}y}{\rm{dt}}(t) = f(t,y)
+\]</div>
+<ul class="simple">
+<li><p>créer un vecteur temps contenant les instants <span class="math notranslate nohighlight">\(t_k = t_0 + k \times h\)</span></p></li>
+<li><p>calculer un vecteur contenant les éléments de la suite <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span> définie par la récurrence:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+y_{k+1} = y_k + f(t_k, y_k) * h
+\]</div>
+<p>avec <span class="math notranslate nohighlight">\(y_0 = y(t_0)\)</span> la condition initiale.</p>
 <p><em>La définition de <span class="math notranslate nohighlight">\(y_k\)</span> par récurrence impose d’utiliser une boucle pour sa création.</em></p>
 </div>
 </div>
