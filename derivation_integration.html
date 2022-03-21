@@ -354,8 +354,8 @@
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a9ef0a37-63f3-406d-b56e-8135c6d4f817" name="8d71a429-d433-44e2-9888-b96f4fe4d5c1" type="radio">
-</input><label class="tabbed-label" for="a9ef0a37-63f3-406d-b56e-8135c6d4f817">
+<input checked="checked" id="92188b9c-6ae0-4056-a7e6-4d1acf489f39" name="5f95f56d-6b15-4c8b-ba3e-1ced874c21e6" type="radio">
+</input><label class="tabbed-label" for="92188b9c-6ae0-4056-a7e6-4d1acf489f39">
 Dérivée à droite</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0)}{h}\]</div>
@@ -365,8 +365,8 @@ Dérivée à droite</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="11f922d1-ca23-47ec-9f75-40e1fbc0804c" name="8d71a429-d433-44e2-9888-b96f4fe4d5c1" type="radio">
-</input><label class="tabbed-label" for="11f922d1-ca23-47ec-9f75-40e1fbc0804c">
+<input id="88379b9a-f7fa-4df4-8da2-3f09c8278b63" name="5f95f56d-6b15-4c8b-ba3e-1ced874c21e6" type="radio">
+</input><label class="tabbed-label" for="88379b9a-f7fa-4df4-8da2-3f09c8278b63">
 Dérivée à gauche</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0) - f(x_0 - h)}{h}\]</div>
@@ -376,8 +376,8 @@ Dérivée à gauche</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="76040078-3f3e-40ee-bee4-621fbb5ec3dc" name="8d71a429-d433-44e2-9888-b96f4fe4d5c1" type="radio">
-</input><label class="tabbed-label" for="76040078-3f3e-40ee-bee4-621fbb5ec3dc">
+<input id="fe1a76b9-4aa7-41d1-bc3f-774e416d0041" name="5f95f56d-6b15-4c8b-ba3e-1ced874c21e6" type="radio">
+</input><label class="tabbed-label" for="fe1a76b9-4aa7-41d1-bc3f-774e416d0041">
 Dérivée centrée</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[ f'(x_0) \approx \frac{f(x_0 + h) - f(x_0 - h)}{2h}\]</div>
@@ -416,13 +416,8 @@ Dérivée centrée</label><div class="tabbed-content docutils">
 \[I = \int_a^b f(x) dx = \lim_{N \to \infty} \sum_{i=0}^{N-1} f(x_i) \times h\]</div>
 <p>avec <span class="math notranslate nohighlight">\(x_i = a + \frac{b-a}{N}i\)</span> et $h = \frac{b-a}{N}</p>
 </div></blockquote>
-<p>L’idée de l’intégration numérique est donc d’approcher le calcul intégrale en prenant une valeur finie pour <span class="math notranslate nohighlight">\(N\)</span>, c’est-à-dire une valeur non nulle pour <span class="math notranslate nohighlight">\(h\)</span> :</p>
-<div class="math notranslate nohighlight">
-\[
-I \approx \sum_{i=0}^{N-1} f(x_i) \times h
-\]</div>
-<div class="topic">
-<p class="topic-title">Relation de récurrence</p>
+<div class="sidebar">
+<p class="sidebar-title">Relation de récurrence</p>
 <p>Si l’on définit <span class="math notranslate nohighlight">\(I_k = \sum_{i=0}^{k} f(x_i) \times h\)</span>, on remarque la relation de récurrence:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -431,37 +426,42 @@ I_{k+1} = I_k + f(x_{k+1}) \times h
 <p>et <span class="math notranslate nohighlight">\(I \approx I_{N-1}\)</span></p>
 <p>C’est une méthode très pratique pour calculer I par une boucle.</p>
 </div>
+<p>L’idée de l’intégration numérique est donc d’approcher le calcul intégrale en prenant une valeur finie pour <span class="math notranslate nohighlight">\(N\)</span>, c’est-à-dire une valeur non nulle pour <span class="math notranslate nohighlight">\(h\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[
+I \approx \sum_{i=0}^{N-1} f(x_i) \times h
+\]</div>
 </div>
 <div class="section" id="type-d-integration">
 <h3><span class="section-number">2.2.2. </span>Type d’intégration<a class="headerlink" href="#type-d-integration" title="Permalink to this headline">¶</a></h3>
 <p>On distingue quatre types d’intégration:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e481e686-186b-45f4-83d7-8b6fd1a3605e" name="b570c1b1-d536-4ce3-a2b7-26bdf0961abe" type="radio">
-</input><label class="tabbed-label" for="e481e686-186b-45f4-83d7-8b6fd1a3605e">
+<input checked="checked" id="38f9146c-e612-47aa-a77e-cff7d0e0df7d" name="63fd25dc-4c11-42db-bb92-7b4c1f35d26f" type="radio">
+</input><label class="tabbed-label" for="38f9146c-e612-47aa-a77e-cff7d0e0df7d">
 Méthode des rectangles à droite</label><div class="tabbed-content docutils">
 <p>On commence à <span class="math notranslate nohighlight">\(a\)</span> et on s’arrête à <span class="math notranslate nohighlight">\(b - h\)</span>.</p>
 <div class="figure align-center" id="rectangle-droite">
-<img alt="images/rectangle_gauche.pngx" src="images/rectangle_gauche.pngx" />
+<img alt="_images/rectangle_gauche.png" src="_images/rectangle_gauche.png" />
 </div>
 </div>
-<input id="497ee3e4-3c37-4f8a-8c09-9214413447a8" name="b570c1b1-d536-4ce3-a2b7-26bdf0961abe" type="radio">
-</input><label class="tabbed-label" for="497ee3e4-3c37-4f8a-8c09-9214413447a8">
+<input id="51f3115c-e5ae-43af-9dbc-74228965ae5f" name="63fd25dc-4c11-42db-bb92-7b4c1f35d26f" type="radio">
+</input><label class="tabbed-label" for="51f3115c-e5ae-43af-9dbc-74228965ae5f">
 Méthode des rectangles à gauche</label><div class="tabbed-content docutils">
 <p>On commence à <span class="math notranslate nohighlight">\(a + h\)</span> et on s’arrête à <span class="math notranslate nohighlight">\(b\)</span>.</p>
 <div class="figure align-center" id="rectangle-gauche">
 <img alt="_images/rectangle_droite.png" src="_images/rectangle_droite.png" />
 </div>
 </div>
-<input id="367a267c-c2d3-419f-ab88-8a6610df9a34" name="b570c1b1-d536-4ce3-a2b7-26bdf0961abe" type="radio">
-</input><label class="tabbed-label" for="367a267c-c2d3-419f-ab88-8a6610df9a34">
+<input id="43f8ae34-0cc8-48da-97ae-dc44ef6d6130" name="63fd25dc-4c11-42db-bb92-7b4c1f35d26f" type="radio">
+</input><label class="tabbed-label" for="43f8ae34-0cc8-48da-97ae-dc44ef6d6130">
 Méthode des rectangles centrés</label><div class="tabbed-content docutils">
 <p>On commence à <span class="math notranslate nohighlight">\(a + h / 2\)</span> et on s’arrête à <span class="math notranslate nohighlight">\(b - h / 2\)</span>.</p>
 <div class="figure align-center" id="rectangle-centre">
 <img alt="_images/rectangle_milieu.png" src="_images/rectangle_milieu.png" />
 </div>
 </div>
-<input id="65cab704-2199-4400-ace4-edb33936ad97" name="b570c1b1-d536-4ce3-a2b7-26bdf0961abe" type="radio">
-</input><label class="tabbed-label" for="65cab704-2199-4400-ace4-edb33936ad97">
+<input id="3cfd0dfc-74b5-4e62-898e-35b3f5c6223a" name="63fd25dc-4c11-42db-bb92-7b4c1f35d26f" type="radio">
+</input><label class="tabbed-label" for="3cfd0dfc-74b5-4e62-898e-35b3f5c6223a">
 Méthode des trapèzes</label><div class="tabbed-content docutils">
 <p>L’aire d’un trapèze est:</p>
 <div class="math notranslate nohighlight">

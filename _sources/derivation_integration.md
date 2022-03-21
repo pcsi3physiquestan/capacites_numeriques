@@ -142,13 +142,7 @@ _Note : Par manque d'information, le nombre dérivée en $x_0$ ne peut alors êt
 >
 > avec $x_i = a + \frac{b-a}{N}i$ et $h = \frac{b-a}{N}
 
-L'idée de l'intégration numérique est donc d'approcher le calcul intégrale en prenant une valeur finie pour $N$, c'est-à-dire une valeur non nulle pour $h$ :
-
-$$
-I \approx \sum_{i=0}^{N-1} f(x_i) \times h
-$$
-
-```{topic} Relation de récurrence
+```{sidebar} Relation de récurrence
 
 Si l'on définit $I_k = \sum_{i=0}^{k} f(x_i) \times h$, on remarque la relation de récurrence:
 
@@ -160,6 +154,12 @@ et $I \approx I_{N-1}$
 
 C'est une méthode très pratique pour calculer I par une boucle.
 ```
+L'idée de l'intégration numérique est donc d'approcher le calcul intégrale en prenant une valeur finie pour $N$, c'est-à-dire une valeur non nulle pour $h$ :
+
+$$
+I \approx \sum_{i=0}^{N-1} f(x_i) \times h
+$$
+
 
 ### Type d'intégration
 On distingue quatre types d'intégration:
@@ -167,7 +167,7 @@ On distingue quatre types d'intégration:
 ````{tabbed} Méthode des rectangles à droite
 On commence à $a$ et on s'arrête à $b - h$.
 
-```{figure} ./images/rectangle_gauche.pngx
+```{figure} ./images/rectangle_gauche.png
 :name: rectangle_droite
 :align: center
 ```
