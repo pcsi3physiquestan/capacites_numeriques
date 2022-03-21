@@ -22,9 +22,9 @@ import matplotlib.pyplot as plt
 from myst_nb import glue
 
 x = np.linspace(0, np.pi / 2, 1000)
-y = np.sin(x) - x ** 3
+y = np.sin(x) - x ** 3 / 3
 
-Kd = 1.1
+Kd = 1.2
 Kg = 2 - Kd
 xd = np.array([np.pi / 4, np.pi / 4 * Kd])
 yd = np.sin(xd) - xd ** 3
@@ -36,38 +36,33 @@ yc = np.sin(xc) - xc ** 3
 
 f, ax = plt.subplots()
 f.suptitle("Dérivée à droite")
-ax.plot(y, x, linewidth=1.3, color="blue")
-ax.plot(yd, xd, linewidth=1, color="red")
+ax.plot(x, y, linewidth=1.3, color="blue")
+ax.plot(xd, yd, linewidth=1, color="red")
 ax.set_xticks(xd)
 ax.set_xticklabels(["x0", "x0+h"])
 glue("deriv_d", f, display="False")
 
 f, ax = plt.subplots()
 f.suptitle("Dérivée à gauche")
-ax.plot(y, x, linewidth=1.3, color=blue)
-ax.plot(yg, xg, linewidth=1, color=red)
+ax.plot(x, y linewidth=1.3, color="blue")
+ax.plot(xg, yg, linewidth=1, color="red")
 ax.set_xticks(xg)
 ax.set_xticklabels(["x0-h", "x0"])
 glue("deriv_g", f, display="False")
 
 f, ax = plt.subplots()
 f.suptitle("Dérivée centrée")
-ax.plot(y, x, linewidth=1.3, color=blue)
-ax.plot(yc, xc, linewidth=1, color=red)
+ax.plot(x, y, linewidth=1.3, color="blue")
+ax.plot(xc,yc, linewidth=1, color="red")
 ax.set_xticks(xc2)
 ax.set_xticklabels(["x0-h", "x0", "x0+h"])
 glue("deriv_c", f, display="False")
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-1-4690f3da6a86>[0m in [0;36m<module>[0;34m[0m
-[1;32m     26[0m [0mf[0m[0;34m,[0m [0max[0m [0;34m=[0m [0mplt[0m[0;34m.[0m[0msubplots[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     27[0m [0mf[0m[0;34m.[0m[0msuptitle[0m[0;34m([0m[0;34m"Dérivée à gauche"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 28[0;31m [0max[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0my[0m[0;34m,[0m [0mx[0m[0;34m,[0m [0mlinewidth[0m[0;34m=[0m[0;36m1.3[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0mblue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     29[0m [0max[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0myg[0m[0;34m,[0m [0mxg[0m[0;34m,[0m [0mlinewidth[0m[0;34m=[0m[0;36m1[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0mred[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     30[0m [0max[0m[0;34m.[0m[0mset_xticks[0m[0;34m([0m[0mxg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;36m  File [0;32m"<ipython-input-1-e79f4ffe4054>"[0;36m, line [0;32m28[0m
+[0;31m    ax.plot(x, y linewidth=1.3, color="blue")[0m
+[0m                 ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-[0;31mNameError[0m: name 'blue' is not defined
-NameError: name 'blue' is not defined
+SyntaxError: invalid syntax (<ipython-input-1-e79f4ffe4054>, line 28)
 
