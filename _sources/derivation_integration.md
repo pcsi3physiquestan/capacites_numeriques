@@ -137,7 +137,9 @@ _Note : Par manque d'information, le nombre dérivée en $x_0$ ne peut alors êt
 ## Intégration numérique
 ### Principe
 > Rappel : L'intégrale d'une fonction $f$ sur l'intervalle $[a; b]$ est définie par:
+>
 > $$I = \int_a^b f(x) dx = \lim_{N \to \infty} \sum_{i=0}^{N-1} f(x_i) \times h$$
+>
 > avec $x_i = a + \frac{b-a}{N}i$ et $h = \frac{b-a}{N}
 
 L'idée de l'intégration numérique est donc d'approcher le calcul intégrale en prenant une valeur finie pour $N$, c'est-à-dire une valeur non nulle pour $h$ :
@@ -165,7 +167,7 @@ On distingue quatre types d'intégration:
 ````{tabbed} Méthode des rectangles à droite
 On commence à $a$ et on s'arrête à $b - h$.
 
-```{figure} ./images/rectangle_gauche.png
+```{figure} ./images/rectangle_gauche.pngx
 :name: rectangle_droite
 :align: center
 ```
@@ -183,7 +185,7 @@ On commence à $a + h$ et on s'arrête à $b$.
 ````{tabbed} Méthode des rectangles centrés
 On commence à $a + h / 2$ et on s'arrête à $b - h / 2$.
 
-```{figure} ./images/rectangle_centre.png
+```{figure} ./images/rectangle_milieu.png
 :name: rectangle_centre
 :align: center
 ```
