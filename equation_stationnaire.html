@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Capacités numériques en physique &#8212; Capacités numériques - Sujets</title>
+    <title>2. Résolution d’équation stationnaire &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,11 +49,14 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/capacite_numerique.html" />
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/equation_stationnaire.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Analyse spectrale d’un signal" href="signal_fourier.html" />
+    <link rel="next" title="2.4. Implémentation basique" href="equation_stationnaire_base.html" />
+    <link rel="prev" title="1.3. Etude complète" href="signal_fourier_complet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -82,13 +85,13 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capacite_numerique.html">
    Capacités numériques en physique
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="signal_fourier.html">
    1. Analyse spectrale d’un signal
@@ -111,11 +114,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="equation_stationnaire.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    2. Résolution d’équation stationnaire
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
@@ -247,11 +250,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/capacite_numerique.ipynb"><button type="button"
+            href="_sources/equation_stationnaire.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/capacite_numerique.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/equation_stationnaire.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -276,7 +279,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/capacite_numerique.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/equation_stationnaire.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -296,6 +299,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unicite-de-la-racine">
+   2.1. Unicité de la racine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-par-dichotomie">
+   2.2. Méthode par dichotomie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-de-newton">
+   2.3. Méthode de Newton
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -304,9 +330,66 @@
         
               <div>
                 
-  <div class="section" id="capacites-numeriques-en-physique">
-<h1>Capacités numériques en physique<a class="headerlink" href="#capacites-numeriques-en-physique" title="Permalink to this headline">¶</a></h1>
-<p>Voici le recueil des activités sur les capacités numériques pour l’année.</p>
+  <div class="section" id="resolution-d-equation-stationnaire">
+<h1><span class="section-number">2. </span>Résolution d’équation stationnaire<a class="headerlink" href="#resolution-d-equation-stationnaire" title="Permalink to this headline">¶</a></h1>
+<p>On va ici donner quelques méthodes pour résoudre une équation stationnaire, c’est-à-dire résoudre une équation du type:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 0
+\]</div>
+<p>sur un intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> <strong>dans lequel on sait qu’il n’y a qu’une seule racine</strong> qui sera noté <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<div class="section" id="unicite-de-la-racine">
+<h2><span class="section-number">2.1. </span>Unicité de la racine<a class="headerlink" href="#unicite-de-la-racine" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Dans la plupart des cas pour nous, une étude graphique peut suffire.</p>
+</div>
+<p>L’hypothèse d’unicité de la racine est fondamental car sinon, on ne sait pas si on va obtenir celle voulue. La résolution d’une équation stationnaire passe donc par <strong>une étude initiale de la fonction pour réduire l’intervalle de recherche à un intervalle ne contenant qu’une seule racine.</strong></p>
+</div>
+<div class="section" id="methode-par-dichotomie">
+<h2><span class="section-number">2.2. </span>Méthode par dichotomie<a class="headerlink" href="#methode-par-dichotomie" title="Permalink to this headline">¶</a></h2>
+<p><em>Condition:</em> <span class="math notranslate nohighlight">\(f\)</span> est continue sur l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> et <span class="math notranslate nohighlight">\(f(a) f(b) &lt; 0\)</span> (ainsi <span class="math notranslate nohighlight">\(f\)</span> admet au moins une racine dansl’intervalle (TVI)).</p>
+<p>Principe:</p>
+<ul class="simple">
+<li><p>On coupe l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> en deux parties égales (soit <span class="math notranslate nohighlight">\(c = \frac{a+b}{2}\)</span>) le milieu</p></li>
+<li><p>On regarde dans quelle moitié se trouve la racine en testant les signes des produits <span class="math notranslate nohighlight">\(f(a)f(c)\)</span> et <span class="math notranslate nohighlight">\(f(c)f(b)\)</span></p>
+<ul>
+<li><p>Si <span class="math notranslate nohighlight">\(f(a)f(c) &lt; 0\)</span>, la racine est dans l’intervalle <span class="math notranslate nohighlight">\([a,c]\)</span>, on réitère le test précédent mais avec l’intervalle <span class="math notranslate nohighlight">\([a,c]\)</span> (soit <span class="math notranslate nohighlight">\(b = c\)</span> maintenant)</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f(c)f(b) &lt; 0\)</span>, la racine est dans l’intervalle <span class="math notranslate nohighlight">\([c,b]\)</span>, on réitère le test précédent mais avec l’intervalle <span class="math notranslate nohighlight">\([c,b]\)</span> (soit <span class="math notranslate nohighlight">\(a = c\)</span> maintenant)</p></li>
+</ul>
+</li>
+<li><p>On recommence jusqu’à atteindre un critère fixé:</p>
+<ul>
+<li><p>soit la largeur de l’intervalle de recherche est plus petit que la précision choisie : <span class="math notranslate nohighlight">\([a_{finale}, b_{finale}] &lt; precx\)</span></p></li>
+<li><p>soit le maximum de <span class="math notranslate nohighlight">\(f\)</span> sur l’intervalle <span class="math notranslate nohighlight">\([a_{finale}, b_{finale}]\)</span> est inférieure à une précision choisie <span class="math notranslate nohighlight">\(precy\)</span></p></li>
+<li><p>on peut imposer les deux conditions si nécessaire.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="methode-de-newton">
+<h2><span class="section-number">2.3. </span>Méthode de Newton<a class="headerlink" href="#methode-de-newton" title="Permalink to this headline">¶</a></h2>
+<p><em>Condition:</em> <span class="math notranslate nohighlight">\(f\)</span> est de classe <span class="math notranslate nohighlight">\(C^1\)</span> sur l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span>.</p>
+<ul class="simple">
+<li><p>On part d’une valeur <span class="math notranslate nohighlight">\(x_0\)</span> dans l’intervalle et on trace la tangente à la courbe de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(a\)</span>. Son équation est:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+y_{tangente,x_0} = f(x_0) + f'(x_0) (x - x_0)
+\]</div>
+<ul class="simple">
+<li><p>On cherche alors l’abscisse <span class="math notranslate nohighlight">\(x_1\)</span> où la tangente coupe l’axe des abscisse soit:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}
+\]</div>
+<ul class="simple">
+<li><p>On recommence en travaillant avec la tangente en <span class="math notranslate nohighlight">\(x_1\)</span></p></li>
+<li><p>On s’arrête quand un critère similaire à la dichotomie (écart entre deux abscisses <span class="math notranslate nohighlight">\(x_{i+1}\)</span> et <span class="math notranslate nohighlight">\(x_i\)</span> ou faible valeur de <span class="math notranslate nohighlight">\(f(x_i)\)</span>) est atteint.</p></li>
+</ul>
+<p><em>Avantage et inconvénient:</em> La méthode de Newton est beaucoup plus rapide que la méthode par dichotomie mais elle nécessite de connaître la dérivée ou de la calculer par dérivation numérique.</p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -336,7 +419,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="signal_fourier.html" title="next page"><span class="section-number">1. </span>Analyse spectrale d’un signal</a>
+    <a class='left-prev' id="prev-link" href="signal_fourier_complet.html" title="previous page"><span class="section-number">1.3. </span>Etude complète</a>
+    <a class='right-next' id="next-link" href="equation_stationnaire_base.html" title="next page"><span class="section-number">2.4. </span>Implémentation basique</a>
 
         </div>
         

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6. Etude d’un pendule simple &#8212; Capacités numériques - Sujets</title>
+    <title>7. Etude d’un pendule simple &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Etude d’un mouvement à force centrale" href="meca_force_centrale.html" />
-    <link rel="prev" title="5. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
+    <link rel="next" title="8. Etude d’un mouvement à force centrale" href="meca_force_centrale.html" />
+    <link rel="prev" title="6. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -115,8 +115,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="derivation_integration.html">
-   2. Dérivation et intégration numérique
+  <a class="reference internal" href="equation_stationnaire.html">
+   2. Résolution d’équation stationnaire
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -125,20 +125,20 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="derivation_base.html">
-     2.3. Dérivation et intégration : Méthode de base
+    <a class="reference internal" href="equation_stationnaire_base.html">
+     2.4. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="derive_integ_fonction.html">
-     2.4. Utilisation de fonctions
+    <a class="reference internal" href="equation_stationnaire_fonction.html">
+     2.5. Etude du redressement monoalternance
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="elec_reponse_o1.html">
-   3. Résolution numérique d’une équation différentielle d’ordre 1
+  <a class="reference internal" href="derivation_integration.html">
+   3. Dérivation et intégration numérique
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -147,45 +147,67 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="derivation_base.html">
+     3.3. Dérivation et intégration : Méthode de base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derive_integ_fonction.html">
+     3.4. Utilisation de fonctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o1.html">
+   4. Résolution numérique d’une équation différentielle d’ordre 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_base.html">
-     3.3. Implémentation basique
+     4.3. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_complet.html">
-     3.4. Implémentation complète
+     4.4. Implémentation complète
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_rampe.html">
-     3.5. Réponse à une rampe de tension.
+     4.5. Réponse à une rampe de tension.
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="elec_filtrage.html">
-   4. Etude numérique d’un filtre linéaire
+   5. Etude numérique d’un filtre linéaire
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_non_lineaire.html">
-   5. Système conservatif : Effets non linéaires.
+   6. Système conservatif : Effets non linéaires.
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   6. Etude d’un pendule simple
+   7. Etude d’un pendule simple
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_force_centrale.html">
-   7. Etude d’un mouvement à force centrale
+   8. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   8. Etude de l’atmosphère terrestre
+   9. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -284,51 +306,51 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#position-du-probleme">
-   6.1. Position du problème
+   7.1. Position du problème
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mise-en-equation">
-     6.1.1. Mise en équation
+     7.1.1. Mise en équation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#schema-d-euler">
-     6.1.2. Schéma d’Euler
+     7.1.2. Schéma d’Euler
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#implementation-du-schema-d-euler">
-   6.2. Implémentation du schéma d’Euler
+   7.2. Implémentation du schéma d’Euler
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#test-sur-le-systeme-aux-petits-angles">
-   6.3. Test sur le système aux petits angles
+   7.3. Test sur le système aux petits angles
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integration-numerique">
-     6.3.1. Intégration numérique
+     7.3.1. Intégration numérique
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#determination-de-la-periode">
-     6.3.2. Détermination de la période.
+     7.3.2. Détermination de la période.
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anisochronisme-des-grandes-oscillations">
-   6.4. Anisochronisme des grandes oscillations.
+   7.4. Anisochronisme des grandes oscillations.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trajectoire-de-diffusion">
-   6.5. Trajectoire de diffusion
+   7.5. Trajectoire de diffusion
   </a>
  </li>
 </ul>
@@ -344,17 +366,17 @@
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="section" id="etude-d-un-pendule-simple">
-<h1><span class="section-number">6. </span>Etude d’un pendule simple<a class="headerlink" href="#etude-d-un-pendule-simple" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7. </span>Etude d’un pendule simple<a class="headerlink" href="#etude-d-un-pendule-simple" title="Permalink to this headline">¶</a></h1>
 <p><strong>But :</strong> à l’aide d’un langage de programmation, mettre en évidence le non isochronisme des oscillations d’un pendule.</p>
 <div class="section" id="position-du-probleme">
-<h2><span class="section-number">6.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
 <p>Nous allons chercher à étudier les oscillations d’un pendule simple :</p>
 <ol class="simple">
 <li><p>Aux petites oscillations. Ce sera l’occasion de tester le schéma d’Euler mis en place pour étudier le système en le comparant aux attentes.</p></li>
 <li><p>Pour des oscillations quelconques. On cherchera alors à déterminer la période des oscillations en fonction de l’amplitude pour observer le <strong>non isochoronisme des oscillations</strong>. On comparera notamment les résultats trouvés à la formule théorique approchée.</p></li>
 </ol>
 <div class="section" id="mise-en-equation">
-<h3><span class="section-number">6.1.1. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.1. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
 <p>On considère un pendule simple de longueur <span class="math notranslate nohighlight">\(l\)</span> sans sources d’amortissement dans un champ de pesanteur uniforme <span class="math notranslate nohighlight">\(g\)</span>. La masse au bout du pendule est <span class="math notranslate nohighlight">\(m\)</span>.</p>
 <p>Pour les applications numériques, on prendra <span class="math notranslate nohighlight">\(l = 1 m; g = 9.81 m.s^{-2}; m=1 kg\)</span>.</p>
 <p>On rappelle que la mise en équation du pendule amène à l’équation :</p>
@@ -375,7 +397,7 @@ E_p(\theta) = mgl(1 - \cos \theta)
 <p>et l’énergie cinétique : <span class="math notranslate nohighlight">\(E_c = {1 \over 2} m l^2 \dot \theta^2\)</span></p>
 </div>
 <div class="section" id="schema-d-euler">
-<h3><span class="section-number">6.1.2. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">¶</a></h3>
 <p>On va utiliser un schéma d’Euler explicite. Le système étant d’ordre 2, on utilise un système d’équations différentielles définit par la relation vectorielle :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -401,7 +423,7 @@ Y_{k+1} = Y_k + h \times F(t_k, Y(t_k))
 </div>
 </div>
 <div class="section" id="implementation-du-schema-d-euler">
-<h2><span class="section-number">6.2. </span>Implémentation du schéma d’Euler<a class="headerlink" href="#implementation-du-schema-d-euler" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Implémentation du schéma d’Euler<a class="headerlink" href="#implementation-du-schema-d-euler" title="Permalink to this headline">¶</a></h2>
 <p>Cette fois, on va directement raisonner avec le <strong>vecteur <span class="math notranslate nohighlight">\(Y_k\)</span></strong> et non avec deux grandeurs séparées <span class="math notranslate nohighlight">\(\theta_k\)</span> et <span class="math notranslate nohighlight">\(\dot \theta_k\)</span></p>
 <blockquote>
 <div><p><strong>Exercice 1 :</strong><br />
@@ -443,9 +465,9 @@ et qui renvoie :</p></li>
 </div>
 </div>
 <div class="section" id="test-sur-le-systeme-aux-petits-angles">
-<h2><span class="section-number">6.3. </span>Test sur le système aux petits angles<a class="headerlink" href="#test-sur-le-systeme-aux-petits-angles" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span>Test sur le système aux petits angles<a class="headerlink" href="#test-sur-le-systeme-aux-petits-angles" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="integration-numerique">
-<h3><span class="section-number">6.3.1. </span>Intégration numérique<a class="headerlink" href="#integration-numerique" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1. </span>Intégration numérique<a class="headerlink" href="#integration-numerique" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p><strong>Exercice 2 :</strong><br />
 Vous devez :</p>
@@ -460,7 +482,7 @@ Vous devez :</p>
 </ul>
 </div>
 <div class="section" id="determination-de-la-periode">
-<h3><span class="section-number">6.3.2. </span>Détermination de la période.<a class="headerlink" href="#determination-de-la-periode" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.2. </span>Détermination de la période.<a class="headerlink" href="#determination-de-la-periode" title="Permalink to this headline">¶</a></h3>
 <p>Par la suite, le signal ne sera plus forcément sinusoïdal mais restera périodique, on va chercher à déterminer la période du signal obtenu par résolution numérique.</p>
 <p><strong>Méthode choisie</strong> : On va déterminer les temps <span class="math notranslate nohighlight">\(t_{0i}\)</span> successifs des points où la solution numérique pour <span class="math notranslate nohighlight">\(\theta(t)\)</span> s’annule (plus précisément les temps médians entre deux instants où le signal change de signe). Comme il n’y a que 2 annulations des angles dans une période (cf. étude des systèmes conservatifs), il suffira de compter le nombre <span class="math notranslate nohighlight">\(N_0\)</span> de 0. La période <span class="math notranslate nohighlight">\(T\)</span> du signal s’écrit alors :</p>
 <div class="math notranslate nohighlight">
@@ -477,7 +499,7 @@ T = {t_{0N_0} - t_{01} \over {N_0 - 1 \over 2}}
 </div>
 </div>
 <div class="section" id="anisochronisme-des-grandes-oscillations">
-<h2><span class="section-number">6.4. </span>Anisochronisme des grandes oscillations.<a class="headerlink" href="#anisochronisme-des-grandes-oscillations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Anisochronisme des grandes oscillations.<a class="headerlink" href="#anisochronisme-des-grandes-oscillations" title="Permalink to this headline">¶</a></h2>
 <p>On a observé théoriquement que la période des oscillations dépendaient aux fortes amplitudes des oscillations. Pour une amplitude “pas trop forte”, une approximation de l’intégrale trouvée en TD amène à la formule dite de Borda :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -505,7 +527,7 @@ T \approx T_0 (1 + {\theta_0 ^2 \over 16})
 </div></blockquote>
 </div>
 <div class="section" id="trajectoire-de-diffusion">
-<h2><span class="section-number">6.5. </span>Trajectoire de diffusion<a class="headerlink" href="#trajectoire-de-diffusion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.5. </span>Trajectoire de diffusion<a class="headerlink" href="#trajectoire-de-diffusion" title="Permalink to this headline">¶</a></h2>
 <p>On s’intéresse au cas où le pendule part de sa position la plus basse avec une vitesse angulaire <span class="math notranslate nohighlight">\(\omega_i\)</span>.</p>
 <blockquote>
 <div><p><strong>Exercice 5 :</strong></p>
@@ -543,8 +565,8 @@ T \approx T_0 (1 + {\theta_0 ^2 \over 16})
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="meca_non_lineaire.html" title="previous page"><span class="section-number">5. </span>Système conservatif : Effets non linéaires.</a>
-    <a class='right-next' id="next-link" href="meca_force_centrale.html" title="next page"><span class="section-number">7. </span>Etude d’un mouvement à force centrale</a>
+    <a class='left-prev' id="prev-link" href="meca_non_lineaire.html" title="previous page"><span class="section-number">6. </span>Système conservatif : Effets non linéaires.</a>
+    <a class='right-next' id="next-link" href="meca_force_centrale.html" title="next page"><span class="section-number">8. </span>Etude d’un mouvement à force centrale</a>
 
         </div>
         

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.4. Implémentation complète &#8212; Capacités numériques - Sujets</title>
+    <title>4.4. Implémentation complète &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.5. Réponse à une rampe de tension." href="elec_reponse_o1_rampe.html" />
-    <link rel="prev" title="3.3. Implémentation basique" href="elec_reponse_o1_base.html" />
+    <link rel="next" title="4.5. Réponse à une rampe de tension." href="elec_reponse_o1_rampe.html" />
+    <link rel="prev" title="4.3. Implémentation basique" href="elec_reponse_o1_base.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -115,8 +115,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="derivation_integration.html">
-   2. Dérivation et intégration numérique
+  <a class="reference internal" href="equation_stationnaire.html">
+   2. Résolution d’équation stationnaire
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -125,67 +125,89 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="equation_stationnaire_base.html">
+     2.4. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="equation_stationnaire_fonction.html">
+     2.5. Etude du redressement monoalternance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="derivation_integration.html">
+   3. Dérivation et intégration numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="derivation_base.html">
-     2.3. Dérivation et intégration : Méthode de base
+     3.3. Dérivation et intégration : Méthode de base
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="derive_integ_fonction.html">
-     2.4. Utilisation de fonctions
+     3.4. Utilisation de fonctions
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_reponse_o1.html">
-   3. Résolution numérique d’une équation différentielle d’ordre 1
+   4. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_base.html">
-     3.3. Implémentation basique
+     4.3. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.4. Implémentation complète
+     4.4. Implémentation complète
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_rampe.html">
-     3.5. Réponse à une rampe de tension.
+     4.5. Réponse à une rampe de tension.
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="elec_filtrage.html">
-   4. Etude numérique d’un filtre linéaire
+   5. Etude numérique d’un filtre linéaire
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_non_lineaire.html">
-   5. Système conservatif : Effets non linéaires.
+   6. Système conservatif : Effets non linéaires.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_pendule.html">
-   6. Etude d’un pendule simple
+   7. Etude d’un pendule simple
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_force_centrale.html">
-   7. Etude d’un mouvement à force centrale
+   8. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   8. Etude de l’atmosphère terrestre
+   9. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -284,37 +306,37 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#implementation-du-schema-d-euler">
-   3.4.1. Implémentation du schéma d’Euler
+   4.4.1. Implémentation du schéma d’Euler
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#application-au-regime-libre-et-a-l-echelon-de-tension">
-   3.4.2. Application au régime libre et à l’échelon de tension.
+   4.4.2. Application au régime libre et à l’échelon de tension.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#erreur-et-pas-d-integration">
-   3.4.3. Erreur et pas d’intégration
+   4.4.3. Erreur et pas d’intégration
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rampe-de-tension">
-   3.4.4. Rampe de tension
+   4.4.4. Rampe de tension
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derivation-numerique">
-     3.4.4.1. Dérivation numérique.
+     4.4.4.1. Dérivation numérique.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integration-numerique">
-     3.4.4.2. Intégration numérique.
+     4.4.4.2. Intégration numérique.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#application-a-la-rampe">
-     3.4.4.3. Application à la rampe.
+     4.4.4.3. Application à la rampe.
     </a>
    </li>
   </ul>
@@ -332,9 +354,9 @@
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="section" id="implementation-complete">
-<h1><span class="section-number">3.4. </span>Implémentation complète<a class="headerlink" href="#implementation-complete" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.4. </span>Implémentation complète<a class="headerlink" href="#implementation-complete" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="implementation-du-schema-d-euler">
-<h2><span class="section-number">3.4.1. </span>Implémentation du schéma d’Euler<a class="headerlink" href="#implementation-du-schema-d-euler" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4.1. </span>Implémentation du schéma d’Euler<a class="headerlink" href="#implementation-du-schema-d-euler" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>Exercice 1</strong></p>
 <ol class="simple">
@@ -368,7 +390,7 @@
 </div>
 </div>
 <div class="section" id="application-au-regime-libre-et-a-l-echelon-de-tension">
-<h2><span class="section-number">3.4.2. </span>Application au régime libre et à l’échelon de tension.<a class="headerlink" href="#application-au-regime-libre-et-a-l-echelon-de-tension" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4.2. </span>Application au régime libre et à l’échelon de tension.<a class="headerlink" href="#application-au-regime-libre-et-a-l-echelon-de-tension" title="Permalink to this headline">¶</a></h2>
 <p><strong>On prendra <span class="math notranslate nohighlight">\(\tau = 1\)</span>.</strong> Il s’agit de vérifier que la fonction précédente fonctionne correctement. <em>Si vous avez fait la comparaison dans l’étude de base, vous pouvez réutiliser une bonne partie du code pour le tracé graphique en choisissant bien le nom de vos variables.</em></p>
 <blockquote>
 <div><p><strong>Exercice 2</strong></p>
@@ -388,7 +410,7 @@
 </div>
 </div>
 <div class="section" id="erreur-et-pas-d-integration">
-<h2><span class="section-number">3.4.3. </span>Erreur et pas d’intégration<a class="headerlink" href="#erreur-et-pas-d-integration" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4.3. </span>Erreur et pas d’intégration<a class="headerlink" href="#erreur-et-pas-d-integration" title="Permalink to this headline">¶</a></h2>
 <p><strong>Inutile de faire cette partie si vous l’avez dans l’étude de base.</strong></p>
 <blockquote>
 <div><p><strong>Exercice 3</strong></p>
@@ -404,10 +426,10 @@
 </ul>
 </div>
 <div class="section" id="rampe-de-tension">
-<h2><span class="section-number">3.4.4. </span>Rampe de tension<a class="headerlink" href="#rampe-de-tension" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4.4. </span>Rampe de tension<a class="headerlink" href="#rampe-de-tension" title="Permalink to this headline">¶</a></h2>
 <p>On va aussi réaliser une étude énergétique. Pour cela, il faut calculer l’intensité <span class="math notranslate nohighlight">\(i\)</span> par dérivation numérique puis l’énergie (dissipée ou fournie) par intégration numérique.</p>
 <div class="section" id="derivation-numerique">
-<h3><span class="section-number">3.4.4.1. </span>Dérivation numérique.<a class="headerlink" href="#derivation-numerique" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.4.1. </span>Dérivation numérique.<a class="headerlink" href="#derivation-numerique" title="Permalink to this headline">¶</a></h3>
 <p>On va réaliser une dérivée numérique centrée. Pour un pas de temps <span class="math notranslate nohighlight">\(h\)</span>. On peut faire l’approximation de <span class="math notranslate nohighlight">\(y(t-h)\)</span> et <span class="math notranslate nohighlight">\(y(t+h)\)</span> par :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -443,7 +465,7 @@ dy_{k_{\max}} &amp;= \frac{y_{k_{\max}} - y_{k_{\max} - 1}}{h} \textrm{ Dérivat
 </div></blockquote>
 </div>
 <div class="section" id="integration-numerique">
-<h3><span class="section-number">3.4.4.2. </span>Intégration numérique.<a class="headerlink" href="#integration-numerique" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.4.2. </span>Intégration numérique.<a class="headerlink" href="#integration-numerique" title="Permalink to this headline">¶</a></h3>
 <p>On applique la méthode des rectangles pour calculer numériquement l’intégrale de <span class="math notranslate nohighlight">\(y(t)\)</span> entre <span class="math notranslate nohighlight">\(t_0\)</span> et <span class="math notranslate nohighlight">\(t_k\)</span>. On note <span class="math notranslate nohighlight">\(s_k\)</span> la valeur de cette intégrale et on prend <span class="math notranslate nohighlight">\(s_0 = 0\)</span> (l’énergie échangé initialement sera nulle). On définit donc la récurrence :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -458,7 +480,7 @@ s_{k+1} = s_k + h * y_k
 </div></blockquote>
 </div>
 <div class="section" id="application-a-la-rampe">
-<h3><span class="section-number">3.4.4.3. </span>Application à la rampe.<a class="headerlink" href="#application-a-la-rampe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.4.3. </span>Application à la rampe.<a class="headerlink" href="#application-a-la-rampe" title="Permalink to this headline">¶</a></h3>
 <p>On étudie un circuit RC série soumis à une tension <span class="math notranslate nohighlight">\(E(t)\)</span> :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -527,8 +549,8 @@ t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="elec_reponse_o1_base.html" title="previous page"><span class="section-number">3.3. </span>Implémentation basique</a>
-    <a class='right-next' id="next-link" href="elec_reponse_o1_rampe.html" title="next page"><span class="section-number">3.5. </span>Réponse à une rampe de tension.</a>
+    <a class='left-prev' id="prev-link" href="elec_reponse_o1_base.html" title="previous page"><span class="section-number">4.3. </span>Implémentation basique</a>
+    <a class='right-next' id="next-link" href="elec_reponse_o1_rampe.html" title="next page"><span class="section-number">4.5. </span>Réponse à une rampe de tension.</a>
 
         </div>
         

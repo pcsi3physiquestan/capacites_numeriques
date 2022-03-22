@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.3. Dérivation et intégration : Méthode de base &#8212; Capacités numériques - Sujets</title>
+    <title>2.4. Implémentation basique &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,12 +51,12 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/derivation_base.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/equation_stationnaire_base.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.4. Utilisation de fonctions" href="derive_integ_fonction.html" />
-    <link rel="prev" title="3. Dérivation et intégration numérique" href="derivation_integration.html" />
+    <link rel="next" title="2.5. Etude du redressement monoalternance" href="equation_stationnaire_fonction.html" />
+    <link rel="prev" title="2. Résolution d’équation stationnaire" href="equation_stationnaire.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -114,18 +114,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="equation_stationnaire.html">
    2. Résolution d’équation stationnaire
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_base.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      2.4. Implémentation basique
     </a>
    </li>
@@ -136,18 +136,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="derivation_integration.html">
    3. Dérivation et intégration numérique
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derivation_base.html">
      3.3. Dérivation et intégration : Méthode de base
     </a>
    </li>
@@ -250,11 +250,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/derivation_base.ipynb"><button type="button"
+            href="_sources/equation_stationnaire_base.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/derivation_base.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/equation_stationnaire_base.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -279,7 +279,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/derivation_base.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/equation_stationnaire_base.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -305,18 +305,23 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calcul-de-l-intensite">
-   3.3.1. Calcul de l’intensité.
+  <a class="reference internal nav-link" href="#position-du-probleme">
+   2.4.1. Position du problème.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calcul-de-l-energie-dissipee">
-   3.3.2. Calcul de l’énergie dissipée
+  <a class="reference internal nav-link" href="#etude-preliminaire">
+   2.4.2. Etude préliminaire
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-partir-de-donnees-experimentales">
-   3.3.3. A partir de données expérimentales.
+  <a class="reference internal nav-link" href="#methode-par-dichotomie">
+   2.4.3. Méthode par dichotomie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-de-newton">
+   2.4.4. Méthode de Newton
   </a>
  </li>
 </ul>
@@ -331,99 +336,122 @@
               <div>
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
-<div class="section" id="derivation-et-integration-methode-de-base">
-<h1><span class="section-number">3.3. </span>Dérivation et intégration : Méthode de base<a class="headerlink" href="#derivation-et-integration-methode-de-base" title="Permalink to this headline">¶</a></h1>
-<p>On se propose de mettre en place les calculs d’intégration et de dérivation sur des cas simples basés sur l’électrocinétique. On considère un circuit RC soumis à un échelon de tension <span class="math notranslate nohighlight">\(E\)</span>. La tension aux bornes du condensateur est alors:</p>
+<p><strong>Si vous vous sentez suffisamment à l’aise,</strong> vous pouvez passer directement à l’<span class="xref myst">étude approfondie</span>.</p>
+<div class="section" id="implementation-basique">
+<h1><span class="section-number">2.4. </span>Implémentation basique<a class="headerlink" href="#implementation-basique" title="Permalink to this headline">¶</a></h1>
+<p>Nous allons ici implémenter sans utiliser de fonction les deux méthodes de recherche de racine pour réaliser la recherche d’un point de fonctionnement et étudier le redressement monoalternance.</p>
+<div class="section" id="position-du-probleme">
+<span id="pos-pb-eq"></span><h2><span class="section-number">2.4.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
+<p>On considère un générateur idéal de tension délivrant une tension <span class="math notranslate nohighlight">\(E\)</span> branché en série avec une résistance <span class="math notranslate nohighlight">\(R = 100 \rm{\Omega}\)</span> et une diode <span class="math notranslate nohighlight">\(D\)</span> dont la relation intensité tension est:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
 <div class="math notranslate nohighlight">
 \[
-u(t) = E (1 - e^{- t / \tau})
+i = I_s\left(\exp \left(\frac{u_D}{V_T}\right) - 1\right)
 \]</div>
-<p>avec <span class="math notranslate nohighlight">\(\tau = RC\)</span>.</p>
-<p>Pour la suite, on prendra <span class="math notranslate nohighlight">\(E = 1\rm{V}; R = 10 \rm{k\Omega}; C=10^{-4} \rm{F}\)</span> et donc <span class="math notranslate nohighlight">\(\tau = 1\rm{s}\)</span>. On rappelle que:</p>
-<ul class="simple">
-<li><p>L’intensité qui circule à travers le condensateur (et donc aussi la résistance) est donné par <span class="math notranslate nohighlight">\(i = C \frac{\rm{d}u}{\rm{dt}}\)</span></p></li>
-<li><p>La puissance dissipée à un instant <span class="math notranslate nohighlight">\(t\)</span> par effet Joule est donné par <span class="math notranslate nohighlight">\(P(t) = R i^2(t)\)</span>. L’énergie dissipée par effet Joule entre <span class="math notranslate nohighlight">\(t_0\)</span> et <span class="math notranslate nohighlight">\(t_1\)</span> est donc:</p></li>
-</ul>
+<p class="card-text">avec <span class="math notranslate nohighlight">\(I_s = 95 \rm{\mu A}\)</span> et <span class="math notranslate nohighlight">\(V_D = 30 \rm{mV}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-center" id="label-image">
+<img alt="_images/diode.png" src="_images/diode.png" />
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Titre</span><a class="headerlink" href="#label-image" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output tag_remove-input docutils container">
+</div>
+<p>La loi des mailles s’écrit: <span class="math notranslate nohighlight">\(E - Ri = u_D\)</span> soit <span class="math notranslate nohighlight">\(\frac{E}{R} - \frac{u_D}{R} = I_s\left(\exp \left(\frac{u_D}{V_T}\right) - 1\right)\)</span>. On doit donc rechercher l’<a class="reference internal" href="#pt-fc"><span class="std std-ref">intersection entre une droite et une exponentielle</span></a> ce qui est n’est pas possible analytiquement. On va donc chercher la <a class="reference internal" href="#eq-rs"><span class="std std-ref">racine de la fonction</span></a>:</p>
 <div class="math notranslate nohighlight">
 \[
-E_J = \int_{t_0}^{t_1} Ri^2(t) dt
+  f(u) = \frac{E-u}{R} - I_s\left(\exp \left(\frac{u}{V_T}\right) - 1\right)
 \]</div>
-<p>Dans ce cas, simple, on peut calculer analytiquement <span class="math notranslate nohighlight">\(i(t)\)</span> et <span class="math notranslate nohighlight">\(E_J\)</span>. Mais on va réaliser une dérivation puis une intégration numérique. L’intérêt sera de comparer ce qu’on trouve aux expressions analytiques.</p>
-<div class="section" id="calcul-de-l-intensite">
-<h2><span class="section-number">3.3.1. </span>Calcul de l’intensité.<a class="headerlink" href="#calcul-de-l-intensite" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-center" id="pt-fc">
+<div class="cell_output docutils container">
+<img alt="_images/equation_stationnaire_base_1_0.png" src="_images/equation_stationnaire_base_1_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Point de fonctionnement</span><a class="headerlink" href="#pt-fc" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="eq-rs">
+<div class="cell_output docutils container">
+<img alt="_images/equation_stationnaire_base_1_2.png" src="_images/equation_stationnaire_base_1_2.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Fonction à étudier</span><a class="headerlink" href="#eq-rs" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="etude-preliminaire">
+<h2><span class="section-number">2.4.2. </span>Etude préliminaire<a class="headerlink" href="#etude-preliminaire" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><strong>Exercice A:</strong></p>
+<div><p><strong>Exercice A:</strong><br />
+On prend <span class="math notranslate nohighlight">\(E = 1\rm{V}\)</span>.</p>
 <ol class="simple">
-<li><p>Importer les bibliothèques scientifiques <code class="docutils literal notranslate"><span class="pre">numpy</span></code> et <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>.</p></li>
-<li><p>Ecrire deux instructions pour créer deux vecteurs <code class="docutils literal notranslate"><span class="pre">tk</span></code> et <code class="docutils literal notranslate"><span class="pre">uk</span></code> contenant respectivement les instants <span class="math notranslate nohighlight">\(t_k\)</span> équirépartis entre 0 et 5s et les valeurs <span class="math notranslate nohighlight">\(u_k = u(t_k)\)</span> à ces instants. On prendra 1000 valeurs pour chaque vecteur.</p></li>
-<li><p>Ecrire une boucle <strong>avec son initialisation</strong> qui calcule les <span class="math notranslate nohighlight">\(i_k = i(t_k)\)</span> par un calcul dérivée à gauche avec un pas <span class="math notranslate nohighlight">\(h=10^{-3}\rm{s}\)</span> puis les ajoute à une liste <code class="docutils literal notranslate"><span class="pre">ik</span></code>.</p></li>
-<li><p>Transformer la liste <code class="docutils literal notranslate"><span class="pre">ik</span></code> en un vecteur <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
-<li><p>Tracer sur un même graphique <span class="math notranslate nohighlight">\(i(t)\)</span> obtenu par dérivation numérique et <span class="math notranslate nohighlight">\(i(t)\)</span> obtenu par calcul analytique puis jouer sur le pas <span class="math notranslate nohighlight">\(h\)</span> pour voir si la dérivation est encore acceptable si on augmente <span class="math notranslate nohighlight">\(h\)</span>.</p></li>
-</ol>
-</div></blockquote>
-<p><em>On rappelle que analytiquement, on trouve:</em></p>
-<div class="math notranslate nohighlight">
-\[
-i(t) = \frac{E}{R} e^{-t / \tau}
-\]</div>
-<blockquote>
-<div><p><strong>Exercice B:</strong></p>
-<ol class="simple">
-<li><p>Reprendre les instructions précédentes et réaliser le calcul de la dérivation numérique par intégration à droite puis centrée. Comparer graphiquement à la solution analytique.</p></li>
+<li><p>Importer les bibliothèques <code class="docutils literal notranslate"><span class="pre">numpy</span></code> et <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code></p></li>
+<li><p>Définir la variable <span class="math notranslate nohighlight">\(E\)</span> puis une fonction <code class="docutils literal notranslate"><span class="pre">f_test</span></code> qui renvoie la valeur de <span class="math notranslate nohighlight">\(f\)</span> pour une tension <span class="math notranslate nohighlight">\(u\)</span> donnée en argument de la fonction. (<strong>On définira <span class="math notranslate nohighlight">\(E\)</span> de manière globale hors de la fonction pour pouvoir modifier sa valeur par la suite.</strong> Pour le reste, on peut les définir dans la fonction.)</p></li>
+<li><p>Tracer la fonction <span class="math notranslate nohighlight">\(f\)</span> entre <span class="math notranslate nohighlight">\([-1,1]\)</span> et vérifier graphiquement qu’il n’y bien qu’une seule racine dans l’intervalle (<em>Note: On peut démontrer que la fonction est strictement décroissante, on a donc bien unicité de la racine quand elle existe.</em>)</p></li>
 </ol>
 </div></blockquote>
 </div>
-<div class="section" id="calcul-de-l-energie-dissipee">
-<h2><span class="section-number">3.3.2. </span>Calcul de l’énergie dissipée<a class="headerlink" href="#calcul-de-l-energie-dissipee" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="methode-par-dichotomie">
+<h2><span class="section-number">2.4.3. </span>Méthode par dichotomie<a class="headerlink" href="#methode-par-dichotomie" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice B:</strong><br />
+Ecrire une suite d’instruction:</p>
+<ol class="simple">
+<li><p>(Initialisation): Définir les bornes <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code> initiales de l’intervalle de recherche et la précision <code class="docutils literal notranslate"><span class="pre">prec</span></code> recherche sur <span class="math notranslate nohighlight">\(u\)</span> (on prendra une précision de <span class="math notranslate nohighlight">\(10^{-6} V\)</span>.). _ Vous pouvez, au cas où tester si <span class="math notranslate nohighlight">\(f(a)\)</span> ou <span class="math notranslate nohighlight">\(f(b)\)</span> est nul et le cas échéant changer l’intervalle pour qu’il soit de longueur nulle (mais bon…)._</p></li>
+<li><p>(Boucle) : La boucle devra être réalisée tant que la largeur de l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> est supérieur à <code class="docutils literal notranslate"><span class="pre">prec</span></code>. Quel type de boucle utiliser ? A l’intérieur de la boucle:</p>
+<ol class="simple">
+<li><p>Calculer le milieu de l’intervale <code class="docutils literal notranslate"><span class="pre">c</span></code> et tester si <span class="math notranslate nohighlight">\(f\)</span> s’annule en <code class="docutils literal notranslate"><span class="pre">c</span></code>. Si c’est le cas, assigner <span class="math notranslate nohighlight">\(c\)</span> à <span class="math notranslate nohighlight">\(a\)</span> ET <span class="math notranslate nohighlight">\(b\)</span> (l’intervalle est alors de longueur nulle et la boucle se terminera).</p></li>
+<li><p>Sinon si <span class="math notranslate nohighlight">\(f(a)f(c) &lt; 0\)</span>, assigner c à b et recommencer.</p></li>
+<li><p>Sinon, assigner c à a et recommencer.</p></li>
+</ol>
+</li>
+<li><p>Afficher la valeur du milieu du dernier intervalle <span class="math notranslate nohighlight">\(c_{finale}\)</span> et la valeur de <span class="math notranslate nohighlight">\(f(c_{finale})\)</span>. Vérifier la cohérence de la valeur obtenue avec le graphique tracé précédemment.</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Exercice Bbis:</strong><br />
+Reprendre la série d’instructions précédentes mais remplacer le critère d’arrêt de la boucle par un test sur le <span class="math notranslate nohighlight">\(max(f(a), f(b))\)</span> qui doit être inférieur la précision choisie (<span class="math notranslate nohighlight">\(10^{-6} A\)</span>). Obtient-on une valeur plus ou moins précise de la tension finale ?</p>
+</div></blockquote>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>L’observation précédente n’est pas une généralité. Suivant la pente de la fonction autour de 0, le test sur l’abscisse ou l’ordonnéeseront plus ou moins performants.</p>
+</div>
+</div>
+<div class="section" id="methode-de-newton">
+<h2><span class="section-number">2.4.4. </span>Méthode de Newton<a class="headerlink" href="#methode-de-newton" title="Permalink to this headline">¶</a></h2>
+<p>La méthode de Newton n’étant pas officiellement au programme en physique, ne faire cette partie QUE si vous êtes suffisamment en avance (ou que vous avez fini la partie suivante).</p>
 <blockquote>
 <div><p><strong>Exercice C:</strong></p>
 <ol class="simple">
-<li><p>Ecrire une instruction pour créer un vecteur <code class="docutils literal notranslate"><span class="pre">Pk</span></code> contenant les puissances <span class="math notranslate nohighlight">\(P_k = P_J(t_k)\)</span> dissipées par effet Joule dans R à chaque instant.</p></li>
-<li><p>Ecrire une boucle <strong>avec son initialisation</strong> qui calcule les <span class="math notranslate nohighlight">\(E_k = E_J(t_k)\)</span>, énergie dissipée entre <span class="math notranslate nohighlight">\(t=0\)</span> et <span class="math notranslate nohighlight">\(t=t_k\)</span>, par la méthode des rectangles à gauche avec un pas <span class="math notranslate nohighlight">\(h=10^{-3}\rm{s}\)</span> puis les ajoute à une liste <code class="docutils literal notranslate"><span class="pre">Ek</span></code>. Pensez à utiliser une récurrence.</p></li>
-<li><p>Transformer la liste <code class="docutils literal notranslate"><span class="pre">Ek</span></code> en un vecteur <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
-<li><p>Tracer sur un même graphique <span class="math notranslate nohighlight">\(E_J(t)\)</span> obtenu par dérivation numérique et <span class="math notranslate nohighlight">\(E_J(t)\)</span> obtenu par calcul analytique puis jouer sur le pas <span class="math notranslate nohighlight">\(h\)</span> pour voir si la dérivation est encore acceptable si on augmente <span class="math notranslate nohighlight">\(h\)</span>.</p></li>
+<li><p>(Initialisation) Choisir une valeur <span class="math notranslate nohighlight">\(x_0\)</span> dans l’intervalle de départ à stocker dans <code class="docutils literal notranslate"><span class="pre">x0</span></code>.</p></li>
+<li><p>(Boucle) Critère pour continuer : <span class="math notranslate nohighlight">\(f(x_0)&gt; prec\)</span>. On prendra une précision de <span class="math notranslate nohighlight">\(10^{-6}A\)</span>. Calculer <span class="math notranslate nohighlight">\(x_1\)</span> défini par la méthode de Newton et l’assigner à la variable <code class="docutils literal notranslate"><span class="pre">x0</span></code>.</p></li>
+<li><p>Vérifier que la valeur finale est cohérente avec les études précédentes.</p></li>
+<li><p>Ajouter un compteur aux deux méthodes (dichotomie et Newton) et comparer le nombre d’itération dans les deux cas.</p></li>
 </ol>
 </div></blockquote>
-<p><em>On rappelle que analytiquement, on trouve:</em></p>
-<div class="math notranslate nohighlight">
-\[
-E_J(t) = \frac{CE^2}{2} \left(1 -  e^{-2 t / \tau}\right)
-\]</div>
-<blockquote>
-<div><p><strong>Exercice D:</strong></p>
-<ol class="simple">
-<li><p>Reprendre les instructions précédentes et réaliser le calcul de l’intégration numérique par intégration à droite, centrée puis par les trapèzes. Comparer graphiquement à la solution analytique.</p></li>
-</ol>
-</div></blockquote>
-</div>
-<div class="section" id="a-partir-de-donnees-experimentales">
-<span id="cas-exp"></span><h2><span class="section-number">3.3.3. </span>A partir de données expérimentales.<a class="headerlink" href="#a-partir-de-donnees-experimentales" title="Permalink to this headline">¶</a></h2>
-<p>Les données expérimentales sont celle déjà utilisée précédemment et accessible par <a class="reference external" href="https://github.com/pcsi3physiquestan/donnees_exp/blob/main/circuit_rc.dat?raw=true">ce lien</a>. On rappelle que la méthode d’importation d’un fichier est disponible <a class="reference external" href="https://pcsi3physiquestan.github.io/intro_python/notebook/import_file.html">ici</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Si votre navigateur ouvre le fichier au lieu de le télécharger, faites un clic droit sur le lien et choisir <code class="docutils literal notranslate"><span class="pre">Enregistrer</span> <span class="pre">la</span> <span class="pre">cible</span> <span class="pre">du</span> <span class="pre">lien</span></code>.</p>
-</div>
-<blockquote>
-<div><p><strong>Exercice E:</strong></p>
-<ol class="simple">
-<li><p>Après avoir télécharger le fichier <strong>et l’avoir placé dans le bon répertoire</strong>, ouvrez le pour lire l’en-tête et la structure du fichier. Ecrire alors deux instructions : la première importe le fichier et crée deux vecteurs <code class="docutils literal notranslate"><span class="pre">tk</span></code> et <code class="docutils literal notranslate"><span class="pre">ukb</span></code> contenant les temps de mesure et les mesures de tension en bits et la seconde instruction qui transforme la liste <code class="docutils literal notranslate"><span class="pre">ukb</span></code> en une liste <code class="docutils literal notranslate"><span class="pre">uk</span></code> contenant les valeurs de tension en volt. <em>S’aider de la ligne de commande proposée ci-dessous et de la description du fichier.</em></p></li>
-<li><p>Ecrire une boucle <strong>avec son initialisation</strong> qui calcule les <span class="math notranslate nohighlight">\(i_k = i(t_k)\)</span> par dérivation numérique (cf. remarque après) et qui le stocke dans une liste <code class="docutils literal notranslate"><span class="pre">ik</span></code> puis transformer la liste en un vecteur.</p></li>
-<li><p>Ecrire une boucle <strong>avec son initialisation</strong> qui calcule les <span class="math notranslate nohighlight">\(E_k = E_J(t_k)\)</span>, énergie dissipée entre <span class="math notranslate nohighlight">\(t=0\)</span> et <span class="math notranslate nohighlight">\(t=t_k\)</span> par intégration numérique et qui le stocke dans une liste <code class="docutils literal notranslate"><span class="pre">Ek</span></code> puis transformer la liste en un vecteur. On utilisera la méthode des rectangles (cf. remarque après).</p></li>
-<li><p>Tracer trois graphiques: <span class="math notranslate nohighlight">\(u(t), i(t), E_J(t)\)</span> sur trois graphiques différents (on utilisera soit trois fenêtres graphiques, soit un graphique multiple si on se sent à l’aise avec ce dernier).</p></li>
-</ol>
-</div></blockquote>
-<ul class="simple">
-<li><p>Pour l’import, on rappelle la commande permettant de séparer les colonne en plusieurs variables:</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">temps,</span> <span class="pre">ucb</span> <span class="pre">=</span> <span class="pre">np.loadtxt('chemin_vers_fichier',</span> <span class="pre">skiprows=nlignes_a_sauter,</span> <span class="pre">delimiter=&quot;delimiteur</span> <span class="pre">de</span> <span class="pre">colonne&quot;,</span> <span class="pre">unpack=True)</span></code></p>
-<ul class="simple">
-<li><p>Pour les méthodes numériques, on ne peut choisir ici le pas d’intégration car on ne connaît que des valeurs discrètes.</p>
-<ul>
-<li><p>Dérivation numérique: le pas est imposé par les écarts entre les <span class="math notranslate nohighlight">\(t_k\)</span>. De plus, comme précisé précédemment, vous devez utiliser une dérivée à droite en <span class="math notranslate nohighlight">\(t_0\)</span> et une dérivée à gauche en <span class="math notranslate nohighlight">\(t_{final}\)</span>. Pour les instants intermédiaires, il est <strong>demandé d’utiliser une dérivée centrée.</strong></p></li>
-<li><p>Intégration numérique: le pas est à nouveau imposé par les <span class="math notranslate nohighlight">\(t_k\)</span>. On utilisera <strong>la méthode des trapèzes</strong> pour l’intégration.</p></li>
-</ul>
-</li>
-</ul>
 </div>
 </div>
 
@@ -452,8 +480,8 @@ E_J(t) = \frac{CE^2}{2} \left(1 -  e^{-2 t / \tau}\right)
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="derivation_integration.html" title="previous page"><span class="section-number">3. </span>Dérivation et intégration numérique</a>
-    <a class='right-next' id="next-link" href="derive_integ_fonction.html" title="next page"><span class="section-number">3.4. </span>Utilisation de fonctions</a>
+    <a class='left-prev' id="prev-link" href="equation_stationnaire.html" title="previous page"><span class="section-number">2. </span>Résolution d’équation stationnaire</a>
+    <a class='right-next' id="next-link" href="equation_stationnaire_fonction.html" title="next page"><span class="section-number">2.5. </span>Etude du redressement monoalternance</a>
 
         </div>
         

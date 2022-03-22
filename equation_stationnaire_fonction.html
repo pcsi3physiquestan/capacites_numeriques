@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.5. Réponse à une rampe de tension. &#8212; Capacités numériques - Sujets</title>
+    <title>2.5. Etude du redressement monoalternance &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,12 +51,12 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_reponse_o1_rampe.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/equation_stationnaire_fonction.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Etude numérique d’un filtre linéaire" href="elec_filtrage.html" />
-    <link rel="prev" title="4.4. Implémentation complète" href="elec_reponse_o1_complet.html" />
+    <link rel="next" title="3. Dérivation et intégration numérique" href="derivation_integration.html" />
+    <link rel="prev" title="2.4. Implémentation basique" href="equation_stationnaire_base.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -114,23 +114,23 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="equation_stationnaire.html">
    2. Résolution d’équation stationnaire
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="equation_stationnaire_base.html">
      2.4. Implémentation basique
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_fonction.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      2.5. Etude du redressement monoalternance
     </a>
    </li>
@@ -158,16 +158,16 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="elec_reponse_o1.html">
    4. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_base.html">
      4.3. Implémentation basique
@@ -178,8 +178,8 @@
      4.4. Implémentation complète
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_rampe.html">
      4.5. Réponse à une rampe de tension.
     </a>
    </li>
@@ -250,11 +250,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/elec_reponse_o1_rampe.ipynb"><button type="button"
+            href="_sources/equation_stationnaire_fonction.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/elec_reponse_o1_rampe.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/equation_stationnaire_fonction.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -279,7 +279,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o1_rampe.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/equation_stationnaire_fonction.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -305,13 +305,13 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fonctions-utiles">
-   4.5.1. Fonctions utiles
+  <a class="reference internal nav-link" href="#fonction-pour-resoudre">
+   2.5.1. Fonction pour résoudre
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rampe-de-tension">
-   4.5.2. Rampe de tension
+  <a class="reference internal nav-link" href="#application-au-redressement-monoalternance">
+   2.5.2. Application au redressement monoalternance
   </a>
  </li>
 </ul>
@@ -326,70 +326,73 @@
               <div>
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
-<div class="section" id="reponse-a-une-rampe-de-tension">
-<h1><span class="section-number">4.5. </span>Réponse à une rampe de tension.<a class="headerlink" href="#reponse-a-une-rampe-de-tension" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="fonctions-utiles">
-<h2><span class="section-number">4.5.1. </span>Fonctions utiles<a class="headerlink" href="#fonctions-utiles" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ol class="simple">
-<li><p>La fonction que vous avez définie dans l’autre notebook n’est pas défini ici. Copiez-collez votre fonction pour l’utiliser ici.</p></li>
-<li><p>De même, les fonctions que vous avez créés dans la partie sur <a class="reference internal" href="derive_integ_fonction.html#deriv-int-fn"><span class="std std-ref">l’intégration et la dérivation numérique</span></a> vont être utiles ici. Recopiez les aussi pour pouvoir les utiliser.</p></li>
-</ol>
-</div></blockquote>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Ne pas oublier d&#39;importer les bibliothèques scientifiques&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Ne pas oublier d&#39;importer les bibliothèques scientifiques&quot;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="rampe-de-tension">
-<h2><span class="section-number">4.5.2. </span>Rampe de tension<a class="headerlink" href="#rampe-de-tension" title="Permalink to this headline">¶</a></h2>
-<p>On étudie un circuit RC série soumis à une tension <span class="math notranslate nohighlight">\(E(t)\)</span> :</p>
+<div class="section" id="etude-du-redressement-monoalternance">
+<h1><span class="section-number">2.5. </span>Etude du redressement monoalternance<a class="headerlink" href="#etude-du-redressement-monoalternance" title="Permalink to this headline">¶</a></h1>
+<p>Nous allons utiliser la méthode précédente pour chercher le point de fonctionnement du <a class="reference internal" href="equation_stationnaire_base.html#pos-pb-eq"><span class="std std-ref">circuit précédent</span></a> à chaque instant <span class="math notranslate nohighlight">\(t\)</span> en supposant que <span class="math notranslate nohighlight">\(E\)</span> varie: <span class="math notranslate nohighlight">\(E(t) = E_0 \cos (2 \pi f t)\)</span> avec <span class="math notranslate nohighlight">\(E_0 = 2 \rm{V}\)</span> et <span class="math notranslate nohighlight">\(f = 50 \rm{Hz}\)</span>.</p>
+<p>On suppose que les caractéristiques des dipôles restent valables en régime variable de sorte qu’à un instant <span class="math notranslate nohighlight">\(t\)</span>, la tension <span class="math notranslate nohighlight">\(u_D\)</span> est donnée par la solution de l’équation:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-E(t) = 
-\begin{cases}
-0 &amp; \textrm{si t &lt;= 0}\\
-t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
-1 &amp; \textrm{si t &gt; T0}\\
-\end{cases}
-\end{split}\]</div>
-<p>On prendra <span class="math notranslate nohighlight">\(R = 1\rm{k\Omega}; C = 1\rm{\mu F}; T0 = n \times \tau; u(t=0) = 0 \rm{V}\)</span>.</p>
-<p><em>Rappels :</em></p>
-<ul class="simple">
-<li><p>L’<strong>énergie</strong> stockée dans un condensateur est <span class="math notranslate nohighlight">\(E_{el} = \frac{1}{2}C u_c^2\)</span></p></li>
-<li><p>La <strong>puissance</strong> dissipée par effet Joule est <span class="math notranslate nohighlight">\(P_J(t) = R i^2(t)\)</span></p></li>
-</ul>
+\[
+  f(u) = \frac{E(t)-u}{R} - I_s\left(\exp \left(\frac{u}{V_T}\right) - 1\right)
+\]</div>
+<p>avec <span class="math notranslate nohighlight">\(I_s = 95 \rm{\mu A}\)</span> et <span class="math notranslate nohighlight">\(V_D = 30 \rm{mV}\)</span> et <span class="math notranslate nohighlight">\(t\)</span> un instant connu.</p>
+<p>On va donc devoir réaliser une recherche de racine un grand nombre de fois. Il est donc préférable de mettre la série d’instructions pour déterminer la racine de <span class="math notranslate nohighlight">\(f\)</span> dans une fonction.</p>
+<div class="section" id="fonction-pour-resoudre">
+<h2><span class="section-number">2.5.1. </span>Fonction pour résoudre<a class="headerlink" href="#fonction-pour-resoudre" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><strong>Exercice 6</strong></p>
+<div><p><strong>Exercice 1:</strong></p>
 <ol class="simple">
-<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">rampe(t)</span></code> qui renvoie la valeur de <code class="docutils literal notranslate"><span class="pre">E(t)</span></code> pour un instant donné puis l’utiliser pour créer la fonction <code class="docutils literal notranslate"><span class="pre">f_rampe</span></code> du schéma d’Euler.</p></li>
-<li><p>Procéder à l’intégration de l’équation différentielle pour <span class="math notranslate nohighlight">\(n=2\)</span> en choisissant un pas de calcul adapté.</p></li>
-<li><p>En déduire l’intensité circulant dans le condensateur, l’énergie stockée dans le condensateur (aux mêmes instants <span class="math notranslate nohighlight">\(t_k\)</span>), l’énergie dissipée par la résistance et l’énergie fournie par la source (entre t=0  et <span class="math notranslate nohighlight">\(t=t_k\)</span>).</p></li>
-<li><p>Représenter quatre graphiques dans une même fenêtre (2 lignes, 2 colonnes) représentant :</p>
-<ul class="simple">
-<li><p>premier graphique : les tensions <span class="math notranslate nohighlight">\(E(t)\)</span> et <span class="math notranslate nohighlight">\(u(t)\)</span></p></li>
-<li><p>deuxième graphique : l’intensité <span class="math notranslate nohighlight">\(i(t)\)</span></p></li>
-<li><p>troisième graphique ; le portrait de phase (ensemble des points de coordonnées (<span class="math notranslate nohighlight">\(u(t); \frac{du}{dt}(t)\)</span>))</p></li>
-<li><p>quatrième graphique ; l’évolution de l’énergie stockée dans le condensateur, celle délivrée par la source et celle dissipée par la résistance</p></li>
-</ul>
-</li>
-<li><p>Analyser physiquement les courbes obtenues.</p></li>
-<li><p>Reprendre l’étude en augmentant <span class="math notranslate nohighlight">\(n\)</span>. On commentera notamment l’énergie dissipée par effet Joule.</p></li>
-<li><p>Quantifier l’évolution du rendement <span class="math notranslate nohighlight">\(\eta = \frac{E_{stockee}(+\infty)}{E_{fournie}(+\infty)}\)</span> par rapport à <span class="math notranslate nohighlight">\(n\)</span> par un tracé graphique adapté. On réfléchira à comment estimer <span class="math notranslate nohighlight">\(\eta\)</span> pour chaque valeur de <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p>Importer les bibliothèques <code class="docutils literal notranslate"><span class="pre">numpy</span></code> et <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code></p></li>
+<li><p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">Esource(t)</span></code> qui renvoie la valeur de <span class="math notranslate nohighlight">\(E(t)\)</span> pour un instant <span class="math notranslate nohighlight">\(t\)</span> donné en argument et une fonction <code class="docutils literal notranslate"><span class="pre">f_test(u)</span></code> qui renvoie la valeur de <span class="math notranslate nohighlight">\(f\)</span> pour une tension <span class="math notranslate nohighlight">\(u\)</span> donnée en argument de la fonction (elle utilisera une valeur <code class="docutils literal notranslate"><span class="pre">E</span></code> de tension pour la source comme une variable globale, les autres grandeurs Is, VT… peuvent être définie dans la fonction <code class="docutils literal notranslate"><span class="pre">f_test</span></code>, cf remarque par la suite).</p></li>
+<li><p><em>(Si ça na pas été fait précédemment)</em> Tracer la fonction <span class="math notranslate nohighlight">\(f\)</span> entre <span class="math notranslate nohighlight">\([-1,1]\)</span> pour <span class="math notranslate nohighlight">\(t = 0\)</span> (donc <span class="math notranslate nohighlight">\(E = 2\rm{V}\)</span>) et vérifier graphiquement qu’il n’y bien qu’une seule racine dans l’intervalle (<em>Note: On peut démontrer que la fonction est strictement décroissante, on a donc bien unicité de la racine quand elle existe.</em>)</p></li>
 </ol>
 </div></blockquote>
-<p><em>Pour étudier le rendement sur plusieurs décades entre <span class="math notranslate nohighlight">\(n=0.01\)</span> et <span class="math notranslate nohighlight">\(n=1000\)</span>. Deux syntaxes utiles :</em></p>
+<p><strong>Remarque</strong>:<br />
+Le code ressemblera donc à ceci:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Esource</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+  <span class="c1"># corps du code si necessaire</span>
+  <span class="k">return</span> <span class="o">....</span>
+
+<span class="k">def</span> <span class="nf">f_test</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+  <span class="c1"># corps du code si necessaire</span>
+  <span class="c1"># La tension E sera notée E sans être définie par exemple :</span>
+  <span class="n">R</span> <span class="o">=</span> <span class="mi">100</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">E</span> <span class="o">-</span> <span class="n">u</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
+  <span class="k">return</span> <span class="n">i</span>
+
+<span class="c1"># Pour utiliser f_test:</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Nécessaire</span>
+<span class="n">f_test</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="c1"># On pourra redéfinir E avant chaque appel de f_test si nécessaire</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Exercice 2:</strong></p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">dicho(f,a0,b0,prec)</span></code> qui va chercher la racine de la fonction <code class="docutils literal notranslate"><span class="pre">f</span></code> dans l’intervalle initiale <span class="math notranslate nohighlight">\([a0,b0]\)</span> avec une précision <code class="docutils literal notranslate"><span class="pre">prec</span></code> par la méthode de dichotomie.</p></li>
+<li><p>Tester la fonction avec <code class="docutils literal notranslate"><span class="pre">f_test</span></code> et <span class="math notranslate nohighlight">\(E = 2\rm{V}\)</span> et vérifier la cohérence avec ce qu’on obtient graphiquement.</p></li>
+</ol>
+</div></blockquote>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">np.logspace(start,</span> <span class="pre">stop,</span> <span class="pre">N)</span></code> fonctionne comme <code class="docutils literal notranslate"><span class="pre">linspace</span></code> mais les points sont créés régulièrement sur un axe logarithmique entre <span class="math notranslate nohighlight">\(10^{start}\)</span> et <span class="math notranslate nohighlight">\(10^{stop}\)</span>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ax.set_xscale('log')</span></code> permet de représenter les abscisses suivant une échelle logarithmique.</p></li>
+<li><p>L’argument <code class="docutils literal notranslate"><span class="pre">f</span></code> est la <strong>fonction</strong> donc <code class="docutils literal notranslate"><span class="pre">f</span></code> ou <code class="docutils literal notranslate"><span class="pre">f_test</span></code>, pas <em>ce qu’elle renvoie</em> (c’est-à-dire <code class="docutils literal notranslate"><span class="pre">f(0)</span></code> ou <code class="docutils literal notranslate"><span class="pre">f_test(1)</span></code>, <em>on a la même différence entre une fonction et l’image d’une fonction</em>).</p></li>
+<li><p>Par contre, à l’intérieur de <code class="docutils literal notranslate"><span class="pre">dicho</span></code>. Comme <code class="docutils literal notranslate"><span class="pre">f</span></code> est une fonction, on pourra l’appeler en utilisant <code class="docutils literal notranslate"><span class="pre">f(a)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(1)</span></code>…</p></li>
+<li><p>On ne modifier <strong>jamais</strong> la valeur d’un argument (ici <code class="docutils literal notranslate"><span class="pre">a0</span></code> et <code class="docutils literal notranslate"><span class="pre">b0</span></code>) donc il faut les réassigner à deux variables internes à la fonction (<code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code> ?) et modifier ces deux variables dans la boucle.</p></li>
+<li><p>Il est conseillé de tester initialement si le produit <span class="math notranslate nohighlight">\(f(a0)f(b0)\)</span> est bien négatif et renvoyer <code class="docutils literal notranslate"><span class="pre">None</span></code> sinon. Cela évitera des résultats absurdes si l’on cherche dans un intervalle où il n’y a pas de racine. <em>Quand vous aurez avancé le cours d’informatique, vous pourrez remplacer ce comportement par le renvoie d’une erreur ou Exception.</em></p></li>
+</ul>
+</div>
+<div class="section" id="application-au-redressement-monoalternance">
+<h2><span class="section-number">2.5.2. </span>Application au redressement monoalternance<a class="headerlink" href="#application-au-redressement-monoalternance" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice 3:</strong><br />
+Ecrire une suite d’instruction:</p>
+<ol class="simple">
+<li><p>Définir un vecteur <code class="docutils literal notranslate"><span class="pre">E_k</span></code> qui prendre 1000 valeurs de <span class="math notranslate nohighlight">\(E(t)\)</span> aux instants <span class="math notranslate nohighlight">\(t_k\)</span> équirépartis sur 2 périodes de <span class="math notranslate nohighlight">\(E(t)\)</span>.</p></li>
+<li><p>Dans une boucle, pour chaque valeur de <span class="math notranslate nohighlight">\(E_k\)</span>, rechercher la tension <span class="math notranslate nohighlight">\(u_D\)</span> correspondant et la stocker dans une liste.</p></li>
+<li><p>Transformer la liste des tensions <code class="docutils literal notranslate"><span class="pre">uD</span></code> en un vecteur puis obtenir les valeurs d’intensités correspondantes <span class="math notranslate nohighlight">\(i(t)\)</span> (pensez aux fonctions vectorialisables pour l’obtenir en une instruction).</p></li>
+<li><p>Obtenir les valeurs de la tension <span class="math notranslate nohighlight">\(uR\)</span> à chaque instant et tracer <span class="math notranslate nohighlight">\(u_R (t)\)</span>. Pourquoi parle-t-on de redressement ? monoalternance ?</p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p>Note : Réfléchir au choix de l’intervalle de recherche.</p></li>
 </ul>
 </div>
 </div>
@@ -419,8 +422,8 @@ t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="elec_reponse_o1_complet.html" title="previous page"><span class="section-number">4.4. </span>Implémentation complète</a>
-    <a class='right-next' id="next-link" href="elec_filtrage.html" title="next page"><span class="section-number">5. </span>Etude numérique d’un filtre linéaire</a>
+    <a class='left-prev' id="prev-link" href="equation_stationnaire_base.html" title="previous page"><span class="section-number">2.4. </span>Implémentation basique</a>
+    <a class='right-next' id="next-link" href="derivation_integration.html" title="next page"><span class="section-number">3. </span>Dérivation et intégration numérique</a>
 
         </div>
         
