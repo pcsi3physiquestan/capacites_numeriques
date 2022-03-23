@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.5. Application du filtre &#8212; Capacités numériques - Sujets</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_filtrage_application.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
+    <link rel="prev" title="5.4. Dimensionnement du filtre" href="elec_filtrage_filtre.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Capacités numériques - Sujets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capacite_numerique.html">
+   Capacités numériques en physique
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="signal_fourier.html">
+   1. Analyse spectrale d’un signal
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="signal_fourier_base.html">
+     1.2. Etude de base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="signal_fourier_complet.html">
+     1.3. Etude complète
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="equation_stationnaire.html">
+   2. Résolution d’équation stationnaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="equation_stationnaire_base.html">
+     2.4. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="equation_stationnaire_fonction.html">
+     2.5. Etude du redressement monoalternance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="derivation_integration.html">
+   3. Dérivation et intégration numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derivation_base.html">
+     3.3. Dérivation et intégration : Méthode de base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derive_integ_fonction.html">
+     3.4. Utilisation de fonctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o1.html">
+   4. Résolution numérique d’une équation différentielle d’ordre 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_base.html">
+     4.3. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_complet.html">
+     4.4. Implémentation complète
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_rampe.html">
+     4.5. Réponse à une rampe de tension.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="elec_filtrage.html">
+   5. Etude numérique d’un filtre linéaire
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_filtrage_filtre.html">
+     5.4. Dimensionnement du filtre
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.5. Application du filtre
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_non_lineaire.html">
+   6. Système conservatif : Effets non linéaires.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_pendule.html">
+   7. Etude d’un pendule simple
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_force_centrale.html">
+   8. Etude d’un mouvement à force centrale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="thermo_statique.html">
+   9. Etude de l’atmosphère terrestre
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/elec_filtrage_application.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/elec_filtrage_application.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_filtrage_application.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonctions-utiles">
+   5.5.1. Fonctions utiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtre-choisi">
+   5.5.2. Filtre choisi
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-a-des-signaux-simples">
+   5.5.3. Application à des signaux simples.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-au-signal-sonore">
+   5.5.4. Application au signal sonore
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importation-d-un-fichier-wav">
+     5.5.4.1. Importation d’un fichier wav
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#realisation-du-filtrage">
+     5.5.4.2. Réalisation du filtrage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creation-du-fichier-sonore">
+     5.5.4.3. Création du fichier sonore
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   5.5.5. Conclusion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<div class="section" id="application-du-filtre">
+<h1><span class="section-number">5.5. </span>Application du filtre<a class="headerlink" href="#application-du-filtre" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fonctions-utiles">
+<h2><span class="section-number">5.5.1. </span>Fonctions utiles<a class="headerlink" href="#fonctions-utiles" title="Permalink to this headline">¶</a></h2>
+<p>Cette activité fait suite à l’activité où vous avez appris à reconstruire un signal à partir des ses composantes spectrales. Pour gagner du temps les fonctions utiles qui avaient déjà été implémentées sont redonnées ici.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.io.wavfile</span> <span class="kn">import</span> <span class="n">read</span><span class="p">,</span> <span class="n">write</span>  <span class="c1"># Pour importer et écrire un fichier son wav</span>
+
+<span class="k">def</span> <span class="nf">fonc_temp</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">amps</span><span class="p">,</span> <span class="n">phis</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Renvoie la somme des composantes spectrales définies par</span>
+<span class="sd">    - leurs fréquences freqs</span>
+<span class="sd">    - leurs amplitudes amprs</span>
+<span class="sd">    - leurs phases à l&#39;origine phis</span>
+<span class="sd">    et le calcul à un temps t.</span>
+<span class="sd">    Cette fonction est vectorialisable : t peut-être un vecteur numpy</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span>  <span class="c1"># Nombre de composantes spectrales</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Initialisation de la valeur du signal</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>  <span class="c1"># On va parcourir les composantes</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.0f}</span><span class="s2"> %&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">amps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">phis</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1"># On ajoute la composante spectrale</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+
+<span class="k">def</span> <span class="nf">evalue_temp</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">amps</span><span class="p">,</span> <span class="n">phis</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Renvoie deux vecteurs : </span>
+<span class="sd">    - un vecteur de N valeurs de temps tk entre t1 et t2</span>
+<span class="sd">    - un vecteur donnant le signal reconstruit à partir de </span>
+<span class="sd">    (fs(fréquence), amps(amplitudes), phis(phase à l&quot;origine))</span>
+<span class="sd">    calculé aux temps tk</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>  <span class="c1"># Création du vecteur temps</span>
+    <span class="k">return</span> <span class="n">ts</span><span class="p">,</span> <span class="n">fonc_temp</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">amps</span><span class="p">,</span> <span class="n">phis</span><span class="p">)</span>  <span class="c1"># Les opérations de evalue_temp sont toutes vectorialisables</span>
+
+
+<span class="k">def</span> <span class="nf">eval_fft</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">fe</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calcul la transformée de Fourier du signal donnée par le vecteur s et échantillonné à la fréquence fe</span>
+<span class="sd">    Il renvoie :</span>
+<span class="sd">    - la liste de fréquences</span>
+<span class="sd">    - la liste des amplitudes (jusqu&#39;à fe/2)</span>
+<span class="sd">    - la liste des phases à l&#39;origine</span>
+<span class="sd">    Pour un vecteur s de taille N, la taille de la décomposition sera int(N/2) </span>
+<span class="sd">    avec un pas de fréquence fe / N</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="c1"># Taille de s pour le vecteur des fréquences</span>
+    <span class="n">freqs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">fe</span> <span class="o">/</span> <span class="n">N</span>  <span class="c1"># Liste de fréquence</span>
+    <span class="n">sk</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>  <span class="c1"># Calcul de la TF</span>
+    <span class="k">return</span> <span class="n">freqs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">sk</span><span class="p">)[:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">sk</span><span class="p">)[:</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="filtre-choisi">
+<h2><span class="section-number">5.5.2. </span>Filtre choisi<a class="headerlink" href="#filtre-choisi" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Recopier dans la cellule ci-dessous la fonction <code class="docutils literal notranslate"><span class="pre">butterworth</span></code> précédemment créée ainsi que les valeur <code class="docutils literal notranslate"><span class="pre">nmin</span></code> et <code class="docutils literal notranslate"><span class="pre">fc</span></code> choisie pour le dimensionnement (remarque : vous pouvez même créer une fonction <code class="docutils literal notranslate"><span class="pre">butterworth(f)</span></code> et mettre nmin et fc comme variable locale car elles ne changeront plus.)</p>
+</div></blockquote>
+<div class="cell tag_remove-output tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Les bibliothèques scientifiques ont déjà été importées. PENSEZ A EXECUTER LA CELLULE PRECEDENTE.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="application-a-des-signaux-simples">
+<h2><span class="section-number">5.5.3. </span>Application à des signaux simples.<a class="headerlink" href="#application-a-des-signaux-simples" title="Permalink to this headline">¶</a></h2>
+<p>Nous allons tester le filtre sur des signaux simples:</p>
+<ul class="simple">
+<li><p>un signal sinusoïdal de basse fréquence puis de haute fréquence</p></li>
+<li><p>un signal modulé en amplitude</p></li>
+<li><p>un signal créneau représenté par ses n premières composantes spectrales.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Exercice 1:</strong></p>
+<ol class="simple">
+<li><p>Définir trois <strong>vecteurs</strong> <code class="docutils literal notranslate"><span class="pre">fs,amps,</span> <span class="pre">phis</span></code> représenter le spectre d’un signal d’entrée sinusoïdal de fréquence 100Hz puis utiliser la fonction <code class="docutils literal notranslate"><span class="pre">butterworth</span></code> pour obtenir les mêmes trois vecteurs <code class="docutils literal notranslate"><span class="pre">fss,</span> <span class="pre">ampss,</span> <span class="pre">phiss</span></code> pour le signal de sortie correspondant. Utiliser la fonctio <code class="docutils literal notranslate"><span class="pre">evalue_temp</span></code> pour tracer le signal d’entrée etle signal de sortie correspondant sur un même graphique. Obtient-on ce qu’on attend?</p></li>
+<li><p>Refaire de même pour un signal sinusoïdal de fréquence 10kHz.</p></li>
+<li><p>Refaire de même pour un signal modulé en amplitude contenant deux fréquences : l’une de 100Hz et l’autre de 10kHz et ayant la même amplitude.</p></li>
+<li><p>Refaire de même pour un signal créneau de fréquence 10kHz défini par ses <span class="math notranslate nohighlight">\(n=10\)</span> premières harmoniques. On rappelle la décomposition d’un signal créneau est:</p></li>
+</ol>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[
+s_{creneau} = \sum_{i=1}^{m} {4 \over \pi (2i + 1)}\ \cos \left ( 2 \pi (2i + 1) f_0 t - \frac{\pi}{2}\right)
+\]</div>
+</div>
+<div class="section" id="application-au-signal-sonore">
+<h2><span class="section-number">5.5.4. </span>Application au signal sonore<a class="headerlink" href="#application-au-signal-sonore" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="importation-d-un-fichier-wav">
+<h3><span class="section-number">5.5.4.1. </span>Importation d’un fichier wav<a class="headerlink" href="#importation-d-un-fichier-wav" title="Permalink to this headline">¶</a></h3>
+<p>Le signal considéré est téléchargeable par <a class="reference external" href="https://github.com/pcsi3physiquestan/donnees_exp/blob/main/signal_bruitee.wav?raw=true">ce lien</a>. <em>Pensez à placer votre fichier au niveau du notebook pour pouvoir importer le fichier</em>. On rappelle que les tracés temporels et fréquentiels ont déjà été donné précédemment.</p>
+<p>La cellule ci-dessous importe le signal sonore bruité et obtient le spectres (fréquence, amplitude et phase à l’origine) pour les deux signaux gauche et droite. Rien n’est à modifier mais <strong>pensez à exécuter la cellule et à noter les variables à réutiliser pour la suite.</strong></p>
+<div class="cell tag_remove-output tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;sources/signal_bruitee.wav&#39;</span>  <span class="c1"># Entrer ici le chemin relatif vers le fichier sonore téléchargé</span>
+<span class="n">samplerate</span><span class="p">,</span> <span class="n">datas</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fréquence d&#39;échantilonnage : </span><span class="si">{}</span><span class="s2"> ech/s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">samplerate</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--------------&#39;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;Séparation des signaux gauche et droite&quot;&quot;&quot;</span>
+<span class="n">gauche</span> <span class="o">=</span> <span class="n">datas</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Signal gauche</span>
+<span class="n">droite</span> <span class="o">=</span> <span class="n">datas</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Signal droite</span>
+<span class="n">npt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">gauche</span><span class="p">)</span>  <span class="c1"># Nombre de points du signal</span>
+
+<span class="n">freqs_g</span><span class="p">,</span> <span class="n">amps_g</span><span class="p">,</span> <span class="n">phis_g</span> <span class="o">=</span> <span class="n">eval_fft</span><span class="p">(</span><span class="n">gauche</span><span class="p">,</span> <span class="n">samplerate</span><span class="p">)</span>  <span class="c1"># On utilise la fonction donnée</span>
+<span class="n">freqs_d</span><span class="p">,</span> <span class="n">amps_d</span><span class="p">,</span> <span class="n">phis_d</span> <span class="o">=</span> <span class="n">eval_fft</span><span class="p">(</span><span class="n">gauche</span><span class="p">,</span> <span class="n">samplerate</span><span class="p">)</span>  <span class="c1"># On utilise la fonction donnée</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="realisation-du-filtrage">
+<h3><span class="section-number">5.5.4.2. </span>Réalisation du filtrage<a class="headerlink" href="#realisation-du-filtrage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Exercice 2 :</strong></p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">reponse(fs,</span> <span class="pre">amps,</span> <span class="pre">phis)</span></code> qui prend comme argument la décomposition spectrale d’un signal d’entrée (<code class="docutils literal notranslate"><span class="pre">fs</span></code>(fréquence), <code class="docutils literal notranslate"><span class="pre">amps</span></code>(amplitudes), <code class="docutils literal notranslate"><span class="pre">phis</span></code>(phase à l’origine). et qui renvoie la décomposition spectrale du signal de sortie sous la forme de 2 vecteurs : les amplitudes de chaque composantes et les phases à l’origine de chaque composante pour le filtre de Butterworth.</p></li>
+<li><p>Appliquer la fonction <code class="docutils literal notranslate"><span class="pre">reponse</span></code> avec le filtre de Butterworth dimensionnée précédemment aux signaux gauche et droite de l’extrait sonore bruité.</p></li>
+<li><p>Tracer le spectre des deux signaux gauche et droite <strong>traités</strong> par le filtre. Vérifier que le filtre abien jouer son rôle.</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p>__Exercice 3:
+4. Recréer les signaux temporels filtrés <code class="docutils literal notranslate"><span class="pre">s_gauche</span></code> et <code class="docutils literal notranslate"><span class="pre">s_droite</span></code> à partir des représentations fréquentielles obtenues précédemment. (Il est important de bien respecter ces deux noms.</p>
+</div></blockquote>
+<p><strong>Attention, il y a plus de 10000 fréquences pour reconstruire le signal. Cela peut prendre un peu de temps. Pensez à sauvegarder votre travail avant d’exécuter la cellule.</strong> Un compteur affiche l’avancé de la reconstruction du signal temporel lors de l’utilisation de la fonction <code class="docutils literal notranslate"><span class="pre">evalue_temp</span></code>.</p>
+<p><em>Respecter les noms es variables pour les deux signaux temporels car ils vont servir à la création du signal sonore final.</em></p>
+</div>
+<div class="section" id="creation-du-fichier-sonore">
+<h3><span class="section-number">5.5.4.3. </span>Création du fichier sonore<a class="headerlink" href="#creation-du-fichier-sonore" title="Permalink to this headline">¶</a></h3>
+<p>Si tout à été fait correctement, la cellule ci-dessous peut-être exécutée directement. Elle va créer un fichier sonore <code class="docutils literal notranslate"><span class="pre">.wav</span></code> à partir du signal filtré. Il ne vous reste plus qu’à écouter (VLC ou Audacity) le signal ainsi obtenu pour vérifier qu’on a bien filtré le bruit parasite.</p>
+<p>Vous pourrez le comparer à l’<a class="reference external" href="https://github.com/pcsi3physiquestan/donnees_exp/blob/main/signal_court.wav?raw=true">extrait original</a> (le bruit ayant été ajouté artificiel pour ce TD).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># On doit normaliser le signal pour que les valeurs soit comprises entre -1 et 1</span>
+<span class="c1"># En pratique, on place les valeurs entre -0.5 et 0.5 pour éviter tout risque de saturation</span>
+<span class="n">reponse2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">reponse2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s_gauche</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">s_gauche</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">reponse2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s_droite</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">s_droite</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">reponse2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">reponse2</span><span class="p">)</span>  <span class="c1"># La fonction write impose l&#39;utilisation d&#39;un array</span>
+
+
+<span class="n">filesortie</span> <span class="o">=</span> <span class="s1">&#39;signal_filtree.wav&#39;</span>  <span class="c1"># Nom du fichier, il sera dans le même répertoire que votre notebook</span>
+<span class="n">write</span><span class="p">(</span><span class="n">filesortie</span><span class="p">,</span> <span class="n">samplerate</span><span class="p">,</span> <span class="n">reponse2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">fcec01014772</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># En pratique, on place les valeurs entre -0.5 et 0.5 pour éviter tout risque de saturation</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">reponse2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">reponse2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s_gauche</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">s_gauche</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">reponse2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s_droite</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">s_droite</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">reponse2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">reponse2</span><span class="p">)</span>  <span class="c1"># La fonction write impose l&#39;utilisation d&#39;un array</span>
+
+<span class="ne">NameError</span>: name &#39;s_gauche&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2><span class="section-number">5.5.5. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>Nous avons donc pu réaliser le traitement d’un signal. Même s’il a été fait sur des signaux numériques, ce traitement reste “analogique” au sens où il suit exactement le même procédé qu’un filtre analogique étudié en TP.</p>
+<p>Cette méthode est néanmoins problématique car elle demande beaucoup de ressource et du temps de calcul (on n’a ici traité que 2s secondes de musique échantilonnée à 8kHz, ce qui est peu et la reconstruction du signal était déjà longue).</p>
+<p>En pratique, le traitement d’un signal numérique se fait par des filtres <strong>numériques</strong> qui s’appliquent directement sur le signal temporel échantillonné (<span class="math notranslate nohighlight">\(s_k\)</span>). Certains de ces filtres seront vus en deuxième année suivant les options. La bibliothèques <code class="docutils literal notranslate"><span class="pre">scipy</span></code> propose notamment plusieurs fonctions natives et optimisées pour le traitement des signaux numériques (sous bibliothèques <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code>).</p>
+<p>On ne présente pas ici ces méthodes qui ne sont pas au programme mais sachez qu’on peut notamment utiliser un filtre de Butterworth ou son équivalent numérique grâce à cette bibliothèque.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "pcsi3physiquestan/capacites_numeriques_source",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="elec_filtrage_filtre.html" title="previous page"><span class="section-number">5.4. </span>Dimensionnement du filtre</a>
+    <a class='right-next' id="next-link" href="meca_non_lineaire.html" title="next page"><span class="section-number">6. </span>Système conservatif : Effets non linéaires.</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Résolution d’équation stationnaire &#8212; Capacités numériques - Sujets</title>
+    <title>5.4. Dimensionnement du filtre &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,12 +51,12 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/equation_stationnaire.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_filtrage_filtre.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.4. Implémentation basique" href="equation_stationnaire_base.html" />
-    <link rel="prev" title="1.3. Etude complète" href="signal_fourier_complet.html" />
+    <link rel="next" title="5.5. Application du filtre" href="elec_filtrage_application.html" />
+    <link rel="prev" title="5. Etude numérique d’un filtre linéaire" href="elec_filtrage.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -114,11 +114,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="equation_stationnaire.html">
    2. Résolution d’équation stationnaire
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
@@ -185,18 +185,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_filtrage.html">
    5. Etude numérique d’un filtre linéaire
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_filtrage_filtre.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      5.4. Dimensionnement du filtre
     </a>
    </li>
@@ -267,11 +267,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/equation_stationnaire.ipynb"><button type="button"
+            href="_sources/elec_filtrage_filtre.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/equation_stationnaire.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/elec_filtrage_filtre.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -296,7 +296,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/equation_stationnaire.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_filtrage_filtre.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -322,18 +322,21 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unicite-de-la-racine">
-   2.1. Unicité de la racine
+  <a class="reference internal nav-link" href="#choix-du-filtre">
+   5.4.1. Choix du filtre
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#methode-par-dichotomie">
-   2.2. Méthode par dichotomie
+  <a class="reference internal nav-link" href="#ordre-du-filtre">
+   5.4.2. Ordre du filtre
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#methode-de-newton">
-   2.3. Méthode de Newton
+  <a class="reference internal nav-link" href="#choix-de-f-c">
+   5.4.3. Choix de
+   <span class="math notranslate nohighlight">
+    \(f_c\)
+   </span>
   </a>
  </li>
 </ul>
@@ -347,75 +350,88 @@
         
               <div>
                 
-  <div class="section" id="resolution-d-equation-stationnaire">
-<h1><span class="section-number">2. </span>Résolution d’équation stationnaire<a class="headerlink" href="#resolution-d-equation-stationnaire" title="Permalink to this headline">¶</a></h1>
-<p>On va ici donner quelques méthodes pour résoudre une équation stationnaire, c’est-à-dire résoudre une équation du type:</p>
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<div class="section" id="dimensionnement-du-filtre">
+<h1><span class="section-number">5.4. </span>Dimensionnement du filtre<a class="headerlink" href="#dimensionnement-du-filtre" title="Permalink to this headline">¶</a></h1>
+<p>On va considérer qu’il convient :</p>
+<ul class="simple">
+<li><p>de garder un gain supérieur à <span class="math notranslate nohighlight">\(G_1 = 0.9\)</span> au dessous de <span class="math notranslate nohighlight">\(f_1 = 1500Hz\)</span>.</p></li>
+<li><p>d’avoir un gain inférieur à <span class="math notranslate nohighlight">\(G_2 = 0.1\)</span> au dessus de <span class="math notranslate nohighlight">\(f_2 = 2500Hz\)</span>.</p></li>
+</ul>
+<div class="section" id="choix-du-filtre">
+<h2><span class="section-number">5.4.1. </span>Choix du filtre<a class="headerlink" href="#choix-du-filtre" title="Permalink to this headline">¶</a></h2>
+<p>Le filtre que nous allons choisir est un filtre passe-bas dit de Butterworth d’ordre n. Comme expliqué en devoir libre, il a les caractéristiques suivantes :</p>
+<ul class="simple">
+<li><p>son gain réel s’écrit sous la forme : <span class="math notranslate nohighlight">\(G = {1 \over \sqrt{1 + x^{2n}}}\)</span> avec <span class="math notranslate nohighlight">\(x = {\omega \over \omega_c}\)</span> et <span class="math notranslate nohighlight">\(\omega_c\)</span> la pulsation de coupure du filtre.</p></li>
+</ul>
+<p>L’intérêt est que quelque soit l’ordre choisi, la pulsation de coupure sera la même. On pourra donc étudier l’influence de l’ordre du filtre sans devoir réadapter sa pulsation de coupure.</p>
+<p>Pour obtenir un tel gain réel, la fonction de transfert pour un filtre d’ordre <span class="math notranslate nohighlight">\(n\)</span> doit s’écrire sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[
-f(x) = 0
+H(j\omega) = {1 \over \prod_{k=1}^{k=n} \left({j \omega \over \omega_c} - p_k\right)} = {1 \over \prod_{k=1}^{k=n} \left({j f \over f_c} - p_k\right)}
 \]</div>
-<p>sur un intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> <strong>dans lequel on sait qu’il n’y a qu’une seule racine</strong> qui sera noté <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
-<div class="section" id="unicite-de-la-racine">
-<h2><span class="section-number">2.1. </span>Unicité de la racine<a class="headerlink" href="#unicite-de-la-racine" title="Permalink to this headline">¶</a></h2>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>Dans la plupart des cas pour nous, une étude graphique peut suffire.</p>
+<p>avec <span class="math notranslate nohighlight">\(p_k = \exp\left( {j (2k + n -1 }) \pi \over 2n\right)\)</span> et <span class="math notranslate nohighlight">\(f_c\)</span> la fréquence de coupure du filtre.</p>
 </div>
-<p>L’hypothèse d’unicité de la racine est fondamental car sinon, on ne sait pas si on va obtenir celle voulue. La résolution d’une équation stationnaire passe donc par <strong>une étude initiale de la fonction pour réduire l’intervalle de recherche à un intervalle ne contenant qu’une seule racine.</strong></p>
-</div>
-<div class="section" id="methode-par-dichotomie">
-<h2><span class="section-number">2.2. </span>Méthode par dichotomie<a class="headerlink" href="#methode-par-dichotomie" title="Permalink to this headline">¶</a></h2>
-<p><em>Condition:</em> <span class="math notranslate nohighlight">\(f\)</span> est continue sur l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> et <span class="math notranslate nohighlight">\(f(a) f(b) &lt; 0\)</span> (ainsi <span class="math notranslate nohighlight">\(f\)</span> admet au moins une racine dansl’intervalle (TVI)).</p>
-<p>Principe:</p>
+<div class="section" id="ordre-du-filtre">
+<h2><span class="section-number">5.4.2. </span>Ordre du filtre<a class="headerlink" href="#ordre-du-filtre" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Exercice 1:</strong><br />
+(Pensez à bien lire les indications après l’énoncé)</p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">butterworth</span></code> qui renvoie la fonction de transfert complexe d’un filtre de Butterworth d’ordre <code class="docutils literal notranslate"><span class="pre">n</span></code> calculé en une fréquence <code class="docutils literal notranslate"><span class="pre">f</span></code> et qui prend comme argument :</p>
 <ul class="simple">
-<li><p>On coupe l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> en deux parties égales (soit <span class="math notranslate nohighlight">\(c = \frac{a+b}{2}\)</span>) le milieu</p></li>
-<li><p>On regarde dans quelle moitié se trouve la racine en testant les signes des produits <span class="math notranslate nohighlight">\(f(a)f(c)\)</span> et <span class="math notranslate nohighlight">\(f(c)f(b)\)</span></p>
-<ul>
-<li><p>Si <span class="math notranslate nohighlight">\(f(a)f(c) &lt; 0\)</span>, la racine est dans l’intervalle <span class="math notranslate nohighlight">\([a,c]\)</span>, on réitère le test précédent mais avec l’intervalle <span class="math notranslate nohighlight">\([a,c]\)</span> (soit <span class="math notranslate nohighlight">\(b = c\)</span> maintenant)</p></li>
-<li><p>Si <span class="math notranslate nohighlight">\(f(c)f(b) &lt; 0\)</span>, la racine est dans l’intervalle <span class="math notranslate nohighlight">\([c,b]\)</span>, on réitère le test précédent mais avec l’intervalle <span class="math notranslate nohighlight">\([c,b]\)</span> (soit <span class="math notranslate nohighlight">\(a = c\)</span> maintenant)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> la fréquence où on veut calculer la fonction de transfert.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fc</span></code> la fréquence du coupure du filtre.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> l’ordre du filtre</p></li>
 </ul>
 </li>
-<li><p>On recommence jusqu’à atteindre un critère fixé:</p>
+<li><p>En utilisant la fonction <code class="docutils literal notranslate"><span class="pre">logspace</span></code> de <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, créer un vecteur de fréquence régulièrement répartie sur un axe logarithmique entre 100Hz et 10kHz. Puis utiliser ce vecteur pour tracer le diagramme de Bode en gain pour un filtre de Butterworth d’ordre 1 et de fréquence de coupure <span class="math notranslate nohighlight">\(f_c = 1kHz\)</span>. Vérifier qu’on a bien le tracé de la fonction de transfert <span class="math notranslate nohighlight">\(H(j\omega) = {1 \over 1 + j {f \over f_c}}\)</span>.</p></li>
+</ol>
+<p>La grandeur <span class="math notranslate nohighlight">\(\eta = {G(f_2)^{-2} - 1 \over G(f_1)^{-2} - 1}\)</span> pour un filtre de Butterworth d’ordre <span class="math notranslate nohighlight">\(n\)</span> ne dépend pas de la fréquence de coupure, mais uniquement du rapport <span class="math notranslate nohighlight">\(f_2 /f_1\)</span> et de l’ordre <span class="math notranslate nohighlight">\(n\)</span> du filtre (on s’entraînera chez soi à le démontrer).<br />
+On peut montrer de plus que le cahier des charges impose que <span class="math notranslate nohighlight">\(\eta &gt; {G(f_2)^{-2} - 1 \over G(f_1)^{-2} - 1}\)</span></p>
+<ol class="simple">
+<li><p>Utiliser le calcul numérique de <span class="math notranslate nohighlight">\(\eta\)</span> et écrire un script qui détermine l’ordre <span class="math notranslate nohighlight">\(n_{min}\)</span> minimal que doit avoir le filtre pour le cahier des charges choisi. On travaillera par la suite avec l’ordre <span class="math notranslate nohighlight">\(n_{min}\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<p><em>Indications utiles :</em></p>
+<ul class="simple">
+<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">butterworth</span></code> ne doit pas être nécessairement vectorialisable en <code class="docutils literal notranslate"><span class="pre">f</span></code>, vous réaliserez une boucle pour créer un vecteur de valeurs pour plusieurs valeurs de <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p></li>
+<li><p>Le nombre complexes <span class="math notranslate nohighlight">\(j\)</span> tel <span class="math notranslate nohighlight">\(j^2 = -1\)</span> s’écrit sous Python <code class="docutils literal notranslate"><span class="pre">1j</span></code> (le 1 est obligatoire et il est collé au j). Pour écrire <span class="math notranslate nohighlight">\(variable \times j\)</span>, on écrira : <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">*</span> <span class="pre">1j</span></code> (ou évidemment <code class="docutils literal notranslate"><span class="pre">1j</span> <span class="pre">*</span> <span class="pre">variable</span></code>).</p></li>
+<li><p>Pour le diagramme de Bode :</p>
 <ul>
-<li><p>soit la largeur de l’intervalle de recherche est plus petit que la précision choisie : <span class="math notranslate nohighlight">\([a_{finale}, b_{finale}] &lt; precx\)</span></p></li>
-<li><p>soit le maximum de <span class="math notranslate nohighlight">\(f\)</span> sur l’intervalle <span class="math notranslate nohighlight">\([a_{finale}, b_{finale}]\)</span> est inférieure à une précision choisie <span class="math notranslate nohighlight">\(precy\)</span></p></li>
-<li><p>on peut imposer les deux conditions si nécessaire.</p></li>
+<li><p>Signature de <code class="docutils literal notranslate"><span class="pre">logspace</span></code> : <code class="docutils literal notranslate"><span class="pre">logspace(start,</span> <span class="pre">stop,</span> <span class="pre">N)</span></code> crée <code class="docutils literal notranslate"><span class="pre">N</span></code> fréquences uniformément répartie sur un axe logarithmique entre <span class="math notranslate nohighlight">\(10^{start}\)</span> et <span class="math notranslate nohighlight">\(10^{stop}\)</span>.</p></li>
+<li><p>Le module d’un complexe s’obtient avec la fonction <code class="docutils literal notranslate"><span class="pre">np.abs</span></code> et le logarithme décimal s’obtient par la fonction <code class="docutils literal notranslate"><span class="pre">np.log10</span></code>.</p></li>
+<li><p>Le tracé d’un diagramme semi-log se fait avec la fonction <code class="docutils literal notranslate"><span class="pre">semilogx</span></code>, elle a les mêmes caractéristiques que la fonction <code class="docutils literal notranslate"><span class="pre">plot</span></code></p></li>
+<li><p>(Esthétique) Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">ax.grid(which='both',</span> <span class="pre">axis='both')</span></code> pour afficher une grille semblable à celles vu sur les diagrammes de Bode.</p></li>
 </ul>
 </li>
 </ul>
-<div class="figure align-center" id="dicho-gr">
-<img alt="_images/recherche_racine_dichotomie.gif" src="_images/recherche_racine_dichotomie.gif" />
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Méthode par dichotomie</span><a class="headerlink" href="#dicho-gr" title="Permalink to this image">¶</a></p>
+<div class="cell tag_remove-output tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ne pas oublier d&#39;importerles modules scientifiques.</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="methode-de-newton">
-<h2><span class="section-number">2.3. </span>Méthode de Newton<a class="headerlink" href="#methode-de-newton" title="Permalink to this headline">¶</a></h2>
-<p><em>Condition:</em> <span class="math notranslate nohighlight">\(f\)</span> est de classe <span class="math notranslate nohighlight">\(C^1\)</span> sur l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span>.</p>
-<ul class="simple">
-<li><p>On part d’une valeur <span class="math notranslate nohighlight">\(x_0\)</span> dans l’intervalle et on trace la tangente à la courbe de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(a\)</span>. Son équation est:</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-y_{tangente,x_0} = f(x_0) + f'(x_0) (x - x_0)
-\]</div>
-<ul class="simple">
-<li><p>On cherche alors l’abscisse <span class="math notranslate nohighlight">\(x_1\)</span> où la tangente coupe l’axe des abscisse soit:</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}
-\]</div>
-<ul class="simple">
-<li><p>On recommence en travaillant avec la tangente en <span class="math notranslate nohighlight">\(x_1\)</span></p></li>
-<li><p>On s’arrête quand un critère similaire à la dichotomie (écart entre deux abscisses <span class="math notranslate nohighlight">\(x_{i+1}\)</span> et <span class="math notranslate nohighlight">\(x_i\)</span> ou faible valeur de <span class="math notranslate nohighlight">\(f(x_i)\)</span>) est atteint.</p></li>
-</ul>
-<div class="figure align-center" id="newton-gr">
-<img alt="_images/recherche_racine_newton.gif" src="_images/recherche_racine_newton.gif" />
-<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Méthode par Newton</span><a class="headerlink" href="#newton-gr" title="Permalink to this image">¶</a></p>
 </div>
-<p><em>Avantage et inconvénient:</em> La méthode de Newton est beaucoup plus rapide que la méthode par dichotomie mais elle nécessite de connaître la dérivée ou de la calculer par dérivation numérique.</p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="choix-de-f-c">
+<h2><span class="section-number">5.4.3. </span>Choix de <span class="math notranslate nohighlight">\(f_c\)</span><a class="headerlink" href="#choix-de-f-c" title="Permalink to this headline">¶</a></h2>
+<p><em>Pour toute la suite, on travaillera avec un filtre d’ordre <span class="math notranslate nohighlight">\(n_{min}\)</span>.</em></p>
+<blockquote>
+<div><p><strong>Exercice 2:</strong></p>
+<ol class="simple">
+<li><p>Ecrire un script qui, par dichotomie entre deux valeurs de fréquence <span class="math notranslate nohighlight">\(f_1\)</span> et <span class="math notranslate nohighlight">\(f_2\)</span> détermine la fréquence de coupure telle que <span class="math notranslate nohighlight">\(G(f_1) = 0.9\)</span>. Vérifier alors que <span class="math notranslate nohighlight">\(G(f_2) &lt; 0.1\)</span>. On s’autorise un écart de <span class="math notranslate nohighlight">\(10^{-1} Hz\)</span> sur la fréquence.</p></li>
+<li><p>Tracer le diagramme de Bode en gain du filtre pour <span class="math notranslate nohighlight">\(f_c\)</span> trouvée précédemment et vérifier visuellement son ordre et que les gains en <span class="math notranslate nohighlight">\(f_1\)</span> et <span class="math notranslate nohighlight">\(f_2\)</span> suivent le cahier des charges.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vous pouvez utiliser (en la recopiant) la fonction `dicho` que vous avez créés dans les TP précédents.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Maintenant que le filtre est dimensionné, vous pouvez passer à son <a class="reference internal" href="elec_filtrage_application.html"><span class="doc std std-doc">utilisation</span></a></p>
 </div>
 </div>
 
@@ -444,8 +460,8 @@ x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="signal_fourier_complet.html" title="previous page"><span class="section-number">1.3. </span>Etude complète</a>
-    <a class='right-next' id="next-link" href="equation_stationnaire_base.html" title="next page"><span class="section-number">2.4. </span>Implémentation basique</a>
+    <a class='left-prev' id="prev-link" href="elec_filtrage.html" title="previous page"><span class="section-number">5. </span>Etude numérique d’un filtre linéaire</a>
+    <a class='right-next' id="next-link" href="elec_filtrage_application.html" title="next page"><span class="section-number">5.5. </span>Application du filtre</a>
 
         </div>
         
