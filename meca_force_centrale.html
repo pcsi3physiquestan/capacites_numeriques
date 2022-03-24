@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8. Etude d’un mouvement à force centrale &#8212; Capacités numériques - Sujets</title>
+    <title>9. Etude d’un mouvement à force centrale &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="9. Etude de l’atmosphère terrestre" href="thermo_statique.html" />
-    <link rel="prev" title="7. Etude d’un pendule simple" href="meca_pendule.html" />
+    <link rel="next" title="10. Etude de l’atmosphère terrestre" href="thermo_statique.html" />
+    <link rel="prev" title="8. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -185,29 +185,68 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="elec_filtrage.html">
-   5. Etude numérique d’un filtre linéaire
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o2.html">
+   5. Système linéaire
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o2_base.html">
+     5.4. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o2_complet.html">
+     5.5. Etude directe d’un système d’ordre 2
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_non_lineaire.html">
-   6. Système conservatif : Effets non linéaires.
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_filtrage.html">
+   6. Etude numérique d’un filtre linéaire
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_filtrage_filtre.html">
+     6.4. Dimensionnement du filtre
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_filtrage_application.html">
+     6.5. Application du filtre
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_pendule.html">
    7. Etude d’un pendule simple
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="meca_non_lineaire.html">
+   8. Système conservatif : Effets non linéaires.
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   8. Etude d’un mouvement à force centrale
+   9. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   9. Etude de l’atmosphère terrestre
+   10. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -306,64 +345,64 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#position-du-probleme">
-   8.1. Position du problème
+   9.1. Position du problème
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modelisation-du-probleme">
-   8.2. Modélisation du problème.
+   9.2. Modélisation du problème.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#consideration-sur-les-unites">
-     8.2.1. Considération sur les unités
+     9.2.1. Considération sur les unités
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mise-en-equation">
-     8.2.2. Mise en équation
+     9.2.2. Mise en équation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#schema-d-euler">
-     8.2.3. Schéma d’Euler
+     9.2.3. Schéma d’Euler
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conditions-initiales">
-     8.2.4. Conditions initiales
+     9.2.4. Conditions initiales
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#temps-d-observation">
-     8.2.5. Temps d’observation
+     9.2.5. Temps d’observation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bibliotheques-utiles">
-   8.3. Bibliothèques utiles
+   9.3. Bibliothèques utiles
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#travail-sur-les-conditions-initiales">
-   8.4. Travail sur les conditions initiales
+   9.4. Travail sur les conditions initiales
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#determination-de-la-trajectoire">
-   8.5. Détermination de la trajectoire
+   9.5. Détermination de la trajectoire
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#parametre-d-impact-et-diffusion">
-   8.6. Paramètre d’impact et diffusion
+   9.6. Paramètre d’impact et diffusion
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#statistique-des-angles-de-diffusion">
-   8.7. Statistique des angles de diffusion
+   9.7. Statistique des angles de diffusion
   </a>
  </li>
 </ul>
@@ -379,10 +418,10 @@
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="section" id="etude-d-un-mouvement-a-force-centrale">
-<h1><span class="section-number">8. </span>Etude d’un mouvement à force centrale<a class="headerlink" href="#etude-d-un-mouvement-a-force-centrale" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Etude d’un mouvement à force centrale<a class="headerlink" href="#etude-d-un-mouvement-a-force-centrale" title="Permalink to this headline">¶</a></h1>
 <p><strong>But :</strong> obtenir des trajectoires d’un point matériel soumis à un champ de force centrale conservatif</p>
 <div class="section" id="position-du-probleme">
-<h2><span class="section-number">8.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
 <p>On se propose d’étudier l’expérience de Rutherford où des particules alpha (charge <span class="math notranslate nohighlight">\(+2e\)</span>) d’énergie cinétique <span class="math notranslate nohighlight">\(E_c\)</span> bombardent des noyau d’or <span class="math notranslate nohighlight">\(Z = 79\)</span> supposés fixes dans un référentiel galiléen. On peut supposer que chaque particule ne rencontre qu’un seul noyau d’or qui est responsable de sa déviation.</p>
 <p>Dans la modélisation habituelle, les particules sont initialement à l’infini et l’interaction entre le noyau et la particule est coulombienne :</p>
 <p>Nous allons :</p>
@@ -395,11 +434,11 @@
 </ul>
 </div>
 <div class="section" id="modelisation-du-probleme">
-<h2><span class="section-number">8.2. </span>Modélisation du problème.<a class="headerlink" href="#modelisation-du-probleme" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span>Modélisation du problème.<a class="headerlink" href="#modelisation-du-probleme" title="Permalink to this headline">¶</a></h2>
 <p>On suppose la particules alpha initialement à une distance <span class="math notranslate nohighlight">\(r_i\)</span> <strong>suffisamment grande</strong> pour qu’elle puisse presque être considérée comme à l’infini (on ne peut pas la placer à l’infini pour une simulation numérique !). Le paramètre d’impact <span class="math notranslate nohighlight">\(b\)</span> représenté sur la figure est supposé connu. Elle possède initialement une vitesse <span class="math notranslate nohighlight">\(v_0\)</span> orientée comme sur le schéma.</p>
 <p><img alt="Conditions initiales" src="_images/rutherford.png" /></p>
 <div class="section" id="consideration-sur-les-unites">
-<h3><span class="section-number">8.2.1. </span>Considération sur les unités<a class="headerlink" href="#consideration-sur-les-unites" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.1. </span>Considération sur les unités<a class="headerlink" href="#consideration-sur-les-unites" title="Permalink to this headline">¶</a></h3>
 <p>Comme dans le cas de l’étude de la vibration moléculaire, on va se placer dans un système d’unités évitant des puissances de 10 trop grandes. On va donc travailler avec comme unité de référence :</p>
 <ul class="simple">
 <li><p>la charge élémentaire devient <span class="math notranslate nohighlight">\(e = 1 \rm{q_a}\)</span></p></li>
@@ -416,7 +455,7 @@
 </ul>
 </div>
 <div class="section" id="mise-en-equation">
-<h3><span class="section-number">8.2.2. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.2. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
 <p>Il s’agit d’un problème classique de force centrale coulombienne, la conservation du moment cinétique et le principe fondamental de la dynamique permettent de se ramener à un problème à trois inconnues :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -435,7 +474,7 @@ r \\
 \end{split}\]</div>
 </div>
 <div class="section" id="schema-d-euler">
-<h3><span class="section-number">8.2.3. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.3. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">¶</a></h3>
 <p>On utlisera directement la fonction native <code class="docutils literal notranslate"><span class="pre">odeint</span></code> de la bibliothèque <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>. Sa signature doit être adaptée pour tenir compte du moment cinétique qui va changer :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ysol</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">C</span><span class="p">,))</span>
 </pre></div>
@@ -450,7 +489,7 @@ r \\
 </ul>
 </div>
 <div class="section" id="conditions-initiales">
-<h3><span class="section-number">8.2.4. </span>Conditions initiales<a class="headerlink" href="#conditions-initiales" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.4. </span>Conditions initiales<a class="headerlink" href="#conditions-initiales" title="Permalink to this headline">¶</a></h3>
 <p>Les conditions initiales ne sont pas directement <span class="math notranslate nohighlight">\(\theta, r, \dot r\)</span> mais :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -470,13 +509,13 @@ Ec(t=0) = E_{c0}
 <p><strong>On choisira donc <span class="math notranslate nohighlight">\(r_i = \max(1000 r_{min}, 1000 b)\)</span>.</strong></p>
 </div>
 <div class="section" id="temps-d-observation">
-<h3><span class="section-number">8.2.5. </span>Temps d’observation<a class="headerlink" href="#temps-d-observation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.5. </span>Temps d’observation<a class="headerlink" href="#temps-d-observation" title="Permalink to this headline">¶</a></h3>
 <p>En supposant <span class="math notranslate nohighlight">\(r_i\)</span> suffisamment grand, le temps que mettra la particule pour atteindre à nouveau la distance <span class="math notranslate nohighlight">\(r_i\)</span> dans un état de diffusion est de l’ordre de <span class="math notranslate nohighlight">\({2r_i \over v_0}\)</span>. On pourra se servir de cette estimer pour choisir un pas de temps donnant <strong>approximativement</strong> N points sur la trajectoire.</p>
 <p><strong>Pour se donner un peu de marge on choisira un un durée totale de simulation égale <span class="math notranslate nohighlight">\({4r_i \over v_0}\)</span> et un nombre de points de simulation <span class="math notranslate nohighlight">\(N = 10000\)</span>.</strong></p>
 </div>
 </div>
 <div class="section" id="bibliotheques-utiles">
-<h2><span class="section-number">8.3. </span>Bibliothèques utiles<a class="headerlink" href="#bibliotheques-utiles" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span>Bibliothèques utiles<a class="headerlink" href="#bibliotheques-utiles" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -489,7 +528,7 @@ Ec(t=0) = E_{c0}
 </div>
 </div>
 <div class="section" id="travail-sur-les-conditions-initiales">
-<h2><span class="section-number">8.4. </span>Travail sur les conditions initiales<a class="headerlink" href="#travail-sur-les-conditions-initiales" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.4. </span>Travail sur les conditions initiales<a class="headerlink" href="#travail-sur-les-conditions-initiales" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>Exercice 1 :</strong></p>
 <ol class="simple">
@@ -499,7 +538,7 @@ Ec(t=0) = E_{c0}
 </div></blockquote>
 </div>
 <div class="section" id="determination-de-la-trajectoire">
-<h2><span class="section-number">8.5. </span>Détermination de la trajectoire<a class="headerlink" href="#determination-de-la-trajectoire" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.5. </span>Détermination de la trajectoire<a class="headerlink" href="#determination-de-la-trajectoire" title="Permalink to this headline">¶</a></h2>
 <p>L’implémentation du schéma d’Euler sera ici un peut particulière : on ne va pas arrêter l’intégration à un temps fixé mais lorsque la particule aura atteint à nouveau la distance <span class="math notranslate nohighlight">\(r_i\)</span>. On pourra alors considérer qu’elle est à nouveau “à l’infini”.</p>
 <p><strong>Vous ne connaîtrez donc pas à l’avance la taille des ensembles de points <code class="docutils literal notranslate"><span class="pre">tk</span></code>(temps), <code class="docutils literal notranslate"><span class="pre">thetak</span></code>, <code class="docutils literal notranslate"><span class="pre">rk</span></code> et <code class="docutils literal notranslate"><span class="pre">rpointk</span></code>.</strong></p>
 <blockquote>
@@ -524,7 +563,7 @@ Ec(t=0) = E_{c0}
 </ul>
 </div>
 <div class="section" id="parametre-d-impact-et-diffusion">
-<h2><span class="section-number">8.6. </span>Paramètre d’impact et diffusion<a class="headerlink" href="#parametre-d-impact-et-diffusion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.6. </span>Paramètre d’impact et diffusion<a class="headerlink" href="#parametre-d-impact-et-diffusion" title="Permalink to this headline">¶</a></h2>
 <p>On va étudier la relation entre le paramètre d’impact et l’angle de diffusion (<span class="math notranslate nohighlight">\(D\)</span> sur la figure ci-après).</p>
 <p><img alt="Angle de diffusion" src="_images/diffusion2.png" /></p>
 <p>On veut tester la relation théorique :
@@ -542,7 +581,7 @@ avec \)</span>\beta = {1 \over 2E_{c0}}{2Ze^2 \over 4\pi \epsilon_0}$</p>
 </div></blockquote>
 </div>
 <div class="section" id="statistique-des-angles-de-diffusion">
-<h2><span class="section-number">8.7. </span>Statistique des angles de diffusion<a class="headerlink" href="#statistique-des-angles-de-diffusion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.7. </span>Statistique des angles de diffusion<a class="headerlink" href="#statistique-des-angles-de-diffusion" title="Permalink to this headline">¶</a></h2>
 <p>En pratique, on n’envoie pas une particule alpha mais un jet uniformément répartie dans le plan <span class="math notranslate nohighlight">\(y0z\)</span>. Pour un point de départ <span class="math notranslate nohighlight">\((y_0, z_0)\)</span>, l’invariance par rotation autour de l’axe Ox permet de conserver l’étude précédente en prenant <span class="math notranslate nohighlight">\(b = \sqrt{y_0^2 + z_0^2}\)</span>.</p>
 <p>Les détecteur de l’expérience de Rutherford, répartie  sur une sphère autour de l’échantillons n’ont pas accès à <span class="math notranslate nohighlight">\(D\)</span> et <span class="math notranslate nohighlight">\(b\)</span> mais au nombre de particules qui arrivent dans la surface <span class="math notranslate nohighlight">\(d\Omega\)</span> (appelée <em>angle solide</em> pour une sphère de rayon 1) située entre <span class="math notranslate nohighlight">\(D\)</span> et <span class="math notranslate nohighlight">\(D + dD\)</span> (<span class="math notranslate nohighlight">\(dD\)</span> est au final la taille d’un capteur).</p>
 <p><img alt="Section efficace" src="_images/section_efficace.png" /></p>
@@ -614,8 +653,8 @@ On utilisera la fonction <code class="docutils literal notranslate"><span class=
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="meca_pendule.html" title="previous page"><span class="section-number">7. </span>Etude d’un pendule simple</a>
-    <a class='right-next' id="next-link" href="thermo_statique.html" title="next page"><span class="section-number">9. </span>Etude de l’atmosphère terrestre</a>
+    <a class='left-prev' id="prev-link" href="meca_non_lineaire.html" title="previous page"><span class="section-number">8. </span>Système conservatif : Effets non linéaires.</a>
+    <a class='right-next' id="next-link" href="thermo_statique.html" title="next page"><span class="section-number">10. </span>Etude de l’atmosphère terrestre</a>
 
         </div>
         

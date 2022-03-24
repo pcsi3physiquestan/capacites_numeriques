@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Etude d’un mouvement à force centrale" href="meca_force_centrale.html" />
-    <link rel="prev" title="6. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
+    <link rel="next" title="8. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
+    <link rel="prev" title="6.5. Application du filtre" href="elec_filtrage_application.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -185,15 +185,49 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="elec_filtrage.html">
-   5. Etude numérique d’un filtre linéaire
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o2.html">
+   5. Système linéaire
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o2_base.html">
+     5.4. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o2_complet.html">
+     5.5. Etude directe d’un système d’ordre 2
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_non_lineaire.html">
-   6. Système conservatif : Effets non linéaires.
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_filtrage.html">
+   6. Etude numérique d’un filtre linéaire
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_filtrage_filtre.html">
+     6.4. Dimensionnement du filtre
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_filtrage_application.html">
+     6.5. Application du filtre
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -201,13 +235,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="meca_non_lineaire.html">
+   8. Système conservatif : Effets non linéaires.
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="meca_force_centrale.html">
-   8. Etude d’un mouvement à force centrale
+   9. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   9. Etude de l’atmosphère terrestre
+   10. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -310,13 +349,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mise-en-equation">
-     7.1.1. Mise en équation
+    <a class="reference internal nav-link" href="#rappel-mise-en-equation">
+     7.1.1. Rappel : Mise en équation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schema-d-euler">
-     7.1.2. Schéma d’Euler
+    <a class="reference internal nav-link" href="#rappel-schema-d-euler">
+     7.1.2. Rappel : Schéma d’Euler
     </a>
    </li>
   </ul>
@@ -375,8 +414,8 @@
 <li><p>Aux petites oscillations. Ce sera l’occasion de tester le schéma d’Euler mis en place pour étudier le système en le comparant aux attentes.</p></li>
 <li><p>Pour des oscillations quelconques. On cherchera alors à déterminer la période des oscillations en fonction de l’amplitude pour observer le <strong>non isochoronisme des oscillations</strong>. On comparera notamment les résultats trouvés à la formule théorique approchée.</p></li>
 </ol>
-<div class="section" id="mise-en-equation">
-<h3><span class="section-number">7.1.1. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="rappel-mise-en-equation">
+<h3><span class="section-number">7.1.1. </span>Rappel : Mise en équation<a class="headerlink" href="#rappel-mise-en-equation" title="Permalink to this headline">¶</a></h3>
 <p>On considère un pendule simple de longueur <span class="math notranslate nohighlight">\(l\)</span> sans sources d’amortissement dans un champ de pesanteur uniforme <span class="math notranslate nohighlight">\(g\)</span>. La masse au bout du pendule est <span class="math notranslate nohighlight">\(m\)</span>.</p>
 <p>Pour les applications numériques, on prendra <span class="math notranslate nohighlight">\(l = 1 m; g = 9.81 m.s^{-2}; m=1 kg\)</span>.</p>
 <p>On rappelle que la mise en équation du pendule amène à l’équation :</p>
@@ -396,8 +435,8 @@ E_p(\theta) = mgl(1 - \cos \theta)
 \]</div>
 <p>et l’énergie cinétique : <span class="math notranslate nohighlight">\(E_c = {1 \over 2} m l^2 \dot \theta^2\)</span></p>
 </div>
-<div class="section" id="schema-d-euler">
-<h3><span class="section-number">7.1.2. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="rappel-schema-d-euler">
+<h3><span class="section-number">7.1.2. </span>Rappel : Schéma d’Euler<a class="headerlink" href="#rappel-schema-d-euler" title="Permalink to this headline">¶</a></h3>
 <p>On va utiliser un schéma d’Euler explicite. Le système étant d’ordre 2, on utilise un système d’équations différentielles définit par la relation vectorielle :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -430,12 +469,12 @@ Y_{k+1} = Y_k + h \times F(t_k, Y(t_k))
 Vous devez :</p>
 <ol class="simple">
 <li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">F_petit</span></code> qui prend comme argument un flottant <code class="docutils literal notranslate"><span class="pre">t</span></code> et un vecteur <code class="docutils literal notranslate"><span class="pre">Y</span></code> à deux éléments et qui renvoie le vecteur <code class="docutils literal notranslate"><span class="pre">F(Y,</span> <span class="pre">t)</span></code> dans le cas d’un pendule aux petites oscillations.</p></li>
-<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> qui prend comme arguments :</p>
+<li><p>Ecrire (ou plutôt réécrire en servant de ce que vous avez fait précédemment) une fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> qui prend comme arguments :</p>
 <ul class="simple">
 <li><p>une fonction <code class="docutils literal notranslate"><span class="pre">F</span></code> (semblable à <code class="docutils literal notranslate"><span class="pre">F_petit</span></code> qui prendra le même type d’arguments et renverra le même type de vecteur).</p></li>
 <li><p>un vecteur <code class="docutils literal notranslate"><span class="pre">Y0</span></code> donnant les <strong>deux</strong> conditions initiales (ici à <span class="math notranslate nohighlight">\(t=0\)</span>) sur les deux composants de <code class="docutils literal notranslate"><span class="pre">Y</span></code></p></li>
 <li><p>un flottant <code class="docutils literal notranslate"><span class="pre">h</span></code> qui sera le pas d’intégration <span class="math notranslate nohighlight">\(h = t_{k+1} - t_k\)</span></p></li>
-<li><p>un flottant <code class="docutils literal notranslate"><span class="pre">tf</span></code> qui sera le temps final de l’intégration.
+<li><p>deux flottants <code class="docutils literal notranslate"><span class="pre">t0</span></code> et <code class="docutils literal notranslate"><span class="pre">tf</span></code> qui seront les temps initial et final de l’intégration.
 et qui renvoie :</p></li>
 <li><p>un tableau à 3 colonnes contenant respectivement : les temps <span class="math notranslate nohighlight">\(t_k\)</span>, les angles <span class="math notranslate nohighlight">\(\theta_k\)</span> et les vitesses angulaires <span class="math notranslate nohighlight">\(\dot \theta_k\)</span>.</p></li>
 </ul>
@@ -444,10 +483,10 @@ et qui renvoie :</p></li>
 </div></blockquote>
 <p><em>Données utiles :</em></p>
 <ul class="simple">
-<li><p>Pour créer un tableau, de taille N lignes et 3 colonnes rempli de 0, la syntaxe est <code class="docutils literal notranslate"><span class="pre">np.zeros((N,</span> <span class="pre">3))</span></code>. A vous de prévoir le nombre de lignes du tableau.</p></li>
+<li><p>pour rappel, il est plus simple de créer une liste de vecteurs à 3 éléments qu’on transforme en tableau de N lignes et 3 colonnes.</p></li>
 <li><p>La sélection de la ligne d’indice i d’un tableau se fait par <code class="docutils literal notranslate"><span class="pre">tableau[i]</span></code>. Attention, les indices commencent à 0 et se terminent à N-1.</p></li>
-<li><p>La sélection de l’élément d’indice (i, j) d’un tableau se fait par <code class="docutils literal notranslate"><span class="pre">tableau[i,</span> <span class="pre">j]</span></code>. Attention, les indices commencent à 0 et se terminent à N-1.</p></li>
-<li><p>Vous pouvez remplier directement une ligne d’un tableau numpy par la syntaxe <code class="docutils literal notranslate"><span class="pre">tableau[indice_ligne]</span> <span class="pre">=</span> <span class="pre">[v1,</span> <span class="pre">v2]</span></code></p></li>
+<li><p>La sélection de la colonne d’indice j d’un tableau se fait par <code class="docutils literal notranslate"><span class="pre">tableau[:,j]</span></code>. Attention, les indices commencent à 0 et se terminent à m-1.</p></li>
+<li><p>La sélection de l’élément d’indice (i, j) d’un tableau se fait par <code class="docutils literal notranslate"><span class="pre">tableau[i,</span> <span class="pre">j]</span></code>. Attention, les indices commencent à 0 et se terminent à N-1 (ou m-1).</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -565,8 +604,8 @@ T \approx T_0 (1 + {\theta_0 ^2 \over 16})
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="meca_non_lineaire.html" title="previous page"><span class="section-number">6. </span>Système conservatif : Effets non linéaires.</a>
-    <a class='right-next' id="next-link" href="meca_force_centrale.html" title="next page"><span class="section-number">8. </span>Etude d’un mouvement à force centrale</a>
+    <a class='left-prev' id="prev-link" href="elec_filtrage_application.html" title="previous page"><span class="section-number">6.5. </span>Application du filtre</a>
+    <a class='right-next' id="next-link" href="meca_non_lineaire.html" title="next page"><span class="section-number">8. </span>Système conservatif : Effets non linéaires.</a>
 
         </div>
         

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6. Etude numérique d’un filtre linéaire &#8212; Capacités numériques - Sujets</title>
+    <title>5.5. Etude directe d’un système d’ordre 2 &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,12 +49,14 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_filtrage.html" />
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_reponse_o2_complet.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6.4. Dimensionnement du filtre" href="elec_filtrage_filtre.html" />
-    <link rel="prev" title="5.5. Etude directe d’un système d’ordre 2" href="elec_reponse_o2_complet.html" />
+    <link rel="next" title="6. Etude numérique d’un filtre linéaire" href="elec_filtrage.html" />
+    <link rel="prev" title="5.4. Implémentation basique" href="elec_reponse_o2_base.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -183,33 +185,33 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_reponse_o2.html">
    5. Système linéaire
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o2_base.html">
      5.4. Implémentation basique
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o2_complet.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      5.5. Etude directe d’un système d’ordre 2
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_filtrage.html">
    6. Etude numérique d’un filtre linéaire
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
@@ -287,11 +289,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/elec_filtrage.ipynb"><button type="button"
+            href="_sources/elec_reponse_o2_complet.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/elec_filtrage.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/elec_reponse_o2_complet.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -316,7 +318,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_filtrage.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o2_complet.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -336,41 +338,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fonctions-utiles">
-   6.1. Fonctions utiles
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#position-du-probleme">
-   6.2. Position du problème
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#signal-etudie">
-     6.2.1. Signal étudié.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importation-d-un-fichier-wav">
-     6.2.2. Importation d’un fichier wav
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#theorie-analyse-du-signal-bruite">
-   6.3. (Théorie)Analyse du signal bruité
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -379,77 +346,21 @@
         
               <div>
                 
-  <div class="section" id="etude-numerique-d-un-filtre-lineaire">
-<h1><span class="section-number">6. </span>Etude numérique d’un filtre linéaire<a class="headerlink" href="#etude-numerique-d-un-filtre-lineaire" title="Permalink to this headline">¶</a></h1>
-<p><strong>But :</strong> Simuler, à l’aide d’un langage de programmation, l’action d’un filtre sur un signal périodique. Mettre en évidence l’influence des caractéristiques du filtre sur l’opération de filtrage.</p>
-<div class="section" id="fonctions-utiles">
-<h2><span class="section-number">6.1. </span>Fonctions utiles<a class="headerlink" href="#fonctions-utiles" title="Permalink to this headline">¶</a></h2>
-<p>Cette activité fait suite à l’activité où vous avez appris à reconstruire un signal à partir des ses composantes spectrales. <em>Pour gagner du temps les fonctions utiles qui avaient déjà été créées à la <a class="reference internal" href="signal_fourier.html"><span class="doc std std-doc">première activité</span></a> seront redonnées</em>.</p>
-<div class="cell tag_remove-output tag_remove-input docutils container">
-</div>
-</div>
-<div class="section" id="position-du-probleme">
-<h2><span class="section-number">6.2. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="signal-etudie">
-<h3><span class="section-number">6.2.1. </span>Signal étudié.<a class="headerlink" href="#signal-etudie" title="Permalink to this headline">¶</a></h3>
-<p>Le signal considéré est téléchargeable par <a class="reference external" href="https://github.com/pcsi3physiquestan/donnees_exp/blob/main/signal_bruitee.wav?raw=true">ce lien</a>. Vous pouvez l’écouter avec VLC ou Audacity : il s’agit un très court extrait d’une musique fortement bruitée.</p>
-<p><em>Note : Le traitement préalable par Python des fichiers sonores n’est pas parfait et certains lecteurs risquent de ne pas lire correctement le fichier son. Préférez donc les deux lecteurs données précédemment qui peuvent être téléchargés gratuitement.</em></p>
-<p>Nous allons :</p>
-<ul class="simple">
-<li><p>transformer ce signal en un tableau numpy donnant deux signaux <strong>temporels</strong> (gauche et droite).</p></li>
-<li><p>Analyser son tracé temporel et sa décomposition spectrale pour observer qu’est-ce qui est responsable du bruit gênant.</p></li>
-<li><p>Procéder à un filtrage approprié pour atténuer le bruit du signal.</p></li>
-</ul>
-</div>
-<div class="section" id="importation-d-un-fichier-wav">
-<h3><span class="section-number">6.2.2. </span>Importation d’un fichier wav<a class="headerlink" href="#importation-d-un-fichier-wav" title="Permalink to this headline">¶</a></h3>
-<p><em>Pensez à placer votre fichier au niveau du notebook pour pouvoir importer le fichier</em>.</p>
-<p><em>Pour information</em>:
-Deux fonctions ont été importées de la bibliothèque <code class="docutils literal notranslate"><span class="pre">scipy.io.wavfile</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">read(chemin_vers_fichier)</span></code> qui importe un fichier <code class="docutils literal notranslate"><span class="pre">.wav</span></code> et qui renvoie deux éléments :</p>
-<ul>
-<li><p>la fréquence d’échantillonnage</p></li>
-<li><p>un tableau numpy contenant deux lignes : chacune représente le signal sonore temporel respectivement gauche et droite. Les valeurs sont des <strong>flottants compris entre -1 et 1</strong>.</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">write(chemin_vers_fichier,</span> <span class="pre">samplerate,</span> <span class="pre">data)</span></code> qui va écrire dans un fichier .<code class="docutils literal notranslate"><span class="pre">wav</span></code> (il faudra lui donner la bonne extension et choisir un nom <strong>different du fichier d’entrée</strong> le fichier son correspondant à data :</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">samplerate</span></code> est la fréquence d’échantillonnage</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> est un tableau numpy contenant 2 lignes donnant le signal sonore temporel gauche et droite. Les valeurs devront être des <strong>flottants compris entre -1 et 1</strong>.</p></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="theorie-analyse-du-signal-bruite">
-<h2><span class="section-number">6.3. </span>(Théorie)Analyse du signal bruité<a class="headerlink" href="#theorie-analyse-du-signal-bruite" title="Permalink to this headline">¶</a></h2>
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<div class="section" id="etude-directe-d-un-systeme-d-ordre-2">
+<h1><span class="section-number">5.5. </span>Etude directe d’un système d’ordre 2<a class="headerlink" href="#etude-directe-d-un-systeme-d-ordre-2" title="Permalink to this headline">¶</a></h1>
+<p>On va étudier directement un système d’ordre 2 issu d’un problème de mécanique: le pendule simple sans frottement. L’équation qui régit l’évolution de l’angle <span class="math notranslate nohighlight">\(\theta(t)\)</span> que fait le pendule avec un axe horizontal est:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\rm{d^2}\theta}{\rm{dt^2}} = - \omega_0^2 \sin \theta
+\]</div>
+<p>avec <span class="math notranslate nohighlight">\(\omega_0 = \sqrt{\frac{g}{l}}\)</span> (<span class="math notranslate nohighlight">\(l=1\rm{m}\)</span> est la longueur du fil du pendule et <span class="math notranslate nohighlight">\(g=9.81 \rm{m.s^{-2}}\)</span> l’intensité du champ de pesanteur).</p>
 <blockquote>
-<div><p><strong>Exercice A :</strong><br />
-Une cellule de code non montrée ici permet d’afficher ci-dessous la fréquence d’échantillonnage, le nombre de points, le tracé temporel et le spectre en fréquence pour les deux signaux gauche et droite.</p>
+<div><p><strong>Exercice 1:</strong></p>
 <ol class="simple">
-<li><p>Déduire de la fréquence d’échantillonnage et du nombre de points la durée de l’extrait sonore.</p></li>
-<li><p>Pouvez-vous observer sur le signal temporel que le signal est bruité ?</p></li>
-<li><p>Quelle bande spectrale correspond selon vous au bruit à supprimer ? Quel type de filtre va-t-on utiliser ?</p></li>
+<li><p>Si l’on pose le vecteur <code class="docutils literal notranslate"><span class="pre">Y(t)</span> <span class="pre">=</span> <span class="pre">(\theta(t),</span> <span class="pre">\dot</span> <span class="pre">\theta(t))</span></code>, écrire la fonction <code class="docutils literal notranslate"><span class="pre">F</span></code> associée au schéma d’Euler puis utiliser la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> (la réécrire dans la cellule suivante pour pouvoir l’utiliser) pour obtenir <span class="math notranslate nohighlight">\(\theta(t)\)</span> si <span class="math notranslate nohighlight">\(\theta(0) = \pi /4\)</span> et <span class="math notranslate nohighlight">\(\dot \theta(0) = 0\)</span></p></li>
 </ol>
 </div></blockquote>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------
-Fréquence d&#39;échantilonnage : 8000 ech/s
---------------
---------------
-Nombre de points du signal : 20126 ech
---------------
-</pre></div>
-</div>
-<img alt="_images/elec_filtrage_4_1.png" src="_images/elec_filtrage_4_1.png" />
-<img alt="_images/elec_filtrage_4_2.png" src="_images/elec_filtrage_4_2.png" />
-</div>
-</div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -477,8 +388,8 @@ Nombre de points du signal : 20126 ech
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="elec_reponse_o2_complet.html" title="previous page"><span class="section-number">5.5. </span>Etude directe d’un système d’ordre 2</a>
-    <a class='right-next' id="next-link" href="elec_filtrage_filtre.html" title="next page"><span class="section-number">6.4. </span>Dimensionnement du filtre</a>
+    <a class='left-prev' id="prev-link" href="elec_reponse_o2_base.html" title="previous page"><span class="section-number">5.4. </span>Implémentation basique</a>
+    <a class='right-next' id="next-link" href="elec_filtrage.html" title="next page"><span class="section-number">6. </span>Etude numérique d’un filtre linéaire</a>
 
         </div>
         

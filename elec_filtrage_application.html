@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.5. Application du filtre &#8212; Capacités numériques - Sujets</title>
+    <title>6.5. Application du filtre &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
-    <link rel="prev" title="5.4. Dimensionnement du filtre" href="elec_filtrage_filtre.html" />
+    <link rel="next" title="7. Etude d’un pendule simple" href="meca_pendule.html" />
+    <link rel="prev" title="6.4. Dimensionnement du filtre" href="elec_filtrage_filtre.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -185,32 +185,49 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o2.html">
+   5. Système linéaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o2_base.html">
+     5.4. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o2_complet.html">
+     5.5. Etude directe d’un système d’ordre 2
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_filtrage.html">
-   5. Etude numérique d’un filtre linéaire
+   6. Etude numérique d’un filtre linéaire
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="elec_filtrage_filtre.html">
-     5.4. Dimensionnement du filtre
+     6.4. Dimensionnement du filtre
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.5. Application du filtre
+     6.5. Application du filtre
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_non_lineaire.html">
-   6. Système conservatif : Effets non linéaires.
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_pendule.html">
@@ -218,13 +235,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="meca_non_lineaire.html">
+   8. Système conservatif : Effets non linéaires.
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="meca_force_centrale.html">
-   8. Etude d’un mouvement à force centrale
+   9. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   9. Etude de l’atmosphère terrestre
+   10. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -323,44 +345,44 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fonctions-utiles">
-   5.5.1. Fonctions utiles
+   6.5.1. Fonctions utiles
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#filtre-choisi">
-   5.5.2. Filtre choisi
+   6.5.2. Filtre choisi
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#application-a-des-signaux-simples">
-   5.5.3. Application à des signaux simples.
+   6.5.3. Application à des signaux simples.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#application-au-signal-sonore">
-   5.5.4. Application au signal sonore
+   6.5.4. Application au signal sonore
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#importation-d-un-fichier-wav">
-     5.5.4.1. Importation d’un fichier wav
+     6.5.4.1. Importation d’un fichier wav
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#realisation-du-filtrage">
-     5.5.4.2. Réalisation du filtrage
+     6.5.4.2. Réalisation du filtrage
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creation-du-fichier-sonore">
-     5.5.4.3. Création du fichier sonore
+     6.5.4.3. Création du fichier sonore
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   5.5.5. Conclusion
+   6.5.5. Conclusion
   </a>
  </li>
 </ul>
@@ -376,9 +398,9 @@
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="section" id="application-du-filtre">
-<h1><span class="section-number">5.5. </span>Application du filtre<a class="headerlink" href="#application-du-filtre" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.5. </span>Application du filtre<a class="headerlink" href="#application-du-filtre" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="fonctions-utiles">
-<h2><span class="section-number">5.5.1. </span>Fonctions utiles<a class="headerlink" href="#fonctions-utiles" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5.1. </span>Fonctions utiles<a class="headerlink" href="#fonctions-utiles" title="Permalink to this headline">¶</a></h2>
 <p>Cette activité fait suite à l’activité où vous avez appris à reconstruire un signal à partir des ses composantes spectrales. Pour gagner du temps les fonctions utiles qui avaient déjà été implémentées sont redonnées ici.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -437,7 +459,7 @@
 </div>
 </div>
 <div class="section" id="filtre-choisi">
-<h2><span class="section-number">5.5.2. </span>Filtre choisi<a class="headerlink" href="#filtre-choisi" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5.2. </span>Filtre choisi<a class="headerlink" href="#filtre-choisi" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Recopier dans la cellule ci-dessous la fonction <code class="docutils literal notranslate"><span class="pre">butterworth</span></code> précédemment créée ainsi que les valeur <code class="docutils literal notranslate"><span class="pre">nmin</span></code> et <code class="docutils literal notranslate"><span class="pre">fc</span></code> choisie pour le dimensionnement (remarque : vous pouvez même créer une fonction <code class="docutils literal notranslate"><span class="pre">butterworth(f)</span></code> et mettre nmin et fc comme variable locale car elles ne changeront plus.)</p>
 </div></blockquote>
@@ -450,7 +472,7 @@
 </div>
 </div>
 <div class="section" id="application-a-des-signaux-simples">
-<h2><span class="section-number">5.5.3. </span>Application à des signaux simples.<a class="headerlink" href="#application-a-des-signaux-simples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5.3. </span>Application à des signaux simples.<a class="headerlink" href="#application-a-des-signaux-simples" title="Permalink to this headline">¶</a></h2>
 <p>Nous allons tester le filtre sur des signaux simples:</p>
 <ul class="simple">
 <li><p>un signal sinusoïdal de basse fréquence puis de haute fréquence</p></li>
@@ -472,9 +494,9 @@ s_{creneau} = \sum_{i=1}^{m} {4 \over \pi (2i + 1)}\ \cos \left ( 2 \pi (2i + 1)
 \]</div>
 </div>
 <div class="section" id="application-au-signal-sonore">
-<h2><span class="section-number">5.5.4. </span>Application au signal sonore<a class="headerlink" href="#application-au-signal-sonore" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5.4. </span>Application au signal sonore<a class="headerlink" href="#application-au-signal-sonore" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="importation-d-un-fichier-wav">
-<h3><span class="section-number">5.5.4.1. </span>Importation d’un fichier wav<a class="headerlink" href="#importation-d-un-fichier-wav" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.4.1. </span>Importation d’un fichier wav<a class="headerlink" href="#importation-d-un-fichier-wav" title="Permalink to this headline">¶</a></h3>
 <p>Le signal considéré est téléchargeable par <a class="reference external" href="https://github.com/pcsi3physiquestan/donnees_exp/blob/main/signal_bruitee.wav?raw=true">ce lien</a>. <em>Pensez à placer votre fichier au niveau du notebook pour pouvoir importer le fichier</em>. On rappelle que les tracés temporels et fréquentiels ont déjà été donné précédemment.</p>
 <p>La cellule ci-dessous importe le signal sonore bruité et obtient le spectres (fréquence, amplitude et phase à l’origine) pour les deux signaux gauche et droite. Rien n’est à modifier mais <strong>pensez à exécuter la cellule et à noter les variables à réutiliser pour la suite.</strong></p>
 <div class="cell tag_remove-output tag_hide-input docutils container">
@@ -499,7 +521,7 @@ s_{creneau} = \sum_{i=1}^{m} {4 \over \pi (2i + 1)}\ \cos \left ( 2 \pi (2i + 1)
 </div>
 </div>
 <div class="section" id="realisation-du-filtrage">
-<h3><span class="section-number">5.5.4.2. </span>Réalisation du filtrage<a class="headerlink" href="#realisation-du-filtrage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.4.2. </span>Réalisation du filtrage<a class="headerlink" href="#realisation-du-filtrage" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p><strong>Exercice 2 :</strong></p>
 <ol class="simple">
@@ -516,10 +538,10 @@ s_{creneau} = \sum_{i=1}^{m} {4 \over \pi (2i + 1)}\ \cos \left ( 2 \pi (2i + 1)
 <p><em>Respecter les noms es variables pour les deux signaux temporels car ils vont servir à la création du signal sonore final.</em></p>
 </div>
 <div class="section" id="creation-du-fichier-sonore">
-<h3><span class="section-number">5.5.4.3. </span>Création du fichier sonore<a class="headerlink" href="#creation-du-fichier-sonore" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.4.3. </span>Création du fichier sonore<a class="headerlink" href="#creation-du-fichier-sonore" title="Permalink to this headline">¶</a></h3>
 <p>Si tout à été fait correctement, la cellule ci-dessous peut-être exécutée directement. Elle va créer un fichier sonore <code class="docutils literal notranslate"><span class="pre">.wav</span></code> à partir du signal filtré. Il ne vous reste plus qu’à écouter (VLC ou Audacity) le signal ainsi obtenu pour vérifier qu’on a bien filtré le bruit parasite.</p>
 <p>Vous pourrez le comparer à l’<a class="reference external" href="https://github.com/pcsi3physiquestan/donnees_exp/blob/main/signal_court.wav?raw=true">extrait original</a> (le bruit ayant été ajouté artificiel pour ce TD).</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># On doit normaliser le signal pour que les valeurs soit comprises entre -1 et 1</span>
 <span class="c1"># En pratique, on place les valeurs entre -0.5 et 0.5 pour éviter tout risque de saturation</span>
@@ -534,25 +556,11 @@ s_{creneau} = \sum_{i=1}^{m} {4 \over \pi (2i + 1)}\ \cos \left ( 2 \pi (2i + 1)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">fcec01014772</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># En pratique, on place les valeurs entre -0.5 et 0.5 pour éviter tout risque de saturation</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">reponse2</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">reponse2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s_gauche</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">s_gauche</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">reponse2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s_droite</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">s_droite</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">reponse2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">reponse2</span><span class="p">)</span>  <span class="c1"># La fonction write impose l&#39;utilisation d&#39;un array</span>
-
-<span class="ne">NameError</span>: name &#39;s_gauche&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
 <div class="section" id="conclusion">
-<h2><span class="section-number">5.5.5. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5.5. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <p>Nous avons donc pu réaliser le traitement d’un signal. Même s’il a été fait sur des signaux numériques, ce traitement reste “analogique” au sens où il suit exactement le même procédé qu’un filtre analogique étudié en TP.</p>
 <p>Cette méthode est néanmoins problématique car elle demande beaucoup de ressource et du temps de calcul (on n’a ici traité que 2s secondes de musique échantilonnée à 8kHz, ce qui est peu et la reconstruction du signal était déjà longue).</p>
 <p>En pratique, le traitement d’un signal numérique se fait par des filtres <strong>numériques</strong> qui s’appliquent directement sur le signal temporel échantillonné (<span class="math notranslate nohighlight">\(s_k\)</span>). Certains de ces filtres seront vus en deuxième année suivant les options. La bibliothèques <code class="docutils literal notranslate"><span class="pre">scipy</span></code> propose notamment plusieurs fonctions natives et optimisées pour le traitement des signaux numériques (sous bibliothèques <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code>).</p>
@@ -585,8 +593,8 @@ s_{creneau} = \sum_{i=1}^{m} {4 \over \pi (2i + 1)}\ \cos \left ( 2 \pi (2i + 1)
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="elec_filtrage_filtre.html" title="previous page"><span class="section-number">5.4. </span>Dimensionnement du filtre</a>
-    <a class='right-next' id="next-link" href="meca_non_lineaire.html" title="next page"><span class="section-number">6. </span>Système conservatif : Effets non linéaires.</a>
+    <a class='left-prev' id="prev-link" href="elec_filtrage_filtre.html" title="previous page"><span class="section-number">6.4. </span>Dimensionnement du filtre</a>
+    <a class='right-next' id="next-link" href="meca_pendule.html" title="next page"><span class="section-number">7. </span>Etude d’un pendule simple</a>
 
         </div>
         

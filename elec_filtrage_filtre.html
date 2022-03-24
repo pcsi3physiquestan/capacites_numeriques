@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.4. Dimensionnement du filtre &#8212; Capacités numériques - Sujets</title>
+    <title>6.4. Dimensionnement du filtre &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.5. Application du filtre" href="elec_filtrage_application.html" />
-    <link rel="prev" title="5. Etude numérique d’un filtre linéaire" href="elec_filtrage.html" />
+    <link rel="next" title="6.5. Application du filtre" href="elec_filtrage_application.html" />
+    <link rel="prev" title="6. Etude numérique d’un filtre linéaire" href="elec_filtrage.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -185,32 +185,49 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o2.html">
+   5. Système linéaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o2_base.html">
+     5.4. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o2_complet.html">
+     5.5. Etude directe d’un système d’ordre 2
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_filtrage.html">
-   5. Etude numérique d’un filtre linéaire
+   6. Etude numérique d’un filtre linéaire
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.4. Dimensionnement du filtre
+     6.4. Dimensionnement du filtre
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_filtrage_application.html">
-     5.5. Application du filtre
+     6.5. Application du filtre
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_non_lineaire.html">
-   6. Système conservatif : Effets non linéaires.
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_pendule.html">
@@ -218,13 +235,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="meca_non_lineaire.html">
+   8. Système conservatif : Effets non linéaires.
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="meca_force_centrale.html">
-   8. Etude d’un mouvement à force centrale
+   9. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   9. Etude de l’atmosphère terrestre
+   10. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -323,17 +345,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#choix-du-filtre">
-   5.4.1. Choix du filtre
+   6.4.1. Choix du filtre
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ordre-du-filtre">
-   5.4.2. Ordre du filtre
+   6.4.2. Ordre du filtre
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#choix-de-f-c">
-   5.4.3. Choix de
+   6.4.3. Choix de
    <span class="math notranslate nohighlight">
     \(f_c\)
    </span>
@@ -352,14 +374,14 @@
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="section" id="dimensionnement-du-filtre">
-<h1><span class="section-number">5.4. </span>Dimensionnement du filtre<a class="headerlink" href="#dimensionnement-du-filtre" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.4. </span>Dimensionnement du filtre<a class="headerlink" href="#dimensionnement-du-filtre" title="Permalink to this headline">¶</a></h1>
 <p>On va considérer qu’il convient :</p>
 <ul class="simple">
 <li><p>de garder un gain supérieur à <span class="math notranslate nohighlight">\(G_1 = 0.9\)</span> au dessous de <span class="math notranslate nohighlight">\(f_1 = 1500Hz\)</span>.</p></li>
 <li><p>d’avoir un gain inférieur à <span class="math notranslate nohighlight">\(G_2 = 0.1\)</span> au dessus de <span class="math notranslate nohighlight">\(f_2 = 2500Hz\)</span>.</p></li>
 </ul>
 <div class="section" id="choix-du-filtre">
-<h2><span class="section-number">5.4.1. </span>Choix du filtre<a class="headerlink" href="#choix-du-filtre" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4.1. </span>Choix du filtre<a class="headerlink" href="#choix-du-filtre" title="Permalink to this headline">¶</a></h2>
 <p>Le filtre que nous allons choisir est un filtre passe-bas dit de Butterworth d’ordre n. Comme expliqué en devoir libre, il a les caractéristiques suivantes :</p>
 <ul class="simple">
 <li><p>son gain réel s’écrit sous la forme : <span class="math notranslate nohighlight">\(G = {1 \over \sqrt{1 + x^{2n}}}\)</span> avec <span class="math notranslate nohighlight">\(x = {\omega \over \omega_c}\)</span> et <span class="math notranslate nohighlight">\(\omega_c\)</span> la pulsation de coupure du filtre.</p></li>
@@ -373,7 +395,7 @@ H(j\omega) = {1 \over \prod_{k=1}^{k=n} \left({j \omega \over \omega_c} - p_k\ri
 <p>avec <span class="math notranslate nohighlight">\(p_k = \exp\left( {j (2k + n -1 }) \pi \over 2n\right)\)</span> et <span class="math notranslate nohighlight">\(f_c\)</span> la fréquence de coupure du filtre.</p>
 </div>
 <div class="section" id="ordre-du-filtre">
-<h2><span class="section-number">5.4.2. </span>Ordre du filtre<a class="headerlink" href="#ordre-du-filtre" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4.2. </span>Ordre du filtre<a class="headerlink" href="#ordre-du-filtre" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>Exercice 1:</strong><br />
 (Pensez à bien lire les indications après l’énoncé)</p>
@@ -415,7 +437,7 @@ On peut montrer de plus que le cahier des charges impose que <span class="math n
 </div>
 </div>
 <div class="section" id="choix-de-f-c">
-<h2><span class="section-number">5.4.3. </span>Choix de <span class="math notranslate nohighlight">\(f_c\)</span><a class="headerlink" href="#choix-de-f-c" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4.3. </span>Choix de <span class="math notranslate nohighlight">\(f_c\)</span><a class="headerlink" href="#choix-de-f-c" title="Permalink to this headline">¶</a></h2>
 <p><em>Pour toute la suite, on travaillera avec un filtre d’ordre <span class="math notranslate nohighlight">\(n_{min}\)</span>.</em></p>
 <blockquote>
 <div><p><strong>Exercice 2:</strong></p>
@@ -424,7 +446,7 @@ On peut montrer de plus que le cahier des charges impose que <span class="math n
 <li><p>Tracer le diagramme de Bode en gain du filtre pour <span class="math notranslate nohighlight">\(f_c\)</span> trouvée précédemment et vérifier visuellement son ordre et que les gains en <span class="math notranslate nohighlight">\(f_1\)</span> et <span class="math notranslate nohighlight">\(f_2\)</span> suivent le cahier des charges.</p></li>
 </ol>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_remove-output tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vous pouvez utiliser (en la recopiant) la fonction `dicho` que vous avez créés dans les TP précédents.</span>
 </pre></div>
@@ -460,8 +482,8 @@ On peut montrer de plus que le cahier des charges impose que <span class="math n
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="elec_filtrage.html" title="previous page"><span class="section-number">5. </span>Etude numérique d’un filtre linéaire</a>
-    <a class='right-next' id="next-link" href="elec_filtrage_application.html" title="next page"><span class="section-number">5.5. </span>Application du filtre</a>
+    <a class='left-prev' id="prev-link" href="elec_filtrage.html" title="previous page"><span class="section-number">6. </span>Etude numérique d’un filtre linéaire</a>
+    <a class='right-next' id="next-link" href="elec_filtrage_application.html" title="next page"><span class="section-number">6.5. </span>Application du filtre</a>
 
         </div>
         
