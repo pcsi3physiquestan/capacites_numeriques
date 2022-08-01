@@ -411,28 +411,31 @@
 \[
 \int_{t_0}^{t_k} \frac{\rm{d}y}{\rm{dt}}(t) \rm{d}t = \int_{t_0}^{t_k} f(t, y(t)) \rm{d}t
 \]</div>
-<p>soit:
-$<span class="math notranslate nohighlight">\(
+<p>soit:</p>
+<div class="math notranslate nohighlight">
+\[
 y(t_{k}) - y(t_0) = \int_{t_0}^{t_k} f(t, y(t)) \rm{d}t
-\)</span>$</p>
+\]</div>
 <p><em>Une méthode d’intégration numérique consiste à approcher l’intégrale du membre de droite par un calcul numérique comme on a pu le faire précédemment. Dans le cas de la méthode d’Euler, il s’agit d’approcher cette intégrale par la méthode des rectangles vue précédemment.</em></p>
-<p>En pratique, on utilise une relation de récurrence comme pour le calcul d’intégrale pour calculer les termes de la suite <span class="math notranslate nohighlight">\((t_k)\)</span> pas à pas. En effet, de:
-$<span class="math notranslate nohighlight">\(
+<p>En pratique, on utilise une relation de récurrence comme pour le calcul d’intégrale pour calculer les termes de la suite <span class="math notranslate nohighlight">\((t_k)\)</span> pas à pas. En effet, de:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{cases}
 y(t_{k}) &amp;= y(t_0) + \int_{t_0}^{t_k} f(t, y(t)) \rm{d}t\\
 y(t_{k+1}) &amp;= y(t_0) + \int_{t_0}^{t_{k+1}} f(t, y(t)) \rm{d}t
 \end{cases}
-\)</span><span class="math notranslate nohighlight">\(
-Il vient la relation de récurrence:
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Il vient la relation de récurrence:</p>
+<div class="math notranslate nohighlight">
+\[
 y(t_{k+1}) = y(t_k) + \int_{t_k}^{t_{k+1}} f(t, y(t)) \rm{d}t \underbrace{\approx}_{rectangle} y(t_k) + f(t_k, y({t_k})) * h
-\)</span>$</p>
+\]</div>
 <p>soit la récurrence qu’on appelle…</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p><strong>Schéma d’Euler explicite.</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-96bd24f8-fb85-4b73-8e75-44a4790ffa2a">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-96bd24f8-fb85-4b73-8e75-44a4790ffa2a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b6efffd9-45f7-4d85-81f6-5c6368e2d96c">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-b6efffd9-45f7-4d85-81f6-5c6368e2d96c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 y_{k+1} = y_k + f(t_k, y_k) * h
 \end{equation}\]</div>
 </div>
@@ -443,19 +446,21 @@ y_{k+1} = y_k + f(t_k, y_k) * h
 <p class="sidebar-title"></p>
 <p>On parle d’approximation à l’ordre 1.</p>
 </div>
-<p>On peut voir aussi la méthode d’Euler comme une approximation de la dérivée par un taux de variation fini calculé pour un pas de temps <span class="math notranslate nohighlight">\(h\)</span> choisi :
-$<span class="math notranslate nohighlight">\(
+<p>On peut voir aussi la méthode d’Euler comme une approximation de la dérivée par un taux de variation fini calculé pour un pas de temps <span class="math notranslate nohighlight">\(h\)</span> choisi :</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{\rm{d}y}{\rm{dt}} \approx \frac{y(t_{k+1}) - y(t_k)}{t_{k+1}-t_k}
-\)</span>$</p>
+\]</div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>On rappelle que <span class="math notranslate nohighlight">\(t_{k+1}-t_k = h\)</span></p>
 </div>
-<p>On peut ainsi déterminer la valeur de <span class="math notranslate nohighlight">\(y_{k+1}=y(t_{k+1})\)</span> par récurrence à partir de <span class="math notranslate nohighlight">\(y_k=y(t_k)\)</span> et <span class="math notranslate nohighlight">\(f\)</span> :
-$<span class="math notranslate nohighlight">\(
+<p>On peut ainsi déterminer la valeur de <span class="math notranslate nohighlight">\(y_{k+1}=y(t_{k+1})\)</span> par récurrence à partir de <span class="math notranslate nohighlight">\(y_k=y(t_k)\)</span> et <span class="math notranslate nohighlight">\(f\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[
 y_{k+1} = y_k + h \times f(t_k, y_k)
-\)</span>$
-<em>C’est le même schéma d’Euler</em></p>
+\]</div>
+<p><em>C’est le même schéma d’Euler</em></p>
 </div>
 </div>
 <div class="section" id="synthese">
@@ -474,12 +479,13 @@ y_{k+1} = y_k + h \times f(t_k, y_k)
 \]</div>
 <ul class="simple">
 <li><p>créer un vecteur temps contenant les instants <span class="math notranslate nohighlight">\(t_k = t_0 + k \times h\)</span></p></li>
-<li><p>calculer un vecteur contenant les éléments de la suite <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span> définie par la récurrence:
-$<span class="math notranslate nohighlight">\(
-y_{k+1} = y_k + f(t_k, y_k) * h
-\)</span><span class="math notranslate nohighlight">\(
-avec \)</span>y_0 = y(t_0)$ la condition initiale.</p></li>
+<li><p>calculer un vecteur contenant les éléments de la suite <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span> définie par la récurrence:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+y_{k+1} = y_k + f(t_k, y_k) * h
+\]</div>
+<p>avec <span class="math notranslate nohighlight">\(y_0 = y(t_0)\)</span> la condition initiale.</p>
 </div>
 </div>
 <div class="section" id="application-en-electrocinetique">
