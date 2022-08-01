@@ -60,7 +60,7 @@ Il renvoie __un tableau numpy__ contenant dans chaque colonne les valeurs des so
 __Par la suite, on essaiera d'utiliser la fonction `odeint` quand c'est nécessaire.__
 
 
-## Petites et graneds oscillations
+## Petites et grandes oscillations
 ### Différences
 Aux petits angles, l'équation différentielle devient:
 $$
