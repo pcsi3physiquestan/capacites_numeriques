@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.5. Etude directe d’un système d’ordre 2 &#8212; Capacités numériques - Sujets</title>
+    <title>5.5. Etude d’un système d’ordre 2 : le pendule &#8212; Capacités numériques - Sujets</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,34 +31,37 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_reponse_o2_complet.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Etude numérique d’un filtre linéaire" href="elec_filtrage.html" />
+    <link rel="next" title="6. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
     <link rel="prev" title="5.4. Implémentation basique" href="elec_reponse_o2_base.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,13 +79,14 @@
     <a class="navbar-brand text-wrap" href="index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Capacités numériques - Sujets</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -93,8 +97,8 @@
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="signal_fourier.html">
-   1. Analyse spectrale d’un signal
+  <a class="reference internal" href="intro.html">
+   1. Introduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -103,13 +107,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="signal_fourier_base.html">
-     1.2. Etude de base
+    <a class="reference internal" href="intro_theorie.html">
+     1.2. Approche théorique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="signal_fourier_complet.html">
-     1.3. Etude complète
+    <a class="reference internal" href="intro_code.html">
+     1.3. Partie codage
     </a>
    </li>
   </ul>
@@ -187,7 +191,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_reponse_o2.html">
-   5. Système linéaire
+   5. Système linéaire et ordre 2
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -202,51 +206,24 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.5. Etude directe d’un système d’ordre 2
+     5.5. Etude d’un système d’ordre 2 : le pendule
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="elec_filtrage.html">
-   6. Etude numérique d’un filtre linéaire
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_filtrage_filtre.html">
-     6.4. Dimensionnement du filtre
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_filtrage_application.html">
-     6.5. Application du filtre
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_pendule.html">
-   7. Etude d’un pendule simple
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_non_lineaire.html">
-   8. Système conservatif : Effets non linéaires.
+   6. Système conservatif : Effets non linéaires.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_force_centrale.html">
-   9. Etude d’un mouvement à force centrale
+   7. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   10. Etude de l’atmosphère terrestre
+   8. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -338,6 +315,41 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#etude-generale">
+   5.5.1. Etude générale
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#petites-et-graneds-oscillations">
+   5.5.2. Petites et graneds oscillations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#differences">
+     5.5.2.1. Différences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anisochronisme">
+     5.5.2.2. Anisochronisme
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trajectoire-de-diffusion">
+     5.5.2.3. Trajectoire de diffusion
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -347,8 +359,10 @@
               <div>
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
-<div class="section" id="etude-directe-d-un-systeme-d-ordre-2">
-<h1><span class="section-number">5.5. </span>Etude directe d’un système d’ordre 2<a class="headerlink" href="#etude-directe-d-un-systeme-d-ordre-2" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="etude-d-un-systeme-d-ordre-2-le-pendule">
+<h1><span class="section-number">5.5. </span>Etude d’un système d’ordre 2 : le pendule<a class="headerlink" href="#etude-d-un-systeme-d-ordre-2-le-pendule" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="etude-generale">
+<h2><span class="section-number">5.5.1. </span>Etude générale<a class="headerlink" href="#etude-generale" title="Permalink to this headline">¶</a></h2>
 <p>On va étudier directement un système d’ordre 2 issu d’un problème de mécanique: le pendule simple sans frottement. L’équation qui régit l’évolution de l’angle <span class="math notranslate nohighlight">\(\theta(t)\)</span> que fait le pendule avec un axe horizontal est:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -358,9 +372,92 @@
 <blockquote>
 <div><p><strong>Exercice 1:</strong></p>
 <ol class="simple">
-<li><p>Si l’on pose le vecteur <code class="docutils literal notranslate"><span class="pre">Y(t)</span> <span class="pre">=</span> <span class="pre">(\theta(t),</span> <span class="pre">\dot</span> <span class="pre">\theta(t))</span></code>, écrire la fonction <code class="docutils literal notranslate"><span class="pre">F</span></code> associée au schéma d’Euler puis utiliser la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> (la réécrire dans la cellule suivante pour pouvoir l’utiliser) pour obtenir <span class="math notranslate nohighlight">\(\theta(t)\)</span> si <span class="math notranslate nohighlight">\(\theta(0) = \pi /4\)</span> et <span class="math notranslate nohighlight">\(\dot \theta(0) = 0\)</span></p></li>
+<li><p>Si l’on pose le vecteur <span class="math notranslate nohighlight">\(Y(t) = (\theta(t), \dot \theta(t))\)</span>, écrire la fonction <code class="docutils literal notranslate"><span class="pre">F</span></code> associée au schéma d’Euler puis utiliser la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> (la réécrire dans la cellule suivante pour pouvoir l’utiliser) pour obtenir <span class="math notranslate nohighlight">\(\theta(t)\)</span> si <span class="math notranslate nohighlight">\(\theta(0) = \pi /4\)</span> et <span class="math notranslate nohighlight">\(\dot \theta(0) = 0\)</span></p></li>
 </ol>
 </div></blockquote>
+<p>Nous allons apprendre à utiliser directement la fonction native <code class="docutils literal notranslate"><span class="pre">odeint</span></code> de la bibliothèque <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>. Sa signature est la suivante:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Par défaut, odeint utiliser une fonction <code class="docutils literal notranslate"><span class="pre">F(Y,t)</span></code> et non <code class="docutils literal notranslate"><span class="pre">F(t,Y)</span></code>. D’où l’argument <code class="docutils literal notranslate"><span class="pre">tfirst=True</span></code> pour lui forcer la main. Cette ordre est préférable car il reste vrai pour d’autres fonctions.</p>
+</div>
+<div class="highlight-{code-block}ipython3 notranslate"><div class="highlight"><pre><span></span>from scipy.integrate import odeint # Ne pas oublier d&#39;importer la fonction
+odeint(f, y0, t, tfirst=True)
+</pre></div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">odeint</span></code> fonctionne aussi à l’ordre 1. <code class="docutils literal notranslate"><span class="pre">y0</span></code> est alors un nombre et non un vecteur.</p>
+</div>
+<p>où <code class="docutils literal notranslate"><span class="pre">f</span></code> est la fonction du schéma d’Euler, <code class="docutils literal notranslate"><span class="pre">y0</span></code> le vecteur contenant les conditions intiales et <code class="docutils literal notranslate"><span class="pre">t</span></code> un vecteur contenant déjà <strong>tous</strong> les instants <span class="math notranslate nohighlight">\(t_k\)</span> où on veut évaluer <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>On est donc proche de ce que vous avez codé.</p>
+</div>
+<p>Il renvoie <strong>un tableau numpy</strong> contenant dans chaque colonne les valeurs des solutions aux instants <span class="math notranslate nohighlight">\(t_k\)</span>.</p>
+<blockquote>
+<div><p><strong>Exercice 2:</strong></p>
+<ol class="simple">
+<li><p>Après l’avoir importée, utiliser la fonction odeint pour obtenir <span class="math notranslate nohighlight">\(\theta(t)\)</span> si <span class="math notranslate nohighlight">\(\theta(0) = \pi /4\)</span> et <span class="math notranslate nohighlight">\(\dot \theta(0) = 0\)</span></p></li>
+</ol>
+</div></blockquote>
+<p><strong>Par la suite, on essaiera d’utiliser la fonction <code class="docutils literal notranslate"><span class="pre">odeint</span></code> quand c’est nécessaire.</strong></p>
+</div>
+<div class="section" id="petites-et-graneds-oscillations">
+<h2><span class="section-number">5.5.2. </span>Petites et graneds oscillations<a class="headerlink" href="#petites-et-graneds-oscillations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="differences">
+<h3><span class="section-number">5.5.2.1. </span>Différences<a class="headerlink" href="#differences" title="Permalink to this headline">¶</a></h3>
+<p>Aux petits angles, l’équation différentielle devient:
+$<span class="math notranslate nohighlight">\(
+\frac{\rm{d^2}\theta}{\rm{dt^2}} = - \omega_0^2 \theta
+\)</span>$
+soit un oscillateur harmonique dont la solution analytique est:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-884dec7d-c04a-42ac-a93c-fad2986a8094">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-884dec7d-c04a-42ac-a93c-fad2986a8094" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\theta (t) = \theta_i \cos \omega_0 t + \frac{\omega_i}{\omega_0} \sin \omega_0 t
+\end{equation}\]</div>
+<p>avec <span class="math notranslate nohighlight">\(\theta_i = \theta(0)\)</span> et <span class="math notranslate nohighlight">\(\omega_i = \dot \theta (0)\)</span>.</p>
+<blockquote>
+<div><p><strong>Exercice 3:</strong></p>
+<ol class="simple">
+<li><p>On considère le cas où on lâche le pendule de <span class="math notranslate nohighlight">\(\theta_i = 0\)</span> avec une vitesse initiale <span class="math notranslate nohighlight">\(\omega_i\)</span>. Déterminer grâce à <code class="docutils literal notranslate"><span class="pre">odeint</span></code> <strong>sans approximation</strong> l’évolution de <span class="math notranslate nohighlight">\(\theta(t)\)</span> pour cinq vitesses de départ différentes répartis entre 0 et <span class="math notranslate nohighlight">\(\sqrt{\frac{2g}{l}}\)</span> et comparer graphiquement les solutions obtenues à la solutions théoriques aux petites angles. Cette approximation est-elle valable jusqu’à <span class="math notranslate nohighlight">\(\sqrt{\frac{2g}{l}}\)</span> ?</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="anisochronisme">
+<h3><span class="section-number">5.5.2.2. </span>Anisochronisme<a class="headerlink" href="#anisochronisme" title="Permalink to this headline">¶</a></h3>
+<p>On se propose de déterminer la période des oscillations en fonction de l’amplitude des oscillations.<br />
+<strong>Méthode choisie</strong> : On va déterminer les temps <span class="math notranslate nohighlight">\(t_{0i}\)</span> successifs des points où la solution numérique pour <span class="math notranslate nohighlight">\(\theta(t)\)</span> s’annule (plus précisément les temps médians entre deux instants où le signal change de signe). Comme il n’y a que 2 annulations des angles dans une période (cf. étude des systèmes conservatifs), il suffira de compter le nombre <span class="math notranslate nohighlight">\(N_0\)</span> de 0. La période <span class="math notranslate nohighlight">\(T\)</span> du signal s’écrit alors :</p>
+<div class="math notranslate nohighlight">
+\[
+T = {t_{0N_0} - t_{01} \over {N_0 - 1 \over 2}}
+\]</div>
+<blockquote>
+<div><p><strong>Exercice 4:</strong></p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">periode</span></code> qui prend en arguments deux vecteurs de mêmes taille <code class="docutils literal notranslate"><span class="pre">tk</span></code> et <code class="docutils literal notranslate"><span class="pre">thetak</span></code> et qui renvoie la période du signal <code class="docutils literal notranslate"><span class="pre">thetak</span></code> en considérant les <code class="docutils literal notranslate"><span class="pre">tk</span></code> comme les temps associés.</p></li>
+<li><p>Tester votre fonction sur un signal intégré numériquement obtenu précédemment pour vérifier que vous trouvez bien la bonne période (prendre un cas de petites oscillations car vous connaissez alors la période).</p></li>
+<li><p>Comment choisir les conditions initiales pour que <span class="math notranslate nohighlight">\(\theta_i\)</span> soit l’amplitude des oscillations? Pour 49 valeurs comprises entre <span class="math notranslate nohighlight">\(\pi/50\)</span> et <span class="math notranslate nohighlight">\(49\pi/50\)</span>, réaliser l’intégration numérique sans approximation et détermienr la période. Tracer alors la période en fonction de l’amplitude des oscillations.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="trajectoire-de-diffusion">
+<h3><span class="section-number">5.5.2.3. </span>Trajectoire de diffusion<a class="headerlink" href="#trajectoire-de-diffusion" title="Permalink to this headline">¶</a></h3>
+<p>On s’intéresse au cas où le pendule part de sa position la plus basse avec une vitesse angulaire <span class="math notranslate nohighlight">\(\omega_i\)</span>.
+La viteses angulaire initiale permettant au pendule (tige rigide) d’atteindre <span class="math notranslate nohighlight">\(\pi\)</span> et de s’y arrêter est :</p>
+<div class="math notranslate nohighlight">
+\[
+\omega_{i,\lim} = \sqrt{\frac{4g}{l}}
+\]</div>
+<p>En dessous, le pendule oscille. Au dessus, il fait des tours complets.</p>
+<blockquote>
+<div><p><strong>Exercice 5 :</strong></p>
+<ol class="simple">
+<li><p>Intégrer l’équation du pendule avec une valeur de <span class="math notranslate nohighlight">\(\omega_i\)</span> supérieure à à la valeur limite et observer l’allure de <span class="math notranslate nohighlight">\(\theta(t)\)</span> et <span class="math notranslate nohighlight">\(\dot \theta(t)\)</span>. Commenter.</p></li>
+<li><p>Intégrer l’équation du pendule avec la valeur de <span class="math notranslate nohighlight">\(\omega_i\)</span> limite précédente et observer l’allure de <span class="math notranslate nohighlight">\(\theta(t)\)</span> et <span class="math notranslate nohighlight">\(\dot \theta(t)\)</span>. Commenter. Reprendre avec une valeur de <span class="math notranslate nohighlight">\(\omega_i\)</span>^très légèrement inférieure.</p></li>
+</ol>
+</div></blockquote>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -386,16 +483,27 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="elec_reponse_o2_base.html" title="previous page"><span class="section-number">5.4. </span>Implémentation basique</a>
-    <a class='right-next' id="next-link" href="elec_filtrage.html" title="next page"><span class="section-number">6. </span>Etude numérique d’un filtre linéaire</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="elec_reponse_o2_base.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5.4. </span>Implémentation basique</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="meca_non_lineaire.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Système conservatif : Effets non linéaires.</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -411,8 +519,7 @@
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

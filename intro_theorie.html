@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Système linéaire et ordre 2 &#8212; Capacités numériques - Sujets</title>
+    <title>1.2. Approche théorique &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,12 +51,12 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_reponse_o2.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/intro_theorie.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.4. Implémentation basique" href="elec_reponse_o2_base.html" />
-    <link rel="prev" title="4.5. Réponse à une rampe de tension." href="elec_reponse_o1_rampe.html" />
+    <link rel="next" title="1.3. Partie codage" href="intro_code.html" />
+    <link rel="prev" title="1. Introduction" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,18 +96,18 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="intro.html">
    1. Introduction
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="intro_theorie.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      1.2. Approche théorique
     </a>
    </li>
@@ -189,11 +189,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o2.html">
    5. Système linéaire et ordre 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
@@ -266,11 +266,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/elec_reponse_o2.ipynb"><button type="button"
+            href="_sources/intro_theorie.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/elec_reponse_o2.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/intro_theorie.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -295,7 +295,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o2.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/intro_theorie.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -315,29 +315,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#position-du-probleme">
-   5.1. Position du problème
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vision-vectorielle">
-   5.2. Vision vectorielle
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schema-d-euler">
-   5.3. Schéma d’Euler
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -346,86 +323,53 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="systeme-lineaire-et-ordre-2">
-<h1><span class="section-number">5. </span>Système linéaire et ordre 2<a class="headerlink" href="#systeme-lineaire-et-ordre-2" title="Permalink to this headline">¶</a></h1>
-<p>Le but est de voir comment utiliser la méthode d’intégration d’Euler explicite pour étudier le régime transitoire d’un système d’équations. On a alors un système d’équations différentielles.</p>
-<div class="section" id="position-du-probleme">
-<h2><span class="section-number">5.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
-<p>On s’intéresse au pont de Wien en régime libre :</p>
-<p><img alt="Circuit de Wien" src="_images/wien_circuit.png" /></p>
-<blockquote>
-<div><p><strong>Exercice :</strong></p>
-<ol class="simple">
-<li><p>(Théorie)Montrer par le calcul que ce circuit est régit par le système d’équation suivant :</p></li>
-</ol>
-</div></blockquote>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{cases}
-\frac{\rm{d}u}{\rm{dt}} = - \frac{1}{RC} v - \frac{2}{RC}u\\
-\frac{\rm{d}v}{\rm{dt}} = - \frac{1}{RC} v - \frac{1}{RC}u
-\end{cases}
-\end{split}\]</div>
-</div>
-<div class="section" id="vision-vectorielle">
-<h2><span class="section-number">5.2. </span>Vision vectorielle<a class="headerlink" href="#vision-vectorielle" title="Permalink to this headline">¶</a></h2>
-<p>Le système d’équations différentielles précédent peut être vu comme une seule équation différentielle faisant un intervenir des vecteurs:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} {\rm{d} \over \rm{d}t}
-\begin{pmatrix}
-u\\
-v
-\end{pmatrix}
-=
-\begin{pmatrix}
-- {1 \over RC} v - {2 \over RC} u\\
-- {1 \over RC} v - {1 \over RC} u
-\end{pmatrix}
-\end{split}\]</div>
-<p>soit, en définissant le vecteur:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} Y(t)=
-\begin{pmatrix}
-u(t)\\
-v(t)
-\end{pmatrix}
-\end{split}\]</div>
-<p>Sa dérivée est:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c9b846c6-0ad6-4ea1-8116-be7f2daf2e3a">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-c9b846c6-0ad6-4ea1-8116-be7f2daf2e3a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-{\rm{d}Y \over \rm{d}t} = F(t, Y(t))
-\end{equation}\]</div>
-<p>avec :</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} F(t, Y(t)) = 
-\begin{pmatrix}
-- {1 \over RC} v(t) - {2 \over RC} u(t)\\
-- {1 \over RC} v(t) - {1 \over RC} u(t)
-\end{pmatrix}
-\end{split}\]</div>
-<p><em>On rappelle que d’un point de vue vectoriel:</em></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="approche-theorique">
+<h1><span class="section-number">1.2. </span>Approche théorique<a class="headerlink" href="#approche-theorique" title="Permalink to this headline">¶</a></h1>
+<p>Il est important d’obtenir les relations théoriques d’étude AVANT de se lancer dans la programmation. Le but est de relier théoriquement les coordonnées d’un point image à celle d’un point objet et des caractéristiques de la lentille qui les conjugue.</p>
+<p><strong>On rappelle que l’origine des coordonnées sur l’axe optique est situé au point <span class="math notranslate nohighlight">\(O\)</span>.</strong> Il correspond aussi à l’origine de la coordonnée transverse d’un point. On considère :</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">Y[0]</span></code> et <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">Y[1]</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> prend comme argument un vecteur <code class="docutils literal notranslate"><span class="pre">Y</span></code> (de taille 2) et renvoie un vecteur de taille 2.</p></li>
-<li><p>On n’a techniquement pas besoin du temps puisque <code class="docutils literal notranslate"><span class="pre">F</span></code> ne dépend pas explicitement du temps mais on prendra l’habitude de le mettre comme argument même si on ne l’utilise pas (pour des fonctions comme <code class="docutils literal notranslate"><span class="pre">odeint</span></code>).</p></li>
+<li><p>Un point objet B dont les <strong>coordonnées</strong> sont :</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x_B\)</span> sa coordonnée sur l’axe optique (position longitudinale)</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_B\)</span> sa coordonnée transverse (position tranvsersale)</p></li>
+</ul>
+</li>
+<li><p>Une lentille :</p>
+<ul>
+<li><p>de distance focale image <span class="math notranslate nohighlight">\(f'\)</span></p></li>
+<li><p>dont le centre optique <span class="math notranslate nohighlight">\(O_L\)</span> est situé à la coordonnées <span class="math notranslate nohighlight">\(x_L\)</span></p></li>
+</ul>
+</li>
+<li><p>Le point <span class="math notranslate nohighlight">\(B_1\)</span>, image de <span class="math notranslate nohighlight">\(B\)</span> par la lentille <span class="math notranslate nohighlight">\(L\)</span>. Ses <strong>coordonnées</strong> sont:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x_{B1}\)</span> sa coordonnée sur l’axe optique (position longitudinale)</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_{B1}\)</span> sa coordonnée transverse (position tranvsersale)</p></li>
+</ul>
+</li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Exercice</p>
+<p>Exprimer <span class="math notranslate nohighlight">\(x_{B1}\)</span> et <span class="math notranslate nohighlight">\(d_{B1}\)</span> en fonction de <span class="math notranslate nohighlight">\(x_B\)</span>, <span class="math notranslate nohighlight">\(d_B\)</span>, <span class="math notranslate nohighlight">\(f'\)</span> et <span class="math notranslate nohighlight">\(x_L\)</span>.<br />
+<em>Conseil:</em> Faites un schéma en représentant les différentes grandeurs.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><em>Indications utiles</em> :</p>
+<ul class="simple">
+<li><p>Attention à ne pas confondre la position absolue sur un axe et une distance relative entre deux éléments (cf. théorie).</p></li>
 </ul>
 </div>
-<div class="section" id="schema-d-euler">
-<h2><span class="section-number">5.3. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">¶</a></h2>
-<p>Le principe du schéma d’Euler est alors identique au cas d’ordre 1 avec une seule fonction:</p>
-<div class="math notranslate nohighlight">
-\[
-Y_{k+1} \approx Y_k + F(t_k, Y_k) \times h
-\]</div>
-<p>avec <span class="math notranslate nohighlight">\(Y_{k} = Y(t_k)\)</span> et <span class="math notranslate nohighlight">\(h = t_{k+1} - t_k\)</span></p>
-<div class="sidebar">
-<p class="sidebar-title">Tableau numpy</p>
-<p>A la fin de la boucle, il est toujours conseillé de transformer la liste de vecteurs en un vecteur de vecteur, c’est-à-dire un tableau numpy qui sera plus facilement manipulable.</p>
-<p>Chaque vecteur constitue alors une ligne du tableau et chaque colonne correspond donc aux valeurs <span class="math notranslate nohighlight">\(u(t_k)\)</span> et <span class="math notranslate nohighlight">\(v(t_k)\)</span>.</p>
-</div>
-<p><strong>Il faudra juste veiller à ce que la fonction <span class="math notranslate nohighlight">\(F\)</span> renvoie un vecteur et que <span class="math notranslate nohighlight">\(Y\)</span> soit un vecteur dans les programmes.</strong> Les valeurs calculées aux instant <span class="math notranslate nohighlight">\(t_k = t_0 + hk\)</span> sont alors stockées dans une liste qui sera <strong>une de vecteurs de taille 2</strong>.</p>
-</div>
-<div class="toctree-wrapper compound">
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Si vous avez des difficultés. Voici ce que vous devez trouver.
+Montrer que:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-12ffcac9-8388-486e-afe5-56bea36d8764">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-12ffcac9-8388-486e-afe5-56bea36d8764" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\begin{cases}
+x_{B1} &amp;= x_L + \frac{f' \times (x_B - x_L)}{f' + x_B - x_L}\\
+d_{B1} &amp;= d_{B} \times \frac{x_B - x_L}{x_{B1} - x_L}
+\end{cases}
+\end{equation}\]</div>
 </div>
 </div>
 
@@ -454,17 +398,17 @@ Y_{k+1} \approx Y_k + F(t_k, Y_k) \times h
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="elec_reponse_o1_rampe.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.5. </span>Réponse à une rampe de tension.</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="elec_reponse_o2_base.html" title="next page">
+    <a class='right-next' id="next-link" href="intro_code.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.4. </span>Implémentation basique</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Partie codage</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

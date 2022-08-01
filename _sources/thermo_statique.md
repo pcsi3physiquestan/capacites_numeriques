@@ -102,24 +102,16 @@ $$
 
 ## Détermination du profil de pression et température
 
+__Attention aux unités m/km.__
 > __Exercice 1 :__  
-> 1. Ecrire une fonction `kISA` qui prend comme argument une altitude `z` et qui renvoie le gradient de température $k_{ISA}(z)$ associé. Pensez à utiliser les listes définies au début.
+> 1. Ecrire une fonction `kISA` qui prend comme argument une altitude `z` et qui renvoie le gradient de température $k_{ISA}(z)$ associé. Pensez à utiliser les listes définies au début. _On supposera que l'altitude reste toujours inférieure à 85km, on ne s'occupera donc pas du cas de la Mésopause._
 > 2. Ecrire une fonction `F_atm(z, Y)` qui prend comme argument l'altitude `z` et le vecteur `Y`$=[T(z), P(z)]$ et qui renvoie la fonction `F` définie précédemment pour ces valeurs. _On rappelle que `F` doit être un __vecteur__._
-> 3. Ecrire une fonction `euler(F, pas, Y0, zf)` qui implémente le schéma d'Euler explicite pour une fonction `F` avec un `pas` d'intégration, des conditions aux limites données par le vecteur `Y0`  en $z=0$ et l'altitude finale de l'intégration `zf`. Elle doit renvoyer un vecteur donnant les altitudes de calcul et un tableau à deux colonnes donnant les solutions $[T_k, P_k]$
+> 3. Utiliser `odeint` pour déterminer le profil de température et de pression dans l'atmosphère
 > 4. Utiliser la fonction précédente pour obtenir le profil de température et de pression dans l'atmosphère pour le modèle ISA.
 > 5. Tracer deux deux graphiques les profils $T(z)$ et $P(z)$.
 
 ```{code-cell} ipython3
 """Les bibliothèques scientifiques ont déjà été importées"""
-```
-
-> __Exercice 2 :__  
-> 1. Reprendre l'exercice précédent mais en utilisant la fonction `odeint` dela bibliothèque `scipy.integrate`
-
-_Indications utiles_ : 
-* Pour pouvoir réutiliser la fonction `F_atm`, pensez à ajouter l'argument `tfirst=True` dans la fonction `odeint`.
-
-```{code-cell} ipython3
 from scipy.integrate import odeint
 ```
 
