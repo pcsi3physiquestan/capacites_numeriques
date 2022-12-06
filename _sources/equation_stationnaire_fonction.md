@@ -1,16 +1,19 @@
 ---
 jupytext:
   encoding: '# -*- coding: utf-8 -*-'
-  formats: ipynb,py:light
+  formats: ipynb,md:myst
+  split_at_heading: true
   text_representation:
     extension: .md
     format_name: myst
     format_version: 0.13
     jupytext_version: 1.10.3
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
+---
+
 ---
 La page ci-présente existe en version notebook téléchargeable grâce au bouton ![Bouton](./images/bouton_tl.png) (choisir le format `.ipynb`). On rappelle qu'l faut ensuite l'enregistrer dans un répertoire adéquat sur votre ordinateur (`capa_num` par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.
 
@@ -54,8 +57,9 @@ f_test(u)
 # On pourra redéfinir E avant chaque appel de f_test si nécessaire
 ```
 
-```{code-cell}
-:tags: [remove-output,hide-input]
+```{code-cell} ipython3
+:tags: [remove-output, hide-input]
+
 
 ```
 
@@ -68,8 +72,9 @@ f_test(u)
 * Ne pas modifier les valeurs des arguments `a0` et `b0` : il faut les réassigner à deux variables internes à la fonction (_`a` et `b` par exemple_) et modifier ces deux variables dans la boucle.
 * Il est conseillé de tester initialement si le produit $f(a0)f(b0)$ est bien négatif et renvoyer `None` sinon. Cela évitera des résultats absurdes si l'on cherche dans un intervalle où il n'y a pas de racine. _Quand vous aurez avancé le cours d'informatique, vous pourrez remplacer ce comportement par une assertion._
 
-```{code-cell}
-:tags: [remove-output,hide-input]
+```{code-cell} ipython3
+:tags: [remove-output, hide-input]
+
 
 ```
 
@@ -82,7 +87,9 @@ f_test(u)
 > 4. Obtenir les valeurs de la tension $uR$ à chaque instant et tracer $u_R (t)$. Pourquoi parle-t-on de redressement ? monoalternance ?
 
 * Note : Réfléchir au choix de l'intervalle de recherche.
-```{code-cell}
-:tags: [remove-output,hide-input]
+
+```{code-cell} ipython3
+:tags: [remove-output, hide-input]
+
 
 ```

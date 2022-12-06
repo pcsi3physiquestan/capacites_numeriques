@@ -387,8 +387,8 @@ v(t)
 \end{pmatrix}
 \end{split}\]</div>
 <p>Sa dérivée est:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9792aa48-a40b-4a5e-a9f1-82813b7ab726">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-9792aa48-a40b-4a5e-a9f1-82813b7ab726" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4c5a8184-60d0-4a0a-a08c-8b02e4f82b33">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-4c5a8184-60d0-4a0a-a08c-8b02e4f82b33" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 {\rm{d}Y \over \rm{d}t} = F(t, Y(t))
 \end{equation}\]</div>
 <p>avec :</p>
@@ -403,7 +403,7 @@ v(t)
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">Y[0]</span></code> et <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">Y[1]</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> prend comme argument un vecteur <code class="docutils literal notranslate"><span class="pre">Y</span></code> (de taille 2) et renvoie un vecteur de taille 2.</p></li>
-<li><p>On n’a techniquement pas besoin du temps puisque <code class="docutils literal notranslate"><span class="pre">F</span></code> ne dépend pas explicitement du temps mais on prendra l’habitude de le mettre comme argument même si on ne l’utilise pas (pour des fonctions comme <code class="docutils literal notranslate"><span class="pre">odeint</span></code>).</p></li>
+<li><p>On n’a techniquement pas besoin du temps puisque <code class="docutils literal notranslate"><span class="pre">F</span></code> ne dépend pas explicitement du temps mais on prendra l’habitude de le mettre comme argument même si on ne l’utilise pas (pour des fonctions comme <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>).</p></li>
 </ul>
 </div>
 <div class="section" id="schema-d-euler">

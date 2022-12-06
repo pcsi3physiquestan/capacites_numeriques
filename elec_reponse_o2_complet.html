@@ -368,35 +368,10 @@
 <blockquote>
 <div><p><strong>Exercice 1:</strong></p>
 <ol class="simple">
-<li><p>Si l’on pose le vecteur <span class="math notranslate nohighlight">\(Y(t) = (\theta(t), \dot \theta(t))\)</span>, écrire la fonction <code class="docutils literal notranslate"><span class="pre">F</span></code> associée au schéma d’Euler puis utiliser la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> (la réécrire dans la cellule suivante pour pouvoir l’utiliser) pour obtenir <span class="math notranslate nohighlight">\(\theta(t)\)</span> si <span class="math notranslate nohighlight">\(\theta(0) = \pi /4\)</span> et <span class="math notranslate nohighlight">\(\dot \theta(0) = 0\)</span></p></li>
+<li><p>Si l’on pose le vecteur <span class="math notranslate nohighlight">\(Y(t) = (\theta(t), \dot \theta(t))\)</span>, écrire la fonction <code class="docutils literal notranslate"><span class="pre">F</span></code> associée au schéma d’Euler puis utiliser la fonction <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> (la réécrire dans la cellule suivante pour pouvoir l’utiliser) pour obtenir <span class="math notranslate nohighlight">\(\theta(t)\)</span> si <span class="math notranslate nohighlight">\(\theta(0) = \pi /4\)</span> et <span class="math notranslate nohighlight">\(\dot \theta(0) = 0\)</span></p></li>
+<li><p>Tracer sur deux graphiques différents l’évolution de <span class="math notranslate nohighlight">\(\theta(t)\)</span> et de sa dérivée. Observe-t-on le comportement d’un oscillateur harmonique ?</p></li>
 </ol>
 </div></blockquote>
-<p>Nous allons apprendre à utiliser directement la fonction native <code class="docutils literal notranslate"><span class="pre">odeint</span></code> de la bibliothèque <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>. Sa signature est la suivante:</p>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>Par défaut, odeint utiliser une fonction <code class="docutils literal notranslate"><span class="pre">F(Y,t)</span></code> et non <code class="docutils literal notranslate"><span class="pre">F(t,Y)</span></code>. D’où l’argument <code class="docutils literal notranslate"><span class="pre">tfirst=True</span></code> pour lui forcer la main. Cette ordre est préférable car il reste vrai pour d’autres fonctions.</p>
-</div>
-<div class="highlight-{code-block}ipython3 notranslate"><div class="highlight"><pre><span></span>from scipy.integrate import odeint # Ne pas oublier d&#39;importer la fonction
-odeint(f, y0, t, tfirst=True)
-</pre></div>
-</div>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p><code class="docutils literal notranslate"><span class="pre">odeint</span></code> fonctionne aussi à l’ordre 1. <code class="docutils literal notranslate"><span class="pre">y0</span></code> est alors un nombre et non un vecteur.</p>
-</div>
-<p>où <code class="docutils literal notranslate"><span class="pre">f</span></code> est la fonction du schéma d’Euler, <code class="docutils literal notranslate"><span class="pre">y0</span></code> le vecteur contenant les conditions intiales et <code class="docutils literal notranslate"><span class="pre">t</span></code> un vecteur contenant déjà <strong>tous</strong> les instants <span class="math notranslate nohighlight">\(t_k\)</span> où on veut évaluer <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>On est donc proche de ce que vous avez codé.</p>
-</div>
-<p>Il renvoie <strong>un tableau numpy</strong> contenant dans chaque colonne les valeurs des solutions aux instants <span class="math notranslate nohighlight">\(t_k\)</span>.</p>
-<blockquote>
-<div><p><strong>Exercice 2:</strong></p>
-<ol class="simple">
-<li><p>Après l’avoir importée, utiliser la fonction odeint pour obtenir <span class="math notranslate nohighlight">\(\theta(t)\)</span> si <span class="math notranslate nohighlight">\(\theta(0) = \pi /4\)</span> et <span class="math notranslate nohighlight">\(\dot \theta(0) = 0\)</span></p></li>
-</ol>
-</div></blockquote>
-<p><strong>Par la suite, on essaiera d’utiliser la fonction <code class="docutils literal notranslate"><span class="pre">odeint</span></code> quand c’est nécessaire.</strong></p>
 </div>
 <div class="section" id="petites-et-grandes-oscillations">
 <h2><span class="section-number">5.5.2. </span>Petites et grandes oscillations<a class="headerlink" href="#petites-et-grandes-oscillations" title="Permalink to this headline">¶</a></h2>
@@ -407,15 +382,15 @@ $<span class="math notranslate nohighlight">\(
 \frac{\rm{d^2}\theta}{\rm{dt^2}} = - \omega_0^2 \theta
 \)</span>$
 soit un oscillateur harmonique dont la solution analytique est:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9eeba771-c557-4cd2-aa37-0b72bce5385f">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-9eeba771-c557-4cd2-aa37-0b72bce5385f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-54eb1554-a8da-4dd4-bd65-8e5c0fd14bcd">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-54eb1554-a8da-4dd4-bd65-8e5c0fd14bcd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \theta (t) = \theta_i \cos \omega_0 t + \frac{\omega_i}{\omega_0} \sin \omega_0 t
 \end{equation}\]</div>
 <p>avec <span class="math notranslate nohighlight">\(\theta_i = \theta(0)\)</span> et <span class="math notranslate nohighlight">\(\omega_i = \dot \theta (0)\)</span>.</p>
 <blockquote>
 <div><p><strong>Exercice 3:</strong></p>
 <ol class="simple">
-<li><p>On considère le cas où on lâche le pendule de <span class="math notranslate nohighlight">\(\theta_i = 0\)</span> avec une vitesse initiale <span class="math notranslate nohighlight">\(\omega_i\)</span>. Déterminer grâce à <code class="docutils literal notranslate"><span class="pre">odeint</span></code> <strong>sans approximation</strong> l’évolution de <span class="math notranslate nohighlight">\(\theta(t)\)</span> pour cinq vitesses de départ différentes répartis entre 0 et <span class="math notranslate nohighlight">\(\sqrt{\frac{2g}{l}}\)</span> et comparer graphiquement les solutions obtenues à la solutions théoriques aux petites angles. Cette approximation est-elle valable jusqu’à <span class="math notranslate nohighlight">\(\sqrt{\frac{2g}{l}}\)</span> ?</p></li>
+<li><p>On considère le cas où on lâche le pendule de <span class="math notranslate nohighlight">\(\theta_i = 0\)</span> avec une vitesse initiale <span class="math notranslate nohighlight">\(\omega_i\)</span>. Déterminer grâce à <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> <strong>sans approximation</strong> l’évolution de <span class="math notranslate nohighlight">\(\theta(t)\)</span> pour cinq vitesses de départ différentes répartis entre 0 et <span class="math notranslate nohighlight">\(\sqrt{\frac{2g}{l}}\)</span> et comparer graphiquement les solutions obtenues à la solutions théoriques aux petites angles. Cette approximation est-elle valable jusqu’à <span class="math notranslate nohighlight">\(\sqrt{\frac{2g}{l}}\)</span> ?</p></li>
 </ol>
 </div></blockquote>
 </div>
