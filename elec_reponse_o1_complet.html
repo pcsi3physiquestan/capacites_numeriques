@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.4. Implémentation complète &#8212; Capacités numériques - Sujets</title>
+    <title>4.5. Implémentation complète &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4.5. Réponse à une rampe de tension." href="elec_reponse_o1_rampe.html" />
-    <link rel="prev" title="4.3. Implémentation basique" href="elec_reponse_o1_base.html" />
+    <link rel="next" title="4.6. Réponse à une rampe de tension." href="elec_reponse_o1_rampe.html" />
+    <link rel="prev" title="4.4. Implémentation basique" href="elec_reponse_o1_base.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -169,18 +169,23 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_fonction.html">
+     4.3. Utilisation de la bibliothèque scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_base.html">
-     4.3. Implémentation basique
+     4.4. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.4. Implémentation complète
+     4.5. Implémentation complète
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_rampe.html">
-     4.5. Réponse à une rampe de tension.
+     4.6. Réponse à une rampe de tension.
     </a>
    </li>
   </ul>
@@ -318,17 +323,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#implementation-du-schema-d-euler">
-   4.4.1. Implémentation du schéma d’Euler
+   4.5.1. Implémentation du schéma d’Euler
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#application-au-regime-libre-et-a-l-echelon-de-tension">
-   4.4.2. Application au régime libre et à l’échelon de tension.
+   4.5.2. Application au régime libre et à l’échelon de tension.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#erreur-et-pas-d-integration">
-   4.4.3. Erreur et pas d’intégration
+   4.5.3. Erreur et pas d’intégration
   </a>
  </li>
 </ul>
@@ -344,9 +349,9 @@
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="section" id="implementation-complete">
-<h1><span class="section-number">4.4. </span>Implémentation complète<a class="headerlink" href="#implementation-complete" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.5. </span>Implémentation complète<a class="headerlink" href="#implementation-complete" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="implementation-du-schema-d-euler">
-<h2><span class="section-number">4.4.1. </span>Implémentation du schéma d’Euler<a class="headerlink" href="#implementation-du-schema-d-euler" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.1. </span>Implémentation du schéma d’Euler<a class="headerlink" href="#implementation-du-schema-d-euler" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>Exercice 1</strong></p>
 <ol class="simple">
@@ -380,7 +385,7 @@
 </div>
 </div>
 <div class="section" id="application-au-regime-libre-et-a-l-echelon-de-tension">
-<h2><span class="section-number">4.4.2. </span>Application au régime libre et à l’échelon de tension.<a class="headerlink" href="#application-au-regime-libre-et-a-l-echelon-de-tension" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.2. </span>Application au régime libre et à l’échelon de tension.<a class="headerlink" href="#application-au-regime-libre-et-a-l-echelon-de-tension" title="Permalink to this headline">¶</a></h2>
 <p><strong>On prendra <span class="math notranslate nohighlight">\(\tau = 1\)</span>.</strong> Il s’agit de vérifier que la fonction précédente fonctionne correctement. <em>Si vous avez fait la comparaison dans l’étude de base, vous pouvez réutiliser une bonne partie du code pour le tracé graphique en choisissant bien le nom de vos variables.</em></p>
 <blockquote>
 <div><p><strong>Exercice 2</strong></p>
@@ -400,7 +405,7 @@
 </div>
 </div>
 <div class="section" id="erreur-et-pas-d-integration">
-<h2><span class="section-number">4.4.3. </span>Erreur et pas d’intégration<a class="headerlink" href="#erreur-et-pas-d-integration" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.3. </span>Erreur et pas d’intégration<a class="headerlink" href="#erreur-et-pas-d-integration" title="Permalink to this headline">¶</a></h2>
 <p><strong>Inutile de faire cette partie si vous l’avez dans l’étude de base.</strong></p>
 <blockquote>
 <div><p><strong>Exercice 3</strong></p>
@@ -442,8 +447,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="elec_reponse_o1_base.html" title="previous page"><span class="section-number">4.3. </span>Implémentation basique</a>
-    <a class='right-next' id="next-link" href="elec_reponse_o1_rampe.html" title="next page"><span class="section-number">4.5. </span>Réponse à une rampe de tension.</a>
+    <a class='left-prev' id="prev-link" href="elec_reponse_o1_base.html" title="previous page"><span class="section-number">4.4. </span>Implémentation basique</a>
+    <a class='right-next' id="next-link" href="elec_reponse_o1_rampe.html" title="next page"><span class="section-number">4.6. </span>Réponse à une rampe de tension.</a>
 
         </div>
         

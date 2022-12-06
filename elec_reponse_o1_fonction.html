@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.5. Etude du redressement monoalternance &#8212; Capacités numériques - Sujets</title>
+    <title>4.3. Utilisation de la bibliothèque scipy &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,12 +51,12 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/equation_stationnaire_fonction.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_reponse_o1_fonction.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Dérivation et intégration numérique" href="derivation_integration.html" />
-    <link rel="prev" title="2.4. Implémentation basique" href="equation_stationnaire_base.html" />
+    <link rel="next" title="4.4. Implémentation basique" href="elec_reponse_o1_base.html" />
+    <link rel="prev" title="4. Résolution numérique d’une équation différentielle d’ordre 1" href="elec_reponse_o1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -114,23 +114,23 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="equation_stationnaire.html">
    2. Résolution d’équation stationnaire
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="equation_stationnaire_base.html">
      2.4. Implémentation basique
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="equation_stationnaire_fonction.html">
      2.5. Etude du redressement monoalternance
     </a>
    </li>
@@ -158,18 +158,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_reponse_o1.html">
    4. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_fonction.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      4.3. Utilisation de la bibliothèque scipy
     </a>
    </li>
@@ -267,11 +267,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/equation_stationnaire_fonction.ipynb"><button type="button"
+            href="_sources/elec_reponse_o1_fonction.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/equation_stationnaire_fonction.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/elec_reponse_o1_fonction.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -296,7 +296,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/equation_stationnaire_fonction.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o1_fonction.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -322,14 +322,26 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fonction-pour-resoudre">
-   2.5.1. Fonction pour résoudre
+  <a class="reference internal nav-link" href="#definition-des-fonctions-pour-le-schema-d-euler">
+   4.3.1. Définition des fonctions pour le schéma d’Euler
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-au-redressement-monoalternance">
-   2.5.2. Application au redressement monoalternance
+  <a class="reference internal nav-link" href="#solve-ivp">
+   4.3.2. Solve_ivp
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-du-regime-libre">
+     4.3.2.1. Cas du régime libre
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-de-la-reponse-a-un-echelon-de-tension">
+     4.3.2.2. Cas de la réponse à un échelon de tension.
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -342,76 +354,96 @@
         
               <div>
                 
-  <hr class="docutils" />
-<p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
-<div class="section" id="etude-du-redressement-monoalternance">
-<h1><span class="section-number">2.5. </span>Etude du redressement monoalternance<a class="headerlink" href="#etude-du-redressement-monoalternance" title="Permalink to this headline">¶</a></h1>
-<p>Nous allons utiliser la méthode précédente pour chercher le point de fonctionnement du <a class="reference internal" href="equation_stationnaire_base.html#pos-pb-eq"><span class="std std-ref">circuit précédent</span></a> à chaque instant <span class="math notranslate nohighlight">\(t\)</span> en supposant que <span class="math notranslate nohighlight">\(E\)</span> varie: <span class="math notranslate nohighlight">\(E(t) = E_0 \cos (2 \pi f t)\)</span> avec <span class="math notranslate nohighlight">\(E_0 = 2 \rm{V}\)</span> et <span class="math notranslate nohighlight">\(f = 50 \rm{Hz}\)</span>.</p>
-<p>On suppose que les caractéristiques des dipôles restent valables en régime variable de sorte qu’à un instant <span class="math notranslate nohighlight">\(t\)</span>, la tension <span class="math notranslate nohighlight">\(u_D\)</span> est donnée par la solution de l’équation:</p>
-<div class="math notranslate nohighlight">
-\[
-  f(u) = \frac{E(t)-u}{R} - I_s\left(\exp \left(\frac{u}{V_T}\right) - 1\right)
-\]</div>
-<p>avec <span class="math notranslate nohighlight">\(I_s = 95 \rm{\mu A}\)</span> et <span class="math notranslate nohighlight">\(V_D = 30 \rm{mV}\)</span> et <span class="math notranslate nohighlight">\(t\)</span> un instant connu.</p>
-<p>On va donc devoir réaliser une recherche de racine un grand nombre de fois. Il est donc préférable de mettre la série d’instructions pour déterminer la racine de <span class="math notranslate nohighlight">\(f\)</span> dans une fonction.</p>
-<div class="section" id="fonction-pour-resoudre">
-<h2><span class="section-number">2.5.1. </span>Fonction pour résoudre<a class="headerlink" href="#fonction-pour-resoudre" title="Permalink to this headline">¶</a></h2>
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<div class="section" id="utilisation-de-la-bibliotheque-scipy">
+<h1><span class="section-number">4.3. </span>Utilisation de la bibliothèque scipy<a class="headerlink" href="#utilisation-de-la-bibliotheque-scipy" title="Permalink to this headline">¶</a></h1>
+<p><strong>Si vous vous sentez suffisamment à l’aise,</strong> vous pouvez passer directement à l’<a class="reference internal" href="elec_reponse_o1_complet.html"><span class="doc std std-doc">étude approfondie</span></a>.</p>
+<div class="section" id="definition-des-fonctions-pour-le-schema-d-euler">
+<h2><span class="section-number">4.3.1. </span>Définition des fonctions pour le schéma d’Euler<a class="headerlink" href="#definition-des-fonctions-pour-le-schema-d-euler" title="Permalink to this headline">¶</a></h2>
+<p>On va commencer par définir la fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span> pour les deux types d’étude : le régime libre et l’échelon de tension.</p>
+<p><strong>Attention : Même si <span class="math notranslate nohighlight">\(f\)</span> ne dépend pas explicitement du temps, on gardera <span class="math notranslate nohighlight">\(t\)</span> comme argument de la fonction car cet argument est nécessaire quand on utilise les fonctions natives de <code class="docutils literal notranslate"><span class="pre">numpy</span></code> pour intégrer une équation différentielle.</strong></p>
 <blockquote>
-<div><p><strong>Exercice 1:</strong></p>
+<div><p><strong>Exercice A</strong><br />
+Dans la cellule ci-après, vous devez:</p>
 <ol class="simple">
-<li><p>Importer les bibliothèques <code class="docutils literal notranslate"><span class="pre">numpy</span></code> et <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code></p></li>
-<li><p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">Esource(t)</span></code> qui renvoie la valeur de <span class="math notranslate nohighlight">\(E(t)\)</span> pour un instant <span class="math notranslate nohighlight">\(t\)</span> donné en argument et une fonction <code class="docutils literal notranslate"><span class="pre">f_test(u)</span></code> qui renvoie la valeur de <span class="math notranslate nohighlight">\(f\)</span> pour une tension <span class="math notranslate nohighlight">\(u\)</span> donnée en argument de la fonction (elle utilisera une valeur <code class="docutils literal notranslate"><span class="pre">E</span></code> de tension pour la source comme une variable globale, les autres grandeurs Is, VT… peuvent être définie dans la fonction <code class="docutils literal notranslate"><span class="pre">f_test</span></code>, cf remarque par la suite).</p></li>
-<li><p><em>(Si ça na pas été fait précédemment)</em> Tracer la fonction <span class="math notranslate nohighlight">\(f\)</span> entre <span class="math notranslate nohighlight">\([-1,1]\)</span> pour <span class="math notranslate nohighlight">\(t = 0\)</span> (donc <span class="math notranslate nohighlight">\(E = 2\rm{V}\)</span>) et vérifier graphiquement qu’il n’y bien qu’une seule racine dans l’intervalle (<em>Note: On peut démontrer que la fonction est strictement décroissante, on a donc bien unicité de la racine quand elle existe.</em>)</p></li>
+<li><p>Importer les deux bibliothèques <code class="docutils literal notranslate"><span class="pre">numpy</span></code> et <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code></p></li>
+<li><p>Créer deux fonction <code class="docutils literal notranslate"><span class="pre">f_libre</span></code> et <code class="docutils literal notranslate"><span class="pre">f_echelon</span></code> prenant deux arguments <code class="docutils literal notranslate"><span class="pre">t</span></code> et <code class="docutils literal notranslate"><span class="pre">u</span></code> (correspondant à un instant <span class="math notranslate nohighlight">\(t_k\)</span> et à <span class="math notranslate nohighlight">\(u_k = u(u_k)\)</span>) et qui renvoie la valeur <span class="math notranslate nohighlight">\(f(t_k, u_k)\)</span> pour chaque cas (régime libre et échelon de tension) (u est la tension aux bornes du condensateur comme dans l’étude présentée dans l’<a class="reference internal" href="elec_reponse_o1.html#pospb"><span class="std std-ref">exemple</span></a>). <em>Vous pouvez définir <span class="math notranslate nohighlight">\(R,C\)</span> et <span class="math notranslate nohighlight">\(\tau\)</span> comme des variables globales que vous utilisez dans les fonctions.</em></p></li>
 </ol>
 </div></blockquote>
-<p><strong>Remarque</strong>:<br />
-Le code ressemblera donc à ceci:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Esource</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-  <span class="c1"># corps du code si necessaire</span>
-  <span class="k">return</span> <span class="o">....</span>
-
-<span class="k">def</span> <span class="nf">f_test</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
-  <span class="c1"># corps du code si necessaire</span>
-  <span class="c1"># La tension E sera notée E sans être définie par exemple :</span>
-  <span class="n">R</span> <span class="o">=</span> <span class="mi">100</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">E</span> <span class="o">-</span> <span class="n">u</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
-  <span class="k">return</span> <span class="n">i</span>
-
-<span class="c1"># Pour utiliser f_test:</span>
-<span class="n">E</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Nécessaire</span>
-<span class="n">f_test</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-<span class="c1"># On pourra redéfinir E avant chaque appel de f_test si nécessaire</span>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Ne pas oublier d&#39;importer les bibliothèques scientifiques et d&#39;éxécuter la cellule.&quot;&quot;&quot;</span>
 </pre></div>
 </div>
-<blockquote>
-<div><p><strong>Exercice 2:</strong></p>
-<ol class="simple">
-<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">dicho(f,a0,b0,prec)</span></code> qui va chercher la racine de la fonction <code class="docutils literal notranslate"><span class="pre">f</span></code> dans l’intervalle initiale <span class="math notranslate nohighlight">\([a0,b0]\)</span> avec une précision <code class="docutils literal notranslate"><span class="pre">prec</span></code> par la méthode de dichotomie.</p></li>
-<li><p>Tester la fonction avec <code class="docutils literal notranslate"><span class="pre">f_test</span></code> et <span class="math notranslate nohighlight">\(E = 2\rm{V}\)</span> et vérifier la cohérence avec ce qu’on obtient graphiquement.</p></li>
-</ol>
-</div></blockquote>
-<ul class="simple">
-<li><p>L’argument <code class="docutils literal notranslate"><span class="pre">f</span></code> est la <strong>fonction</strong> donc <code class="docutils literal notranslate"><span class="pre">f</span></code> ou <code class="docutils literal notranslate"><span class="pre">f_test</span></code>, pas <em>ce qu’elle renvoie</em> (c’est-à-dire <code class="docutils literal notranslate"><span class="pre">f(0)</span></code> ou <code class="docutils literal notranslate"><span class="pre">f_test(1)</span></code>, <em>on a la même différence entre une fonction et l’image d’une fonction</em>).</p></li>
-<li><p>Par contre, à l’intérieur de <code class="docutils literal notranslate"><span class="pre">dicho</span></code>. Comme <code class="docutils literal notranslate"><span class="pre">f</span></code> est une fonction, on pourra l’appeler en utilisant <code class="docutils literal notranslate"><span class="pre">f(a)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(1)</span></code>…</p></li>
-<li><p>Ne pas modifier les valeurs des arguments <code class="docutils literal notranslate"><span class="pre">a0</span></code> et <code class="docutils literal notranslate"><span class="pre">b0</span></code> : il faut les réassigner à deux variables internes à la fonction (<em><code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code> par exemple</em>) et modifier ces deux variables dans la boucle.</p></li>
-<li><p>Il est conseillé de tester initialement si le produit <span class="math notranslate nohighlight">\(f(a0)f(b0)\)</span> est bien négatif et renvoyer <code class="docutils literal notranslate"><span class="pre">None</span></code> sinon. Cela évitera des résultats absurdes si l’on cherche dans un intervalle où il n’y a pas de racine. <em>Quand vous aurez avancé le cours d’informatique, vous pourrez remplacer ce comportement par une assertion.</em></p></li>
-</ul>
 </div>
-<div class="section" id="application-au-redressement-monoalternance">
-<h2><span class="section-number">2.5.2. </span>Application au redressement monoalternance<a class="headerlink" href="#application-au-redressement-monoalternance" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="solve-ivp">
+<h2><span class="section-number">4.3.2. </span>Solve_ivp<a class="headerlink" href="#solve-ivp" title="Permalink to this headline">¶</a></h2>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> appartient à la bibliothèque <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>, sa signature est la suivante:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solve_ivp</span><span class="p">(</span><span class="n">f</span><span class="p">:</span><span class="n">callable</span><span class="p">,</span> <span class="n">t_span</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">y0</span><span class="p">:</span><span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t_eval</span><span class="p">:</span><span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Arguments :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> est la fonction du schéma d’Euler définie précédemment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t_span</span></code> est un tuple de élément <code class="docutils literal notranslate"><span class="pre">(t0,</span> <span class="pre">tf)</span></code> donnant l’instant initial et l’instant final de l’intégration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code> est <strong>un vecteur numpy</strong> (ou une liste classique) contenant les conditions initiales. Ceci <strong>même quand il n’y a qu’une condition initiale.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t_eval</span></code> (argument optionnel donc impératif de le nommer <code class="docutils literal notranslate"><span class="pre">t_eval</span> <span class="pre">=</span> <span class="pre">...</span></code>) est un vecteur numpy contenant les instants <span class="math notranslate nohighlight">\(t_k\)</span> où l’on veut estimer la fonction solution. Même s’il est optionnel, il faudra toujours le donner.</p></li>
+</ul>
+</li>
+<li><p>Retour :</p>
+<ul>
+<li><p>Un <strong>dictionnaire</strong> dont les clés <em>utiles</em> sont:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict['t']</span></code>: les instants <span class="math notranslate nohighlight">\(t_k\)</span> (donc l’argument de <code class="docutils literal notranslate"><span class="pre">t_eval</span></code>…)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict['y']</span></code>: un <strong>tableau</strong> numpy contenant à chaque ligne la solution <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span>. Comme il n’y a qu’une seule ligne pour une équation différentielle de degré 1, on obtiendra les <span class="math notranslate nohighlight">\(y_k\)</span> par <code class="docutils literal notranslate"><span class="pre">dict['y'][0]</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="cas-du-regime-libre">
+<h3><span class="section-number">4.3.2.1. </span>Cas du régime libre<a class="headerlink" href="#cas-du-regime-libre" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p><strong>Exercice 3:</strong><br />
-Ecrire une suite d’instruction:</p>
+<div><p><strong>Exercice B</strong> : Avec une boucle for</p>
 <ol class="simple">
-<li><p>Définir un vecteur <code class="docutils literal notranslate"><span class="pre">E_k</span></code> qui prendre 1000 valeurs de <span class="math notranslate nohighlight">\(E(t)\)</span> aux instants <span class="math notranslate nohighlight">\(t_k\)</span> équirépartis sur 2 périodes de <span class="math notranslate nohighlight">\(E(t)\)</span>.</p></li>
-<li><p>Dans une boucle, pour chaque valeur de <span class="math notranslate nohighlight">\(E_k\)</span>, rechercher la tension <span class="math notranslate nohighlight">\(u_D\)</span> correspondant et la stocker dans une liste.</p></li>
-<li><p>Transformer la liste des tensions <code class="docutils literal notranslate"><span class="pre">uD</span></code> en un vecteur puis obtenir les valeurs d’intensités correspondantes <span class="math notranslate nohighlight">\(i(t)\)</span> (pensez aux fonctions vectorialisables pour l’obtenir en une instruction).</p></li>
-<li><p>Obtenir les valeurs de la tension <span class="math notranslate nohighlight">\(uR\)</span> à chaque instant et tracer <span class="math notranslate nohighlight">\(u_R (t)\)</span>. Pourquoi parle-t-on de redressement ? monoalternance ?</p></li>
+<li><p>Définir un vecteur numpy contenant les instants <span class="math notranslate nohighlight">\(t_k\)</span>.</p></li>
+<li><p>Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> pour intégrer l’équation dans le cas d’un régime libre puis tracer <span class="math notranslate nohighlight">\(y_k\)</span> en fonction <span class="math notranslate nohighlight">\(t_k\)</span> avec les avoir extraits du dictionnaire renvoyé par la fonction.</p></li>
+<li><p>Le comparer graphiquement à la solution analytique donnée ci-dessous.</p></li>
 </ol>
 </div></blockquote>
-<ul class="simple">
-<li><p>Note : Réfléchir au choix de l’intervalle de recherche.</p></li>
-</ul>
+<p>On rappelle que la solution analytique est:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t) = y_0 \exp^{- t / \tau}
+\]</div>
+<p><em>Note : Certaines étapes pourraient être raffinées (création du vecteur temps par exemple).</em></p>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># On rappelle que la fonction f_libre est accessible et que les bibliothèques scientifiques ont été créés.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cas-de-la-reponse-a-un-echelon-de-tension">
+<h3><span class="section-number">4.3.2.2. </span>Cas de la réponse à un échelon de tension.<a class="headerlink" href="#cas-de-la-reponse-a-un-echelon-de-tension" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Exercice C</strong> : Avec une boucle for</p>
+<ol class="simple">
+<li><p>Définir un vecteur numpy contenant les instants <span class="math notranslate nohighlight">\(t_k\)</span>.</p></li>
+<li><p>Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> pour intégrer l’équation dans le cas de la réponse à un échelon de tension puis tracer <span class="math notranslate nohighlight">\(y_k\)</span> en fonction <span class="math notranslate nohighlight">\(t_k\)</span> avec les avoir extraits du dictionnaire renvoyé par la fonction.</p></li>
+<li><p>Le comparer graphiquement à la solution analytique donnée ci-dessous.</p></li>
+</ol>
+</div></blockquote>
+<p>On rappelle que la solution analytique est:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t) = E(1 -  \exp^{- t / \tau})
+\]</div>
+</div>
 </div>
 </div>
 
@@ -440,8 +472,8 @@ Ecrire une suite d’instruction:</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="equation_stationnaire_base.html" title="previous page"><span class="section-number">2.4. </span>Implémentation basique</a>
-    <a class='right-next' id="next-link" href="derivation_integration.html" title="next page"><span class="section-number">3. </span>Dérivation et intégration numérique</a>
+    <a class='left-prev' id="prev-link" href="elec_reponse_o1.html" title="previous page"><span class="section-number">4. </span>Résolution numérique d’une équation différentielle d’ordre 1</a>
+    <a class='right-next' id="next-link" href="elec_reponse_o1_base.html" title="next page"><span class="section-number">4.4. </span>Implémentation basique</a>
 
         </div>
         

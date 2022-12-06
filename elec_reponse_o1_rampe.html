@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.5. Réponse à une rampe de tension. &#8212; Capacités numériques - Sujets</title>
+    <title>4.6. Réponse à une rampe de tension. &#8212; Capacités numériques - Sujets</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="5. Système linéaire et ordre 2" href="elec_reponse_o2.html" />
-    <link rel="prev" title="4.4. Implémentation complète" href="elec_reponse_o1_complet.html" />
+    <link rel="prev" title="4.5. Implémentation complète" href="elec_reponse_o1_complet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -169,18 +169,23 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_fonction.html">
+     4.3. Utilisation de la bibliothèque scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_base.html">
-     4.3. Implémentation basique
+     4.4. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_complet.html">
-     4.4. Implémentation complète
+     4.5. Implémentation complète
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.5. Réponse à une rampe de tension.
+     4.6. Réponse à une rampe de tension.
     </a>
    </li>
   </ul>
@@ -318,12 +323,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fonctions-utiles">
-   4.5.1. Fonctions utiles
+   4.6.1. Fonctions utiles
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rampe-de-tension">
-   4.5.2. Rampe de tension
+   4.6.2. Rampe de tension
   </a>
  </li>
 </ul>
@@ -339,13 +344,13 @@
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="section" id="reponse-a-une-rampe-de-tension">
-<h1><span class="section-number">4.5. </span>Réponse à une rampe de tension.<a class="headerlink" href="#reponse-a-une-rampe-de-tension" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.6. </span>Réponse à une rampe de tension.<a class="headerlink" href="#reponse-a-une-rampe-de-tension" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="fonctions-utiles">
-<h2><span class="section-number">4.5.1. </span>Fonctions utiles<a class="headerlink" href="#fonctions-utiles" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6.1. </span>Fonctions utiles<a class="headerlink" href="#fonctions-utiles" title="Permalink to this headline">¶</a></h2>
 <p>Pour l’intégration des équations différentielles, on utilisera directement <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>.</p>
 </div>
 <div class="section" id="rampe-de-tension">
-<h2><span class="section-number">4.5.2. </span>Rampe de tension<a class="headerlink" href="#rampe-de-tension" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6.2. </span>Rampe de tension<a class="headerlink" href="#rampe-de-tension" title="Permalink to this headline">¶</a></h2>
 <p>On étudie un circuit RC série soumis à une tension <span class="math notranslate nohighlight">\(E(t)\)</span> :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -414,7 +419,7 @@ t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="elec_reponse_o1_complet.html" title="previous page"><span class="section-number">4.4. </span>Implémentation complète</a>
+    <a class='left-prev' id="prev-link" href="elec_reponse_o1_complet.html" title="previous page"><span class="section-number">4.5. </span>Implémentation complète</a>
     <a class='right-next' id="next-link" href="elec_reponse_o2.html" title="next page"><span class="section-number">5. </span>Système linéaire et ordre 2</a>
 
         </div>
