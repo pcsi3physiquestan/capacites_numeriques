@@ -351,10 +351,10 @@
 </div>
 <div class="section" id="rampe-de-tension">
 <h2><span class="section-number">4.6.2. </span>Rampe de tension<a class="headerlink" href="#rampe-de-tension" title="Permalink to this headline">¶</a></h2>
-<p>On étudie un circuit RC série soumis à une tension <span class="math notranslate nohighlight">\(E(t)\)</span> :</p>
+<p>On étudie un circuit RC série soumis à une tension <span class="math notranslate nohighlight">\(rampe(t)\)</span> :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-E(t) = 
+rampe(t) = 
 \begin{cases}
 0 &amp; \textrm{si t &lt;= 0}\\
 t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
@@ -370,7 +370,7 @@ t / T0 &amp; \textrm{si 0 &lt; t &lt;= T0}\\
 <blockquote>
 <div><p><strong>Exercice 6</strong></p>
 <ol class="simple">
-<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">rampe(t)</span></code> qui renvoie la valeur de <code class="docutils literal notranslate"><span class="pre">E(t)</span></code> pour un instant donné puis l’utiliser pour créer la fonction <code class="docutils literal notranslate"><span class="pre">f_rampe</span></code> du schéma d’Euler.</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">rampe(t)</span></code> qui renvoie la valeur de <span class="math notranslate nohighlight">\(rampe(t)\)</span> pour un instant donné puis l’utiliser pour créer la fonction <code class="docutils literal notranslate"><span class="pre">f_rampe(t,u)</span></code> du schéma d’Euler.</p></li>
 <li><p>Procéder à l’intégration de l’équation différentielle pour <span class="math notranslate nohighlight">\(n=2\)</span> en choisissant un pas de calcul adapté.</p></li>
 <li><p>En déduire l’intensité circulant dans le condensateur, l’énergie stockée dans le condensateur (aux mêmes instants <span class="math notranslate nohighlight">\(t_k\)</span>), l’énergie dissipée par la résistance et l’énergie fournie par la source (entre t=0  et <span class="math notranslate nohighlight">\(t=t_k\)</span>).</p></li>
 <li><p>Représenter quatre graphiques dans une même fenêtre (2 lignes, 2 colonnes) représentant :</p>
