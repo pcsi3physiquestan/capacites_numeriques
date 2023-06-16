@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4. Résolution numérique d’une équation différentielle d’ordre 1 &#8212; Capacités numériques - Sujets</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +19,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_reponse_o1.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -58,10 +58,27 @@
     <link rel="next" title="4.3. Utilisation de la bibliothèque scipy" href="elec_reponse_o1_fonction.html" />
     <link rel="prev" title="3.4. Utilisation de fonctions" href="derive_integ_fonction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -70,10 +87,12 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">Capacités numériques - Sujets</h1>
@@ -82,16 +101,17 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="capacite_numerique.html">
-   Capacités numériques en physique
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="capacite_numerique.html">
+                    Capacités numériques en physique
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="intro.html">
    1. Introduction
@@ -230,97 +250,217 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="_sources/elec_reponse_o1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/elec_reponse_o1.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/pcsi3physiquestan/capacites_numeriques_source/blob/main/elec_reponse_o1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/elec_reponse_o1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/elec_reponse_o1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rappels-sur-la-methode-d-euler">
    4.1. Rappels sur la méthode d’Euler
@@ -369,23 +509,87 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Résolution numérique d’une équation différentielle d’ordre 1</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rappels-sur-la-methode-d-euler">
+   4.1. Rappels sur la méthode d’Euler
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#position-du-probleme">
+     4.1.1. Position du problème.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schema-d-integration-d-euler-explicite">
+     4.1.2. Schéma d’intégration d’Euler explicite
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vision-integrale">
+       4.1.2.1. Vision intégrale
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vision-differentielle">
+       4.1.2.2. Vision différentielle
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#synthese">
+     4.1.3. Synthèse
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-en-electrocinetique">
+   4.2. Application en électrocinétique.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mise-en-equation">
+     4.2.1. Mise en équation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="resolution-numerique-d-une-equation-differentielle-d-ordre-1">
-<h1><span class="section-number">4. </span>Résolution numérique d’une équation différentielle d’ordre 1<a class="headerlink" href="#resolution-numerique-d-une-equation-differentielle-d-ordre-1" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="resolution-numerique-d-une-equation-differentielle-d-ordre-1">
+<h1><span class="section-number">4. </span>Résolution numérique d’une équation différentielle d’ordre 1<a class="headerlink" href="#resolution-numerique-d-une-equation-differentielle-d-ordre-1" title="Permalink to this headline">#</a></h1>
 <p><strong>But :</strong> mettre en œuvre la méthode d’Euler à l’aide d’un langage de programmation pour simuler la réponse d’un système linéaire du premier ordre à une excitation de forme quelconque.</p>
 <div class="section" id="rappels-sur-la-methode-d-euler">
-<h2><span class="section-number">4.1. </span>Rappels sur la méthode d’Euler<a class="headerlink" href="#rappels-sur-la-methode-d-euler" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Rappels sur la méthode d’Euler<a class="headerlink" href="#rappels-sur-la-methode-d-euler" title="Permalink to this headline">#</a></h2>
 <p>La <em>méthode d’Euler</em> est une méthode numérique d’intégration d’une équation différentielle.</p>
 <div class="section" id="position-du-probleme">
-<span id="pospb"></span><h3><span class="section-number">4.1.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h3>
+<span id="pospb"></span><h3><span class="section-number">4.1.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h3>
 <p>Un équation différentielle d’ordre 1 peut se mettre sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -403,10 +607,10 @@
 </div></blockquote>
 </div>
 <div class="section" id="schema-d-integration-d-euler-explicite">
-<h3><span class="section-number">4.1.2. </span>Schéma d’intégration d’Euler explicite<a class="headerlink" href="#schema-d-integration-d-euler-explicite" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2. </span>Schéma d’intégration d’Euler explicite<a class="headerlink" href="#schema-d-integration-d-euler-explicite" title="Permalink to this headline">#</a></h3>
 <p>On considère N+1 instants <span class="math notranslate nohighlight">\(t_k\)</span> espacés d’un <em>pas d’intégration</em> <span class="math notranslate nohighlight">\(h\)</span> (<span class="math notranslate nohighlight">\(t_{k+1} - t_k = h\)</span>) et commençant à <span class="math notranslate nohighlight">\(t_0\)</span>. On note les valeurs de la fonctions <span class="math notranslate nohighlight">\(y\)</span> aux instants <span class="math notranslate nohighlight">\(t_k\)</span> <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span>. On définit ainsi deux suites <span class="math notranslate nohighlight">\((t_k)_{k\in[0,N]}\)</span> et <span class="math notranslate nohighlight">\((y_k)_[k \in 0,N]\)</span></p>
 <div class="section" id="vision-integrale">
-<h4><span class="section-number">4.1.2.1. </span>Vision intégrale<a class="headerlink" href="#vision-integrale" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">4.1.2.1. </span>Vision intégrale<a class="headerlink" href="#vision-integrale" title="Permalink to this headline">#</a></h4>
 <p>Intégrons l’équation différentielle entre <span class="math notranslate nohighlight">\(t_0\)</span> et <span class="math notranslate nohighlight">\(t_k\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -435,14 +639,14 @@ y(t_{k+1}) = y(t_k) + \int_{t_k}^{t_{k+1}} f(t, y(t)) \rm{d}t \underbrace{\appro
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p><strong>Schéma d’Euler explicite.</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-350895b7-7c6e-4e42-bc71-fd9ab2ef4867">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-350895b7-7c6e-4e42-bc71-fd9ab2ef4867" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-21731d44-011d-4e9f-907d-79ec83f1682f">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-21731d44-011d-4e9f-907d-79ec83f1682f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_{k+1} = y_k + f(t_k, y_k) * h
 \end{equation}\]</div>
 </div>
 </div>
 <div class="section" id="vision-differentielle">
-<h4><span class="section-number">4.1.2.2. </span>Vision différentielle<a class="headerlink" href="#vision-differentielle" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">4.1.2.2. </span>Vision différentielle<a class="headerlink" href="#vision-differentielle" title="Permalink to this headline">#</a></h4>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>On parle d’approximation à l’ordre 1.</p>
@@ -465,7 +669,7 @@ y_{k+1} = y_k + h \times f(t_k, y_k)
 </div>
 </div>
 <div class="section" id="synthese">
-<h3><span class="section-number">4.1.3. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.3. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">#</a></h3>
 <p>Pour résoudre numériquement une équation différentielle d’ordre 1 par la méthode d’Euler avec un pas de temps <span class="math notranslate nohighlight">\(h\)</span>, on va donc:</p>
 <ul class="simple">
 <li><p>définir une fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span> qui est une expression de la dérivée obtenue par l’équation différentielle:</p></li>
@@ -490,7 +694,7 @@ y_{k+1} = y_k + f(t_k, y_k) * h
 </div>
 </div>
 <div class="section" id="application-en-electrocinetique">
-<h2><span class="section-number">4.2. </span>Application en électrocinétique.<a class="headerlink" href="#application-en-electrocinetique" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Application en électrocinétique.<a class="headerlink" href="#application-en-electrocinetique" title="Permalink to this headline">#</a></h2>
 <p>On traite le cas général d’un système d’ordre 1 stable de constante de temps <span class="math notranslate nohighlight">\(\tau\)</span>. On va notamment étudier la réponse à plusieurs entrées :</p>
 <ul class="simple">
 <li><p>un régime libre et un échelon de tension. On comparera avec la réponse attendue pour tester l’intégration numérique.</p></li>
@@ -498,7 +702,7 @@ y_{k+1} = y_k + f(t_k, y_k) * h
 </ul>
 <p>On étudiera l’influence du pas d’intégration sur la fiabilité de l’intégration numérique.</p>
 <div class="section" id="mise-en-equation">
-<span id="miseq"></span><h3><span class="section-number">4.2.1. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
+<span id="miseq"></span><h3><span class="section-number">4.2.1. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p><strong>Etude théorique</strong>
 On travaille avec un circuit <span class="math notranslate nohighlight">\(RC\)</span> série dont la constante de temps est <span class="math notranslate nohighlight">\(\tau = RC\)</span>. On prendra <span class="math notranslate nohighlight">\(R = 10\rm{k\Omega}\)</span> et <span class="math notranslate nohighlight">\(C = 100 \rm{\mu F}\)</span>.</p>
@@ -536,34 +740,48 @@ On travaille avec un circuit <span class="math notranslate nohighlight">\(RC\)</
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="derive_integ_fonction.html" title="previous page"><span class="section-number">3.4. </span>Utilisation de fonctions</a>
-    <a class='right-next' id="next-link" href="elec_reponse_o1_fonction.html" title="next page"><span class="section-number">4.3. </span>Utilisation de la bibliothèque scipy</a>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="derive_integ_fonction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.4. </span>Utilisation de fonctions</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="elec_reponse_o1_fonction.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Utilisation de la bibliothèque scipy</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By C. Lacpatia<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By C. Lacpatia<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>

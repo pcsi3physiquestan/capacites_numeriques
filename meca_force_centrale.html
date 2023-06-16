@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>7. Etude d’un mouvement à force centrale &#8212; Capacités numériques - Sujets</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +19,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/meca_force_centrale.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -58,10 +58,27 @@
     <link rel="next" title="8. Etude de l’atmosphère terrestre" href="thermo_statique.html" />
     <link rel="prev" title="6. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -70,10 +87,12 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">Capacités numériques - Sujets</h1>
@@ -82,16 +101,17 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="capacite_numerique.html">
-   Capacités numériques en physique
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="capacite_numerique.html">
+                    Capacités numériques en physique
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="intro.html">
    1. Introduction
@@ -230,97 +250,217 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="_sources/meca_force_centrale.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/meca_force_centrale.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/meca_force_centrale.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/meca_force_centrale.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/pcsi3physiquestan/capacites_numeriques_source/blob/main/meca_force_centrale.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/meca_force_centrale.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/meca_force_centrale.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#position-du-probleme">
    7.1. Position du problème
@@ -385,21 +525,101 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Etude d’un mouvement à force centrale</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#position-du-probleme">
+   7.1. Position du problème
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelisation-du-probleme">
+   7.2. Modélisation du problème.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#consideration-sur-les-unites">
+     7.2.1. Considération sur les unités
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mise-en-equation">
+     7.2.2. Mise en équation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schema-d-euler">
+     7.2.3. Schéma d’Euler
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditions-initiales">
+     7.2.4. Conditions initiales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temps-d-observation">
+     7.2.5. Temps d’observation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliotheques-utiles">
+   7.3. Bibliothèques utiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#travail-sur-les-conditions-initiales">
+   7.4. Travail sur les conditions initiales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determination-de-la-trajectoire">
+   7.5. Détermination de la trajectoire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametre-d-impact-et-diffusion">
+   7.6. Paramètre d’impact et diffusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistique-des-angles-de-diffusion">
+   7.7. Statistique des angles de diffusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
-<div class="section" id="etude-d-un-mouvement-a-force-centrale">
-<h1><span class="section-number">7. </span>Etude d’un mouvement à force centrale<a class="headerlink" href="#etude-d-un-mouvement-a-force-centrale" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="etude-d-un-mouvement-a-force-centrale">
+<h1><span class="section-number">7. </span>Etude d’un mouvement à force centrale<a class="headerlink" href="#etude-d-un-mouvement-a-force-centrale" title="Permalink to this headline">#</a></h1>
 <p><strong>But :</strong> obtenir des trajectoires d’un point matériel soumis à un champ de force centrale conservatif</p>
 <div class="section" id="position-du-probleme">
-<h2><span class="section-number">7.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h2>
 <p>On se propose d’étudier l’expérience de Rutherford où des particules alpha (charge <span class="math notranslate nohighlight">\(+2e\)</span>) d’énergie cinétique <span class="math notranslate nohighlight">\(E_c\)</span> bombardent des noyau d’or <span class="math notranslate nohighlight">\(Z = 79\)</span> supposés fixes dans un référentiel galiléen. On peut supposer que chaque particule ne rencontre qu’un seul noyau d’or qui est responsable de sa déviation.</p>
 <p>Dans la modélisation habituelle, les particules sont initialement à l’infini et l’interaction entre le noyau et la particule est coulombienne :</p>
 <p>Nous allons :</p>
@@ -412,11 +632,11 @@
 </ul>
 </div>
 <div class="section" id="modelisation-du-probleme">
-<h2><span class="section-number">7.2. </span>Modélisation du problème.<a class="headerlink" href="#modelisation-du-probleme" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Modélisation du problème.<a class="headerlink" href="#modelisation-du-probleme" title="Permalink to this headline">#</a></h2>
 <p>On suppose la particules alpha initialement à une distance <span class="math notranslate nohighlight">\(r_i\)</span> <strong>suffisamment grande</strong> pour qu’elle puisse presque être considérée comme à l’infini (on ne peut pas la placer à l’infini pour une simulation numérique !). Le paramètre d’impact <span class="math notranslate nohighlight">\(b\)</span> représenté sur la figure est supposé connu. Elle possède initialement une vitesse <span class="math notranslate nohighlight">\(v_0\)</span> orientée comme sur le schéma.</p>
 <p><img alt="Conditions initiales" src="_images/rutherford.png" /></p>
 <div class="section" id="consideration-sur-les-unites">
-<h3><span class="section-number">7.2.1. </span>Considération sur les unités<a class="headerlink" href="#consideration-sur-les-unites" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1. </span>Considération sur les unités<a class="headerlink" href="#consideration-sur-les-unites" title="Permalink to this headline">#</a></h3>
 <p>Comme dans le cas de l’étude de la vibration moléculaire, on va se placer dans un système d’unités évitant des puissances de 10 trop grandes. On va donc travailler avec comme unité de référence :</p>
 <ul class="simple">
 <li><p>la charge élémentaire devient <span class="math notranslate nohighlight">\(e = 1 \rm{q_a}\)</span></p></li>
@@ -433,7 +653,7 @@
 </ul>
 </div>
 <div class="section" id="mise-en-equation">
-<h3><span class="section-number">7.2.2. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.2. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">#</a></h3>
 <p>Il s’agit d’un problème classique de force centrale coulombienne, la conservation du moment cinétique et le principe fondamental de la dynamique permettent de se ramener à un problème à trois inconnues :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -452,11 +672,11 @@ r \\
 \end{split}\]</div>
 </div>
 <div class="section" id="schema-d-euler">
-<h3><span class="section-number">7.2.3. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.3. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">#</a></h3>
 <p>On utlisera directement la fonction native <code class="docutils literal notranslate"><span class="pre">odeint</span></code> de la bibliothèque <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>.</p>
 </div>
 <div class="section" id="conditions-initiales">
-<h3><span class="section-number">7.2.4. </span>Conditions initiales<a class="headerlink" href="#conditions-initiales" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.4. </span>Conditions initiales<a class="headerlink" href="#conditions-initiales" title="Permalink to this headline">#</a></h3>
 <p>Les conditions initiales ne sont pas directement <span class="math notranslate nohighlight">\(\theta, r, \dot r\)</span> mais :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -476,13 +696,13 @@ Ec(t=0) = E_{c0}
 <p><strong>On choisira donc <span class="math notranslate nohighlight">\(r_i = \max(1000 r_{min}, 1000 b)\)</span>.</strong></p>
 </div>
 <div class="section" id="temps-d-observation">
-<h3><span class="section-number">7.2.5. </span>Temps d’observation<a class="headerlink" href="#temps-d-observation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.5. </span>Temps d’observation<a class="headerlink" href="#temps-d-observation" title="Permalink to this headline">#</a></h3>
 <p>En supposant <span class="math notranslate nohighlight">\(r_i\)</span> suffisamment grand, le temps que mettra la particule pour atteindre à nouveau la distance <span class="math notranslate nohighlight">\(r_i\)</span> dans un état de diffusion est de l’ordre de <span class="math notranslate nohighlight">\({2r_i \over v_0}\)</span>. On pourra se servir de cette estimer pour choisir un pas de temps donnant <strong>approximativement</strong> N points sur la trajectoire.</p>
 <p><strong>Pour se donner un peu de marge on choisira un un durée totale de simulation égale <span class="math notranslate nohighlight">\({4r_i \over v_0}\)</span> et un nombre de points de simulation <span class="math notranslate nohighlight">\(N = 10000\)</span>.</strong></p>
 </div>
 </div>
 <div class="section" id="bibliotheques-utiles">
-<h2><span class="section-number">7.3. </span>Bibliothèques utiles<a class="headerlink" href="#bibliotheques-utiles" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span>Bibliothèques utiles<a class="headerlink" href="#bibliotheques-utiles" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -495,7 +715,7 @@ Ec(t=0) = E_{c0}
 </div>
 </div>
 <div class="section" id="travail-sur-les-conditions-initiales">
-<h2><span class="section-number">7.4. </span>Travail sur les conditions initiales<a class="headerlink" href="#travail-sur-les-conditions-initiales" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Travail sur les conditions initiales<a class="headerlink" href="#travail-sur-les-conditions-initiales" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p><strong>Exercice 1 :</strong></p>
 <ol class="simple">
@@ -505,7 +725,7 @@ Ec(t=0) = E_{c0}
 </div></blockquote>
 </div>
 <div class="section" id="determination-de-la-trajectoire">
-<h2><span class="section-number">7.5. </span>Détermination de la trajectoire<a class="headerlink" href="#determination-de-la-trajectoire" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.5. </span>Détermination de la trajectoire<a class="headerlink" href="#determination-de-la-trajectoire" title="Permalink to this headline">#</a></h2>
 <p>L’implémentation du schéma d’Euler sera ici un peut particulière : on ne va pas arrêter l’intégration à un temps fixé mais lorsque la particule aura atteint à nouveau la distance <span class="math notranslate nohighlight">\(r_i\)</span>. On pourra alors considérer qu’elle est à nouveau “à l’infini”.</p>
 <p><strong>Vous ne connaîtrez donc pas à l’avance la taille des ensembles de points <code class="docutils literal notranslate"><span class="pre">tk</span></code>(temps), <code class="docutils literal notranslate"><span class="pre">thetak</span></code>, <code class="docutils literal notranslate"><span class="pre">rk</span></code> et <code class="docutils literal notranslate"><span class="pre">rpointk</span></code>.</strong></p>
 <blockquote>
@@ -530,14 +750,15 @@ Ec(t=0) = E_{c0}
 </ul>
 </div>
 <div class="section" id="parametre-d-impact-et-diffusion">
-<h2><span class="section-number">7.6. </span>Paramètre d’impact et diffusion<a class="headerlink" href="#parametre-d-impact-et-diffusion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.6. </span>Paramètre d’impact et diffusion<a class="headerlink" href="#parametre-d-impact-et-diffusion" title="Permalink to this headline">#</a></h2>
 <p>On va étudier la relation entre le paramètre d’impact et l’angle de diffusion (<span class="math notranslate nohighlight">\(D\)</span> sur la figure ci-après).</p>
 <p><img alt="Angle de diffusion" src="_images/diffusion2.png" /></p>
-<p>On veut tester la relation théorique :
-$<span class="math notranslate nohighlight">\(
-b = {\beta \over \tan({D \over 2}}
-\)</span><span class="math notranslate nohighlight">\(
-avec \)</span>\beta = {1 \over 2E_{c0}}{2Ze^2 \over 4\pi \epsilon_0}$</p>
+<p>On veut tester la relation théorique :</p>
+<div class="math notranslate nohighlight">
+\[
+b = {\beta \over \tan({D \over 2})}
+\]</div>
+<p>avec <span class="math notranslate nohighlight">\(\beta = {1 \over 2E_{c0}}{2Ze^2 \over 4\pi \epsilon_0}\)</span></p>
 <blockquote>
 <div><p><strong>Exercice 3 :</strong></p>
 <ol class="simple">
@@ -548,7 +769,7 @@ avec \)</span>\beta = {1 \over 2E_{c0}}{2Ze^2 \over 4\pi \epsilon_0}$</p>
 </div></blockquote>
 </div>
 <div class="section" id="statistique-des-angles-de-diffusion">
-<h2><span class="section-number">7.7. </span>Statistique des angles de diffusion<a class="headerlink" href="#statistique-des-angles-de-diffusion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.7. </span>Statistique des angles de diffusion<a class="headerlink" href="#statistique-des-angles-de-diffusion" title="Permalink to this headline">#</a></h2>
 <p>En pratique, on n’envoie pas une particule alpha mais un jet uniformément répartie dans le plan <span class="math notranslate nohighlight">\(y0z\)</span>. Pour un point de départ <span class="math notranslate nohighlight">\((y_0, z_0)\)</span>, l’invariance par rotation autour de l’axe Ox permet de conserver l’étude précédente en prenant <span class="math notranslate nohighlight">\(b = \sqrt{y_0^2 + z_0^2}\)</span>.</p>
 <p>Les détecteur de l’expérience de Rutherford, répartie  sur une sphère autour de l’échantillons n’ont pas accès à <span class="math notranslate nohighlight">\(D\)</span> et <span class="math notranslate nohighlight">\(b\)</span> mais au nombre de particules qui arrivent dans la surface <span class="math notranslate nohighlight">\(d\Omega\)</span> (appelée <em>angle solide</em> pour une sphère de rayon 1) située entre <span class="math notranslate nohighlight">\(D\)</span> et <span class="math notranslate nohighlight">\(D + dD\)</span> (<span class="math notranslate nohighlight">\(dD\)</span> est au final la taille d’un capteur).</p>
 <p><img alt="Section efficace" src="_images/section_efficace.png" /></p>
@@ -617,34 +838,48 @@ On utilisera la fonction <code class="docutils literal notranslate"><span class=
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="meca_non_lineaire.html" title="previous page"><span class="section-number">6. </span>Système conservatif : Effets non linéaires.</a>
-    <a class='right-next' id="next-link" href="thermo_statique.html" title="next page"><span class="section-number">8. </span>Etude de l’atmosphère terrestre</a>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="meca_non_lineaire.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6. </span>Système conservatif : Effets non linéaires.</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="thermo_statique.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Etude de l’atmosphère terrestre</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By C. Lacpatia<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By C. Lacpatia<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>
