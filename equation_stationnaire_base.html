@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.4. Implémentation basique &#8212; Capacités numériques - Sujets</title>
+    <title>1.4. Implémentation basique &#8212; Capacités numériques - Sujets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.5. Etude du redressement monoalternance" href="equation_stationnaire_fonction.html" />
-    <link rel="prev" title="2. Résolution d’équation stationnaire" href="equation_stationnaire.html" />
+    <link rel="next" title="1.5. Etude abstraite" href="equation_stationnaire_math.html" />
+    <link rel="prev" title="1. Résolution d’équation stationnaire" href="equation_stationnaire.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -112,53 +112,53 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro.html">
-   1. Introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="intro_theorie.html">
-     1.2. Approche théorique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="intro_code.html">
-     1.3. Partie codage
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="equation_stationnaire.html">
-   2. Résolution d’équation stationnaire
+   1. Résolution d’équation stationnaire
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4. Implémentation basique
+     1.4. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_fonction.html">
-     2.5. Etude du redressement monoalternance
+    <a class="reference internal" href="equation_stationnaire_math.html">
+     1.5. Etude abstraite
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="derivation_integration.html">
-   3. Dérivation et intégration numérique
+   2. Dérivation et intégration numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derivation_base.html">
+     2.3. Dérivation et intégration : Méthode de base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derive_integ_fonction.html">
+     2.4. Utilisation de fonctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o1.html">
+   3. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -167,20 +167,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="derivation_base.html">
-     3.3. Dérivation et intégration : Méthode de base
+    <a class="reference internal" href="elec_reponse_o1_fonction.html">
+     3.3. Utilisation de la bibliothèque scipy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="derive_integ_fonction.html">
-     3.4. Utilisation de fonctions
+    <a class="reference internal" href="elec_reponse_o1_base.html">
+     3.4. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_complet.html">
+     3.5. Implémentation complète
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_rampe.html">
+     3.6. Réponse à une rampe de tension.
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="elec_reponse_o1.html">
-   4. Résolution numérique d’une équation différentielle d’ordre 1
+  <a class="reference internal" href="elec_reponse_o2.html">
+   4. Système linéaire et ordre 2
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -189,62 +199,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_fonction.html">
-     4.3. Utilisation de la bibliothèque scipy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_base.html">
+    <a class="reference internal" href="elec_reponse_o2_base.html">
      4.4. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_complet.html">
-     4.5. Implémentation complète
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_rampe.html">
-     4.6. Réponse à une rampe de tension.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="elec_reponse_o2.html">
-   5. Système linéaire et ordre 2
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o2_base.html">
-     5.4. Implémentation basique
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o2_complet.html">
-     5.5. Etude d’un système d’ordre 2 : le pendule
+     4.5. Etude d’un système d’ordre 2 : le pendule
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_non_lineaire.html">
-   6. Système conservatif : Effets non linéaires.
+   5. Système conservatif : Effets non linéaires.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_force_centrale.html">
-   7. Etude d’un mouvement à force centrale
+   6. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   8. Etude de l’atmosphère terrestre
+   7. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -463,22 +441,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#position-du-probleme">
-   2.4.1. Position du problème.
+   1.4.1. Position du problème.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#etude-preliminaire">
-   2.4.2. Etude préliminaire
+   1.4.2. Etude préliminaire
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methode-par-dichotomie">
-   2.4.3. Méthode par dichotomie
+   1.4.3. Méthode par dichotomie
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methode-de-newton">
-   2.4.4. Méthode de Newton
+   1.4.4. Méthode de Newton
   </a>
  </li>
 </ul>
@@ -502,22 +480,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#position-du-probleme">
-   2.4.1. Position du problème.
+   1.4.1. Position du problème.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#etude-preliminaire">
-   2.4.2. Etude préliminaire
+   1.4.2. Etude préliminaire
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methode-par-dichotomie">
-   2.4.3. Méthode par dichotomie
+   1.4.3. Méthode par dichotomie
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methode-de-newton">
-   2.4.4. Méthode de Newton
+   1.4.4. Méthode de Newton
   </a>
  </li>
 </ul>
@@ -531,12 +509,12 @@ title="Print to PDF"
               <div>
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
-<p><strong>Si vous vous sentez suffisamment à l’aise,</strong> vous pouvez passer directement à l’<a class="reference internal" href="equation_stationnaire_fonction.html"><span class="doc std std-doc">étude approfondie</span></a>.</p>
+<p><strong>Si vous vous sentez suffisamment à l’aise,</strong> vous pouvez passer directement à l’<span class="xref myst">étude approfondie</span>.</p>
 <div class="tex2jax_ignore mathjax_ignore section" id="implementation-basique">
-<h1><span class="section-number">2.4. </span>Implémentation basique<a class="headerlink" href="#implementation-basique" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.4. </span>Implémentation basique<a class="headerlink" href="#implementation-basique" title="Permalink to this headline">#</a></h1>
 <p>Nous allons ici implémenter sans utiliser de fonction les deux méthodes de recherche de racine pour réaliser la recherche d’un point de fonctionnement et étudier le redressement monoalternance.</p>
 <div class="section" id="position-du-probleme">
-<span id="pos-pb-eq"></span><h2><span class="section-number">2.4.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h2>
+<span id="pos-pb-eq"></span><h2><span class="section-number">1.4.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h2>
 <p>On considère un générateur idéal de tension délivrant une tension <span class="math notranslate nohighlight">\(E\)</span> branché en série avec une résistance <span class="math notranslate nohighlight">\(R = 100 \rm{\Omega}\)</span> et une diode <span class="math notranslate nohighlight">\(D\)</span> dont la relation intensité tension est:</p>
 <div class="cell tag_remove-output tag_remove-input docutils container">
 </div>
@@ -547,7 +525,7 @@ title="Print to PDF"
 \]</div>
 </div>
 <div class="section" id="etude-preliminaire">
-<h2><span class="section-number">2.4.2. </span>Etude préliminaire<a class="headerlink" href="#etude-preliminaire" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.2. </span>Etude préliminaire<a class="headerlink" href="#etude-preliminaire" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p><strong>Exercice A:</strong><br />
 On prend <span class="math notranslate nohighlight">\(E = 1\rm{V}\)</span>.</p>
@@ -559,7 +537,7 @@ On prend <span class="math notranslate nohighlight">\(E = 1\rm{V}\)</span>.</p>
 </div></blockquote>
 </div>
 <div class="section" id="methode-par-dichotomie">
-<h2><span class="section-number">2.4.3. </span>Méthode par dichotomie<a class="headerlink" href="#methode-par-dichotomie" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.3. </span>Méthode par dichotomie<a class="headerlink" href="#methode-par-dichotomie" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p><strong>Exercice B:</strong><br />
 Ecrire une suite d’instruction:</p>
@@ -585,7 +563,7 @@ Reprendre la série d’instructions précédentes mais remplacer le critère d�
 </div>
 </div>
 <div class="section" id="methode-de-newton">
-<h2><span class="section-number">2.4.4. </span>Méthode de Newton<a class="headerlink" href="#methode-de-newton" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.4. </span>Méthode de Newton<a class="headerlink" href="#methode-de-newton" title="Permalink to this headline">#</a></h2>
 <p>La méthode de Newton n’étant pas officiellement au programme en physique, <strong>ne faire cette partie QUE si vous êtes suffisamment en avance (ET que vous avez fini la partie suivante)</strong>.</p>
 <blockquote>
 <div><p><strong>Exercice C:</strong></p>
@@ -630,13 +608,13 @@ Reprendre la série d’instructions précédentes mais remplacer le critère d�
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Résolution d’équation stationnaire</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Résolution d’équation stationnaire</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="equation_stationnaire_fonction.html" title="next page">
+    <a class='right-next' id="next-link" href="equation_stationnaire_math.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Etude du redressement monoalternance</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>Etude abstraite</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

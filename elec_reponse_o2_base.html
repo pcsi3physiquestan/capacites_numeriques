@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.4. Implémentation basique &#8212; Capacités numériques - Sujets</title>
+    <title>4.3. Implémentation basique &#8212; Capacités numériques - Sujets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.5. Etude d’un système d’ordre 2 : le pendule" href="elec_reponse_o2_complet.html" />
-    <link rel="prev" title="5. Système linéaire et ordre 2" href="elec_reponse_o2.html" />
+    <link rel="prev" title="4. Système d’équations et ordre 2" href="elec_reponse_o2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,8 +112,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro.html">
-   1. Introduction
+  <a class="reference internal" href="equation_stationnaire.html">
+   1. Résolution d’équation stationnaire
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -123,20 +122,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_theorie.html">
-     1.2. Approche théorique
+    <a class="reference internal" href="equation_stationnaire_math.html">
+     1.4. Etude abstraite
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_code.html">
-     1.3. Partie codage
+    <a class="reference internal" href="equation_stationnaire_reponse.html">
+     1.5. Exemple d’implémentation
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="equation_stationnaire.html">
-   2. Résolution d’équation stationnaire
+  <a class="reference internal" href="derivation_integration.html">
+   2. Dérivation et intégration numérique
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -145,20 +144,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_base.html">
-     2.4. Implémentation basique
+    <a class="reference internal" href="derivation_math.html">
+     2.3. Dérivation numérique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_fonction.html">
-     2.5. Etude du redressement monoalternance
+    <a class="reference internal" href="integration_math.html">
+     2.4. Intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derivation_integration_reponse.html">
+     2.5. Exemple d’implémentation
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="derivation_integration.html">
-   3. Dérivation et intégration numérique
+  <a class="reference internal" href="elec_reponse_o1.html">
+   3. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -167,85 +171,33 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="derivation_base.html">
-     3.3. Dérivation et intégration : Méthode de base
+    <a class="reference internal" href="elec_reponse_o1_math.html">
+     3.2. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="derive_integ_fonction.html">
-     3.4. Utilisation de fonctions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="elec_reponse_o1.html">
-   4. Résolution numérique d’une équation différentielle d’ordre 1
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_fonction.html">
-     4.3. Utilisation de la bibliothèque scipy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_base.html">
-     4.4. Implémentation basique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_complet.html">
-     4.5. Implémentation complète
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_rampe.html">
-     4.6. Réponse à une rampe de tension.
+    <a class="reference internal" href="elec_reponse_o1_math_reponse.html">
+     3.3. Exemple d’implémentation basique
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_reponse_o2.html">
-   5. Système linéaire et ordre 2
+   4. Système d’équations et ordre 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.4. Implémentation basique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o2_complet.html">
-     5.5. Etude d’un système d’ordre 2 : le pendule
+     4.3. Implémentation basique
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_non_lineaire.html">
-   6. Système conservatif : Effets non linéaires.
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_force_centrale.html">
-   7. Etude d’un mouvement à force centrale
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="thermo_statique.html">
-   8. Etude de l’atmosphère terrestre
-  </a>
  </li>
 </ul>
 
@@ -462,13 +414,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mise-en-pratique">
-   5.4.1. Mise en pratique
+  <a class="reference internal nav-link" href="#schema-d-euler-systeme-d-equations">
+   4.3.1. Schéma d’euler - Système d’équations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vers-l-ordre-2">
-   5.4.2. Vers l’ordre 2.
+  <a class="reference internal nav-link" href="#schema-d-euler-ordre-2">
+   4.3.2. Schéma d’Euler - Ordre 2
   </a>
  </li>
 </ul>
@@ -491,13 +443,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mise-en-pratique">
-   5.4.1. Mise en pratique
+  <a class="reference internal nav-link" href="#schema-d-euler-systeme-d-equations">
+   4.3.1. Schéma d’euler - Système d’équations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vers-l-ordre-2">
-   5.4.2. Vers l’ordre 2.
+  <a class="reference internal nav-link" href="#schema-d-euler-ordre-2">
+   4.3.2. Schéma d’Euler - Ordre 2
   </a>
  </li>
 </ul>
@@ -512,58 +464,67 @@ title="Print to PDF"
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="tex2jax_ignore mathjax_ignore section" id="implementation-basique">
-<h1><span class="section-number">5.4. </span>Implémentation basique<a class="headerlink" href="#implementation-basique" title="Permalink to this headline">#</a></h1>
-<div class="section" id="mise-en-pratique">
-<h2><span class="section-number">5.4.1. </span>Mise en pratique<a class="headerlink" href="#mise-en-pratique" title="Permalink to this headline">#</a></h2>
+<h1><span class="section-number">4.3. </span>Implémentation basique<a class="headerlink" href="#implementation-basique" title="Permalink to this headline">#</a></h1>
+<div class="section" id="schema-d-euler-systeme-d-equations">
+<h2><span class="section-number">4.3.1. </span>Schéma d’euler - Système d’équations<a class="headerlink" href="#schema-d-euler-systeme-d-equations" title="Permalink to this headline">#</a></h2>
+<p>On va chercher à résoudre le système suivant:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+\frac{\rm{d}u}{\rm{dt}} = - \frac{1}{\tau} v - \frac{2}{\tau}u\\
+\frac{\rm{d}v}{\rm{dt}} = - \frac{1}{\tau} v - \frac{1}{\tau}u
+\end{cases}
+\end{split}\]</div>
+<p>avec <span class="math notranslate nohighlight">\(v(t=0) = 2\)</span>, <span class="math notranslate nohighlight">\(u(t=0) = 0\)</span>,  <span class="math notranslate nohighlight">\(\tau = 1\)</span></p>
 <blockquote>
-<div><p><strong>Exercice :</strong><br />
-Pour les études numériques, on prend <span class="math notranslate nohighlight">\(R=1k\Omega\)</span> et <span class="math notranslate nohighlight">\(C= 1nF\)</span>.</p>
+<div><p><strong>Exercice 1 :</strong></p>
+<ol class="simple">
+<li><p>Copier-coller la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> que vous avez écrite pour la séance précédente. Si le corps de la fonction ne change pas, sa signature change:</p></li>
+</ol>
 </div></blockquote>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p><em>Si vous avez bien travaillé avec des vecteurs, la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> utilisée à l’ordre 1 devrez ne pas nécessiter beaucoup de changements.</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">:</span><span class="n">callable</span><span class="p">,</span> <span class="n">y0</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">t0</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">tf</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">pas</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
+</pre></div>
 </div>
 <blockquote>
 <div><ol class="simple">
-<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">F(t,</span> <span class="pre">Y)</span></code> qui prend comme argument le vecteur <code class="docutils literal notranslate"><span class="pre">Y</span></code> et l’instant <code class="docutils literal notranslate"><span class="pre">t</span></code> et qui renvoie un <strong>vecteur</strong> numpy de taille 2 correspondant au vecteur donné précédemment.</p></li>
-<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">euler(F,</span> <span class="pre">Y0,</span> <span class="pre">tf,</span> <span class="pre">pas)</span></code> qui prend comme argument la fonction <code class="docutils literal notranslate"><span class="pre">F</span></code>, un vecteur <code class="docutils literal notranslate"><span class="pre">Y0</span></code> donnant les conditions initiales <span class="math notranslate nohighlight">\(u(0), v(0)\)</span>, et qui réalise l’intégration d’Euler par <code class="docutils literal notranslate"><span class="pre">pas</span></code> d’intégration de <span class="math notranslate nohighlight">\(t=0\)</span> à <code class="docutils literal notranslate"><span class="pre">tf</span></code>. Elle renverra un tableaux numpy à deux colonnes contenant pour chaque lignes les valeurs de Y aux temps <span class="math notranslate nohighlight">\(t_k\)</span> et un vecteur numpy contenant les temps <span class="math notranslate nohighlight">\(t_k\)</span>. <strong>S’inspirer de ce qui a été fait à l’ordre 1.</strong></p></li>
-<li><p>Obtenir puis tracer l’évolution temporelle de <span class="math notranslate nohighlight">\(u(t)\)</span> et <span class="math notranslate nohighlight">\(v(t)\)</span> par intégration numérique et anlyser le tracé. On adaptera le pas d’intégration à bon escient. On prend <span class="math notranslate nohighlight">\(u(0) = 0; v(0) = v_0 = 1V\)</span>.</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">F(t:float,</span> <span class="pre">Y:numpy.ndarray)</span> <span class="pre">-&gt;</span> <span class="pre">numpy.ndarray</span></code> qui renvoie la fonction <span class="math notranslate nohighlight">\(F\)</span> du schéma d’Euler précédent. <strong>Attention, cette fois, <code class="docutils literal notranslate"><span class="pre">Y</span></code> est un vecteur (dont les composantes sont <span class="math notranslate nohighlight">\(u_k\)</span> et <span class="math notranslate nohighlight">\(v_k\)</span>) et <span class="math notranslate nohighlight">\(F\)</span> renvoie un vecteur (dont les composantes sont <span class="math notranslate nohighlight">\(\frac{\rm{d}u}{\rm{dt}}(t_k)\)</span> et <span class="math notranslate nohighlight">\(\frac{\rm{d}v}{\rm{dt}}(t_k)\)</span> obtenus à partir du système d’équations). Veillez à renvoyer un vecteur et non une liste (pourquoi ?).</strong></p></li>
+<li><p>Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> pour obtenir <span class="math notranslate nohighlight">\(Y(t)\)</span> puis tracer <span class="math notranslate nohighlight">\(u(t)\)</span> et <span class="math notranslate nohighlight">\(v(t)\)</span> entre <span class="math notranslate nohighlight">\(t=0\)</span> et <span class="math notranslate nohighlight">\(t=10\)</span>. A vous de choisir le pas d’intégration sachant que <span class="math notranslate nohighlight">\(\tau\)</span> est à peu près le “temps caractéristique” du système.</p></li>
+<li><p>Obtenir la solution grâce aux fonction <code class="docutils literal notranslate"><span class="pre">odeint</span></code> ou <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> puis les tracer pour vérifier que vous obtenez le même tracé.</p></li>
 </ol>
 </div></blockquote>
+<div class="cell tag_remove-output tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Ne pas oubliez d&#39;importer les bibliothèques scientifiques.&quot;&quot;&quot;</span>
+</pre></div>
 </div>
-<div class="section" id="vers-l-ordre-2">
-<h2><span class="section-number">5.4.2. </span>Vers l’ordre 2.<a class="headerlink" href="#vers-l-ordre-2" title="Permalink to this headline">#</a></h2>
-<p>Remarquons que le problème précédent peut aussi s’appliquer à une équation linéaire d’ordre 2. Reprenons le système précédent et en éliminant <span class="math notranslate nohighlight">\(v(t)\)</span>, on obtient l’équation:</p>
+</div>
+</div>
+</div>
+<div class="section" id="schema-d-euler-ordre-2">
+<h2><span class="section-number">4.3.2. </span>Schéma d’Euler - Ordre 2<a class="headerlink" href="#schema-d-euler-ordre-2" title="Permalink to this headline">#</a></h2>
+<p>On veut résoudre l’équation différentielle suivante:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>On pourra vérifier théoriquement qu’en éliminant <span class="math notranslate nohighlight">\(v(t)\)</span> du système précédent, on obtient cette équation.</p>
+</div>
 <div class="math notranslate nohighlight">
 \[
-\frac{\rm{d^2}u}{\rm{dt^2}} = - \frac{3}{RC}\frac{\rm{d}u}{\rm{dt}} - \frac{1}{RC}u
+\frac{\rm{d^2}u}{\rm{dt^2}} = - \frac{3}{\tau}\frac{\rm{d}u}{\rm{dt}} - \frac{1}{\tau}u
 \]</div>
-<p>Soit en posant <span class="math notranslate nohighlight">\(w = \dot u = \frac{\rm{d}u}{\rm{dt}}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} {\rm{d} \over \rm{d}t}
-\begin{pmatrix}
-u\\
-w
-\end{pmatrix}
-=
-\begin{pmatrix}
-w\\
-- \frac{3}{RC}w - \frac{1}{RC}u
-\end{pmatrix}
-\end{split}\]</div>
-<p>avec <span class="math notranslate nohighlight">\(u(0) = u(0)\)</span> et <span class="math notranslate nohighlight">\(w(0) = - \frac{v(0)}{RC}\)</span>
-On retrouve donc la même vision vectorielle en posant:</p>
+<p>On va donc travailler avec le vecteur :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} Y(t)=
 \begin{pmatrix}
 u(t)\\
-v(t)
+\frac{\rm{d}u}{\rm{dt}}(t)
 \end{pmatrix}
 \end{split}\]</div>
 <blockquote>
-<div><p><strong>Exercice :</strong></p>
+<div><p><strong>Exercice 2 :</strong></p>
 <ol class="simple">
-<li><p>Reprendre la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> avec une fonction <code class="docutils literal notranslate"><span class="pre">G</span></code> qui correspondant à la dérivée du vecteur <span class="math notranslate nohighlight">\(Y = (u,\dot u)\)</span> et retrouver ainsi l’expression de <span class="math notranslate nohighlight">\(u(t)\)</span> (ainsi que <span class="math notranslate nohighlight">\(\dot u(t)\)</span>).</p></li>
+<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> a-t-elle besoin d’être modifiée ?</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">F2(t,</span> <span class="pre">Y)</span></code> correspondant au schéma d’Euler comme <a class="reference internal" href="elec_reponse_o2.html#sys-o2"><span class="std std-ref">expliqué précédemment</span></a>.</p></li>
+<li><p>Obtenir la solution  sur le même intervale de temps que dans l’exercice précédent et vérifier que la solution coïncide avec la solution trouvée avec un système d’équations.</p></li>
 </ol>
 </div></blockquote>
 </div>
@@ -600,15 +561,8 @@ v(t)
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Système linéaire et ordre 2</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Système d’équations et ordre 2</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="elec_reponse_o2_complet.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.5. </span>Etude d’un système d’ordre 2 : le pendule</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

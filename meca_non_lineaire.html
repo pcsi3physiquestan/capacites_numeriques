@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6. Système conservatif : Effets non linéaires. &#8212; Capacités numériques - Sujets</title>
+    <title>5. Système conservatif : Effets non linéaires. &#8212; Capacités numériques - Sujets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Etude d’un mouvement à force centrale" href="meca_force_centrale.html" />
-    <link rel="prev" title="5.5. Etude d’un système d’ordre 2 : le pendule" href="elec_reponse_o2_complet.html" />
+    <link rel="next" title="6. Etude d’un mouvement à force centrale" href="meca_force_centrale.html" />
+    <link rel="prev" title="4.5. Etude d’un système d’ordre 2 : le pendule" href="elec_reponse_o2_complet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,8 +113,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro.html">
-   1. Introduction
+  <a class="reference internal" href="equation_stationnaire.html">
+   1. Résolution d’équation stationnaire
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -123,20 +123,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_theorie.html">
-     1.2. Approche théorique
+    <a class="reference internal" href="equation_stationnaire_math.html">
+     1.4. Etude abstraite
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_code.html">
-     1.3. Partie codage
+    <a class="reference internal" href="equation_stationnaire_reponse.html">
+     1.5. Exemple d’implémentation
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="equation_stationnaire.html">
-   2. Résolution d’équation stationnaire
+  <a class="reference internal" href="derivation_integration.html">
+   2. Dérivation et intégration numérique
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -145,20 +145,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_base.html">
-     2.4. Implémentation basique
+    <a class="reference internal" href="derivation_math.html">
+     2.3. Dérivation numérique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_fonction.html">
-     2.5. Etude du redressement monoalternance
+    <a class="reference internal" href="integration_math.html">
+     2.4. Intégration numérique
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="derivation_integration.html">
-   3. Dérivation et intégration numérique
+  <a class="reference internal" href="elec_reponse_o1.html">
+   3. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -167,20 +167,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="derivation_base.html">
-     3.3. Dérivation et intégration : Méthode de base
+    <a class="reference internal" href="elec_reponse_o1_fonction.html">
+     3.3. Utilisation de la bibliothèque scipy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="derive_integ_fonction.html">
-     3.4. Utilisation de fonctions
+    <a class="reference internal" href="elec_reponse_o1_base.html">
+     3.4. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_complet.html">
+     3.5. Implémentation complète
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_rampe.html">
+     3.6. Réponse à une rampe de tension.
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="elec_reponse_o1.html">
-   4. Résolution numérique d’une équation différentielle d’ordre 1
+  <a class="reference internal" href="elec_reponse_o2.html">
+   4. Système linéaire et ordre 2
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -189,62 +199,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_fonction.html">
-     4.3. Utilisation de la bibliothèque scipy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_base.html">
+    <a class="reference internal" href="elec_reponse_o2_base.html">
      4.4. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_complet.html">
-     4.5. Implémentation complète
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_rampe.html">
-     4.6. Réponse à une rampe de tension.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="elec_reponse_o2.html">
-   5. Système linéaire et ordre 2
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o2_base.html">
-     5.4. Implémentation basique
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o2_complet.html">
-     5.5. Etude d’un système d’ordre 2 : le pendule
+     4.5. Etude d’un système d’ordre 2 : le pendule
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   6. Système conservatif : Effets non linéaires.
+   5. Système conservatif : Effets non linéaires.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_force_centrale.html">
-   7. Etude d’un mouvement à force centrale
+   6. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   8. Etude de l’atmosphère terrestre
+   7. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -463,36 +441,36 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#position-du-probleme">
-   6.1. Position du problème
+   5.1. Position du problème
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#etude-de-l-energie-potentielle">
-     6.1.1. Etude de l’énergie potentielle.
+     5.1.1. Etude de l’énergie potentielle.
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#schema-d-euler-pour-un-equation-d-ordre-2">
-   6.2. Schéma d’Euler pour un équation d’ordre 2
+   5.2. Schéma d’Euler pour un équation d’ordre 2
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#application-a-l-etude-de-la-vibration">
-   6.3. Application à l’étude de la vibration
+   5.3. Application à l’étude de la vibration
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#effets-de-non-linearite">
-     6.3.1. Effets de non linéarité
+     5.3.1. Effets de non linéarité
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trajectoire-de-diffusion">
-   6.4. Trajectoire de diffusion
+   5.4. Trajectoire de diffusion
   </a>
  </li>
 </ul>
@@ -516,36 +494,36 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#position-du-probleme">
-   6.1. Position du problème
+   5.1. Position du problème
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#etude-de-l-energie-potentielle">
-     6.1.1. Etude de l’énergie potentielle.
+     5.1.1. Etude de l’énergie potentielle.
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#schema-d-euler-pour-un-equation-d-ordre-2">
-   6.2. Schéma d’Euler pour un équation d’ordre 2
+   5.2. Schéma d’Euler pour un équation d’ordre 2
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#application-a-l-etude-de-la-vibration">
-   6.3. Application à l’étude de la vibration
+   5.3. Application à l’étude de la vibration
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#effets-de-non-linearite">
-     6.3.1. Effets de non linéarité
+     5.3.1. Effets de non linéarité
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trajectoire-de-diffusion">
-   6.4. Trajectoire de diffusion
+   5.4. Trajectoire de diffusion
   </a>
  </li>
 </ul>
@@ -560,10 +538,10 @@ title="Print to PDF"
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="tex2jax_ignore mathjax_ignore section" id="systeme-conservatif-effets-non-lineaires">
-<h1><span class="section-number">6. </span>Système conservatif : Effets non linéaires.<a class="headerlink" href="#systeme-conservatif-effets-non-lineaires" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5. </span>Système conservatif : Effets non linéaires.<a class="headerlink" href="#systeme-conservatif-effets-non-lineaires" title="Permalink to this headline">#</a></h1>
 <p><strong>But :</strong>  résoudre numériquement une équation différentielle du deuxième ordre non-linéaire et faire apparaître l’effet des termes non-linéaires.</p>
 <div class="section" id="position-du-probleme">
-<h2><span class="section-number">6.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h2>
 <p>Nous allons chercher à résoudre numériquement l’équation d’évolution traduisant la vibration d’une molécule HCl. La différence de masse des deux atomes permet de supposer que l’atome de chlore est immobile. On travaillera donc dans son référentiel qu’on supposera galiléen. On suppose le mouvement de l’atome d’hydrogène rectiligne suivant un axe Ox (O étant la position du chlore)</p>
 <p>Le système HCl est supposé isolé. On suppose que l’interaction intramoléculaire est modélisée par l’énergie potentielle :</p>
 <div class="math notranslate nohighlight">
@@ -576,7 +554,7 @@ E_p = {C \over r^n} - \alpha {e^2 \over 4\pi \epsilon_0 r}
 <p><span class="math notranslate nohighlight">\(C = 1.4 \times 10^{-1} (UA); \alpha = 0.40; n = 12; \epsilon_0 = 3.45 \times 10^{-1} (UA); e=1 (UA); m_H = 1 (UA)\)</span></p>
 <p>De plus, 1 unité arbitraire d’énergie dans les résultats obtenus correspond à <span class="math notranslate nohighlight">\(100\rm{eV} = 1.6 \times 10^{-17} \rm{J}\)</span> et 1 unité arbitraire de force correspond à <span class="math notranslate nohighlight">\(0.62 \times 10^{7} \rm{N}\)</span></p>
 <div class="section" id="etude-de-l-energie-potentielle">
-<h3><span class="section-number">6.1.1. </span>Etude de l’énergie potentielle.<a class="headerlink" href="#etude-de-l-energie-potentielle" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.1.1. </span>Etude de l’énergie potentielle.<a class="headerlink" href="#etude-de-l-energie-potentielle" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p><strong>Exercice 1</strong> :<br />
 Vous devez :</p>
@@ -606,7 +584,7 @@ Vous devez :</p>
 </div>
 </div>
 <div class="section" id="schema-d-euler-pour-un-equation-d-ordre-2">
-<h2><span class="section-number">6.2. </span>Schéma d’Euler pour un équation d’ordre 2<a class="headerlink" href="#schema-d-euler-pour-un-equation-d-ordre-2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2. </span>Schéma d’Euler pour un équation d’ordre 2<a class="headerlink" href="#schema-d-euler-pour-un-equation-d-ordre-2" title="Permalink to this headline">#</a></h2>
 <p>On rappelle le principe, on utilise deux fonctions inconnues :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -663,9 +641,9 @@ v_k + h \times f(t, Y)
 </div>
 </div>
 <div class="section" id="application-a-l-etude-de-la-vibration">
-<h2><span class="section-number">6.3. </span>Application à l’étude de la vibration<a class="headerlink" href="#application-a-l-etude-de-la-vibration" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.3. </span>Application à l’étude de la vibration<a class="headerlink" href="#application-a-l-etude-de-la-vibration" title="Permalink to this headline">#</a></h2>
 <div class="section" id="effets-de-non-linearite">
-<h3><span class="section-number">6.3.1. </span>Effets de non linéarité<a class="headerlink" href="#effets-de-non-linearite" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.3.1. </span>Effets de non linéarité<a class="headerlink" href="#effets-de-non-linearite" title="Permalink to this headline">#</a></h3>
 <p>Le but est d’observer les vibrations de la molécule autour de sa position d’équilibre pour :</p>
 <ul class="simple">
 <li><p>une vibration de très faible amplitude : <span class="math notranslate nohighlight">\((r - r_E) = 0.01 r_E\)</span></p></li>
@@ -692,7 +670,7 @@ Vous devez :</p>
 </div>
 </div>
 <div class="section" id="trajectoire-de-diffusion">
-<h2><span class="section-number">6.4. </span>Trajectoire de diffusion<a class="headerlink" href="#trajectoire-de-diffusion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.4. </span>Trajectoire de diffusion<a class="headerlink" href="#trajectoire-de-diffusion" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p><strong>Exercice 5:</strong></p>
 <ol class="simple">
@@ -734,13 +712,13 @@ Vous devez :</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.5. </span>Etude d’un système d’ordre 2 : le pendule</p>
+            <p class="prev-next-title"><span class="section-number">4.5. </span>Etude d’un système d’ordre 2 : le pendule</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="meca_force_centrale.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Etude d’un mouvement à force centrale</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Etude d’un mouvement à force centrale</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.5. Etude d’un système d’ordre 2 : le pendule &#8212; Capacités numériques - Sujets</title>
+    <title>4.5. Etude d’un système d’ordre 2 : le pendule &#8212; Capacités numériques - Sujets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
-    <link rel="prev" title="5.4. Implémentation basique" href="elec_reponse_o2_base.html" />
+    <link rel="next" title="5. Système conservatif : Effets non linéaires." href="meca_non_lineaire.html" />
+    <link rel="prev" title="4.4. Implémentation basique" href="elec_reponse_o2_base.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,8 +113,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro.html">
-   1. Introduction
+  <a class="reference internal" href="equation_stationnaire.html">
+   1. Résolution d’équation stationnaire
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -123,20 +123,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_theorie.html">
-     1.2. Approche théorique
+    <a class="reference internal" href="equation_stationnaire_math.html">
+     1.4. Etude abstraite
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_code.html">
-     1.3. Partie codage
+    <a class="reference internal" href="equation_stationnaire_reponse.html">
+     1.5. Exemple d’implémentation
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="equation_stationnaire.html">
-   2. Résolution d’équation stationnaire
+  <a class="reference internal" href="derivation_integration.html">
+   2. Dérivation et intégration numérique
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -145,20 +145,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_base.html">
-     2.4. Implémentation basique
+    <a class="reference internal" href="derivation_math.html">
+     2.3. Dérivation numérique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_fonction.html">
-     2.5. Etude du redressement monoalternance
+    <a class="reference internal" href="integration_math.html">
+     2.4. Intégration numérique
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="derivation_integration.html">
-   3. Dérivation et intégration numérique
+  <a class="reference internal" href="elec_reponse_o1.html">
+   3. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -167,84 +167,62 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="derivation_base.html">
-     3.3. Dérivation et intégration : Méthode de base
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="derive_integ_fonction.html">
-     3.4. Utilisation de fonctions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="elec_reponse_o1.html">
-   4. Résolution numérique d’une équation différentielle d’ordre 1
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_fonction.html">
-     4.3. Utilisation de la bibliothèque scipy
+     3.3. Utilisation de la bibliothèque scipy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_base.html">
-     4.4. Implémentation basique
+     3.4. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_complet.html">
-     4.5. Implémentation complète
+     3.5. Implémentation complète
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o1_rampe.html">
-     4.6. Réponse à une rampe de tension.
+     3.6. Réponse à une rampe de tension.
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="elec_reponse_o2.html">
-   5. Système linéaire et ordre 2
+   4. Système linéaire et ordre 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o2_base.html">
-     5.4. Implémentation basique
+     4.4. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.5. Etude d’un système d’ordre 2 : le pendule
+     4.5. Etude d’un système d’ordre 2 : le pendule
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_non_lineaire.html">
-   6. Système conservatif : Effets non linéaires.
+   5. Système conservatif : Effets non linéaires.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="meca_force_centrale.html">
-   7. Etude d’un mouvement à force centrale
+   6. Etude d’un mouvement à force centrale
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="thermo_statique.html">
-   8. Etude de l’atmosphère terrestre
+   7. Etude de l’atmosphère terrestre
   </a>
  </li>
 </ul>
@@ -463,27 +441,27 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#etude-generale">
-   5.5.1. Etude générale
+   4.5.1. Etude générale
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#petites-et-grandes-oscillations">
-   5.5.2. Petites et grandes oscillations
+   4.5.2. Petites et grandes oscillations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#differences">
-     5.5.2.1. Différences
+     4.5.2.1. Différences
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#anisochronisme">
-     5.5.2.2. Anisochronisme
+     4.5.2.2. Anisochronisme
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#trajectoire-de-diffusion">
-     5.5.2.3. Trajectoire de diffusion
+     4.5.2.3. Trajectoire de diffusion
     </a>
    </li>
   </ul>
@@ -509,27 +487,27 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#etude-generale">
-   5.5.1. Etude générale
+   4.5.1. Etude générale
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#petites-et-grandes-oscillations">
-   5.5.2. Petites et grandes oscillations
+   4.5.2. Petites et grandes oscillations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#differences">
-     5.5.2.1. Différences
+     4.5.2.1. Différences
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#anisochronisme">
-     5.5.2.2. Anisochronisme
+     4.5.2.2. Anisochronisme
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#trajectoire-de-diffusion">
-     5.5.2.3. Trajectoire de diffusion
+     4.5.2.3. Trajectoire de diffusion
     </a>
    </li>
   </ul>
@@ -546,9 +524,9 @@ title="Print to PDF"
                 
   <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’l faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
 <div class="tex2jax_ignore mathjax_ignore section" id="etude-d-un-systeme-d-ordre-2-le-pendule">
-<h1><span class="section-number">5.5. </span>Etude d’un système d’ordre 2 : le pendule<a class="headerlink" href="#etude-d-un-systeme-d-ordre-2-le-pendule" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">4.5. </span>Etude d’un système d’ordre 2 : le pendule<a class="headerlink" href="#etude-d-un-systeme-d-ordre-2-le-pendule" title="Permalink to this headline">#</a></h1>
 <div class="section" id="etude-generale">
-<h2><span class="section-number">5.5.1. </span>Etude générale<a class="headerlink" href="#etude-generale" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.5.1. </span>Etude générale<a class="headerlink" href="#etude-generale" title="Permalink to this headline">#</a></h2>
 <p>On va étudier directement un système d’ordre 2 issu d’un problème de mécanique: le pendule simple sans frottement. L’équation qui régit l’évolution de l’angle <span class="math notranslate nohighlight">\(\theta(t)\)</span> que fait le pendule avec un axe horizontal est:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -564,16 +542,16 @@ title="Print to PDF"
 </div></blockquote>
 </div>
 <div class="section" id="petites-et-grandes-oscillations">
-<h2><span class="section-number">5.5.2. </span>Petites et grandes oscillations<a class="headerlink" href="#petites-et-grandes-oscillations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.5.2. </span>Petites et grandes oscillations<a class="headerlink" href="#petites-et-grandes-oscillations" title="Permalink to this headline">#</a></h2>
 <div class="section" id="differences">
-<h3><span class="section-number">5.5.2.1. </span>Différences<a class="headerlink" href="#differences" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.5.2.1. </span>Différences<a class="headerlink" href="#differences" title="Permalink to this headline">#</a></h3>
 <p>Aux petits angles, l’équation différentielle devient:
 $<span class="math notranslate nohighlight">\(
 \frac{\rm{d^2}\theta}{\rm{dt^2}} = - \omega_0^2 \theta
 \)</span>$
 soit un oscillateur harmonique dont la solution analytique est:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5a173c59-cf8c-438b-8a6e-62b5e1be713a">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-5a173c59-cf8c-438b-8a6e-62b5e1be713a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c69de4dc-7f90-4764-bb28-6de4852c3d4e">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-c69de4dc-7f90-4764-bb28-6de4852c3d4e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \theta (t) = \theta_i \cos \omega_0 t + \frac{\omega_i}{\omega_0} \sin \omega_0 t
 \end{equation}\]</div>
 <p>avec <span class="math notranslate nohighlight">\(\theta_i = \theta(0)\)</span> et <span class="math notranslate nohighlight">\(\omega_i = \dot \theta (0)\)</span>.</p>
@@ -585,7 +563,7 @@ soit un oscillateur harmonique dont la solution analytique est:</p>
 </div></blockquote>
 </div>
 <div class="section" id="anisochronisme">
-<h3><span class="section-number">5.5.2.2. </span>Anisochronisme<a class="headerlink" href="#anisochronisme" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.5.2.2. </span>Anisochronisme<a class="headerlink" href="#anisochronisme" title="Permalink to this headline">#</a></h3>
 <p>On se propose de déterminer la période des oscillations en fonction de l’amplitude des oscillations.<br />
 <strong>Méthode choisie</strong>: On va déterminer les temps <span class="math notranslate nohighlight">\(t_{0i}\)</span> successifs des points où la solution numérique pour <span class="math notranslate nohighlight">\(\theta(t)\)</span> s’annule (plus précisément les temps médians entre deux instants où le signal change de signe). Comme il n’y a que 2 annulations des angles dans une période (cf. étude des systèmes conservatifs), il suffira de compter le nombre <span class="math notranslate nohighlight">\(N_0\)</span> de 0. La période <span class="math notranslate nohighlight">\(T\)</span> du signal s’écrit alors :</p>
 <div class="math notranslate nohighlight">
@@ -602,7 +580,7 @@ T = {t_{0N_0} - t_{01} \over {N_0 - 1 \over 2}}
 </div></blockquote>
 </div>
 <div class="section" id="trajectoire-de-diffusion">
-<h3><span class="section-number">5.5.2.3. </span>Trajectoire de diffusion<a class="headerlink" href="#trajectoire-de-diffusion" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.5.2.3. </span>Trajectoire de diffusion<a class="headerlink" href="#trajectoire-de-diffusion" title="Permalink to this headline">#</a></h3>
 <p>On s’intéresse au cas où le pendule part de sa position la plus basse avec une vitesse angulaire <span class="math notranslate nohighlight">\(\omega_i\)</span>.
 La viteses angulaire initiale permettant au pendule (tige rigide) d’atteindre <span class="math notranslate nohighlight">\(\pi\)</span> et de s’y arrêter est :</p>
 <div class="math notranslate nohighlight">
@@ -652,13 +630,13 @@ La viteses angulaire initiale permettant au pendule (tige rigide) d’atteindre 
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.4. </span>Implémentation basique</p>
+            <p class="prev-next-title"><span class="section-number">4.4. </span>Implémentation basique</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="meca_non_lineaire.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Système conservatif : Effets non linéaires.</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Système conservatif : Effets non linéaires.</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

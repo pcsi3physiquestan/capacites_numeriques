@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Système linéaire et ordre 2 &#8212; Capacités numériques - Sujets</title>
+    <title>4. Système d’équations et ordre 2 &#8212; Capacités numériques - Sujets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.4. Implémentation basique" href="elec_reponse_o2_base.html" />
-    <link rel="prev" title="4.6. Réponse à une rampe de tension." href="elec_reponse_o1_rampe.html" />
+    <link rel="next" title="4.3. Implémentation basique" href="elec_reponse_o2_base.html" />
+    <link rel="prev" title="3.3. Exemple d’implémentation basique" href="elec_reponse_o1_math_reponse.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,8 +113,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro.html">
-   1. Introduction
+  <a class="reference internal" href="equation_stationnaire.html">
+   1. Résolution d’équation stationnaire
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -123,20 +123,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_theorie.html">
-     1.2. Approche théorique
+    <a class="reference internal" href="equation_stationnaire_math.html">
+     1.4. Etude abstraite
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_code.html">
-     1.3. Partie codage
+    <a class="reference internal" href="equation_stationnaire_reponse.html">
+     1.5. Exemple d’implémentation
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="equation_stationnaire.html">
-   2. Résolution d’équation stationnaire
+  <a class="reference internal" href="derivation_integration.html">
+   2. Dérivation et intégration numérique
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -145,20 +145,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_base.html">
-     2.4. Implémentation basique
+    <a class="reference internal" href="derivation_math.html">
+     2.3. Dérivation numérique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_fonction.html">
-     2.5. Etude du redressement monoalternance
+    <a class="reference internal" href="integration_math.html">
+     2.4. Intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derivation_integration_reponse.html">
+     2.5. Exemple d’implémentation
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="derivation_integration.html">
-   3. Dérivation et intégration numérique
+  <a class="reference internal" href="elec_reponse_o1.html">
+   3. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -167,85 +172,33 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="derivation_base.html">
-     3.3. Dérivation et intégration : Méthode de base
+    <a class="reference internal" href="elec_reponse_o1_math.html">
+     3.2. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="derive_integ_fonction.html">
-     3.4. Utilisation de fonctions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="elec_reponse_o1.html">
-   4. Résolution numérique d’une équation différentielle d’ordre 1
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_fonction.html">
-     4.3. Utilisation de la bibliothèque scipy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_base.html">
-     4.4. Implémentation basique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_complet.html">
-     4.5. Implémentation complète
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_rampe.html">
-     4.6. Réponse à une rampe de tension.
+    <a class="reference internal" href="elec_reponse_o1_math_reponse.html">
+     3.3. Exemple d’implémentation basique
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   5. Système linéaire et ordre 2
+   4. Système d’équations et ordre 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o2_base.html">
-     5.4. Implémentation basique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o2_complet.html">
-     5.5. Etude d’un système d’ordre 2 : le pendule
+     4.3. Implémentation basique
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_non_lineaire.html">
-   6. Système conservatif : Effets non linéaires.
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_force_centrale.html">
-   7. Etude d’un mouvement à force centrale
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="thermo_statique.html">
-   8. Etude de l’atmosphère terrestre
-  </a>
  </li>
 </ul>
 
@@ -462,18 +415,25 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#position-du-probleme">
-   5.1. Position du problème
+  <a class="reference internal nav-link" href="#systeme-d-equations-position-du-probleme">
+   4.1. Système d’équations - Position du problème
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vision-vectorielle">
+     4.1.1. Vision vectorielle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schema-d-euler">
+     4.1.2. Schéma d’Euler
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vision-vectorielle">
-   5.2. Vision vectorielle
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schema-d-euler">
-   5.3. Schéma d’Euler
+  <a class="reference internal nav-link" href="#systeme-d-ordre-2">
+   4.2. Système d’ordre 2
   </a>
  </li>
 </ul>
@@ -485,7 +445,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Système linéaire et ordre 2</h1>
+                <h1>Système d’équations et ordre 2</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -496,18 +456,25 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#position-du-probleme">
-   5.1. Position du problème
+  <a class="reference internal nav-link" href="#systeme-d-equations-position-du-probleme">
+   4.1. Système d’équations - Position du problème
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vision-vectorielle">
+     4.1.1. Vision vectorielle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schema-d-euler">
+     4.1.2. Schéma d’Euler
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vision-vectorielle">
-   5.2. Vision vectorielle
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schema-d-euler">
-   5.3. Schéma d’Euler
+  <a class="reference internal nav-link" href="#systeme-d-ordre-2">
+   4.2. Système d’ordre 2
   </a>
  </li>
 </ul>
@@ -520,30 +487,22 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="systeme-lineaire-et-ordre-2">
-<h1><span class="section-number">5. </span>Système linéaire et ordre 2<a class="headerlink" href="#systeme-lineaire-et-ordre-2" title="Permalink to this headline">#</a></h1>
-<p>Le but est de voir comment utiliser la méthode d’intégration d’Euler explicite pour étudier le régime transitoire d’un système d’équations. On a alors un système d’équations différentielles.</p>
-<div class="section" id="position-du-probleme">
-<h2><span class="section-number">5.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h2>
-<p>On s’intéresse au pont de Wien en régime libre :</p>
-<p><img alt="Circuit de Wien" src="_images/wien_circuit.png" /></p>
-<blockquote>
-<div><p><strong>Exercice :</strong></p>
-<ol class="simple">
-<li><p>(Théorie)Montrer par le calcul que ce circuit est régit par le système d’équation suivant :</p></li>
-</ol>
-</div></blockquote>
+  <div class="tex2jax_ignore mathjax_ignore section" id="systeme-d-equations-et-ordre-2">
+<h1><span class="section-number">4. </span>Système d’équations et ordre 2<a class="headerlink" href="#systeme-d-equations-et-ordre-2" title="Permalink to this headline">#</a></h1>
+<p>Le but est de voir comment utiliser la méthode d’intégration d’Euler explicite pour étudier le régime transitoire d’un système d’équations. On a alors un système d’équations différentielles. La théorie relative à la méthode d’intégration par Euler explicite ayant déjà été donnée, nous allons ici partir d’un exemple pour comprenre sa généralisation à des systèmes d’ordre supérieurs.</p>
+<div class="section" id="systeme-d-equations-position-du-probleme">
+<h2><span class="section-number">4.1. </span>Système d’équations - Position du problème<a class="headerlink" href="#systeme-d-equations-position-du-probleme" title="Permalink to this headline">#</a></h2>
+<p>On s’intéresse au système d’équations différentielle suivant :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{cases}
-\frac{\rm{d}u}{\rm{dt}} = - \frac{1}{RC} v - \frac{2}{RC}u\\
-\frac{\rm{d}v}{\rm{dt}} = - \frac{1}{RC} v - \frac{1}{RC}u
+\frac{\rm{d}u}{\rm{dt}} = - \frac{1}{\tau} v - \frac{2}{\tau}u\\
+\frac{\rm{d}v}{\rm{dt}} = - \frac{1}{\tau} v - \frac{1}{\tau}u
 \end{cases}
 \end{split}\]</div>
-</div>
 <div class="section" id="vision-vectorielle">
-<h2><span class="section-number">5.2. </span>Vision vectorielle<a class="headerlink" href="#vision-vectorielle" title="Permalink to this headline">#</a></h2>
-<p>Le système d’équations différentielles précédent peut être vu comme une seule équation différentielle faisant un intervenir des vecteurs:</p>
+<h3><span class="section-number">4.1.1. </span>Vision vectorielle<a class="headerlink" href="#vision-vectorielle" title="Permalink to this headline">#</a></h3>
+<p>Le système d’équations différentielles précédent peut être vu comme une seule équation différentielle d’ordre 1 faisant un intervenir des vecteurs:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} {\rm{d} \over \rm{d}t}
 \begin{pmatrix}
@@ -552,8 +511,8 @@ v
 \end{pmatrix}
 =
 \begin{pmatrix}
-- {1 \over RC} v - {2 \over RC} u\\
-- {1 \over RC} v - {1 \over RC} u
+- {1 \over \tau} v - {2 \over \tau} u\\
+- {1 \over \tau} v - {1 \over \tau} u
 \end{pmatrix}
 \end{split}\]</div>
 <p>soit, en définissant le vecteur:</p>
@@ -565,16 +524,16 @@ v(t)
 \end{pmatrix}
 \end{split}\]</div>
 <p>Sa dérivée est:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d58bf8e5-cc1a-45b2-9eb1-73bdee2c4e57">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-d58bf8e5-cc1a-45b2-9eb1-73bdee2c4e57" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a30107b-8a7a-4c59-94e2-3ea30f354b58">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-6a30107b-8a7a-4c59-94e2-3ea30f354b58" title="Permalink to this equation">#</a></span>\[\begin{equation}
 {\rm{d}Y \over \rm{d}t} = F(t, Y(t))
 \end{equation}\]</div>
 <p>avec :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} F(t, Y(t)) = 
 \begin{pmatrix}
-- {1 \over RC} v(t) - {2 \over RC} u(t)\\
-- {1 \over RC} v(t) - {1 \over RC} u(t)
+- {1 \over \tau} v(t) - {2 \over \tau} u(t)\\
+- {1 \over \tau} v(t) - {1 \over \tau} u(t)
 \end{pmatrix}
 \end{split}\]</div>
 <p><em>On rappelle que d’un point de vue vectoriel:</em></p>
@@ -585,19 +544,56 @@ v(t)
 </ul>
 </div>
 <div class="section" id="schema-d-euler">
-<h2><span class="section-number">5.3. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">4.1.2. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">#</a></h3>
 <p>Le principe du schéma d’Euler est alors identique au cas d’ordre 1 avec une seule fonction:</p>
 <div class="math notranslate nohighlight">
 \[
 Y_{k+1} \approx Y_k + F(t_k, Y_k) \times h
 \]</div>
 <p>avec <span class="math notranslate nohighlight">\(Y_{k} = Y(t_k)\)</span> et <span class="math notranslate nohighlight">\(h = t_{k+1} - t_k\)</span></p>
-<div class="sidebar">
-<p class="sidebar-title">Tableau numpy</p>
-<p>A la fin de la boucle, il est toujours conseillé de transformer la liste de vecteurs en un vecteur de vecteur, c’est-à-dire un tableau numpy qui sera plus facilement manipulable.</p>
-<p>Chaque vecteur constitue alors une ligne du tableau et chaque colonne correspond donc aux valeurs <span class="math notranslate nohighlight">\(u(t_k)\)</span> et <span class="math notranslate nohighlight">\(v(t_k)\)</span>.</p>
+<p><strong>Dans l’expression précédente, la somme correspond à la somme vectorielle (somme des coordonnées terme à terme <span class="math notranslate nohighlight">\(\overrightarrow{w_1} + \overrightarrow{w_2}\)</span>) et la multiplication à la multiplication d’un vecteur par un scalaire (<span class="math notranslate nohighlight">\(\lambda \overrightarrow{w}\)</span>).</strong></p>
+<p><strong>Il faudra juste veiller à ce que la fonction <span class="math notranslate nohighlight">\(F\)</span> renvoie un vecteur numpy et que <span class="math notranslate nohighlight">\(y_0\)</span> soit un vecteur numpy dans les programmes (de manière à faciliter la somme vectorielle et la multiplication par un scalaire - pas besoin de boucle).</strong> Les valeurs <span class="math notranslate nohighlight">\(u_k\)</span> et <span class="math notranslate nohighlight">\(v_k\)</span> calculées aux instant <span class="math notranslate nohighlight">\(t_k = t_0 + hk\)</span> sont alors stockées dans deux vecteurs numpy (on pourra les rassembler dans un seul tableau numpy à deux colonnes comme le fait <code class="docutils literal notranslate"><span class="pre">odeint</span></code>  <em>(ce que fera naturellement la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> créée dans la partie précédente)</em> ou à deux lignes comme le fait <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>.</p>
 </div>
-<p><strong>Il faudra juste veiller à ce que la fonction <span class="math notranslate nohighlight">\(F\)</span> renvoie un vecteur et que <span class="math notranslate nohighlight">\(Y\)</span> soit un vecteur dans les programmes.</strong> Les valeurs calculées aux instant <span class="math notranslate nohighlight">\(t_k = t_0 + hk\)</span> sont alors stockées dans une liste qui sera <strong>une de vecteurs de taille 2</strong>.</p>
+</div>
+<div class="section" id="systeme-d-ordre-2">
+<span id="sys-o2"></span><h2><span class="section-number">4.2. </span>Système d’ordre 2<a class="headerlink" href="#systeme-d-ordre-2" title="Permalink to this headline">#</a></h2>
+<p>Lors qu’on doit résoudre un système d’ordre 2 du type:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\rm{d^2}y}{\rm{dt^2}} = G(t, y(t), \frac{\rm{d}y}{\rm{dt}}(t))
+\]</div>
+<p>on peut toujours le réécrire sous la forme d’un système d’équations différentielles d’ordre 1 où les deux fonctions inconnues sont:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} Y(t)=
+\begin{pmatrix}
+u(t) = y(t)\\
+v(t) = \dot y(t)
+\end{pmatrix}
+\end{split}\]</div>
+<p>En effet, la dérivée de <span class="math notranslate nohighlight">\(Y\)</span> est:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3647e03f-a8c8-4aae-9363-aa450397b734">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-3647e03f-a8c8-4aae-9363-aa450397b734" title="Permalink to this equation">#</a></span>\[\begin{equation}
+{\rm{d}Y \over \rm{d}t} =
+\begin{pmatrix}
+\dot y(t)\\
+\ddot y(t)
+\end{pmatrix}
+=
+
+\begin{pmatrix}
+v(t)\\
+g(t, u(t), v(t))
+\end{pmatrix}
+\end{equation}\]</div>
+<p>On peut donc se ramener au cas précédent en posant:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} F(t, Y(t)) = 
+\begin{pmatrix}
+v(t)\\
+g(t, u(t), v(t))
+\end{pmatrix}
+\end{split}\]</div>
+<p>La méthode permettant de résoudre un système d’équation permettra donc aussi de résoudre un système d’ordre 2 (et on obtient en prime la dérivée de la solution aux instants <span class="math notranslate nohighlight">\(t_k\)</span>).</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -630,17 +626,17 @@ Y_{k+1} \approx Y_k + F(t_k, Y_k) \times h
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="elec_reponse_o1_rampe.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="elec_reponse_o1_math_reponse.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.6. </span>Réponse à une rampe de tension.</p>
+            <p class="prev-next-title"><span class="section-number">3.3. </span>Exemple d’implémentation basique</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="elec_reponse_o2_base.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.4. </span>Implémentation basique</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Implémentation basique</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

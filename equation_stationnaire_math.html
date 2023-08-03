@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.4. Etude abstraite &#8212; Capacités numériques - Sujets</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/equation_stationnaire_math.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.5. Exemple d’implémentation" href="equation_stationnaire_reponse.html" />
+    <link rel="prev" title="1. Résolution d’équation stationnaire" href="equation_stationnaire.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Capacités numériques - Sujets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="capacite_numerique.html">
+                    Capacités numériques en physique
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="equation_stationnaire.html">
+   1. Résolution d’équation stationnaire
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.4. Etude abstraite
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="equation_stationnaire_reponse.html">
+     1.5. Exemple d’implémentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="derivation_integration.html">
+   2. Dérivation et intégration numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derivation_math.html">
+     2.3. Dérivation numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration_math.html">
+     2.4. Intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derivation_integration_reponse.html">
+     2.5. Exemple d’implémentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o1.html">
+   3. Résolution numérique d’une équation différentielle d’ordre 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_math.html">
+     3.2. Implémentation basique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o1_math_reponse.html">
+     3.3. Exemple d’implémentation basique
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o2.html">
+   4. Système d’équations et ordre 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elec_reponse_o2_base.html">
+     4.3. Implémentation basique
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/equation_stationnaire_math.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/pcsi3physiquestan/capacites_numeriques_source/blob/main/equation_stationnaire_math.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/equation_stationnaire_math.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/equation_stationnaire_math.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#etude-prealable">
+   1.4.1. Etude préalable.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementation-de-la-dichotomie">
+   1.4.2. Implémentation de la dichotomie.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonction-scipy">
+   1.4.3. Fonction scipy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#facultatif-pour-aller-plus-loin">
+   1.4.4. (Facultatif) Pour aller plus loin
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autres-conditions">
+     1.4.4.1. Autres conditions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-recursive">
+     1.4.4.2. Implémentation récursive
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Etude abstraite</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#etude-prealable">
+   1.4.1. Etude préalable.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementation-de-la-dichotomie">
+   1.4.2. Implémentation de la dichotomie.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonction-scipy">
+   1.4.3. Fonction scipy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#facultatif-pour-aller-plus-loin">
+   1.4.4. (Facultatif) Pour aller plus loin
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autres-conditions">
+     1.4.4.1. Autres conditions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-recursive">
+     1.4.4.2. Implémentation récursive
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>La page ci-présente existe en version notebook téléchargeable grâce au bouton <img alt="Bouton" src="_images/bouton_tl.png" /> (choisir le format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). On rappelle qu’il faut ensuite l’enregistrer dans un répertoire adéquat sur votre ordinateur (<code class="docutils literal notranslate"><span class="pre">capa_num</span></code> par exemple dans votre répertoire personnel) puis lancer Jupyter Notebook depuis Anaconda pour accéder au notebook, le modifier et exécutez les cellules de code adéquates.</p>
+<p><em>Les questions (Math) ne demande pas de code informatique.</em></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="etude-abstraite">
+<h1><span class="section-number">1.4. </span>Etude abstraite<a class="headerlink" href="#etude-abstraite" title="Permalink to this headline">#</a></h1>
+<p>On se propose d’utiliser la méthode précédente pour déterminer la racine de la fonction :</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \exp(x) + x
+\]</div>
+<p>Ce problème est ici purement mathématique aucune modélisation physique n’est associée à cette fonction. Le but est :</p>
+<ul class="simple">
+<li><p>d’utiliser un tracé graphique pour déterminer le nombre de solution et trouver un intervalle de recherche pour chaque solution.</p></li>
+<li><p>de coder, sous la forme d’une série d’instruction puis sous la forme d’une fonction, la méthode de dichotomie</p></li>
+<li><p>d’utiliser la fonction <code class="docutils literal notranslate"><span class="pre">scipy.optimize.bisect</span></code> qui réalise aussi la dichotomie.</p></li>
+<li><p>(facultatif) Tester d’autre terminaisons ou essayer de coder la méthode de dichotomie par une méthode récursive.</p></li>
+</ul>
+<div class="section" id="etude-prealable">
+<span id="math-prealable-eq"></span><h2><span class="section-number">1.4.1. </span>Etude préalable.<a class="headerlink" href="#etude-prealable" title="Permalink to this headline">#</a></h2>
+<p><strong>On ne peut se lancer dans une recherche de solution par dichotomie sans avoir d’abord vérifier l’existence d’une solution et avoir trouvé un intervalle (de taille finie) dans laquelle la solution se trouve.</strong></p>
+<blockquote>
+<div><p><strong>Exercice 1:</strong></p>
+<ol class="simple">
+<li><p>(Math) Montrer, par une étude théorique et mathématique que la fonction précédente admet une seule et unique racine et que cette racine est négative.</p></li>
+<li><p>(Math) Que vaut <span class="math notranslate nohighlight">\(f(0)\)</span> ? Proposer une valeur numérique <span class="math notranslate nohighlight">\(x_0\)</span> telle que <span class="math notranslate nohighlight">\(f(x_0)\)</span> soit de signe opposé à <span class="math notranslate nohighlight">\(f(0)\)</span>.</p></li>
+<li><p>Tracer <span class="math notranslate nohighlight">\(f\)</span> sur l’intervale <span class="math notranslate nohighlight">\([x_0, 0]\)</span> grâce à <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> et vérifier que la racine se trouve dans cette intervalle. On pourra pour la suite choisir un intervale <span class="math notranslate nohighlight">\([a,b]\)</span> de recherche par dichotomie plus petit que l’intervale précédent grâce au graphique ainsi tracé.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell tag_remove-output tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Utiliser cette cellule pour définir la fonction f et tracer son allure sur [x0,0]</span>
+
+<span class="sd">_Vous pouvez utiliser cette cellule pour trouver un x0 convenable._</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># Ne pas oublier d&#39;importer les bibliothèques scientifiques</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="implementation-de-la-dichotomie">
+<h2><span class="section-number">1.4.2. </span>Implémentation de la dichotomie.<a class="headerlink" href="#implementation-de-la-dichotomie" title="Permalink to this headline">#</a></h2>
+<p>Pour rappel, le principe de dichotomie consiste à :</p>
+<ol class="simple">
+<li><p>Définir deux valeurs initiales <code class="docutils literal notranslate"><span class="pre">a0</span></code> et <code class="docutils literal notranslate"><span class="pre">b0</span></code> qui correspondent à l’intervale initial de recherche.</p></li>
+<li><p>Tant que la largeur de l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> est supérieure à une largeur <span class="math notranslate nohighlight">\(\epsilon\)</span> choisie.</p>
+<ol class="simple">
+<li><p>Assigner à <code class="docutils literal notranslate"><span class="pre">c</span></code> la valeur médiane <code class="docutils literal notranslate"><span class="pre">(a+b)/2</span></code>.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f(c) = 0\)</span>, alors on peut remplacer l’intervale de recherche directement par <span class="math notranslate nohighlight">\([c,c]\)</span> et ainsi terminer la boucle avec la solution.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f(c) * f(b) &lt;0\)</span> alors le nouvel intervale de recherche devient <code class="docutils literal notranslate"><span class="pre">a,b</span> <span class="pre">&lt;-</span> <span class="pre">c,b</span></code>.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f(c) * f(a) &lt;0\)</span> alors le nouvel intervale de recherche devient <code class="docutils literal notranslate"><span class="pre">a,b</span> <span class="pre">&lt;-</span> <span class="pre">a,c</span></code>.</p></li>
+<li><p>Sinon, c’est que vous avez mal choisi l’intervale !</p></li>
+</ol>
+</li>
+<li><p>Une fois la boucle terminée, l’estimation de la racine (à <span class="math notranslate nohighlight">\(\epsilon /2\)</span> près) sera le milieu du dernier intervale.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Exercice 2:</strong><br />
+<em>Si vous vous sentez à l’aise, vous pouvez passer et écrire directement une fonction (Exercice 3) pour réaliser la dichotomie.</em></p>
+<ol class="simple">
+<li><p>Choisir un intervale de départ en choisissant <code class="docutils literal notranslate"><span class="pre">a0</span></code> et <code class="docutils literal notranslate"><span class="pre">b0</span></code> ainsi qu’une précision <code class="docutils literal notranslate"><span class="pre">prec</span></code></p></li>
+<li><p>Ecrire une série d’instructions qui réalise la dichotomie précédente et vérifier que la valeur de la racine trouvée est cohérente avec le tracé graphique.</p></li>
+<li><p>(Math) Prévoir par le calcul le nombre d’itération de boucle nécessaire pour en fonction de <span class="math notranslate nohighlight">\(a, b\)</span> et <span class="math notranslate nohighlight">\(\epsilon\)</span> la précision recherchée.</p></li>
+<li><p>Introduire un compteur dans la boucle et vérifier que le nombre d’itérations est bien celui attendu lorsqu’on chercher une précision à <span class="math notranslate nohighlight">\(10^{-12}\)</span> près.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell tag_remove-output tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Si vous avez exécutez la cellule précédente, la fonction f est déjà définie et les bibliothèques scientifiques sont déjà importées.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><strong>Exercice 3:</strong></p>
+<ol class="simple">
+<li><p>En vous aidant du code précédent, écrire une fonction <code class="docutils literal notranslate"><span class="pre">racine(f:callable,</span> <span class="pre">a0:float,</span> <span class="pre">b0:float,</span> <span class="pre">prec:float)</span> <span class="pre">-&gt;</span> <span class="pre">float</span></code> qui prend comme argument la fonction <span class="math notranslate nohighlight">\(f\)</span> et les bornes <span class="math notranslate nohighlight">\(a0\)</span> et <span class="math notranslate nohighlight">\(b0\)</span> de l’intervale de recherche initial et qui renvoie la racine avec une précision <span class="math notranslate nohighlight">\(prec\)</span>.
+<strong>ATTENTION:</strong></p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Le premier argument est bien la FONCTION <code class="docutils literal notranslate"><span class="pre">f</span></code> et pas son <em>image</em> f(x) en un point x.</strong> (<code class="docutils literal notranslate"><span class="pre">callable</span></code> est pour Python le type d’une fonction)</p></li>
+<li><p>__Une fonction (comme <code class="docutils literal notranslate"><span class="pre">racine</span></code>) NE DOIT PAS MODIFIER ses arguments (même si Python vous laissera faire). Votre fonction ne doit pas modifier <code class="docutils literal notranslate"><span class="pre">a0</span></code> et <code class="docutils literal notranslate"><span class="pre">b0</span></code>. Il faudra assigner leur valeur à deux autres variables dans le corps de la fonction.</p></li>
+</ul>
+<blockquote>
+<div><ol class="simple">
+<li><p>Vérifier que vous obtenez bien une racine correcte puis utiliser cette fonction pour déterminer les racines des fonctions suivantes (il n’est pas demandé de démonstratino mathématique de l’unicité mais pensez TOUJOURS à tracer la fonction pour choisir un intervale de recherche):</p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(g(x) = \sin (x) - x / 2\)</span> avec <span class="math notranslate nohighlight">\(x &gt; 0\)</span> à <span class="math notranslate nohighlight">\(10^{-12}\)</span> près.</p></li>
+<li><p><span class="math notranslate nohighlight">\(h(x) = \ln (x) + x\)</span> à <span class="math notranslate nohighlight">\(10^{-12}\)</span> près.</p></li>
+</ul>
+<div class="cell tag_remove-output tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;A vous de coder&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fonction-scipy">
+<h2><span class="section-number">1.4.3. </span>Fonction scipy<a class="headerlink" href="#fonction-scipy" title="Permalink to this headline">#</a></h2>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">bisect</span></code> du sous-module <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> permet de réaliser une recherche de racine par dichotomie. <strong>L’utilisation de cette fonction n’enlève pas la nécessité d’étudier au préalable la fonction pour choisir un intervalle de départ.</strong> La signature de la fonction est:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">:</span><span class="n">callable</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span>
+</pre></div>
+</div>
+<p><em>La précision est par défaut de <span class="math notranslate nohighlight">\(10^{-12}\)</span>. Elle peut-être modifiée avec l’argument optionnel <code class="docutils literal notranslate"><span class="pre">xtol=...:float</span></code></em></p>
+<blockquote>
+<div><p><strong>Exercice 4:</strong></p>
+<ol class="simple">
+<li><p>Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">bisect</span></code> pour déterminer la racine des trois fonctions étudiées précédemment et comparer aux résultats précédents.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell tag_remove-output tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Ne pas oublier d&#39;importer la fonction bisect. Inutile d&#39;importer tout le module scipy.optimize</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="facultatif-pour-aller-plus-loin">
+<h2><span class="section-number">1.4.4. </span>(Facultatif) Pour aller plus loin<a class="headerlink" href="#facultatif-pour-aller-plus-loin" title="Permalink to this headline">#</a></h2>
+<div class="section" id="autres-conditions">
+<h3><span class="section-number">1.4.4.1. </span>Autres conditions<a class="headerlink" href="#autres-conditions" title="Permalink to this headline">#</a></h3>
+<p>Pour terminer la boucle, on peut imposer d’autres conditions:</p>
+<ul class="simple">
+<li><p>on peut vérifier que <span class="math notranslate nohighlight">\(f(a)\)</span> et <span class="math notranslate nohighlight">\(f(b)\)</span> sont inférieur à une valeur <span class="math notranslate nohighlight">\(precy\)</span> choisie arbitrairement.</p></li>
+<li><p>on peut aussi tester un écart relatif <span class="math notranslate nohighlight">\(\vert b-a \vert / \vert b \vert &lt; rtol\)</span></p></li>
+</ul>
+<blockquote>
+<div><ol class="simple">
+<li><p>Modifier votre fonction <code class="docutils literal notranslate"><span class="pre">racine</span></code> pour tester l’une de ses deux conditions et afficher le nombre d’itérations (avec <code class="docutils literal notranslate"><span class="pre">print</span></code> dans la fonction, ne pas enlever le return !). L’efficacité des méthodes conditions précédentes et la précisions obtenues dépend de la fonction qu’on étudie. Il n’y a pas de solution miracle (sauf à tout tester mais bon…)</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="implementation-recursive">
+<h3><span class="section-number">1.4.4.2. </span>Implémentation récursive<a class="headerlink" href="#implementation-recursive" title="Permalink to this headline">#</a></h3>
+<p>Une fonction récursive est une fonction qui s’appelle elle-même. La dichotomie s’y prête tout à fait car une fois le nouvel intervale <span class="math notranslate nohighlight">\([a,b]\)</span> crée, on va devoir refaire la même suite d’instruction. Il n’est alors plus nécessaire de faire une boucle. La récursivité s’en charge de manière implicite ce qui simplifie en général l’écriture de la fonction.</p>
+<p>A titre d’exemple, on peut calculer <span class="math notranslate nohighlight">\(n! = n \times (n-1) \times \ldots \times 2 \times 1\)</span> de manière récursive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Implémentation récursive</span>
+<span class="k">def</span> <span class="nf">factorielle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># Initialisation nécessaire</span>
+    <span class="k">return</span> <span class="mi">1</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorielle</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># au lieu de</span>
+
+<span class="k">def</span> <span class="nf">factorielle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">k</span>
+  <span class="k">return</span> <span class="n">s</span>
+</pre></div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Si vous comprenez ce concept (qui sera vu plus en détail en informatique), vous pouvez essayez de réécrire la fonction <code class="docutils literal notranslate"><span class="pre">racine</span></code>, mais de manière récursive.</p></li>
+</ol>
+</div></blockquote>
+<p><em>Un devoir avec modélisation physique sera proposé en électrocinétique.</em></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "pcsi3physiquestan/capacites_numeriques_source",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="equation_stationnaire.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Résolution d’équation stationnaire</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="equation_stationnaire_reponse.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>Exemple d’implémentation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By C. Lacpatia<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

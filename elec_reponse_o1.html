@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Résolution numérique d’une équation différentielle d’ordre 1 &#8212; Capacités numériques - Sujets</title>
+    <title>3. Résolution numérique d’une équation différentielle d’ordre 1 &#8212; Capacités numériques - Sujets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4.3. Utilisation de la bibliothèque scipy" href="elec_reponse_o1_fonction.html" />
-    <link rel="prev" title="3.4. Utilisation de fonctions" href="derive_integ_fonction.html" />
+    <link rel="next" title="3.2. Implémentation basique" href="elec_reponse_o1_math.html" />
+    <link rel="prev" title="2.5. Exemple d’implémentation" href="derivation_integration_reponse.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,8 +113,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro.html">
-   1. Introduction
+  <a class="reference internal" href="equation_stationnaire.html">
+   1. Résolution d’équation stationnaire
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -123,20 +123,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_theorie.html">
-     1.2. Approche théorique
+    <a class="reference internal" href="equation_stationnaire_math.html">
+     1.4. Etude abstraite
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro_code.html">
-     1.3. Partie codage
+    <a class="reference internal" href="equation_stationnaire_reponse.html">
+     1.5. Exemple d’implémentation
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="equation_stationnaire.html">
-   2. Résolution d’équation stationnaire
+  <a class="reference internal" href="derivation_integration.html">
+   2. Dérivation et intégration numérique
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -145,107 +145,60 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_base.html">
-     2.4. Implémentation basique
+    <a class="reference internal" href="derivation_math.html">
+     2.3. Dérivation numérique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="equation_stationnaire_fonction.html">
-     2.5. Etude du redressement monoalternance
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="derivation_integration.html">
-   3. Dérivation et intégration numérique
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="derivation_base.html">
-     3.3. Dérivation et intégration : Méthode de base
+    <a class="reference internal" href="integration_math.html">
+     2.4. Intégration numérique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="derive_integ_fonction.html">
-     3.4. Utilisation de fonctions
+    <a class="reference internal" href="derivation_integration_reponse.html">
+     2.5. Exemple d’implémentation
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   4. Résolution numérique d’une équation différentielle d’ordre 1
+   3. Résolution numérique d’une équation différentielle d’ordre 1
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_fonction.html">
-     4.3. Utilisation de la bibliothèque scipy
+    <a class="reference internal" href="elec_reponse_o1_math.html">
+     3.2. Implémentation basique
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_base.html">
-     4.4. Implémentation basique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_complet.html">
-     4.5. Implémentation complète
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o1_rampe.html">
-     4.6. Réponse à une rampe de tension.
+    <a class="reference internal" href="elec_reponse_o1_math_reponse.html">
+     3.3. Exemple d’implémentation basique
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="elec_reponse_o2.html">
-   5. Système linéaire et ordre 2
+   4. Système d’équations et ordre 2
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="elec_reponse_o2_base.html">
-     5.4. Implémentation basique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="elec_reponse_o2_complet.html">
-     5.5. Etude d’un système d’ordre 2 : le pendule
+     4.3. Implémentation basique
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_non_lineaire.html">
-   6. Système conservatif : Effets non linéaires.
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="meca_force_centrale.html">
-   7. Etude d’un mouvement à force centrale
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="thermo_statique.html">
-   8. Etude de l’atmosphère terrestre
-  </a>
  </li>
 </ul>
 
@@ -306,7 +259,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o1.ipynb"
+        <a href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o1.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -324,7 +277,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/pcsi3physiquestan/capacites_numeriques_source/blob/main/elec_reponse_o1.ipynb"
+        <a href="https://colab.research.google.com/github/pcsi3physiquestan/capacites_numeriques_source/blob/main/elec_reponse_o1.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -463,46 +416,34 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rappels-sur-la-methode-d-euler">
-   4.1. Rappels sur la méthode d’Euler
+   3.1. Rappels sur la méthode d’Euler
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#position-du-probleme">
-     4.1.1. Position du problème.
+     3.1.1. Position du problème.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#schema-d-integration-d-euler-explicite">
-     4.1.2. Schéma d’intégration d’Euler explicite
+     3.1.2. Schéma d’intégration d’Euler explicite
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#vision-integrale">
-       4.1.2.1. Vision intégrale
+       3.1.2.1. Vision intégrale
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#vision-differentielle">
-       4.1.2.2. Vision différentielle
+       3.1.2.2. Vision différentielle
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#synthese">
-     4.1.3. Synthèse
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-en-electrocinetique">
-   4.2. Application en électrocinétique.
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mise-en-equation">
-     4.2.1. Mise en équation
+     3.1.3. Synthèse
     </a>
    </li>
   </ul>
@@ -528,46 +469,34 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rappels-sur-la-methode-d-euler">
-   4.1. Rappels sur la méthode d’Euler
+   3.1. Rappels sur la méthode d’Euler
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#position-du-probleme">
-     4.1.1. Position du problème.
+     3.1.1. Position du problème.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#schema-d-integration-d-euler-explicite">
-     4.1.2. Schéma d’intégration d’Euler explicite
+     3.1.2. Schéma d’intégration d’Euler explicite
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#vision-integrale">
-       4.1.2.1. Vision intégrale
+       3.1.2.1. Vision intégrale
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#vision-differentielle">
-       4.1.2.2. Vision différentielle
+       3.1.2.2. Vision différentielle
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#synthese">
-     4.1.3. Synthèse
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-en-electrocinetique">
-   4.2. Application en électrocinétique.
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mise-en-equation">
-     4.2.1. Mise en équation
+     3.1.3. Synthèse
     </a>
    </li>
   </ul>
@@ -583,13 +512,13 @@ title="Print to PDF"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="resolution-numerique-d-une-equation-differentielle-d-ordre-1">
-<h1><span class="section-number">4. </span>Résolution numérique d’une équation différentielle d’ordre 1<a class="headerlink" href="#resolution-numerique-d-une-equation-differentielle-d-ordre-1" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3. </span>Résolution numérique d’une équation différentielle d’ordre 1<a class="headerlink" href="#resolution-numerique-d-une-equation-differentielle-d-ordre-1" title="Permalink to this headline">#</a></h1>
 <p><strong>But :</strong> mettre en œuvre la méthode d’Euler à l’aide d’un langage de programmation pour simuler la réponse d’un système linéaire du premier ordre à une excitation de forme quelconque.</p>
 <div class="section" id="rappels-sur-la-methode-d-euler">
-<h2><span class="section-number">4.1. </span>Rappels sur la méthode d’Euler<a class="headerlink" href="#rappels-sur-la-methode-d-euler" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1. </span>Rappels sur la méthode d’Euler<a class="headerlink" href="#rappels-sur-la-methode-d-euler" title="Permalink to this headline">#</a></h2>
 <p>La <em>méthode d’Euler</em> est une méthode numérique d’intégration d’une équation différentielle.</p>
 <div class="section" id="position-du-probleme">
-<span id="pospb"></span><h3><span class="section-number">4.1.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h3>
+<span id="pospb"></span><h3><span class="section-number">3.1.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h3>
 <p>Un équation différentielle d’ordre 1 peut se mettre sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -607,10 +536,10 @@ title="Print to PDF"
 </div></blockquote>
 </div>
 <div class="section" id="schema-d-integration-d-euler-explicite">
-<h3><span class="section-number">4.1.2. </span>Schéma d’intégration d’Euler explicite<a class="headerlink" href="#schema-d-integration-d-euler-explicite" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.2. </span>Schéma d’intégration d’Euler explicite<a class="headerlink" href="#schema-d-integration-d-euler-explicite" title="Permalink to this headline">#</a></h3>
 <p>On considère N+1 instants <span class="math notranslate nohighlight">\(t_k\)</span> espacés d’un <em>pas d’intégration</em> <span class="math notranslate nohighlight">\(h\)</span> (<span class="math notranslate nohighlight">\(t_{k+1} - t_k = h\)</span>) et commençant à <span class="math notranslate nohighlight">\(t_0\)</span>. On note les valeurs de la fonctions <span class="math notranslate nohighlight">\(y\)</span> aux instants <span class="math notranslate nohighlight">\(t_k\)</span> <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span>. On définit ainsi deux suites <span class="math notranslate nohighlight">\((t_k)_{k\in[0,N]}\)</span> et <span class="math notranslate nohighlight">\((y_k)_[k \in 0,N]\)</span></p>
 <div class="section" id="vision-integrale">
-<h4><span class="section-number">4.1.2.1. </span>Vision intégrale<a class="headerlink" href="#vision-integrale" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.1.2.1. </span>Vision intégrale<a class="headerlink" href="#vision-integrale" title="Permalink to this headline">#</a></h4>
 <p>Intégrons l’équation différentielle entre <span class="math notranslate nohighlight">\(t_0\)</span> et <span class="math notranslate nohighlight">\(t_k\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -630,6 +559,10 @@ y(t_{k}) &amp;= y(t_0) + \int_{t_0}^{t_k} f(t, y(t)) \rm{d}t\\
 y(t_{k+1}) &amp;= y(t_0) + \int_{t_0}^{t_{k+1}} f(t, y(t)) \rm{d}t
 \end{cases}
 \end{split}\]</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>La méthode des rectangles à droite peut aussi être utilisées mais comme elle utilise <span class="math notranslate nohighlight">\(y_{k+1}\)</span> - alors inconnue, on dit qu’elle est <em>implicite</em>.</p>
+</div>
 <p>Il vient la relation de récurrence:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -639,14 +572,14 @@ y(t_{k+1}) = y(t_k) + \int_{t_k}^{t_{k+1}} f(t, y(t)) \rm{d}t \underbrace{\appro
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p><strong>Schéma d’Euler explicite.</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-21731d44-011d-4e9f-907d-79ec83f1682f">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-21731d44-011d-4e9f-907d-79ec83f1682f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-38ce09b4-92d5-4c63-99f7-5c64c556b50c">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-38ce09b4-92d5-4c63-99f7-5c64c556b50c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_{k+1} = y_k + f(t_k, y_k) * h
 \end{equation}\]</div>
 </div>
 </div>
 <div class="section" id="vision-differentielle">
-<h4><span class="section-number">4.1.2.2. </span>Vision différentielle<a class="headerlink" href="#vision-differentielle" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.1.2.2. </span>Vision différentielle<a class="headerlink" href="#vision-differentielle" title="Permalink to this headline">#</a></h4>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>On parle d’approximation à l’ordre 1.</p>
@@ -669,7 +602,7 @@ y_{k+1} = y_k + h \times f(t_k, y_k)
 </div>
 </div>
 <div class="section" id="synthese">
-<h3><span class="section-number">4.1.3. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.3. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">#</a></h3>
 <p>Pour résoudre numériquement une équation différentielle d’ordre 1 par la méthode d’Euler avec un pas de temps <span class="math notranslate nohighlight">\(h\)</span>, on va donc:</p>
 <ul class="simple">
 <li><p>définir une fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span> qui est une expression de la dérivée obtenue par l’équation différentielle:</p></li>
@@ -683,36 +616,28 @@ y_{k+1} = y_k + h \times f(t_k, y_k)
 \frac{\rm{d}y}{\rm{dt}}(t) = f(t,y)
 \]</div>
 <ul class="simple">
-<li><p>créer un vecteur temps contenant les instants <span class="math notranslate nohighlight">\(t_k = t_0 + k \times h\)</span></p></li>
-<li><p>calculer un vecteur contenant les éléments de la suite <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span> définie par la récurrence:</p></li>
+<li><p>créer une liste temps contenant les instants <span class="math notranslate nohighlight">\(t_k = t_0 + k \times h\)</span></p></li>
+<li><p>calculer une liste contenant les éléments de la suite <span class="math notranslate nohighlight">\(y_k = y(t_k)\)</span> définie par la récurrence:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
 y_{k+1} = y_k + f(t_k, y_k) * h
 \]</div>
 <p>avec <span class="math notranslate nohighlight">\(y_0 = y(t_0)\)</span> la condition initiale.</p>
-</div>
-</div>
-<div class="section" id="application-en-electrocinetique">
-<h2><span class="section-number">4.2. </span>Application en électrocinétique.<a class="headerlink" href="#application-en-electrocinetique" title="Permalink to this headline">#</a></h2>
-<p>On traite le cas général d’un système d’ordre 1 stable de constante de temps <span class="math notranslate nohighlight">\(\tau\)</span>. On va notamment étudier la réponse à plusieurs entrées :</p>
-<ul class="simple">
-<li><p>un régime libre et un échelon de tension. On comparera avec la réponse attendue pour tester l’intégration numérique.</p></li>
-<li><p>une rampe de tension suivie d’une tension constante.</p></li>
-</ul>
-<p>On étudiera l’influence du pas d’intégration sur la fiabilité de l’intégration numérique.</p>
-<div class="section" id="mise-en-equation">
-<span id="miseq"></span><h3><span class="section-number">4.2.1. </span>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">#</a></h3>
-<blockquote>
-<div><p><strong>Etude théorique</strong>
-On travaille avec un circuit <span class="math notranslate nohighlight">\(RC\)</span> série dont la constante de temps est <span class="math notranslate nohighlight">\(\tau = RC\)</span>. On prendra <span class="math notranslate nohighlight">\(R = 10\rm{k\Omega}\)</span> et <span class="math notranslate nohighlight">\(C = 100 \rm{\mu F}\)</span>.</p>
-<ol class="simple">
-<li><p>Dans le cas d’un régime libre, préciser l’expression de la fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span>. Dépend-elle explicitement de <span class="math notranslate nohighlight">\(t\)</span>?</p></li>
-<li><p>Dans le cas où le RC est relié à une source <span class="math notranslate nohighlight">\(E = 1V\)</span>, préciser l’expression de la fonction <span class="math notranslate nohighlight">\(f(t,y)\)</span>. Dépend-elle explicitement de <span class="math notranslate nohighlight">\(t\)</span>?</p></li>
-<li><p>On veut étudier le régime transitoire, on va donc intégrer de 0 à <span class="math notranslate nohighlight">\(t_f\)</span>. Comment choisir le temps final <span class="math notranslate nohighlight">\(t_f\)</span> pour observer complètement le régime transitoire ? En déduire le nombre de temps <span class="math notranslate nohighlight">\(t_k\)</span> de calcul pour un pas <span class="math notranslate nohighlight">\(h\)</span> choisi en fonction de <span class="math notranslate nohighlight">\(\tau\)</span> et <span class="math notranslate nohighlight">\(h\)</span>.</p></li>
-</ol>
-</div></blockquote>
-</div>
+<!-- ## Application en électrocinétique.
+On traite le cas général d'un système d'ordre 1 stable de constante de temps $\tau$. On va notamment étudier la réponse à plusieurs entrées :
+* un régime libre et un échelon de tension. On comparera avec la réponse attendue pour tester l'intégration numérique.
+* une rampe de tension suivie d'une tension constante.
+
+On étudiera l'influence du pas d'intégration sur la fiabilité de l'intégration numérique.
+
+(miseq)=
+### Mise en équation
+> __Etude théorique__
+> On travaille avec un circuit $RC$ série dont la constante de temps est $\tau = RC$. On prendra $R = 10\rm{k\Omega}$ et $C = 100 \rm{\mu F}$.  
+> 1. Dans le cas d'un régime libre, préciser l'expression de la fonction $f(t,y)$. Dépend-elle explicitement de $t$?
+> 2. Dans le cas où le RC est relié à une source $E = 1V$, préciser l'expression de la fonction $f(t,y)$. Dépend-elle explicitement de $t$?
+> 3. On veut étudier le régime transitoire, on va donc intégrer de 0 à $t_f$. Comment choisir le temps final $t_f$ pour observer complètement le régime transitoire ? En déduire le nombre de temps $t_k$ de calcul pour un pas $h$ choisi en fonction de $\tau$ et $h$. --></div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -745,17 +670,17 @@ On travaille avec un circuit <span class="math notranslate nohighlight">\(RC\)</
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="derive_integ_fonction.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="derivation_integration_reponse.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.4. </span>Utilisation de fonctions</p>
+            <p class="prev-next-title"><span class="section-number">2.5. </span>Exemple d’implémentation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="elec_reponse_o1_fonction.html" title="next page">
+    <a class='right-next' id="next-link" href="elec_reponse_o1_math.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.3. </span>Utilisation de la bibliothèque scipy</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Implémentation basique</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
