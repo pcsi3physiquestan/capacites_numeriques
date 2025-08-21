@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Système d’équations et ordre 2 &#8212; Capacités numériques - Sujets</title>
+    <title>1.1. Optique et informatique - Entrainement &#8212; Capacités numériques - Sujets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_reponse_o2.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/opt_instru_python.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.3. Implémentation basique" href="elec_reponse_o2_base.html" />
-    <link rel="prev" title="4.3. Exemple d’implémentation basique" href="elec_reponse_o1_math_reponse.html" />
+    <link rel="next" title="2. Résolution d’équation stationnaire" href="equation_stationnaire.html" />
+    <link rel="prev" title="1. Utilisation des bibliothèques scientifiques." href="biblio_scientifiques.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -112,18 +112,18 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="biblio_scientifiques.html">
    1. Utilisation des bibliothèques scientifiques.
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="opt_instru_python.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      1.1. Optique et informatique - Entrainement
     </a>
    </li>
@@ -205,11 +205,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o2.html">
    5. Système d’équations et ordre 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
@@ -281,7 +281,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o2.md"
+        <a href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/opt_instru_python.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -299,7 +299,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/pcsi3physiquestan/capacites_numeriques_source/blob/main/elec_reponse_o2.md"
+        <a href="https://colab.research.google.com/github/pcsi3physiquestan/capacites_numeriques_source/blob/main/opt_instru_python.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -360,7 +360,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/elec_reponse_o2.ipynb"
+        <a href="_sources/opt_instru_python.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -377,7 +377,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="_sources/elec_reponse_o2.md"
+        <a href="_sources/opt_instru_python.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -437,25 +437,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#systeme-d-equations-position-du-probleme">
-   5.1. Système d’équations - Position du problème
+  <a class="reference internal nav-link" href="#etude-theorique">
+   1.1.1. Etude théorique
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vision-vectorielle">
-     5.1.1. Vision vectorielle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schema-d-euler">
-     5.1.2. Schéma d’Euler
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#systeme-d-ordre-2">
-   5.2. Système d’ordre 2
+  <a class="reference internal nav-link" href="#partie-code">
+   1.1.2. Partie code
   </a>
  </li>
 </ul>
@@ -467,7 +455,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Système d’équations et ordre 2</h1>
+                <h1>Optique et informatique - Entrainement</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -478,25 +466,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#systeme-d-equations-position-du-probleme">
-   5.1. Système d’équations - Position du problème
+  <a class="reference internal nav-link" href="#etude-theorique">
+   1.1.1. Etude théorique
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vision-vectorielle">
-     5.1.1. Vision vectorielle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schema-d-euler">
-     5.1.2. Schéma d’Euler
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#systeme-d-ordre-2">
-   5.2. Système d’ordre 2
+  <a class="reference internal nav-link" href="#partie-code">
+   1.1.2. Partie code
   </a>
  </li>
 </ul>
@@ -509,115 +485,87 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="systeme-d-equations-et-ordre-2">
-<h1><span class="section-number">5. </span>Système d’équations et ordre 2<a class="headerlink" href="#systeme-d-equations-et-ordre-2" title="Permalink to this headline">#</a></h1>
-<p>Le but est de voir comment utiliser la méthode d’intégration d’Euler explicite pour étudier le régime transitoire d’un système d’équations. On a alors un système d’équations différentielles. La théorie relative à la méthode d’intégration par Euler explicite ayant déjà été donnée, nous allons ici partir d’un exemple pour comprenre sa généralisation à des systèmes d’ordre supérieurs.</p>
-<div class="section" id="systeme-d-equations-position-du-probleme">
-<h2><span class="section-number">5.1. </span>Système d’équations - Position du problème<a class="headerlink" href="#systeme-d-equations-position-du-probleme" title="Permalink to this headline">#</a></h2>
-<p>On s’intéresse au système d’équations différentielle suivant :</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="optique-et-informatique-entrainement">
+<h1><span class="section-number">1.1. </span>Optique et informatique - Entrainement<a class="headerlink" href="#optique-et-informatique-entrainement" title="Permalink to this headline">#</a></h1>
+<p>Ces exercices proposent de s’entrainer à l’utilisation de Python en physique dans le cadre de l’optique. On n’utilisera pas ici de méthode numérique particulière, simplement le tracé graphique et l’utilisation de <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. <strong>Il est nécessaire d’avoir fait le cours d’optique géométrique avant d’aborder cet exercice.</strong></p>
+<div class="section" id="etude-theorique">
+<h2><span class="section-number">1.1.1. </span>Etude théorique<a class="headerlink" href="#etude-theorique" title="Permalink to this headline">#</a></h2>
+<p>Cette partie est semblable à un exercice d’entrainement classique.</p>
+<p>On considère un axe Ox et on supposera par la suite que <em>tous les axes optiques des systèmes centrées mis en jeu sont confondus avec Ox.</em> On repèrera donc la position longitudinale de tout objet, image ou lentille par une coordonnées <span class="math notranslate nohighlight">\(x\)</span> sur cet axe. <strong>Attention, ces coordonnées ne sont PAS des distance algébriques comme dans les relations de conjugaison.</strong></p>
+<p>On choisi un axe <span class="math notranslate nohighlight">\(Oy\)</span> orienté de sorte à ce que <span class="math notranslate nohighlight">\((O, \overrightarrow{e}_x, \overrightarrow{e}_y)\)</span> soit orienté dans le sens trigonométrique. La côté <span class="math notranslate nohighlight">\(y\)</span> d’un objet ou d’une image sur cet axe correspondra à sa taille.</p>
+<div class="tip admonition">
+<p class="admonition-title">Mise en équation</p>
+<ol class="simple">
+<li><p>On considère une lentille placé à la coordonnée <span class="math notranslate nohighlight">\(x_L\)</span>, de distance focale <span class="math notranslate nohighlight">\(f'\)</span> et un objet lumineux situé à une coordonnée <span class="math notranslate nohighlight">\(x_O\)</span> et de taille <span class="math notranslate nohighlight">\(y_O\)</span>. Exprimer la position <span class="math notranslate nohighlight">\(x_I\)</span> et la taille <span class="math notranslate nohighlight">\(y_I\)</span> de l’image de cet objet par la lentille et montrer que :</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{cases}
-\frac{\rm{d}u}{\rm{dt}} = - \frac{1}{\tau} v - \frac{2}{\tau}u\\
-\frac{\rm{d}v}{\rm{dt}} = - \frac{1}{\tau} v - \frac{1}{\tau}u
+x_I &amp;= x_L + \frac{f' (x_O - x_L)}{f' + x_O - x_L}\\
+y_I &amp;= \frac{f'}{f' + x_0 - x_L}y_O
 \end{cases}
 \end{split}\]</div>
-<div class="section" id="vision-vectorielle">
-<h3><span class="section-number">5.1.1. </span>Vision vectorielle<a class="headerlink" href="#vision-vectorielle" title="Permalink to this headline">#</a></h3>
-<p>Le système d’équations différentielles précédent peut être vu comme une seule équation différentielle d’ordre 1 faisant un intervenir des vecteurs:</p>
+</div>
+<p>On va considérer pour l’étude numérique un système à trois lentilles <span class="math notranslate nohighlight">\((L_2), (L_3), L_4)\)</span> telle que:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} {\rm{d} \over \rm{d}t}
-\begin{pmatrix}
-u\\
-v
-\end{pmatrix}
-=
-\begin{pmatrix}
-- {1 \over \tau} v - {2 \over \tau} u\\
-- {1 \over \tau} v - {1 \over \tau} u
-\end{pmatrix}
+\[\begin{split}
+\begin{cases}
+f_2 = f_4 &amp;= -6 \rm{cm}\\
+f_3 &amp;= 3.5 \rm{cm}\\
+\overline{O_2 O_4} &amp;= f_4 + \frac{f_2 f_3}{f_2 + f_3}
+\end{cases}
 \end{split}\]</div>
-<p>soit, en définissant le vecteur:</p>
+<p>Les lentilles <span class="math notranslate nohighlight">\(L_2\)</span> et <span class="math notranslate nohighlight">\(L_4\)</span> sont fixes et la lentilles <span class="math notranslate nohighlight">\(L_3\)</span> peut se déplacer entre les deux lentilles.</p>
+<p>On rappelle que lorsque deux lentilles de distances focales <span class="math notranslate nohighlight">\(f_A\)</span> et <span class="math notranslate nohighlight">\(f_B\)</span> sont accolées, l’ensemble est équivalent à une seule lentille dont la distance focale est:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} Y(t)=
-\begin{pmatrix}
-u(t)\\
-v(t)
-\end{pmatrix}
-\end{split}\]</div>
-<p>Sa dérivée est:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8130f003-699f-4f82-8ad2-6d1d93cf1f06">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-8130f003-699f-4f82-8ad2-6d1d93cf1f06" title="Permalink to this equation">#</a></span>\[\begin{equation}
-{\rm{d}Y \over \rm{d}t} = F(t, Y(t))
-\end{equation}\]</div>
-<p>avec :</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} F(t, Y(t)) = 
-\begin{pmatrix}
-- {1 \over \tau} v(t) - {2 \over \tau} u(t)\\
-- {1 \over \tau} v(t) - {1 \over \tau} u(t)
-\end{pmatrix}
-\end{split}\]</div>
-<p><em>On rappelle que d’un point de vue vectoriel:</em></p>
+\[
+f_{eq} = \frac{f_A f_B}{f_B + f_B}
+\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Cas extrêmes.</p>
+<p>Justifier que lorsque <span class="math notranslate nohighlight">\(L_3\)</span> est accolée à <span class="math notranslate nohighlight">\(L_2\)</span> ou à <span class="math notranslate nohighlight">\(L_4\)</span>, alors le système est afocal.</p>
+</div>
+</div>
+<div class="section" id="partie-code">
+<h2><span class="section-number">1.1.2. </span>Partie code<a class="headerlink" href="#partie-code" title="Permalink to this headline">#</a></h2>
+<p>Vous allez maintenant vous entraîner à coder en Python. Lorsqu’on code des problèmes physiques, il est important de savoir sous quelle forme/type on va coder les objets physiques. Ici:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">Y[0]</span></code> et <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">Y[1]</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> prend comme argument un vecteur <code class="docutils literal notranslate"><span class="pre">Y</span></code> (de taille 2) et renvoie un vecteur de taille 2.</p></li>
-<li><p>On n’a techniquement pas besoin du temps puisque <code class="docutils literal notranslate"><span class="pre">F</span></code> ne dépend pas explicitement du temps mais on prendra l’habitude de le mettre comme argument même si on ne l’utilise pas (pour des fonctions comme <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>).</p></li>
+<li><p>Les objets et les images seront représentés par des listes de deux flottants <code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">&lt;-</span> <span class="pre">[xi,</span> <span class="pre">yi]</span></code> où <code class="docutils literal notranslate"><span class="pre">xi</span></code> et <code class="docutils literal notranslate"><span class="pre">yi</span></code> représentent les coordonnées de l’objet (position sur Ox et taille sur Oy).</p></li>
+<li><p>Les lentilles seront représentées par des listes de deux flottants <code class="docutils literal notranslate"><span class="pre">L1</span> <span class="pre">&lt;-</span> <span class="pre">[xL,</span> <span class="pre">f]</span></code> où <code class="docutils literal notranslate"><span class="pre">xL</span></code> représente la position sur Ox de la lentille et <code class="docutils literal notranslate"><span class="pre">f</span></code> la distance focale image de la lentille.</p></li>
 </ul>
-</div>
-<div class="section" id="schema-d-euler">
-<h3><span class="section-number">5.1.2. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">#</a></h3>
-<p>Le principe du schéma d’Euler est alors identique au cas d’ordre 1 avec une seule fonction:</p>
-<div class="math notranslate nohighlight">
-\[
-Y_{k+1} \approx Y_k + F(t_k, Y_k) \times h
-\]</div>
-<p>avec <span class="math notranslate nohighlight">\(Y_{k} = Y(t_k)\)</span> et <span class="math notranslate nohighlight">\(h = t_{k+1} - t_k\)</span></p>
-<p><strong>Dans l’expression précédente, la somme correspond à la somme vectorielle (somme des coordonnées terme à terme <span class="math notranslate nohighlight">\(\overrightarrow{w_1} + \overrightarrow{w_2}\)</span>) et la multiplication à la multiplication d’un vecteur par un scalaire (<span class="math notranslate nohighlight">\(\lambda \overrightarrow{w}\)</span>).</strong></p>
-<p><strong>Il faudra juste veiller à ce que la fonction <span class="math notranslate nohighlight">\(F\)</span> renvoie un vecteur numpy et que <span class="math notranslate nohighlight">\(y_0\)</span> soit un vecteur numpy dans les programmes (de manière à faciliter la somme vectorielle et la multiplication par un scalaire - pas besoin de boucle).</strong> Les valeurs <span class="math notranslate nohighlight">\(u_k\)</span> et <span class="math notranslate nohighlight">\(v_k\)</span> calculées aux instant <span class="math notranslate nohighlight">\(t_k = t_0 + hk\)</span> sont alors stockées dans deux vecteurs numpy (on pourra les rassembler dans un seul tableau numpy à deux colonnes comme le fait <code class="docutils literal notranslate"><span class="pre">odeint</span></code>  <em>(ce que fera naturellement la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> créée dans la partie précédente)</em> ou à deux lignes comme le fait <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemples</span>
+<span class="n">objet1</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># Objet ou image en x=-3 de taille y=1</span>
+<span class="n">lentille1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Lentilles en x=2 de distance focale f=-1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">objet1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Quelle valeur est affichee ? A quelle grandeur physique correspond-elle ?</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="systeme-d-ordre-2">
-<span id="sys-o2"></span><h2><span class="section-number">5.2. </span>Système d’ordre 2<a class="headerlink" href="#systeme-d-ordre-2" title="Permalink to this headline">#</a></h2>
-<p>Lors qu’on doit résoudre un système d’ordre 2 du type:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\rm{d^2}y}{\rm{dt^2}} = G(t, y(t), \frac{\rm{d}y}{\rm{dt}}(t))
-\]</div>
-<p>on peut toujours le réécrire sous la forme d’un système d’équations différentielles d’ordre 1 où les deux fonctions inconnues sont:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} Y(t)=
-\begin{pmatrix}
-u(t) = y(t)\\
-v(t) = \dot y(t)
-\end{pmatrix}
-\end{split}\]</div>
-<p>En effet, la dérivée de <span class="math notranslate nohighlight">\(Y\)</span> est:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b208d96-8a5b-488a-bb94-dbdf46531c88">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-7b208d96-8a5b-488a-bb94-dbdf46531c88" title="Permalink to this equation">#</a></span>\[\begin{equation}
-{\rm{d}Y \over \rm{d}t} =
-\begin{pmatrix}
-\dot y(t)\\
-\ddot y(t)
-\end{pmatrix}
-=
-
-\begin{pmatrix}
-v(t)\\
-g(t, u(t), v(t))
-\end{pmatrix}
-\end{equation}\]</div>
-<p>On peut donc se ramener au cas précédent en posant:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} F(t, Y(t)) = 
-\begin{pmatrix}
-v(t)\\
-g(t, u(t), v(t))
-\end{pmatrix}
-\end{split}\]</div>
-<p>La méthode permettant de résoudre un système d’équation permettra donc aussi de résoudre un système d’ordre 2 (et on obtient en prime la dérivée de la solution aux instants <span class="math notranslate nohighlight">\(t_k\)</span>).</p>
 </div>
-<div class="toctree-wrapper compound">
+<p>Lorsqu’on étudiera le système <span class="math notranslate nohighlight">\(L_2 + L_3 + L_4\)</span>, on supposera que la lentille <span class="math notranslate nohighlight">\(L_2\)</span> est placée en <span class="math notranslate nohighlight">\(O\)</span>, soit <span class="math notranslate nohighlight">\(x_2 = 0\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Codons</p>
+<ol class="simple">
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">image(L:list,</span> <span class="pre">objet:list)</span> <span class="pre">--&gt;</span> <span class="pre">list</span></code> qui prend comme argument:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">L</span></code>: une liste représentant une lentille</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">objet</span></code>: une liste représentant un objet<br />
+et qui renvoie une liste représentant l’image de l’objet par la lentille.</p></li>
+</ul>
+</li>
+<li><p>Se servir de la fonction image pour trouver la position de l’image finale donnée par le système <span class="math notranslate nohighlight">\(L_2 + L_3 + L_4\)</span> lorsque <span class="math notranslate nohighlight">\(L_3\)</span> est au milieu de <span class="math notranslate nohighlight">\(L_2\)</span> et <span class="math notranslate nohighlight">\(L_4\)</span> pour un objet situé 1m avant le système.</p></li>
+<li><p>Ecrire une procédure <code class="docutils literal notranslate"><span class="pre">systeme(objet:list)</span> <span class="pre">--&gt;</span> <span class="pre">list</span></code> qui prend comme argument un objet et qui renvoie la position finale après le système <span class="math notranslate nohighlight">\(L_2 + L_3 + L_4\)</span>.</p></li>
+<li><p>Pour 100 positions équiréparties d’objet entre 100m et 1m, tous de taille 1, obtenir, sous forme de liste les positions des images correspondant. On devra pour cela:</p>
+<ul class="simple">
+<li><p>Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">numpy.linspace</span></code> pour créer un vecteur position d’objet équiréparties.</p></li>
+<li><p>Utiliser une boucle pour obtenir et stocker les positions d’image obtenues dans une liste.</p></li>
+</ul>
+</li>
+<li><p>Modifier le programme précédent pour obtenir aussi dans une seconde liste, les tailles des images.</p></li>
+<li><p>Tracer 2 graphiques représentant la position ou la taille de l’image en fonction de la position de l’objet.</p></li>
+</ol>
+</div>
 </div>
 </div>
 
@@ -648,17 +596,17 @@ g(t, u(t), v(t))
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="elec_reponse_o1_math_reponse.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="biblio_scientifiques.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.3. </span>Exemple d’implémentation basique</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Utilisation des bibliothèques scientifiques.</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="elec_reponse_o2_base.html" title="next page">
+    <a class='right-next' id="next-link" href="equation_stationnaire.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.3. </span>Implémentation basique</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Résolution d’équation stationnaire</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

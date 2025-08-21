@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Système d’équations et ordre 2 &#8212; Capacités numériques - Sujets</title>
+    <title>2.6. Application en électrocinétique &#8212; Capacités numériques - Sujets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/elec_reponse_o2.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/capacites_numeriques/el_bases_num.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.3. Implémentation basique" href="elec_reponse_o2_base.html" />
-    <link rel="prev" title="4.3. Exemple d’implémentation basique" href="elec_reponse_o1_math_reponse.html" />
+    <link rel="next" title="3. Dérivation et intégration numérique" href="derivation_integration.html" />
+    <link rel="prev" title="2.5. Exemple d’implémentation" href="equation_stationnaire_reponse.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -129,16 +129,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="equation_stationnaire.html">
    2. Résolution d’équation stationnaire
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="equation_stationnaire_math.html">
      2.4. Etude abstraite
@@ -149,8 +149,8 @@ const thebe_selector_output = ".output, .cell_output"
      2.5. Exemple d’implémentation
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="el_bases_num.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      2.6. Application en électrocinétique
     </a>
    </li>
@@ -205,11 +205,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="elec_reponse_o2.html">
    5. Système d’équations et ordre 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
@@ -281,7 +281,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/elec_reponse_o2.md"
+        <a href="https://mybinder.org/v2/gh/pcsi3physiquestan/capacites_numeriques_source/main?urlpath=tree/el_bases_num.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -299,7 +299,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/pcsi3physiquestan/capacites_numeriques_source/blob/main/elec_reponse_o2.md"
+        <a href="https://colab.research.google.com/github/pcsi3physiquestan/capacites_numeriques_source/blob/main/el_bases_num.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -360,7 +360,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/elec_reponse_o2.ipynb"
+        <a href="_sources/el_bases_num.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -377,7 +377,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="_sources/elec_reponse_o2.md"
+        <a href="_sources/el_bases_num.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -437,25 +437,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#systeme-d-equations-position-du-probleme">
-   5.1. Système d’équations - Position du problème
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vision-vectorielle">
-     5.1.1. Vision vectorielle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schema-d-euler">
-     5.1.2. Schéma d’Euler
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#systeme-d-ordre-2">
-   5.2. Système d’ordre 2
+  <a class="reference internal nav-link" href="#redressement-simple-alternance">
+   2.6.1. Redressement simple alternance
   </a>
  </li>
 </ul>
@@ -467,7 +450,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Système d’équations et ordre 2</h1>
+                <h1>Application en électrocinétique</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -478,25 +461,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#systeme-d-equations-position-du-probleme">
-   5.1. Système d’équations - Position du problème
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vision-vectorielle">
-     5.1.1. Vision vectorielle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schema-d-euler">
-     5.1.2. Schéma d’Euler
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#systeme-d-ordre-2">
-   5.2. Système d’ordre 2
+  <a class="reference internal nav-link" href="#redressement-simple-alternance">
+   2.6.1. Redressement simple alternance
   </a>
  </li>
 </ul>
@@ -509,115 +475,76 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="systeme-d-equations-et-ordre-2">
-<h1><span class="section-number">5. </span>Système d’équations et ordre 2<a class="headerlink" href="#systeme-d-equations-et-ordre-2" title="Permalink to this headline">#</a></h1>
-<p>Le but est de voir comment utiliser la méthode d’intégration d’Euler explicite pour étudier le régime transitoire d’un système d’équations. On a alors un système d’équations différentielles. La théorie relative à la méthode d’intégration par Euler explicite ayant déjà été donnée, nous allons ici partir d’un exemple pour comprenre sa généralisation à des systèmes d’ordre supérieurs.</p>
-<div class="section" id="systeme-d-equations-position-du-probleme">
-<h2><span class="section-number">5.1. </span>Système d’équations - Position du problème<a class="headerlink" href="#systeme-d-equations-position-du-probleme" title="Permalink to this headline">#</a></h2>
-<p>On s’intéresse au système d’équations différentielle suivant :</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="application-en-electrocinetique">
+<h1><span class="section-number">2.6. </span>Application en électrocinétique<a class="headerlink" href="#application-en-electrocinetique" title="Permalink to this headline">#</a></h1>
+<p><strong>Ce problème nécessite d’avoir traité le premier chapitre d’électrocinétique.</strong></p>
+<div class="section" id="redressement-simple-alternance">
+<h2><span class="section-number">2.6.1. </span>Redressement simple alternance<a class="headerlink" href="#redressement-simple-alternance" title="Permalink to this headline">#</a></h2>
+<p>Cet exercice est basé sur la résolution d’équations stationnaires dont la méthode est proposée <a class="reference external" href="https://pcsi3physiquestan.github.io/capacites_numeriques/equation_stationnaire.html">ici</a>. <strong>On fera l’activité correspondate avant de se lancer dans cet exercice et on utilisera directement la fonction <code class="docutils literal notranslate"><span class="pre">scipy.optimize.bisect</span></code> pour résoudre une équation.</strong></p>
+<p>On considère un générateur de tension modélisé par un modèle de Thévenin composé d’une f.e.m. de tension <span class="math notranslate nohighlight">\(E\)</span> et d’une résistance de sortie <span class="math notranslate nohighlight">\(R = 50 \rm{\Omega}\)</span>. Il est relié à une diode <span class="math notranslate nohighlight">\(D\)</span> dont la relation intensité tension est:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{cases}
-\frac{\rm{d}u}{\rm{dt}} = - \frac{1}{\tau} v - \frac{2}{\tau}u\\
-\frac{\rm{d}v}{\rm{dt}} = - \frac{1}{\tau} v - \frac{1}{\tau}u
-\end{cases}
-\end{split}\]</div>
-<div class="section" id="vision-vectorielle">
-<h3><span class="section-number">5.1.1. </span>Vision vectorielle<a class="headerlink" href="#vision-vectorielle" title="Permalink to this headline">#</a></h3>
-<p>Le système d’équations différentielles précédent peut être vu comme une seule équation différentielle d’ordre 1 faisant un intervenir des vecteurs:</p>
+\[
+i = I_s\left(\exp \left(\frac{u_D}{V_D}\right) - 1\right)
+\]</div>
+<p>avec <span class="math notranslate nohighlight">\(I_s = 95 \rm{\mu A}\)</span> et <span class="math notranslate nohighlight">\(V_D = 30 \rm{mV}\)</span></p>
+<div class="figure align-center" id="label-image">
+<a class="reference internal image-reference" href="_images/diode.png"><img alt="_images/diode.png" src="_images/diode.png" style="width: 150px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Titre</span><a class="headerlink" href="#label-image" title="Permalink to this image">#</a></p>
+</div>
+<blockquote>
+<div><p><strong>Point de fonctionnement</strong> :</p>
+<ol class="simple">
+<li><p>Justifier que si l’on trace les caractéristiques statiques de la diode et du générateur de Thévenin, l’intersection des deux courbes donne l’intensité circulant dans le circuit et la tension aux bornes des deux dipôles en régime indépendant du temps. On précisera notamment les conventions choisies pour tracer chaque caractéristique. On appelle ce point, le point de fonctionnement du circuit.</p></li>
+<li><p>Déterminer graphiquement le point de fonctionnement pour <span class="math notranslate nohighlight">\(E &lt; 0\)</span> puis pour <span class="math notranslate nohighlight">\(E\)</span> supérieur à <span class="math notranslate nohighlight">\(V_D\)</span>.</p></li>
+<li><p>Montrer, dans le cas général que la tension <span class="math notranslate nohighlight">\(u\)</span> aux bornes du générateur doit, à un instant <span class="math notranslate nohighlight">\(t\)</span> doit vérifier l’équation suivante:</p></li>
+</ol>
+</div></blockquote>
 <div class="math notranslate nohighlight">
-\[\begin{split} {\rm{d} \over \rm{d}t}
-\begin{pmatrix}
-u\\
-v
-\end{pmatrix}
-=
-\begin{pmatrix}
-- {1 \over \tau} v - {2 \over \tau} u\\
-- {1 \over \tau} v - {1 \over \tau} u
-\end{pmatrix}
-\end{split}\]</div>
-<p>soit, en définissant le vecteur:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} Y(t)=
-\begin{pmatrix}
-u(t)\\
-v(t)
-\end{pmatrix}
-\end{split}\]</div>
-<p>Sa dérivée est:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8130f003-699f-4f82-8ad2-6d1d93cf1f06">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-8130f003-699f-4f82-8ad2-6d1d93cf1f06" title="Permalink to this equation">#</a></span>\[\begin{equation}
-{\rm{d}Y \over \rm{d}t} = F(t, Y(t))
-\end{equation}\]</div>
-<p>avec :</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} F(t, Y(t)) = 
-\begin{pmatrix}
-- {1 \over \tau} v(t) - {2 \over \tau} u(t)\\
-- {1 \over \tau} v(t) - {1 \over \tau} u(t)
-\end{pmatrix}
-\end{split}\]</div>
-<p><em>On rappelle que d’un point de vue vectoriel:</em></p>
+\[
+I_s\left(\exp \left(\frac{u}{V_D}\right) - 1\right) - \frac{E - u}{R} = 0
+\]</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>On note <span class="math notranslate nohighlight">\(f\)</span> la fonction précédente précédente dont <span class="math notranslate nohighlight">\(u\)</span> doit être racine. Tracer <span class="math notranslate nohighlight">\(u\)</span> pour <span class="math notranslate nohighlight">\(E = 1 \rm{V}\)</span> sur un intervalle où <span class="math notranslate nohighlight">\(f\)</span> s’annule et estimer graphiquement la valeur de <span class="math notranslate nohighlight">\(u\)</span>.</p></li>
+<li><p>Utiliser la fonction <code class="docutils literal notranslate"><span class="pre">bisect</span></code> pour trouver <span class="math notranslate nohighlight">\(u\)</span> lorsque <span class="math notranslate nohighlight">\(E = 1 \rm{V}\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Réponses aux questions théoriques<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="simple">
+<li><p class="sd-card-text">et 2. Les deux dipôles <span class="math notranslate nohighlight">\(\{E+RS\}\)</span> et <span class="math notranslate nohighlight">\(D\)</span> étant branchés ensemble, l’intensité qui circule est la même dans les deux dipoles et la tension <span class="math notranslate nohighlight">\(u\)</span> sera la même <strong>à condition de prendre l’un en convention générateur et l’autre en convention récepteur.</strong> On prendra le générateur de Thévenin en convention générateur et la diode en convention récepteur. On cherche alors l’intersection entre une droite décroissante et une exponentielle.</p></li>
+</ol>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">Y[0]</span></code> et <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">Y[1]</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> prend comme argument un vecteur <code class="docutils literal notranslate"><span class="pre">Y</span></code> (de taille 2) et renvoie un vecteur de taille 2.</p></li>
-<li><p>On n’a techniquement pas besoin du temps puisque <code class="docutils literal notranslate"><span class="pre">F</span></code> ne dépend pas explicitement du temps mais on prendra l’habitude de le mettre comme argument même si on ne l’utilise pas (pour des fonctions comme <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>).</p></li>
+<li><p class="sd-card-text">Quand <span class="math notranslate nohighlight">\(E &lt; 0\)</span>, l’intersection est proche de <span class="math notranslate nohighlight">\(i=0\)</span> (diode bloquée est assimilable à un interrupteur ouvert)</p></li>
+<li><p class="sd-card-text">Quand <span class="math notranslate nohighlight">\(E &gt; V_D\)</span>, l’intersection est proche de <span class="math notranslate nohighlight">\(u = V_D\)</span> (diode passante assimilable à une fem <span class="math notranslate nohighlight">\(V_D\)</span>)</p></li>
 </ul>
+<ol class="simple">
+<li><p class="sd-card-text">On égalise les deux expressions des intensités données par l’équation de la diode et celle du générateur de Thévenin.</p></li>
+</ol>
 </div>
-<div class="section" id="schema-d-euler">
-<h3><span class="section-number">5.1.2. </span>Schéma d’Euler<a class="headerlink" href="#schema-d-euler" title="Permalink to this headline">#</a></h3>
-<p>Le principe du schéma d’Euler est alors identique au cas d’ordre 1 avec une seule fonction:</p>
+</details><blockquote>
+<div><p><strong>Redressement monoalternance :</strong><br />
+On suppose maintenant que <span class="math notranslate nohighlight">\(E(t)\)</span> est une tension sinusoïdale:</p>
+</div></blockquote>
 <div class="math notranslate nohighlight">
 \[
-Y_{k+1} \approx Y_k + F(t_k, Y_k) \times h
+E(t) = E_0 \cos 2 \pi f t
 \]</div>
-<p>avec <span class="math notranslate nohighlight">\(Y_{k} = Y(t_k)\)</span> et <span class="math notranslate nohighlight">\(h = t_{k+1} - t_k\)</span></p>
-<p><strong>Dans l’expression précédente, la somme correspond à la somme vectorielle (somme des coordonnées terme à terme <span class="math notranslate nohighlight">\(\overrightarrow{w_1} + \overrightarrow{w_2}\)</span>) et la multiplication à la multiplication d’un vecteur par un scalaire (<span class="math notranslate nohighlight">\(\lambda \overrightarrow{w}\)</span>).</strong></p>
-<p><strong>Il faudra juste veiller à ce que la fonction <span class="math notranslate nohighlight">\(F\)</span> renvoie un vecteur numpy et que <span class="math notranslate nohighlight">\(y_0\)</span> soit un vecteur numpy dans les programmes (de manière à faciliter la somme vectorielle et la multiplication par un scalaire - pas besoin de boucle).</strong> Les valeurs <span class="math notranslate nohighlight">\(u_k\)</span> et <span class="math notranslate nohighlight">\(v_k\)</span> calculées aux instant <span class="math notranslate nohighlight">\(t_k = t_0 + hk\)</span> sont alors stockées dans deux vecteurs numpy (on pourra les rassembler dans un seul tableau numpy à deux colonnes comme le fait <code class="docutils literal notranslate"><span class="pre">odeint</span></code>  <em>(ce que fera naturellement la fonction <code class="docutils literal notranslate"><span class="pre">euler</span></code> créée dans la partie précédente)</em> ou à deux lignes comme le fait <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>.</p>
-</div>
-</div>
-<div class="section" id="systeme-d-ordre-2">
-<span id="sys-o2"></span><h2><span class="section-number">5.2. </span>Système d’ordre 2<a class="headerlink" href="#systeme-d-ordre-2" title="Permalink to this headline">#</a></h2>
-<p>Lors qu’on doit résoudre un système d’ordre 2 du type:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\rm{d^2}y}{\rm{dt^2}} = G(t, y(t), \frac{\rm{d}y}{\rm{dt}}(t))
-\]</div>
-<p>on peut toujours le réécrire sous la forme d’un système d’équations différentielles d’ordre 1 où les deux fonctions inconnues sont:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} Y(t)=
-\begin{pmatrix}
-u(t) = y(t)\\
-v(t) = \dot y(t)
-\end{pmatrix}
-\end{split}\]</div>
-<p>En effet, la dérivée de <span class="math notranslate nohighlight">\(Y\)</span> est:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b208d96-8a5b-488a-bb94-dbdf46531c88">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-7b208d96-8a5b-488a-bb94-dbdf46531c88" title="Permalink to this equation">#</a></span>\[\begin{equation}
-{\rm{d}Y \over \rm{d}t} =
-\begin{pmatrix}
-\dot y(t)\\
-\ddot y(t)
-\end{pmatrix}
-=
-
-\begin{pmatrix}
-v(t)\\
-g(t, u(t), v(t))
-\end{pmatrix}
-\end{equation}\]</div>
-<p>On peut donc se ramener au cas précédent en posant:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} F(t, Y(t)) = 
-\begin{pmatrix}
-v(t)\\
-g(t, u(t), v(t))
-\end{pmatrix}
-\end{split}\]</div>
-<p>La méthode permettant de résoudre un système d’équation permettra donc aussi de résoudre un système d’ordre 2 (et on obtient en prime la dérivée de la solution aux instants <span class="math notranslate nohighlight">\(t_k\)</span>).</p>
-</div>
-<div class="toctree-wrapper compound">
+<p>avec <span class="math notranslate nohighlight">\(E_0 = 2\rm{V}\)</span> et <span class="math notranslate nohighlight">\(f = 50\rm{Hz}\)</span>.</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>Même si <span class="math notranslate nohighlight">\(E\)</span> varie, pourquoi <span class="math notranslate nohighlight">\(u\)</span> est toujours racine de <span class="math notranslate nohighlight">\(f\)</span> à chaque instant <span class="math notranslate nohighlight">\(t\)</span> ?</p></li>
+<li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">Esource(t:float)</span> <span class="pre">-&gt;</span> <span class="pre">float</span></code> qui renvoie la valeur de <span class="math notranslate nohighlight">\(E(t)\)</span> et, si ce n’est pas déjà fait une fonction <code class="docutils literal notranslate"><span class="pre">f(u:float)</span> <span class="pre">-&gt;</span> <span class="pre">float</span></code> qui renvoie <span class="math notranslate nohighlight">\(f(u)\)</span> (on prendra la valeur <span class="math notranslate nohighlight">\(E_{instantanee} = E(t)\)</span> comme une valeur globale pour la fonction <code class="docutils literal notranslate"><span class="pre">f</span></code>)`.</p></li>
+<li><p>Créer un vecteur <span class="math notranslate nohighlight">\(E_k\)</span> contenant les 1000 valeurs <span class="math notranslate nohighlight">\(E(t_k)\)</span> aux instants <span class="math notranslate nohighlight">\(t_k\)</span> équirépartis sur 2 périodes de <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
+<li><p>Pour chaque valeur <span class="math notranslate nohighlight">\(E_k\)</span>, déterminer la tension <span class="math notranslate nohighlight">\(u_k\)</span> et l’intensité <span class="math notranslate nohighlight">\(i_k\)</span> correspondant au point de fonctionnement du circuit et stocker ces valeurs dans deux listes. Transformer ensuite ces listes en des vecteurs.</p></li>
+<li><p>Tracer <span class="math notranslate nohighlight">\(u_R(t)= R i(t)\)</span> grâce aux résultats précédents puis lui superposer <span class="math notranslate nohighlight">\(E(t)\)</span>. Pourquoi parle-t-on de redressement monoalternance ?</p></li>
+</ol>
+</div></blockquote>
 </div>
 </div>
 
@@ -648,17 +575,17 @@ g(t, u(t), v(t))
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="elec_reponse_o1_math_reponse.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="equation_stationnaire_reponse.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.3. </span>Exemple d’implémentation basique</p>
+            <p class="prev-next-title"><span class="section-number">2.5. </span>Exemple d’implémentation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="elec_reponse_o2_base.html" title="next page">
+    <a class='right-next' id="next-link" href="derivation_integration.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.3. </span>Implémentation basique</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Dérivation et intégration numérique</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
